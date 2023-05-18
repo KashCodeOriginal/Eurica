@@ -12,5 +12,8 @@ namespace Data.AssetsAddressablesConstants
         public const string GAME_LOADING_SCREEN = "GameLoadingScreen";
         
         public const string PLAYER_PREFAB = "PlayerPrefab";
+
+        public const string PORTAL_PREFAB = "Portal";
+        public const string PORTAL_GUN = "PortalGun";
     }
 }
