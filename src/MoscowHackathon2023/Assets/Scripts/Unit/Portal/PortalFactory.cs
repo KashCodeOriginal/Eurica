@@ -1,10 +1,9 @@
+using System.Collections.Generic;
 using Data.AssetsAddressablesConstants;
 using Services.Factories.AbstractFactory;
-using System.Collections.Generic;
 using UnityEngine;
-using Zenject;
 
-namespace PortalMechanics { 
+namespace Unit.Portal { 
     public class PortalFactory
     {
         private IAbstractFactory _abstractFactory;        
@@ -24,14 +23,20 @@ namespace PortalMechanics {
         public async void CreatePortal(Vector3 position, Vector3 face, PortalType portalView)
         {
             PortalType typeOppositePortal = portalView == PortalType.Red ? PortalType.Blue : PortalType.Red;
-            Portal createdPortal = _pullPortals[portalView];            
+            
+            Portal createdPortal = _pullPortals[portalView];
+            
             Portal oppositePortal = _pullPortals[typeOppositePortal];
 
             if (createdPortal == null)
-                createdPortal = await _abstractFactory.CreateInstance<Portal>(AssetsAddressablesConstants.PORTAL_PREFAB);                
-                          
+            {
+                createdPortal = await _abstractFactory.CreateInstance<Portal>(AssetsAddressablesConstants.PORTAL_PREFAB);
+            }
+
             createdPortal.transform.rotation = Quaternion.LookRotation(face);
+            
             createdPortal.transform.position = position + createdPortal.transform.forward * 0.6f;
+            
             SetUp(createdPortal, portalView, oppositePortal);
         }
 
@@ -40,11 +45,6 @@ namespace PortalMechanics {
             portalInstance.Construct(portalView, oppositePortal);
             _pullPortals[portalView] = portalInstance;
         }
-    }
-
-    public enum PortalType { 
-        Blue,
-        Red
     }
 }
 

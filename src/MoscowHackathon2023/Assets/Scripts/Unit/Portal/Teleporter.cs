@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace PortalMechanics
+namespace Unit.Portal
 {
     public class Teleporter : MonoBehaviour
     {
