@@ -1,6 +1,6 @@
 namespace Data.AssetsAddressablesConstants
 {
-    public static class AssetsAddressablesConstants
+    public class AssetsAddressablesConstants
     {
         public const string INITIAL_LEVEL = "Bootstrap";
         public const string MAIN_MENU_LEVEL = "MainMenu";
@@ -12,15 +12,8 @@ namespace Data.AssetsAddressablesConstants
         public const string GAME_LOADING_SCREEN = "GameLoadingScreen";
         
         public const string PLAYER_PREFAB = "PlayerPrefab";
-        public const string CAMERA_PREFAB = "CameraPrefab";
 
         public const string PORTAL_PREFAB = "Portal";
         public const string PORTAL_GUN = "PortalGun";
-<<<<<<< Updated upstream
-=======
-        public const string PORTAL_GUN_VIEW_PREFAB = "PortalGunView";
-        public const string GRAVITY_GUN_VIEW_PREFAB = "GravityGunView";
-        public const string SCALE_GUN_VIEW_PREFAB = "ScaleGunView";
->>>>>>> Stashed changes
     }
 }

@@ -28,7 +28,7 @@ namespace Infrastructure.Zenject.Installers
         {
             Container.BindInterfacesTo<AbstractFactory>().AsSingle();
         }
-        
+
         private void BindAddressablesProvider()
         {
             Container.BindInterfacesTo<AssetsAddressablesProvider>().AsSingle();

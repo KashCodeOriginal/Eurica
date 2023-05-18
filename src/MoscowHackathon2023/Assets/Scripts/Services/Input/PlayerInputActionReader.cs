@@ -11,22 +11,6 @@ namespace Services.Input
 
         public Action<Vector2> OnMovementInput;
 
-        public Vector2 OnMousePositionInput { get; private set; }
-
-        public Action IsLeftButtonClicked;
-        public Action IsRightButtonClicked;
-
-<<<<<<< Updated upstream
-=======
-        public Action IsLeftButtonClickStarted;
-        public Action IsLeftButtonClickEnded;
-        
-        public Action IsRightButtonClickStarted;
-        public Action IsRightButtonClickEnded;
-
->>>>>>> Stashed changes
-        public Action<float> IsMouseScroll;
-
         private void OnEnable()
         {
             if (_playerInputAction != null)
@@ -43,57 +27,6 @@ namespace Services.Input
         public void OnPlayerInput(InputAction.CallbackContext context)
         {
             OnMovementInput?.Invoke(context.ReadValue<Vector2>());
-        }
-
-        public void OnMousePosition(InputAction.CallbackContext context)
-        {
-            OnMousePositionInput = context.ReadValue<Vector2>();
-        }
-
-        public void OnMouseLeftButtonClick(InputAction.CallbackContext context)
-        {
-            if (context.started)
-            {
-                IsLeftButtonClickStarted?.Invoke();
-            }
-            
-            if (context.performed)
-            {
-                IsLeftButtonClicked?.Invoke();
-            }
-            
-            if (context.canceled)
-            {
-                IsLeftButtonClickEnded?.Invoke();
-            }
-        }
-
-        public void OnMouseRightButtonClick(InputAction.CallbackContext context)
-        {
-            if (context.started)
-            {
-                IsRightButtonClickStarted?.Invoke();
-            }
-            
-            if (context.performed)
-            {
-                IsRightButtonClicked?.Invoke();
-            }
-            
-            if (context.canceled)
-            {
-                IsRightButtonClickEnded?.Invoke();
-            }
-        }
-
-        public void OnMouseWheelScroll(InputAction.CallbackContext context)
-        {
-            IsMouseScroll?.Invoke(context.ReadValue<float>()); ;
-        }
-
-        public void OnMouseWheelScroll(InputAction.CallbackContext context)
-        {
-            IsMouseScroll?.Invoke(context.ReadValue<float>()); ;
         }
     }
 }
