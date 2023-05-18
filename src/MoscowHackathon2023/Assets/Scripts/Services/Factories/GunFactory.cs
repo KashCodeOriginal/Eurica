@@ -1,14 +1,15 @@
-﻿using Data.AssetsAddressablesConstants;
-using PortalMechanics;
+﻿using System.Threading.Tasks;
+using Data.AssetsAddressablesConstants;
 using Services.Factories.AbstractFactory;
 using Services.Input;
-using System.Threading.Tasks;
+using Tools;
 using Unit.GravityGunMechanics;
 using Unit.Portal;
+using Unit.ScaleGun;
 using UnityEngine;
 using Zenject.Installers;
 
-namespace Unit
+namespace Services.Factories
 {
     public class GunFactory
     {
@@ -18,7 +19,11 @@ namespace Unit
         private PortalFactory _portalFactory;
         private ICoroutineRunner _coroutinerRunner;
 
-        public GunFactory(ICoroutineRunner coroutinerRunner, PortalFactory portalFactory, PositionPlacemarkerTestScene positionPlacemarkerTestScene, IAbstractFactory abstractFactory, PlayerInputActionReader playerInputActionReader)
+        public GunFactory(ICoroutineRunner coroutinerRunner,
+            PortalFactory portalFactory,
+            PositionPlacemarkerTestScene positionPlacemarkerTestScene, 
+            IAbstractFactory abstractFactory, 
+            PlayerInputActionReader playerInputActionReader)
         {
             _abstractFactory = abstractFactory;
             _positionPlacemarkerTestScene = positionPlacemarkerTestScene;
@@ -36,25 +41,46 @@ namespace Unit
         {
             return new GravityGun(_coroutinerRunner, await CreateGravityGunView(), _playerInputActionReader);
         }
+        
+        public async Task<ScaleGun> CreateScaleGun()
+        {
+            return new ScaleGun(_playerInputActionReader, await CreateScaleGunView());
+        }
 
         private async Task<PortalGunView> CreatePortalGunView()
         {
             var portalGun =
                 await _abstractFactory.CreateInstance<GameObject>(AssetsAddressablesConstants.PORTAL_GUN_VIEW_PREFAB);
 
-            portalGun.transform.position = _positionPlacemarkerTestScene.PlaceSpawnPortalGun.transform.position;
-            portalGun.transform.rotation = _positionPlacemarkerTestScene.PlaceSpawnPortalGun.transform.rotation;            
+            var transform = _positionPlacemarkerTestScene.PlaceSpawnPortalGun.transform;
+            
+            portalGun.transform.position = transform.position;
+            portalGun.transform.rotation = transform.rotation;            
             return portalGun.GetComponent<PortalGunView>();
         }
 
         private async Task<GravityGunView> CreateGravityGunView()
         {
-            var portalGun =
+            var gravityGun =
                 await _abstractFactory.CreateInstance<GameObject>(AssetsAddressablesConstants.GRAVITY_GUN_VIEW_PREFAB);
 
-            portalGun.transform.position = _positionPlacemarkerTestScene.PlaceSpawnGrawityGun.transform.position;
-            portalGun.transform.rotation = _positionPlacemarkerTestScene.PlaceSpawnGrawityGun.transform.rotation;            
-            return portalGun.GetComponent<GravityGunView>();
+            var transform = _positionPlacemarkerTestScene.PlaceSpawnGravityGun.transform;
+            
+            gravityGun.transform.position = transform.position;
+            gravityGun.transform.rotation = transform.rotation;            
+            return gravityGun.GetComponent<GravityGunView>();
+        }
+        
+        private async Task<ScaleGunView> CreateScaleGunView()
+        {
+            var scaleGun =
+                await _abstractFactory.CreateInstance<GameObject>(AssetsAddressablesConstants.SCALE_GUN_VIEW_PREFAB);
+
+            var transform = _positionPlacemarkerTestScene.PlaceSpawnScaleGun.transform;
+            
+            scaleGun.transform.position = transform.position;
+            scaleGun.transform.rotation = transform.rotation;            
+            return scaleGun.GetComponent<ScaleGunView>();
         }
     }
 }

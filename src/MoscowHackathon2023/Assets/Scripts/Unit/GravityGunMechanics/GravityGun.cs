@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using Unit.Portal;
+using Unit.Weapon;
 using UnityEngine;
 
 namespace Unit.GravityGunMechanics
@@ -30,6 +31,7 @@ namespace Unit.GravityGunMechanics
         public void MainFire()
         {
             Debug.Log(_currentRigidbody);
+            
             var ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f)); //Center the screen in the crosshairs
 
             if (Physics.Raycast(ray, out var hit, _catchDistance))
@@ -72,7 +74,8 @@ namespace Unit.GravityGunMechanics
             _playerInputActionReader.IsRightButtonClicked += AlternateFire;
         }
 
-        private void Release() {
+        private void Release() 
+        {
             if (_dragIn != null) 
             { 
                  _coroutinerRunner.StopCoroutine(_dragIn);            

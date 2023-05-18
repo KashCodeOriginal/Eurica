@@ -1,8 +1,8 @@
-﻿using Unit.Portal;
+﻿using Unit.Weapon;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace PortalMechanics
+namespace Unit.Portal
 {
     public class PortalGunView : MonoBehaviour, IWeaponedView
     {
@@ -12,14 +12,17 @@ namespace PortalMechanics
         public UnityEvent PickedUp { get => _pickedUp; }
         public UnityEvent Released { get => _released; }
 
-        public void PickUp(Transform placeInHand) {
+        public void PickUp(Transform placeInHand) 
+        {
             _pickedUp?.Invoke();
-            this.gameObject.transform.parent = placeInHand;
-            this.gameObject.transform.localPosition = Vector3.zero;
-            this.gameObject.transform.localRotation = Quaternion.identity;
+            
+            gameObject.transform.parent = placeInHand;
+            gameObject.transform.localPosition = Vector3.zero;
+            gameObject.transform.localRotation = Quaternion.identity;
         }
-        public void Release() {            
-            this.gameObject.transform.parent = null;
+        public void Release() 
+        {            
+            gameObject.transform.parent = null;
             _released?.Invoke();
         }
     }
