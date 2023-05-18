@@ -21,7 +21,7 @@ namespace Infrastructure.ProjectStateMachine.States
         {
             _uiFactory.CreateMenuLoadingScreen();
 
-            var asyncOperationHandler = Addressables.LoadSceneAsync(AssetsAddressablesConstants.GAMEPLAY_LEVEL);
+            var asyncOperationHandler = Addressables.LoadSceneAsync(AssetsAddressablesConstants.MAIN_MENU_LEVEL);
 
             await asyncOperationHandler.Task;
             

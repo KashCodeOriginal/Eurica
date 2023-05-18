@@ -10,5 +10,7 @@ namespace Data.AssetsAddressablesConstants
         public const string MAIN_MENU_SCREEN = "MainMenuScreen";
         public const string GAMEPLAY_SCREEN = "GameplayScreen";
         public const string GAME_LOADING_SCREEN = "GameLoadingScreen";
+        
+        public const string PLAYER_PREFAB = "PlayerPrefab";
     }
 }
