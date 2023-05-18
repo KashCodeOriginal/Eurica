@@ -1,19 +1,19 @@
 using Data.AssetsAddressablesConstants;
 using Services.Factories.AbstractFactory;
+using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
 namespace PortalMechanics { 
     public class PortalFactory
     {
-        private IAbstractFactory _abstractFactory;
-        private DiContainer _container;
+        private IAbstractFactory _abstractFactory;        
+        private Dictionary<PortalType, Portal> _pullPortals = new Dictionary<PortalType, Portal>();
         public Portal Portal { get; private set; }
 
-        public PortalFactory(DiContainer container, IAbstractFactory abstractFactory)
+        public PortalFactory(IAbstractFactory abstractFactory)
         {
             _abstractFactory = abstractFactory;
-            _container = container;
         }
 
         public PortalGun CreatePortalGun()
@@ -23,18 +23,22 @@ namespace PortalMechanics {
 
         public async void CreatePortal(Vector3 position, Vector3 face, PortalType portalView)
         {
-            var portalInstance =
-                await _abstractFactory.CreateInstance<Portal>(AssetsAddressablesConstants.PORTAL_PREFAB);
+            PortalType typeOppositePortal = portalView == PortalType.Red ? PortalType.Blue : PortalType.Red;
+            Portal createdPortal = _pullPortals[portalView];            
+            Portal oppositePortal = _pullPortals[typeOppositePortal];
 
-            portalInstance.transform.rotation = Quaternion.LookRotation(face);
-            portalInstance.transform.position = position + portalInstance.transform.forward * 0.6f;
-
-            SetUp(portalInstance, portalView);
+            if (createdPortal == null)
+                createdPortal = await _abstractFactory.CreateInstance<Portal>(AssetsAddressablesConstants.PORTAL_PREFAB);                
+                          
+            createdPortal.transform.rotation = Quaternion.LookRotation(face);
+            createdPortal.transform.position = position + createdPortal.transform.forward * 0.6f;
+            SetUp(createdPortal, portalView, oppositePortal);
         }
 
-        private void SetUp(Portal portalInstance,  PortalType portalView)
+        private void SetUp(Portal portalInstance, PortalType portalView, Portal oppositePortal)
         {
-            portalInstance.Construct(portalView);
+            portalInstance.Construct(portalView, oppositePortal);
+            _pullPortals[portalView] = portalInstance;
         }
     }
 
