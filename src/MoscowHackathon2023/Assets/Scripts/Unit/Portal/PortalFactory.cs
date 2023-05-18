@@ -1,10 +1,9 @@
+using System.Collections.Generic;
 using Data.AssetsAddressablesConstants;
 using Services.Factories.AbstractFactory;
-using System.Collections.Generic;
 using UnityEngine;
-using Zenject;
 
-namespace PortalMechanics { 
+namespace Unit.Portal { 
     public class PortalFactory
     {
         private IAbstractFactory _abstractFactory;        

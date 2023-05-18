@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace GravityGunMechanics
+namespace Unit.GravityGunMechanics
 {
     public class GravityGun : MonoBehaviour
     {
@@ -11,16 +11,31 @@ namespace GravityGunMechanics
 
         private Rigidbody _currentRigidbody;
 
-        public void Fire() {
-            if (_currentRigidbody == null) {
-                Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f));//Center the screen in the crosshairs
-                RaycastHit hit;
-                if (Physics.Raycast(ray, out hit, _catchDistance)) {
-                    if (hit.collider.gameObject.layer != 11) return;//11 - InteractiveObjectForGravity
-                    _currentRigidbody = hit.collider.gameObject.GetComponent<Rigidbody>();
-                    if (_currentRigidbody == null) Debug.LogError("InteractiveObjectForGravity does not have a Rigidbody");
+        public void Fire() 
+        {
+            if (_currentRigidbody == null) 
+            {
+                var ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f)); //Center the screen in the crosshairs
+
+                if (!Physics.Raycast(ray, out var hit, _catchDistance))
+                {
+                    return;
                 }
-            } else {
+                
+                if (hit.collider.gameObject.layer != 11)
+                {
+                    return; //11 - InteractiveObjectForGravity
+                }
+                
+                _currentRigidbody = hit.collider.gameObject.GetComponent<Rigidbody>();
+                
+                if (_currentRigidbody == null)
+                {
+                    Debug.LogError("InteractiveObjectForGravity does not have a Rigidbody");
+                }
+            } 
+            else 
+            {
                 DragIn();
             }            
         }
@@ -29,7 +44,8 @@ namespace GravityGunMechanics
         public void Release() => _currentRigidbody = null;
 
         //On a different "Fire" button
-        public void Drop() {
+        public void Drop() 
+        {
             _currentRigidbody.velocity = _pointGravity.forward * _dropPower;
             Release();
         }

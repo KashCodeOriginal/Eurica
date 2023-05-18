@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-namespace PortalMechanics { 
+namespace Unit.Portal { 
     public class Portal : MonoBehaviour
     {
         [SerializeField] private Camera _portalСamera;
