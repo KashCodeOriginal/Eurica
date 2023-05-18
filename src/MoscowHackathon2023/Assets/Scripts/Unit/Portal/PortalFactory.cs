@@ -40,10 +40,10 @@ namespace Unit.Portal {
                 var createdPortalGO = await _abstractFactory.CreateInstance<GameObject>(AssetsAddressablesConstants.PORTAL_PREFAB);
                 createdPortal = createdPortalGO.GetComponent<Portal>();
             }  
-            createdPortal.transform.rotation = Quaternion.LookRotation(face);            
-            createdPortal.transform.position = position + createdPortal.transform.forward * 0.6f;
-            SetUpPortal(createdPortal, portalView, oppositePortal);
 
+            createdPortal.transform.position = position;
+            createdPortal.transform.rotation = Quaternion.FromToRotation(Vector3.forward, face);
+            SetUpPortal(createdPortal, portalView, oppositePortal);
         }
 
         private void SetUpPortal(Portal portalInstance,  PortalType portalView, Portal oppositePortal)

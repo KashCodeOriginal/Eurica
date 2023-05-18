@@ -8,16 +8,20 @@ namespace Tools
         public float jumpSpeed = 8.0f;
         public float rotateSpeed = 0.8f;
         public float gravity = 20.0f;
+        public Rigidbody rigidbody;
 
         private Vector3 moveDirection = Vector3.zero;
 
         private CharacterController controller;
         private Transform playerCamera;
 
+        public Transform PlayerCamera { get => playerCamera; }
+
         private void Start()
         {
             controller = GetComponent<CharacterController>();
             playerCamera = GetComponentInChildren<Camera>().transform;
+            rigidbody = GetComponent<Rigidbody>();
         }
 
         void Update()
@@ -33,14 +37,15 @@ namespace Tools
             moveDirection = new Vector3(Input.GetAxis("Horizontal") * speed, moveDirection.y, Input.GetAxis("Vertical") * speed);
             moveDirection = transform.TransformDirection(moveDirection);
 
+
             if (controller.isGrounded)
             {
                 if (Input.GetButton("Jump")) moveDirection.y = jumpSpeed;
                 else moveDirection.y = 0;
             }
 
-            moveDirection.y -= gravity * Time.deltaTime;
-            controller.Move(moveDirection * Time.deltaTime);
+            //moveDirection.y -= gravity * Time.deltaTime;
+            rigidbody.velocity = moveDirection * Time.deltaTime;
         }
     }
 }
