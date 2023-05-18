@@ -1,7 +1,7 @@
-using Infrastructure;
 using Infrastructure.ProjectStateMachine.States;
+using Zenject;
 
-namespace Zenject.Installers
+namespace Infrastructure.Zenject.Installers
 {
     public class GameInstanceInstaller : MonoInstaller
     {

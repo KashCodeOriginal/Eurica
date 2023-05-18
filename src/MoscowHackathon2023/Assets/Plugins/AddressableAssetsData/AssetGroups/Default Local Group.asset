@@ -62,6 +62,23 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 303fae77537ad364e97be5951aa67b16
+    m_Address: TestScene
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c82321505cb30d045a4c577aa0463882
+    m_Address: PortalGunView
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PortalGunView
+    - default
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9911d39109caf1d4da3046f7fae6e2e7
+    m_Address: GravityGunView
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 300d2db3ae098de46982c113583dafb4, type: 2}
   m_SchemaSet:
