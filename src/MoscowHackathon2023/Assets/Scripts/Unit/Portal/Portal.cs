@@ -14,17 +14,21 @@ namespace PortalMechanics {
         public Camera PortalСamera { get => _portalСamera; }
         public Teleporter Teleporter { get => _teleporter; }
 
-        public void Construct(PortalType portalType) {
+        public void Construct(PortalType portalType, Portal oppositePortal) {
             _portalType = portalType;
+            if (oppositePortal != null)
+                Open(oppositePortal);
+            else
+                Close();
         }
 
         //Opens only when the second portal appears
-        private void Open(Portal otherPortal)
+        private void Open(Portal oppositePortal)
         {            
-            otherPortal.PortalСamera.targetTexture = new RenderTexture(Screen.width, Screen.height, 24);
-            _portalView.sharedMaterial.mainTexture = otherPortal.PortalСamera.targetTexture;
-            _portalBroadcast = StartCoroutine(PortalBroadcast(otherPortal));
-            _teleporter.TurnOn(otherPortal.Teleporter);
+            oppositePortal.PortalСamera.targetTexture = new RenderTexture(Screen.width, Screen.height, 24);
+            _portalView.sharedMaterial.mainTexture = oppositePortal.PortalСamera.targetTexture;
+            _portalBroadcast = StartCoroutine(PortalBroadcast(oppositePortal));
+            _teleporter.TurnOn(oppositePortal.Teleporter);
             
         }
         //Closes if the second portal is missing
