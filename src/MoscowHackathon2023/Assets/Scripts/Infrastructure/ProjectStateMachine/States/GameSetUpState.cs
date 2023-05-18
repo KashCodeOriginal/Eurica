@@ -46,8 +46,11 @@ namespace Infrastructure.ProjectStateMachine.States
             
             virtualCamera.Follow = playerInstance.transform;
             
+<<<<<<< Updated upstream
             ScaleGun scaleGun = new ScaleGun(_playerInputActionReader, mainCamera);
 
+=======
+>>>>>>> Stashed changes
             if (playerInstance.TryGetComponent(out PlayerMovement playerMovement))
             {
                 playerMovement.Construct(_playerInputActionReader, mainCamera.transform);

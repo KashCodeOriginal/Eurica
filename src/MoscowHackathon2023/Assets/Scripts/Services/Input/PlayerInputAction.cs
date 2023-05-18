@@ -144,7 +144,11 @@ public partial class @PlayerInputAction : IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""b694c377-cb5c-4ea1-bc3c-7e544528cd65"",
                     ""path"": ""<Mouse>/leftButton"",
+<<<<<<< Updated upstream
                     ""interactions"": """",
+=======
+                    ""interactions"": ""Press(behavior=1),Hold"",
+>>>>>>> Stashed changes
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""MouseLeftButtonClick"",

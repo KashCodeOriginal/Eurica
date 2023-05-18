@@ -18,10 +18,16 @@ namespace Infrastructure
                 new MenuLoadingState(this, uiFactory),
                 new MainMenuState(this, uiFactory),
                 new GameLoadingState(this),
+<<<<<<< Updated upstream
                 new GameSetUpState(this,
                     abstractFactory, playerInputActionReader),
                 new GameplayState(this, uiFactory));
 
+=======
+                new GameSetUpState(this, abstractFactory, playerInputActionReader),
+                new TestState(),
+                new GameplayState(this, uiFactory));  
+>>>>>>> Stashed changes
                 StateMachine.SwitchState<BootstrapState>();
         }
 

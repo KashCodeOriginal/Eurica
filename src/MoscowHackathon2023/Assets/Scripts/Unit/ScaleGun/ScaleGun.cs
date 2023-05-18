@@ -1,33 +1,36 @@
-﻿using Services.Input;
+﻿using System.Threading.Tasks;
+using Services.Input;
+using Unit.Weapon;
 using UnityEngine;
 
 namespace Unit.ScaleGun
 {
-    public class ScaleGun
+    public class ScaleGun : IWeaponed
     {
-        public ScaleGun(PlayerInputActionReader playerInputActionReader, Camera camera)
+        public ScaleGun(PlayerInputActionReader playerInputActionReader, ScaleGunView scaleGunView)
         {
             _playerInputActionReader = playerInputActionReader;
 
-            _camera = camera;
-
-            _playerInputActionReader.IsLeftButtonClicked += TryScale;
-
-            _playerInputActionReader.IsMouseScroll += OnMouseScroll;
+            _scaleGunView = scaleGunView;
+            
+            _scaleGunView.PickedUp.AddListener(PickUp);
+            _scaleGunView.Released.AddListener(Release);
         }
 
         private PlayerInputActionReader _playerInputActionReader;
 
-        private Camera _camera;
-        
         private IScalable _currentScalableObject;
+
+        private ScaleGunView _scaleGunView;
 
         private float _resizeValue = 0.05f;
 
-
-        public void TryScale()
+        private bool _isLeftMouseHeld;
+        private bool _isRightMouseHeld;
+        
+        private void TryFindScalableObject()
         {
-            var ray = _camera.ViewportPointToRay(new Vector3(0.5f, 0.5f));
+            var ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f));
 
             if (!Physics.Raycast(ray, out var hit))
             {
@@ -42,20 +45,69 @@ namespace Unit.ScaleGun
             _currentScalableObject = scalable;
         }
 
-        private void OnMouseScroll(float onMouseScroll)
+        private void PickUp() 
         {
-            if (_currentScalableObject == null)
-            {
-                return;
-            }
+            _playerInputActionReader.IsLeftButtonClickStarted += StartLeftMouseHeld;
+            _playerInputActionReader.IsLeftButtonClickEnded += EndLeftMouseHeld;
             
-            if (onMouseScroll > 0)
+            _playerInputActionReader.IsRightButtonClickStarted += StartRightMouseHeld;
+            _playerInputActionReader.IsRightButtonClickEnded += EndRightMouseHeld;
+        }
+
+        private void Release() 
+        {
+            _playerInputActionReader.IsLeftButtonClickStarted -= StartLeftMouseHeld;
+            _playerInputActionReader.IsLeftButtonClickEnded -= EndLeftMouseHeld;
+            
+            _playerInputActionReader.IsRightButtonClickStarted -= StartRightMouseHeld;
+            _playerInputActionReader.IsRightButtonClickEnded -= EndRightMouseHeld;
+        }
+
+        private void StartLeftMouseHeld()
+        {
+            _isLeftMouseHeld = true;
+            MainFire();
+        }
+
+        private void EndLeftMouseHeld()
+        {
+            _isLeftMouseHeld = false;
+            _currentScalableObject = null;
+        }
+        
+        private void StartRightMouseHeld()
+        {
+            _isRightMouseHeld = true;
+            AlternateFire();
+        }
+
+        private void EndRightMouseHeld()
+        {
+            _isRightMouseHeld = false;
+            _currentScalableObject = null;
+        }
+
+        public async void MainFire()
+        {
+            TryFindScalableObject();
+
+            while (_isLeftMouseHeld)
             {
-                _currentScalableObject.UpScale(_resizeValue);
+                _currentScalableObject?.UpScale(_resizeValue);
+
+                await Task.Yield();
             }
-            else if (onMouseScroll < 0)
+        }
+
+        public async void AlternateFire()
+        {
+            TryFindScalableObject();
+
+            while (_isRightMouseHeld)
             {
-                _currentScalableObject.DownScale(_resizeValue);
+                _currentScalableObject?.DownScale(_resizeValue);
+
+                await Task.Yield();
             }
         }
     }
