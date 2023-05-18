@@ -29,11 +29,17 @@ namespace Unit.Portal {
             _portalView.sharedMaterial.mainTexture = oppositePortal.PortalСamera.targetTexture;
             _portalBroadcast = StartCoroutine(PortalBroadcast(oppositePortal));
             _teleporter.TurnOn(oppositePortal.Teleporter);
+            oppositePortal.Teleporter.TurnOn(_teleporter);
             
         }
         //Closes if the second portal is missing
         private void Close() {
-            StopCoroutine(_portalBroadcast);
+
+            if (_portalBroadcast != null) 
+            {
+                StopCoroutine(_portalBroadcast);
+            }
+            
             _portalView.sharedMaterial.mainTexture = _closeViewTexture;
             _teleporter.TurnOff();
         }

@@ -5,7 +5,12 @@ namespace Unit.Portal
     public class Teleporter : MonoBehaviour
     {
         private Teleporter _other;
-
+        private LayerMask _layerMaskForTeleport;
+        private LayerMask _currentLayerMaskObject;
+        private void Awake()
+        {
+            _layerMaskForTeleport = LayerMask.NameToLayer("Teleporting");
+        }
         public void TurnOn(Teleporter other) {
             enabled = true;
             _other = other;
@@ -31,8 +36,15 @@ namespace Unit.Portal
             obj.rotation = difference * obj.rotation;
         }
 
-        private void OnTriggerEnter(Collider other) => other.gameObject.layer = 9;//9-PlayerTeleporting
+        private void OnTriggerEnter(Collider other)
+        {
+            _currentLayerMaskObject = other.gameObject.layer;
+            other.gameObject.layer = _layerMaskForTeleport;
+        }
 
-        private void OnTriggerExit(Collider other) => other.gameObject.layer = 8;//8-Player
+        private void OnTriggerExit(Collider other)
+        {
+            other.gameObject.layer = _currentLayerMaskObject;
+        }
     }
 }
