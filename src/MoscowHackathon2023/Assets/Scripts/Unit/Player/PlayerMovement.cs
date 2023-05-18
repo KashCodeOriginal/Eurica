@@ -5,7 +5,7 @@ namespace Unit.Player
 {
     public class PlayerMovement : MonoBehaviour
     {
-        [SerializeField] private CharacterController _characterController;
+        [SerializeField] private Rigidbody _rigidbody;
         [SerializeField] private float _speed;
 
         private Transform _cameraTransform;
@@ -33,10 +33,10 @@ namespace Unit.Player
             var newDirection = new Vector3(_currentDirection.x, 0f, _currentDirection.y).normalized;
 
             newDirection = _cameraTransform.forward * newDirection.z + _cameraTransform.right * newDirection.x;
-            
-            newDirection += Physics.gravity;
 
-            _characterController.Move(newDirection * (_speed * Time.deltaTime));
+            newDirection.y = 0f;
+
+            _rigidbody.AddForce(newDirection * _speed, ForceMode.Impulse);
         }
 
         private void OnMovementInput(Vector2 direction)

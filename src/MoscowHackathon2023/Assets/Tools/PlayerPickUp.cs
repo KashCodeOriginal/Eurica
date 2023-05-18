@@ -1,14 +1,24 @@
+using Services.Containers;
 using Unit.Weapon;
 using UnityEngine;
+using Zenject;
 
 namespace Tools
 {
     public class PlayerPickUp : MonoBehaviour
     {
         [SerializeField] private Transform _placeInHand;
+        
         private IWeaponedView _currentWeaponView;
         private LayerMask _layerMask;
 
+        private ICameraContainer _cameraContainer;
+        
+        public void Construct(ICameraContainer cameraContainer)
+        {
+            _cameraContainer = cameraContainer;
+        }
+        
         private void Start()
         {
             _layerMask = LayerMask.NameToLayer("PickUp");
@@ -19,8 +29,13 @@ namespace Tools
             {
                 return;
             }
+
+            if (_cameraContainer == null)
+            {
+                return;
+            }
         
-            var ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f)); //Center the screen in the crosshairs
+            var ray = _cameraContainer.Camera.ViewportPointToRay(new Vector3(0.5f, 0.5f)); //Center the screen in the crosshairs
 
             if (!Physics.Raycast(ray, out var hit))
             {

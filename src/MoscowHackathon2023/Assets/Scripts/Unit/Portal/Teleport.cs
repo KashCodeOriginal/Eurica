@@ -1,4 +1,5 @@
 ﻿using System;
+using Tools.FirstPersonCharacter.Scripts;
 using UnityEngine;
 
 namespace Unit.Portal
@@ -35,7 +36,7 @@ namespace Unit.Portal
             if (rigidbodyObject.CompareTag("Player"))
             {
                 var turnAngle = Quaternion.Angle(_other.transform.rotation, rigidbodyObject.transform.rotation);
-                rigidbodyObject.GetComponent<UnityStandardAssets.Characters.FirstPerson.RigidbodyFirstPersonController>().mouseLook.ForceTurnAngle(turnAngle);
+                rigidbodyObject.GetComponent<RigidbodyFirstPersonController>().mouseLook.ForceTurnAngle(turnAngle);
             }
 
             var rigidBodyTransform =  rigidbodyObject.transform;

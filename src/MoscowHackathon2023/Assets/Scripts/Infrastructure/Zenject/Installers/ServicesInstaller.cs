@@ -1,6 +1,7 @@
 using Data.StaticData.GunData.GravityGunData;
 using Data.StaticData.GunData.ScaleGunData;
 using Services.AssetsAddressables;
+using Services.Containers;
 using Services.Factories.AbstractFactory;
 using Services.Factories.UIFactory;
 using Services.Input;
@@ -19,6 +20,7 @@ namespace Infrastructure.Zenject.Installers
         {
             BindUIFactory();
             BindAbstractFactory();
+            BindCameraContainer();
             BindGunsStaticDataData();
             BindAddressablesProvider();
             BindPlayerInputActionsReader();
@@ -42,6 +44,11 @@ namespace Infrastructure.Zenject.Installers
         private void BindPlayerInputActionsReader()
         {
             Container.Bind<PlayerInputActionReader>().FromInstance(_playerInputActionReader).AsSingle();
+        }
+        
+        private void BindCameraContainer()
+        {
+            Container.BindInterfacesTo<CameraContainer>().AsSingle().NonLazy();
         }
         
         private void BindGunsStaticDataData()

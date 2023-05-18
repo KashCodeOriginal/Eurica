@@ -20,5 +20,10 @@ namespace Data.AssetsAddressablesConstants
         public const string PORTAL_GUN_VIEW_PREFAB = "PortalGunView";
         public const string GRAVITY_GUN_VIEW_PREFAB = "GravityGunView";
         public const string SCALE_GUN_VIEW_PREFAB = "ScaleGunView";
+        public const string MOUNT_REMOTE_VIEW = "MountRemoteView";
+        
+        public const string MOUNT_TARGET_PREFAB = "Target";
+
+        public const string MOUNT_VIEW_PREFAB = "MountViewPrefab";
     }
 }

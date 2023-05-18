@@ -3,6 +3,7 @@ using Infrastructure.ProjectStateMachine.States;
 using Services.Factories.AbstractFactory;
 using Services.Factories.UIFactory;
 using Services.Input;
+using Tools;
 using Unit.ScaleGun;
 
 namespace Infrastructure
@@ -21,6 +22,8 @@ namespace Infrastructure
                 new GameSetUpState(this, abstractFactory, playerInputActionReader),
                 new TestState(),
                 new GameplayState(this, uiFactory));  
+            
+            
                 StateMachine.SwitchState<BootstrapState>();
         }
 
