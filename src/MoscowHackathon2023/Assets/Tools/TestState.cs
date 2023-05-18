@@ -1,10 +1,11 @@
 ﻿using Data.AssetsAddressablesConstants;
+using Infrastructure;
 using Infrastructure.ProjectStateMachine.Base;
 using UnityEngine.AddressableAssets;
 
-namespace Infrastructure.ProjectStateMachine.States
+namespace Tools
 {
-    public class TestState : IState<Bootstrap>, IEnterable, IExitable
+    public class TestState : IState<Bootstrap>, IEnterable
     {
         public Bootstrap Initializer { get; }
 
@@ -17,11 +18,6 @@ namespace Infrastructure.ProjectStateMachine.States
         {
             var asyncOperationHandler = Addressables.LoadSceneAsync(AssetsAddressablesConstants.TEST_LEVEL);
             await asyncOperationHandler.Task;            
-        }
-
-        public void OnExit()
-        {
-            
         }
     }
 }

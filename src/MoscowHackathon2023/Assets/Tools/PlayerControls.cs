@@ -8,7 +8,7 @@ namespace Tools
         public float jumpSpeed = 8.0f;
         public float rotateSpeed = 0.8f;
         public float gravity = 20.0f;
-        public Rigidbody rigidbody;
+        public new Rigidbody rigidbody;
 
         private Vector3 moveDirection = Vector3.zero;
 

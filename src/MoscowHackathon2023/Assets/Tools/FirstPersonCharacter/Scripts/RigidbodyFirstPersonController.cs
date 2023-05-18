@@ -1,8 +1,10 @@
 using System;
 using UnityEngine;
+using UnityStandardAssets.Characters.FirstPerson;
+
 //using UnityStandardAssets.CrossPlatformInput;
 
-namespace UnityStandardAssets.Characters.FirstPerson
+namespace Tools.FirstPersonCharacter.Scripts
 {
     [RequireComponent(typeof (Rigidbody))]
     [RequireComponent(typeof (CapsuleCollider))]

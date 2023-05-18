@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using Data.StaticData.GunData.ScaleGunData;
+using Services.Containers;
 using Services.Input;
 using Unit.Weapon;
 using UnityEngine;
@@ -10,9 +11,12 @@ namespace Unit.ScaleGun
     {
         public ScaleGun(PlayerInputActionReader playerInputActionReader, 
             ScaleGunView scaleGunView,
-            ScaleGunData scaleGunData)
+            ScaleGunData scaleGunData,
+            ICameraContainer cameraContainer)
         {
             _playerInputActionReader = playerInputActionReader;
+
+            _cameraContainer = cameraContainer;
 
             _scaleGunView = scaleGunView;
             _scaleGunData = scaleGunData;
@@ -28,6 +32,8 @@ namespace Unit.ScaleGun
         private ScaleGunView _scaleGunView;
         private readonly ScaleGunData _scaleGunData;
 
+        private readonly ICameraContainer _cameraContainer;
+
         private RaycastHit[] _hit = new RaycastHit[2];
         
         private LayerMask _layerMask = LayerMask.NameToLayer("Walls");
@@ -37,7 +43,7 @@ namespace Unit.ScaleGun
         
         private void TryFindScalableObject()
         {
-            var ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f));
+            var ray = _cameraContainer.Camera.ViewportPointToRay(new Vector3(0.5f, 0.5f));
 
             if (!Physics.Raycast(ray, out var hit))
             {

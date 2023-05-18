@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using Data.StaticData.GunData.GravityGunData;
+using Services.Containers;
 using Services.Input;
 using Unit.Weapon;
 using UnityEngine;
@@ -14,18 +15,21 @@ namespace Unit.GravityGun
         private Coroutine _dragIn;
         private PlayerInputActionReader _playerInputActionReader;
         private readonly GravityGunData _gravityGunData;
+        private readonly ICameraContainer _cameraContainer;
         private LayerMask _interactiveLayer = LayerMask.NameToLayer("InteractiveObjectForGravity");
         private LayerMask _grabbedLayer = LayerMask.NameToLayer("Grabbed");
 
         public GravityGun(ICoroutineRunner coroutinerRunner,
             GravityGunView gravityGunView, 
             PlayerInputActionReader playerInputActionReader,
-            GravityGunData gravityGunData)
+            GravityGunData gravityGunData,
+            ICameraContainer cameraContainer)
         {
             _gravityGunView = gravityGunView;
             _coroutinerRunner = coroutinerRunner;
             _playerInputActionReader = playerInputActionReader;
             _gravityGunData = gravityGunData;
+            _cameraContainer = cameraContainer;
             _gravityGunView.PickedUp.AddListener(PickUp);
             _gravityGunView.Released.AddListener(Release);
         }
@@ -34,7 +38,7 @@ namespace Unit.GravityGun
         {
             Debug.Log(_currentRigidbody);
             
-            var ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f));
+            var ray = _cameraContainer.Camera.ViewportPointToRay(new Vector3(0.5f, 0.5f));
 
             if (!Physics.Raycast(ray, out var hit, _gravityGunData.CatchDistance))
             {
@@ -49,6 +53,7 @@ namespace Unit.GravityGun
             
             _currentRigidbody = hit.collider.gameObject.GetComponent<Rigidbody>();
             _dragIn = _coroutinerRunner.StartCoroutine(DragIn());
+            
             _playerInputActionReader.IsLeftButtonClicked -= MainFire;
             _playerInputActionReader.IsLeftButtonClicked += StopMainFire;
 

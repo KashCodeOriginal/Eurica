@@ -1,22 +1,24 @@
 ﻿using Infrastructure.ProjectStateMachine.Base;
-using Infrastructure.ProjectStateMachine.States;
+using Services.Containers;
 using Services.Factories;
-using Tools;
-using Unit;
+using Services.Factories.AbstractFactory;
+using Services.Input;
 
-namespace Infrastructure
+namespace Tools
 {
     public class BootstrapTest
     {
-        public BootstrapTest(
-            GunFactory gunFactory)
+        public readonly StateMachine<BootstrapTest> StateMachine;
+
+        public BootstrapTest(GunFactory gunFactory,
+            IAbstractFactory abstractFactory, 
+            PlayerInputActionReader playerInputActionReader,
+            ICameraContainer cameraContainer)
         {
             StateMachine = new StateMachine<BootstrapTest>(                
-                new LoadTestState(gunFactory));
+                new LoadTestState(gunFactory, abstractFactory, playerInputActionReader, cameraContainer));
 
                 StateMachine.SwitchState<LoadTestState>();
         }
-
-        public readonly StateMachine<BootstrapTest> StateMachine;
     }
 }

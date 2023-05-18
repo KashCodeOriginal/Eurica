@@ -89,6 +89,21 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 03aee60fd627cbb44a6130afee716670
+    m_Address: MountRemoteView
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 60190e3d2f1e7604397a589bebc8c716
+    m_Address: MountViewPrefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 97cab97b235599046a23d975c83f16cd
+    m_Address: Target
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 300d2db3ae098de46982c113583dafb4, type: 2}
   m_SchemaSet:

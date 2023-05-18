@@ -1,4 +1,5 @@
-﻿using Services.Input;
+﻿using Services.Containers;
+using Services.Input;
 using Unit.Base;
 using UnityEngine;
 using Zenject;
@@ -7,21 +8,30 @@ namespace Unit.Player
 {
     public class PlayerInteraction : MonoBehaviour
     {
-        [Inject]
-        public void Construct(PlayerInputActionReader playerInputActionReader)
+        public void Construct(PlayerInputActionReader playerInputActionReader, 
+            ICameraContainer cameraContainer)
         {
             _playerInputActionReader = playerInputActionReader;
 
+            _cameraContainer = cameraContainer;
+
             _playerInputActionReader.IsPlayerInteractionButtonClicked += IsPlayerInteract;
         }
-        
+
         private bool _canInteract;
 
         private PlayerInputActionReader _playerInputActionReader;
 
+        private ICameraContainer _cameraContainer;
+
         private void Update()
         {
-            var ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f));
+            if (_cameraContainer == null)
+            {
+                return;
+            }
+            
+            var ray = _cameraContainer.Camera.ViewportPointToRay(new Vector3(0.5f, 0.5f));
 
             if (!Physics.Raycast(ray, out var hit))
             {
