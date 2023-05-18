@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using Data.StaticData.GunData.ScaleGunData;
 using Services.Input;
 using Unit.Weapon;
 using UnityEngine;
@@ -7,12 +8,15 @@ namespace Unit.ScaleGun
 {
     public class ScaleGun : IWeaponed
     {
-        public ScaleGun(PlayerInputActionReader playerInputActionReader, ScaleGunView scaleGunView)
+        public ScaleGun(PlayerInputActionReader playerInputActionReader, 
+            ScaleGunView scaleGunView,
+            ScaleGunData scaleGunData)
         {
             _playerInputActionReader = playerInputActionReader;
 
             _scaleGunView = scaleGunView;
-            
+            _scaleGunData = scaleGunData;
+
             _scaleGunView.PickedUp.AddListener(PickUp);
             _scaleGunView.Released.AddListener(Release);
         }
@@ -22,12 +26,11 @@ namespace Unit.ScaleGun
         private IScalable _currentScalableObject;
 
         private ScaleGunView _scaleGunView;
-        
+        private readonly ScaleGunData _scaleGunData;
+
         private RaycastHit[] _hit = new RaycastHit[2];
         
         private LayerMask _layerMask = LayerMask.NameToLayer("Walls");
-
-        private float _resizeValue = 0.05f;
 
         private bool _isLeftMouseHeld;
         private bool _isRightMouseHeld;
@@ -97,7 +100,7 @@ namespace Unit.ScaleGun
 
             while (_isLeftMouseHeld)
             {
-                _currentScalableObject?.UpScale(_resizeValue);
+                _currentScalableObject?.UpScale(_scaleGunData.ResizeValue);
 
                 await Task.Yield();
             }
@@ -109,7 +112,7 @@ namespace Unit.ScaleGun
 
             while (_isRightMouseHeld)
             {
-                _currentScalableObject?.DownScale(_resizeValue);
+                _currentScalableObject?.DownScale(_scaleGunData.ResizeValue);
 
                 await Task.Yield();
             }

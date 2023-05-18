@@ -1,7 +1,7 @@
 ﻿using Infrastructure;
 using Infrastructure.ProjectStateMachine.Base;
 using Services.Factories;
-using Unit.GravityGunMechanics;
+using Unit.GravityGun;
 using Unit.Portal;
 using Unit.ScaleGun;
 using UnityEngine;

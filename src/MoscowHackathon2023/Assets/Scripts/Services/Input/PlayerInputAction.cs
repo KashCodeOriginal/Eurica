@@ -71,6 +71,15 @@ public partial class @PlayerInputAction : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""PlayerInteraction"",
+                    ""type"": ""Button"",
+                    ""id"": ""adcb1dbf-2b9c-4c15-a998-c52078b6b1dc"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -172,6 +181,17 @@ public partial class @PlayerInputAction : IInputActionCollection2, IDisposable
                     ""action"": ""MouseWheelScroll"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1542d8d0-d5be-4c9e-9b0a-37c4b8e75920"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PlayerInteraction"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -185,6 +205,7 @@ public partial class @PlayerInputAction : IInputActionCollection2, IDisposable
         m_PlayerInput_MouseLeftButtonClick = m_PlayerInput.FindAction("MouseLeftButtonClick", throwIfNotFound: true);
         m_PlayerInput_MouseRightButtonClick = m_PlayerInput.FindAction("MouseRightButtonClick", throwIfNotFound: true);
         m_PlayerInput_MouseWheelScroll = m_PlayerInput.FindAction("MouseWheelScroll", throwIfNotFound: true);
+        m_PlayerInput_PlayerInteraction = m_PlayerInput.FindAction("PlayerInteraction", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -249,6 +270,7 @@ public partial class @PlayerInputAction : IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerInput_MouseLeftButtonClick;
     private readonly InputAction m_PlayerInput_MouseRightButtonClick;
     private readonly InputAction m_PlayerInput_MouseWheelScroll;
+    private readonly InputAction m_PlayerInput_PlayerInteraction;
     public struct PlayerInputActions
     {
         private @PlayerInputAction m_Wrapper;
@@ -258,6 +280,7 @@ public partial class @PlayerInputAction : IInputActionCollection2, IDisposable
         public InputAction @MouseLeftButtonClick => m_Wrapper.m_PlayerInput_MouseLeftButtonClick;
         public InputAction @MouseRightButtonClick => m_Wrapper.m_PlayerInput_MouseRightButtonClick;
         public InputAction @MouseWheelScroll => m_Wrapper.m_PlayerInput_MouseWheelScroll;
+        public InputAction @PlayerInteraction => m_Wrapper.m_PlayerInput_PlayerInteraction;
         public InputActionMap Get() { return m_Wrapper.m_PlayerInput; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -282,6 +305,9 @@ public partial class @PlayerInputAction : IInputActionCollection2, IDisposable
                 @MouseWheelScroll.started -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnMouseWheelScroll;
                 @MouseWheelScroll.performed -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnMouseWheelScroll;
                 @MouseWheelScroll.canceled -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnMouseWheelScroll;
+                @PlayerInteraction.started -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnPlayerInteraction;
+                @PlayerInteraction.performed -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnPlayerInteraction;
+                @PlayerInteraction.canceled -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnPlayerInteraction;
             }
             m_Wrapper.m_PlayerInputActionsCallbackInterface = instance;
             if (instance != null)
@@ -301,6 +327,9 @@ public partial class @PlayerInputAction : IInputActionCollection2, IDisposable
                 @MouseWheelScroll.started += instance.OnMouseWheelScroll;
                 @MouseWheelScroll.performed += instance.OnMouseWheelScroll;
                 @MouseWheelScroll.canceled += instance.OnMouseWheelScroll;
+                @PlayerInteraction.started += instance.OnPlayerInteraction;
+                @PlayerInteraction.performed += instance.OnPlayerInteraction;
+                @PlayerInteraction.canceled += instance.OnPlayerInteraction;
             }
         }
     }
@@ -312,5 +341,6 @@ public partial class @PlayerInputAction : IInputActionCollection2, IDisposable
         void OnMouseLeftButtonClick(InputAction.CallbackContext context);
         void OnMouseRightButtonClick(InputAction.CallbackContext context);
         void OnMouseWheelScroll(InputAction.CallbackContext context);
+        void OnPlayerInteraction(InputAction.CallbackContext context);
     }
 }

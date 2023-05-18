@@ -1,16 +1,16 @@
 ﻿using Infrastructure;
 using Infrastructure.ProjectStateMachine.States;
 using Services.Factories;
-using Tools;
-using Unit;
 using Unit.Portal;
 using UnityEngine;
+using Zenject;
 
-namespace Zenject.Installers
+namespace Tools
 {
     public class TestInstanceInstaller : MonoInstaller, ICoroutineRunner
     {
         [SerializeField] private PositionPlacemarkerTestScene  _positionPlacemarkerTestScene;
+        
         public override void InstallBindings()
         {
             Container.Bind<ICoroutineRunner>().FromInstance(this).AsSingle();
