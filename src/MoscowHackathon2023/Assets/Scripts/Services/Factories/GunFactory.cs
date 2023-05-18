@@ -1,33 +1,40 @@
 ﻿using System.Threading.Tasks;
 using Data.AssetsAddressablesConstants;
+using Data.StaticData.GunData.GravityGunData;
+using Data.StaticData.GunData.ScaleGunData;
 using Services.Factories.AbstractFactory;
 using Services.Input;
 using Tools;
-using Unit.GravityGunMechanics;
+using Unit.GravityGun;
 using Unit.Portal;
 using Unit.ScaleGun;
 using UnityEngine;
-using Zenject.Installers;
 
 namespace Services.Factories
 {
     public class GunFactory
     {
-        private IAbstractFactory _abstractFactory;
-        private PositionPlacemarkerTestScene _positionPlacemarkerTestScene;
-        private PlayerInputActionReader _playerInputActionReader;
-        private PortalFactory _portalFactory;
-        private ICoroutineRunner _coroutinerRunner;
+        private readonly IAbstractFactory _abstractFactory;
+        private readonly PositionPlacemarkerTestScene _positionPlacemarkerTestScene;
+        private readonly PlayerInputActionReader _playerInputActionReader;
+        private readonly GravityGunData _gravityGunData;
+        private readonly ScaleGunData _scaleGunData;
+        private readonly PortalFactory _portalFactory;
+        private readonly ICoroutineRunner _coroutinerRunner;
 
         public GunFactory(ICoroutineRunner coroutinerRunner,
             PortalFactory portalFactory,
             PositionPlacemarkerTestScene positionPlacemarkerTestScene, 
             IAbstractFactory abstractFactory, 
-            PlayerInputActionReader playerInputActionReader)
+            PlayerInputActionReader playerInputActionReader,
+            GravityGunData gravityGunData,
+            ScaleGunData scaleGunData)
         {
             _abstractFactory = abstractFactory;
             _positionPlacemarkerTestScene = positionPlacemarkerTestScene;
             _playerInputActionReader = playerInputActionReader;
+            _gravityGunData = gravityGunData;
+            _scaleGunData = scaleGunData;
             _portalFactory = portalFactory;
             _coroutinerRunner = coroutinerRunner;
         }
@@ -39,12 +46,12 @@ namespace Services.Factories
 
         public async Task<GravityGun> CreateGravityGun()
         {
-            return new GravityGun(_coroutinerRunner, await CreateGravityGunView(), _playerInputActionReader);
+            return new GravityGun(_coroutinerRunner, await CreateGravityGunView(), _playerInputActionReader, _gravityGunData);
         }
         
         public async Task<ScaleGun> CreateScaleGun()
         {
-            return new ScaleGun(_playerInputActionReader, await CreateScaleGunView());
+            return new ScaleGun(_playerInputActionReader, await CreateScaleGunView(), _scaleGunData);
         }
 
         private async Task<PortalGunView> CreatePortalGunView()

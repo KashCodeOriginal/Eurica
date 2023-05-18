@@ -9,24 +9,28 @@ namespace Unit.Portal {
         [SerializeField] private Texture _closeViewTexture;
         [SerializeField] private Teleporter _teleporter;
 
-        private PortalType _portalType;
         private Coroutine _portalBroadcast;
         public Camera PortalСamera { get => _portalСamera; }
         public Teleporter Teleporter { get => _teleporter; }
 
-        public void Construct(PortalType portalType, Portal oppositePortal) {
-            _portalType = portalType;
-            if (oppositePortal != null)
+        public void Construct(Portal oppositePortal) {
+            
+            if (oppositePortal != null) 
+            {
                 Open(oppositePortal);
-            else
+                oppositePortal.Open(this);
+            } 
+            else 
+            { 
                 Close();
+            }   
         }
 
         //Opens only when the second portal appears
         private void Open(Portal oppositePortal)
         {            
             oppositePortal.PortalСamera.targetTexture = new RenderTexture(Screen.width, Screen.height, 24);
-            _portalView.sharedMaterial.mainTexture = oppositePortal.PortalСamera.targetTexture;
+            _portalView.material.mainTexture = oppositePortal.PortalСamera.targetTexture;
             _portalBroadcast = StartCoroutine(PortalBroadcast(oppositePortal));
             _teleporter.TurnOn(oppositePortal.Teleporter);
             oppositePortal.Teleporter.TurnOn(_teleporter);
@@ -46,9 +50,11 @@ namespace Unit.Portal {
 
         private IEnumerator PortalBroadcast(Portal otherPortal) {
 
-            while (true) {
+            while (true) 
+            {
                 yield return null;
-                if (Camera.main != null) { 
+                if (Camera.main != null) 
+                { 
                     Vector3 lookerPosition = otherPortal.transform.worldToLocalMatrix.MultiplyPoint3x4(Camera.main.transform.position);
                     lookerPosition = new Vector3(-lookerPosition.x, lookerPosition.y, -lookerPosition.z);
                     _portalСamera.transform.localPosition = lookerPosition;

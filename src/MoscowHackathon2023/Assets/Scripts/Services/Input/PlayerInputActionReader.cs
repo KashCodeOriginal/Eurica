@@ -22,6 +22,8 @@ namespace Services.Input
         public Action IsRightButtonClickStarted;
         public Action IsRightButtonClickEnded;
 
+        public Action<bool> IsPlayerInteractionButtonClicked;
+
         public Action<float> IsMouseScroll;
 
         private void OnEnable()
@@ -86,6 +88,11 @@ namespace Services.Input
         public void OnMouseWheelScroll(InputAction.CallbackContext context)
         {
             IsMouseScroll?.Invoke(context.ReadValue<float>()); ;
+        }
+
+        public void OnPlayerInteraction(InputAction.CallbackContext context)
+        {
+            IsPlayerInteractionButtonClicked?.Invoke(context.performed);
         }
     }
 }

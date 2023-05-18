@@ -3,7 +3,6 @@ using Data.AssetsAddressablesConstants;
 using Services.Factories.AbstractFactory;
 using System.Threading.Tasks;
 using UnityEngine;
-using Zenject.Installers;
 using Services.Input;
 
 namespace Unit.Portal { 
@@ -48,8 +47,8 @@ namespace Unit.Portal {
 
         private void SetUpPortal(Portal portalInstance,  PortalType portalView, Portal oppositePortal)
         {
-            portalInstance.Construct(portalView, oppositePortal);
-            _pullPortals[portalView] = portalInstance;       
+            portalInstance.Construct(oppositePortal);
+            _pullPortals[portalView] = portalInstance; 
         }
     }
 }

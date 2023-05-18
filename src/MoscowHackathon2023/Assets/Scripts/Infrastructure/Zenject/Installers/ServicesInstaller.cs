@@ -1,3 +1,5 @@
+using Data.StaticData.GunData.GravityGunData;
+using Data.StaticData.GunData.ScaleGunData;
 using Services.AssetsAddressables;
 using Services.Factories.AbstractFactory;
 using Services.Factories.UIFactory;
@@ -10,11 +12,14 @@ namespace Infrastructure.Zenject.Installers
     public class ServicesInstaller : MonoInstaller
     {
         [SerializeField] private PlayerInputActionReader _playerInputActionReader;
-        
+        [SerializeField] private GravityGunData _gravityGunData;
+        [SerializeField] private ScaleGunData _scaleGunData;
+
         public override void InstallBindings()
         {
             BindUIFactory();
             BindAbstractFactory();
+            BindGunsStaticDataData();
             BindAddressablesProvider();
             BindPlayerInputActionsReader();
         }
@@ -36,7 +41,13 @@ namespace Infrastructure.Zenject.Installers
 
         private void BindPlayerInputActionsReader()
         {
-            Container.Bind<PlayerInputActionReader>().FromInstance(_playerInputActionReader);
+            Container.Bind<PlayerInputActionReader>().FromInstance(_playerInputActionReader).AsSingle();
+        }
+        
+        private void BindGunsStaticDataData()
+        {
+            Container.Bind<GravityGunData>().FromInstance(_gravityGunData).AsSingle();
+            Container.Bind<ScaleGunData>().FromInstance(_scaleGunData).AsSingle();
         }
     }
 }

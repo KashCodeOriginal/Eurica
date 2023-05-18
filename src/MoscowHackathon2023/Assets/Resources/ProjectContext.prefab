@@ -153,3 +153,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerInputActionReader: {fileID: 11400000, guid: 58a20ac641c43a84aa48a45708cf76b4, type: 2}
+  _gravityGunData: {fileID: 11400000, guid: 02f333e6f9f502f45a247b470e66ebb9, type: 2}
+  _scaleGunData: {fileID: 11400000, guid: 1067157493b38ac4c8f5a5d6ef1b18f3, type: 2}
