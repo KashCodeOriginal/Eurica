@@ -1,8 +1,11 @@
-﻿namespace Unit.Weapon
+﻿using Data.StaticData.GunData;
+
+namespace Unit.Weapon
 {
-    internal interface IWeaponed
+    public interface IWeaponed
     {
-        void AlternateFire();
-        void MainFire();
+        public BaseGunData GunData { get; }
+        public void PickUp();
+        public void Release();
     }
 }

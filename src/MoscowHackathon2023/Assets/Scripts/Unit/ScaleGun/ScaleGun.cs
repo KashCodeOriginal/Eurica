@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using Data.StaticData.GunData;
 using Data.StaticData.GunData.ScaleGunData;
 using Services.Containers;
 using Services.Input;
@@ -12,11 +13,13 @@ namespace Unit.ScaleGun
         public ScaleGun(PlayerInputActionReader playerInputActionReader, 
             ScaleGunView scaleGunView,
             ScaleGunData scaleGunData,
-            ICameraContainer cameraContainer)
+            ICameraContainer cameraContainer,
+            Transform placeWeaponInHand)
         {
             _playerInputActionReader = playerInputActionReader;
 
             _cameraContainer = cameraContainer;
+            _placeWeaponInHand = placeWeaponInHand;
 
             _scaleGunView = scaleGunView;
             _scaleGunData = scaleGunData;
@@ -24,6 +27,8 @@ namespace Unit.ScaleGun
             _scaleGunView.PickedUp.AddListener(PickUp);
             _scaleGunView.Released.AddListener(Release);
         }
+
+        public BaseGunData GunData => _scaleGunData;
 
         private PlayerInputActionReader _playerInputActionReader;
 
@@ -35,12 +40,15 @@ namespace Unit.ScaleGun
         private readonly ICameraContainer _cameraContainer;
 
         private RaycastHit[] _hit = new RaycastHit[2];
-        
+
         private LayerMask _layerMask = LayerMask.NameToLayer("Walls");
 
         private bool _isLeftMouseHeld;
         private bool _isRightMouseHeld;
-        
+
+        private Transform _placeWeaponInHand;
+
+
         private void TryFindScalableObject()
         {
             var ray = _cameraContainer.Camera.ViewportPointToRay(new Vector3(0.5f, 0.5f));
@@ -58,22 +66,26 @@ namespace Unit.ScaleGun
             _currentScalableObject = scalable;
         }
 
-        private void PickUp() 
+        public void PickUp() 
         {
             _playerInputActionReader.IsLeftButtonClickStarted += StartLeftMouseHeld;
             _playerInputActionReader.IsLeftButtonClickEnded += EndLeftMouseHeld;
-            
+
             _playerInputActionReader.IsRightButtonClickStarted += StartRightMouseHeld;
             _playerInputActionReader.IsRightButtonClickEnded += EndRightMouseHeld;
+
+            _scaleGunView.ShowInHand(_placeWeaponInHand);
         }
 
-        private void Release() 
+        public void Release() 
         {
             _playerInputActionReader.IsLeftButtonClickStarted -= StartLeftMouseHeld;
             _playerInputActionReader.IsLeftButtonClickEnded -= EndLeftMouseHeld;
-            
+
             _playerInputActionReader.IsRightButtonClickStarted -= StartRightMouseHeld;
             _playerInputActionReader.IsRightButtonClickEnded -= EndRightMouseHeld;
+
+            _scaleGunView.HideInHand();
         }
 
         private void StartLeftMouseHeld()

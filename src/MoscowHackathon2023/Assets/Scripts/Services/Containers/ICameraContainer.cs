@@ -1,10 +1,12 @@
-﻿using UnityEngine;
+﻿using Cinemachine;
+using UnityEngine;
 
 namespace Services.Containers
 {
     public interface ICameraContainer
     {
         public Camera Camera { get; }
-        public void SetUpCamera(Camera camera);
+        public CinemachineBrain CinemachineBrain { get; }
+        public void SetUpCamera(Camera camera, CinemachineBrain cinemachineBrain);
     }
 }

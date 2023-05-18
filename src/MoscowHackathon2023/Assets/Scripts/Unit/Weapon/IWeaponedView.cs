@@ -4,7 +4,7 @@ namespace Unit.Weapon
 {
     internal interface IWeaponedView
     {
-        void PickUp(Transform placeInHand);
-        void Release();
+        public void PickUp();
+        public void Release();
     }
 }

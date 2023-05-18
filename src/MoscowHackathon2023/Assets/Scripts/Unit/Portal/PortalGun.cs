@@ -1,5 +1,7 @@
 ﻿using Services.Input;
 using System.Timers;
+using Data.StaticData.GunData;
+using Data.StaticData.GunData.PortalGunData;
 using Services.Containers;
 using Unit.Weapon;
 using UnityEngine;
@@ -8,40 +10,54 @@ namespace Unit.Portal
 { 
     public class PortalGun : IWeaponed
     {
+        public BaseGunData GunData => _portalGunData;
+        
         private PortalFactory _portalFactory;
         private readonly PortalGunView _portalGunView;
         private readonly PlayerInputActionReader _playerInputActionReader;
         private readonly ICameraContainer _cameraContainer;
+        private readonly PortalGunData _portalGunData;
+        private readonly Transform _placeWeaponInHand;
         private LayerMask _layerMask = LayerMask.NameToLayer("Walls");
+
 
         public PortalGun(PortalFactory portalFactory, 
             PortalGunView portalGunView, 
             PlayerInputActionReader playerInputActionReader,
-            ICameraContainer cameraContainer)
+            ICameraContainer cameraContainer,
+            PortalGunData portalGunData,
+            Transform placeInHand)
         {
             _portalFactory = portalFactory;
             _portalGunView = portalGunView;
             _playerInputActionReader = playerInputActionReader;
             _cameraContainer = cameraContainer;
+            _portalGunData = portalGunData;
+            _placeWeaponInHand = placeInHand;
             _portalGunView.PickedUp.AddListener(PickUp);
             _portalGunView.Released.AddListener(Release);
         }
 
         public void MainFire() 
             => Fire(PortalType.Blue);
+
         public void AlternateFire() 
             => Fire(PortalType.Red);
 
-        private void PickUp() 
+        public void PickUp() 
         {         
             _playerInputActionReader.IsRightButtonClicked += MainFire;
             _playerInputActionReader.IsLeftButtonClicked += AlternateFire;
+            
+            _portalGunView.ShowInHand(_placeWeaponInHand);
         }
 
-        private void Release() 
+        public void Release() 
         { 
             _playerInputActionReader.IsRightButtonClicked -= MainFire;
             _playerInputActionReader.IsLeftButtonClicked -= AlternateFire;
+            
+            _portalGunView.HideInHand();
         }
 
         private void Fire(PortalType portalType) 

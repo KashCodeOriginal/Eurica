@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using Data.StaticData.GunData;
 using Data.StaticData.GunData.GravityGunData;
 using Services.Containers;
 using Services.Input;
@@ -7,29 +8,35 @@ using UnityEngine;
 
 namespace Unit.GravityGun
 {
-    public class GravityGun : IWeaponed 
+    public class GravityGun : IWeaponed
     {
+        public BaseGunData GunData => _gravityGunGravityGunData;
+        
         private Rigidbody _currentRigidbody;
         private GravityGunView _gravityGunView;
-        private ICoroutineRunner _coroutinerRunner;
+        private ICoroutineRunner _coroutineRunner;
         private Coroutine _dragIn;
         private PlayerInputActionReader _playerInputActionReader;
-        private readonly GravityGunData _gravityGunData;
+        private readonly GravityGunData _gravityGunGravityGunData;
         private readonly ICameraContainer _cameraContainer;
+        private readonly Transform _placeWeaponInHand;
         private LayerMask _interactiveLayer = LayerMask.NameToLayer("InteractiveObjectForGravity");
         private LayerMask _grabbedLayer = LayerMask.NameToLayer("Grabbed");
 
-        public GravityGun(ICoroutineRunner coroutinerRunner,
+
+        public GravityGun(ICoroutineRunner coroutineRunner,
             GravityGunView gravityGunView, 
             PlayerInputActionReader playerInputActionReader,
-            GravityGunData gravityGunData,
-            ICameraContainer cameraContainer)
+            GravityGunData gravityGunGravityGunData,
+            ICameraContainer cameraContainer,
+            Transform placeWeaponInHand)
         {
             _gravityGunView = gravityGunView;
-            _coroutinerRunner = coroutinerRunner;
+            _coroutineRunner = coroutineRunner;
             _playerInputActionReader = playerInputActionReader;
-            _gravityGunData = gravityGunData;
+            _gravityGunGravityGunData = gravityGunGravityGunData;
             _cameraContainer = cameraContainer;
+            _placeWeaponInHand = placeWeaponInHand;
             _gravityGunView.PickedUp.AddListener(PickUp);
             _gravityGunView.Released.AddListener(Release);
         }
@@ -40,7 +47,7 @@ namespace Unit.GravityGun
             
             var ray = _cameraContainer.Camera.ViewportPointToRay(new Vector3(0.5f, 0.5f));
 
-            if (!Physics.Raycast(ray, out var hit, _gravityGunData.CatchDistance))
+            if (!Physics.Raycast(ray, out var hit, _gravityGunGravityGunData.CatchDistance))
             {
                 return;
             }
@@ -52,7 +59,7 @@ namespace Unit.GravityGun
             
             
             _currentRigidbody = hit.collider.gameObject.GetComponent<Rigidbody>();
-            _dragIn = _coroutinerRunner.StartCoroutine(DragIn());
+            _dragIn = _coroutineRunner.StartCoroutine(DragIn());
             
             _playerInputActionReader.IsLeftButtonClicked -= MainFire;
             _playerInputActionReader.IsLeftButtonClicked += StopMainFire;
@@ -68,7 +75,7 @@ namespace Unit.GravityGun
 
         private void StopMainFire()
         {
-            _coroutinerRunner.StopCoroutine(_dragIn);
+            _coroutineRunner.StopCoroutine(_dragIn);
             _playerInputActionReader.IsLeftButtonClicked -= StopMainFire;
             _playerInputActionReader.IsLeftButtonClicked += MainFire;
 
@@ -78,7 +85,6 @@ namespace Unit.GravityGun
             }
         }
 
-        //On a different "Fire" button
         public void AlternateFire()
         {
             if (_currentRigidbody == null)
@@ -86,30 +92,34 @@ namespace Unit.GravityGun
                 return;
             }
             
-            _coroutinerRunner.StopCoroutine(_dragIn);
-            _currentRigidbody.velocity = _gravityGunView.PointGravity.forward * _gravityGunData.DropPower;
+            _coroutineRunner.StopCoroutine(_dragIn);
+            _currentRigidbody.velocity = _gravityGunView.PointGravity.forward * _gravityGunGravityGunData.DropPower;
                 
             _currentRigidbody.gameObject.layer = _interactiveLayer;
                 
             _currentRigidbody = null;
         }
 
-        private void PickUp() 
+        public void PickUp() 
         {         
             _playerInputActionReader.IsLeftButtonClicked += MainFire;
             _playerInputActionReader.IsRightButtonClicked += AlternateFire;
+
+            _gravityGunView.ShowInHand(_placeWeaponInHand);
         }
 
-        private void Release() 
+        public void Release() 
         {
             if (_dragIn != null) 
             { 
-                 _coroutinerRunner.StopCoroutine(_dragIn);            
+                _coroutineRunner.StopCoroutine(_dragIn);            
             }
-               
+
             _playerInputActionReader.IsLeftButtonClicked -= StopMainFire;
             _playerInputActionReader.IsLeftButtonClicked -= MainFire;
-            _playerInputActionReader.IsRightButtonClicked -= AlternateFire;            
+            _playerInputActionReader.IsRightButtonClicked -= AlternateFire;
+
+            _gravityGunView.HideInHand();          
         }
         
         private IEnumerator DragIn()
@@ -118,7 +128,7 @@ namespace Unit.GravityGun
             { 
                 _currentRigidbody.velocity =
                     (_gravityGunView.PointGravity.position - 
-                     (_currentRigidbody.transform.position + _currentRigidbody.centerOfMass)) * _gravityGunData.CatchPower;
+                     (_currentRigidbody.transform.position + _currentRigidbody.centerOfMass)) * _gravityGunGravityGunData.CatchPower;
                 yield return new WaitForFixedUpdate();
             }
         }

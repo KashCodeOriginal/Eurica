@@ -1,10 +1,11 @@
 using Cinemachine;
 using Data.AssetsAddressablesConstants;
+using Data.StaticData.PlayerData;
 using Infrastructure.ProjectStateMachine.Base;
 using Services.Factories.AbstractFactory;
 using Services.Input;
 using Unit.Player;
-using Unit.ScaleGun;
+using UnityEditor;
 using UnityEngine;
 
 namespace Infrastructure.ProjectStateMachine.States
@@ -15,13 +16,16 @@ namespace Infrastructure.ProjectStateMachine.States
         
         private readonly IAbstractFactory _abstractFactory;
         private readonly PlayerInputActionReader _playerInputActionReader;
+        private readonly PlayerBaseSettings _playerSettings;
 
         public GameSetUpState(Bootstrap initializer,
             IAbstractFactory abstractFactory,
-            PlayerInputActionReader playerInputActionReader)
+            PlayerInputActionReader playerInputActionReader,
+            PlayerBaseSettings playerSettings)
         {
             _abstractFactory = abstractFactory;
             _playerInputActionReader = playerInputActionReader;
+            _playerSettings = playerSettings;
             Initializer = initializer;
         }
 
@@ -48,7 +52,7 @@ namespace Infrastructure.ProjectStateMachine.States
             
             if (playerInstance.TryGetComponent(out PlayerMovement playerMovement))
             {
-                playerMovement.Construct(_playerInputActionReader, mainCamera.transform);
+                playerMovement.Construct(_playerInputActionReader, mainCamera, _playerSettings);
             }
         }
     }

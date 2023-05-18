@@ -1,54 +1,57 @@
 ﻿using Cinemachine;
 using Data.AssetsAddressablesConstants;
-using Infrastructure;
+using Data.StaticData.PlayerData;
 using Infrastructure.ProjectStateMachine.Base;
 using Services.Containers;
-using Services.Factories;
 using Services.Factories.AbstractFactory;
+using Services.Factories.GunsFactory;
+using Services.Factories.UIFactory;
 using Services.Input;
-using Tools.FirstPersonCharacter.Scripts;
+using Unit.CameraContainer;
 using Unit.GravityGun;
 using Unit.MountRemote;
 using Unit.Player;
 using Unit.Portal;
 using Unit.ScaleGun;
+using Unit.WeaponInventory;
 using UnityEngine;
-using UnityStandardAssets.Characters.FirstPerson;
 
 namespace Tools
 {
-    public class LoadTestState : IState<BootstrapTest>, IEnterable, IExitable
+    public class LoadTestState : IState<BootstrapTest>, IEnterable
     {
         public BootstrapTest Initializer { get; }
 
-        private readonly GunFactory _gunFactory;
+        private readonly IGunFactory _gunFactory;
         private readonly IAbstractFactory _abstractFactory;
         private readonly PlayerInputActionReader _playerInputActionReader;
         private readonly ICameraContainer _cameraContainer;
+        private readonly PlayerBaseSettings _playerSettings;
+        private readonly IUIFactory _uiFactory;
 
+        private Inventory _inventory;
         private PortalGun _portalGun;
         private GravityGun _gravityGun;
         private ScaleGun _scaleGun;
         private MountRemote _mountRemote;
 
-        public LoadTestState(GunFactory gunFactory,
+        public LoadTestState(IGunFactory gunFactory,
             IAbstractFactory abstractFactory,
             PlayerInputActionReader playerInputActionReader,
-            ICameraContainer cameraContainer)
+            ICameraContainer cameraContainer,
+            PlayerBaseSettings playerSettings,
+            IUIFactory uiFactory)
         {
             _gunFactory = gunFactory;
             _abstractFactory = abstractFactory;
             _playerInputActionReader = playerInputActionReader;
             _cameraContainer = cameraContainer;
+            _playerSettings = playerSettings;
+            _uiFactory = uiFactory;
         }
 
         public async void OnEnter()
         {
-            _portalGun = await _gunFactory.CreatePortalGun();
-            _gravityGun = await _gunFactory.CreateGravityGun();
-            _scaleGun = await _gunFactory.CreateScaleGun();
-            _mountRemote = await _gunFactory.CreateMountRemove();
-
             var playerInstance = await
                 _abstractFactory.CreateInstance<GameObject>(AssetsAddressablesConstants.PLAYER_PREFAB);
 
@@ -56,6 +59,29 @@ namespace Tools
                 _abstractFactory.CreateInstance<GameObject>(AssetsAddressablesConstants.CAMERA_PREFAB);
 
             SetUp(playerInstance, cameraInstance);
+            
+            var inventoryContainer = cameraInstance.GetComponentInChildren<CameraChildContainer>().InventoryContainer;
+
+            if (playerInstance.TryGetComponent(out PlayerPickUp playerPick))
+            {
+                _gunFactory.Construct(playerPick.PlaceInHand);
+            }
+
+            _portalGun = await _gunFactory.CreatePortalGun();
+            _gravityGun = await _gunFactory.CreateGravityGun();
+            _scaleGun = await _gunFactory.CreateScaleGun();
+            _mountRemote = await _gunFactory.CreateMountRemove();
+
+            _inventory = new Inventory(_uiFactory, _playerInputActionReader, inventoryContainer);
+
+            await _inventory.ShowPanel();
+
+            _inventory.CollectWeapon(_portalGun);
+            _inventory.CollectWeapon(_gravityGun);
+            _inventory.CollectWeapon(_scaleGun);
+            _inventory.CollectWeapon(_mountRemote);
+
+            Cursor.lockState = CursorLockMode.Locked;
         }
 
         private void SetUp(GameObject playerInstance, GameObject cameraInstance)
@@ -64,16 +90,16 @@ namespace Tools
             
             var mainCamera = cameraInstance.GetComponentInChildren<Camera>();
 
-            if (playerInstance.TryGetComponent(out PlayerContainer playerContainer))
+            if (playerInstance.TryGetComponent(out PlayerChildContainer playerContainer))
             {
                 var headTransform = playerContainer.HeadTransform;
 
                 virtualCamera.Follow = headTransform;
             }
 
-            _cameraContainer.SetUpCamera(cameraInstance.GetComponentInChildren<Camera>());
-
-
+            _cameraContainer.SetUpCamera(cameraInstance.GetComponentInChildren<Camera>(), 
+                cameraInstance.GetComponentInChildren<CinemachineBrain>());
+            
             if (playerInstance.TryGetComponent(out PlayerInteraction playerInteraction))
             {
                 playerInteraction.Construct(_playerInputActionReader, _cameraContainer);   
@@ -83,24 +109,18 @@ namespace Tools
             {
                 playerPick.Construct(_cameraContainer);   
             }
-            
-            if (playerInstance.TryGetComponent(out RigidbodyFirstPersonController rigidbodyFirstPersonController))
-            {
-                rigidbodyFirstPersonController.cam = mainCamera;
-            }
-
 
             if (playerInstance.TryGetComponent(out PlayerMovement playerMovement))
             {
-                playerMovement.Construct(_playerInputActionReader, mainCamera.transform);
+                playerMovement.Construct(_playerInputActionReader, mainCamera, _playerSettings);
+            }
+            
+            if (playerInstance.TryGetComponent(out PlayerRotation playerRotation))
+            {
+                playerRotation.Construct(mainCamera);
             }
 
-            playerInstance.transform.position = new Vector3(0, 1f, 0);
-        }
-
-        public void OnExit()
-        {
-            
+            playerInstance.transform.position = new Vector3(-200, 1f, -100);
         }
     }
 }

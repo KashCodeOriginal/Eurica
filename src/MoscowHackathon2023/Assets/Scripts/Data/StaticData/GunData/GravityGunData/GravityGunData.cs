@@ -2,7 +2,7 @@
 
 namespace Data.StaticData.GunData.GravityGunData
 {
-    [CreateAssetMenu(menuName = "StaticData/GravityGun", fileName = "GravityGunStaticData")]
+    [CreateAssetMenu(menuName = "StaticData/Gun/GravityGun", fileName = "GravityGunStaticData")]
     public class GravityGunData : BaseGunData
     {
         [field: SerializeField] public float CatchDistance { get; private set; }

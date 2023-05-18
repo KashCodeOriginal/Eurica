@@ -7,8 +7,6 @@ namespace Unit.ScaleGun
         [SerializeField] private float _minScale;
         [SerializeField] private float _maxScale;
 
-        public GameObject GameObject => gameObject;
-
         public void UpScale(float resizeValue)
         {
             if (transform.localScale.x >= _maxScale)

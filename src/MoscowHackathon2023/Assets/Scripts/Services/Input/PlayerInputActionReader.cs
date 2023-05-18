@@ -10,7 +10,7 @@ namespace Services.Input
         private PlayerInputAction _playerInputAction;
 
         public Action<Vector2> OnMovementInput;
-
+        
         public Vector2 OnMousePositionInput { get; private set; }
 
         public Action IsLeftButtonClicked;
@@ -21,10 +21,18 @@ namespace Services.Input
         
         public Action IsRightButtonClickStarted;
         public Action IsRightButtonClickEnded;
-
+        
+        public Action IsPlayerAccelerationButtonClickStarted;
+        public Action IsPlayerAccelerationButtonClickEnded;
+        
+        public Action IsPlayerCrouchButtonClickStarted;
+        public Action IsPlayerCrouchButtonClickEnded;
+        
         public Action<bool> IsPlayerInteractionButtonClicked;
 
         public Action<float> IsMouseScroll;
+
+        public Action<bool> IsPlayerJumpButtonClicked;
 
         private void OnEnable()
         {
@@ -93,6 +101,37 @@ namespace Services.Input
         public void OnPlayerInteraction(InputAction.CallbackContext context)
         {
             IsPlayerInteractionButtonClicked?.Invoke(context.performed);
+        }
+
+        public void OnPlayerAcceleration(InputAction.CallbackContext context)
+        {
+            if (context.started)
+            {
+                IsPlayerAccelerationButtonClickStarted?.Invoke();
+            }
+
+            if (context.canceled)
+            {
+                IsPlayerAccelerationButtonClickEnded?.Invoke();
+            }
+        }
+
+        public void OnPlayerJump(InputAction.CallbackContext context)
+        {
+            IsPlayerJumpButtonClicked?.Invoke(context.performed);
+        }
+
+        public void OnPlayerCrouch(InputAction.CallbackContext context)
+        {
+            if (context.started)
+            {
+                IsPlayerCrouchButtonClickStarted?.Invoke();
+            }
+
+            if (context.canceled)
+            {
+                IsPlayerCrouchButtonClickEnded?.Invoke();
+            }
         }
     }
 }

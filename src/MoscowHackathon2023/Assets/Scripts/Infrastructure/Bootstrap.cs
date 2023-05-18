@@ -1,3 +1,4 @@
+using Data.StaticData.PlayerData;
 using Infrastructure.ProjectStateMachine.Base;
 using Infrastructure.ProjectStateMachine.States;
 using Services.Factories.AbstractFactory;
@@ -5,6 +6,7 @@ using Services.Factories.UIFactory;
 using Services.Input;
 using Tools;
 using Unit.ScaleGun;
+using UnityEditor;
 
 namespace Infrastructure
 {
@@ -12,14 +14,15 @@ namespace Infrastructure
     {
         public Bootstrap(IUIFactory uiFactory,
             IAbstractFactory abstractFactory,
-            PlayerInputActionReader playerInputActionReader)
+            PlayerInputActionReader playerInputActionReader,
+            PlayerBaseSettings playerSettings)
         {
             StateMachine = new StateMachine<Bootstrap>(
                 new BootstrapState(this),
                 new MenuLoadingState(this, uiFactory),
                 new MainMenuState(this, uiFactory),
                 new GameLoadingState(this),
-                new GameSetUpState(this, abstractFactory, playerInputActionReader),
+                new GameSetUpState(this, abstractFactory, playerInputActionReader, playerSettings),
                 new TestState(),
                 new GameplayState(this, uiFactory));  
             

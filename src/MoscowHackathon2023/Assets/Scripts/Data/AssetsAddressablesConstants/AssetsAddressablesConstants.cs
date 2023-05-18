@@ -16,13 +16,13 @@ namespace Data.AssetsAddressablesConstants
         public const string CAMERA_PREFAB = "CameraPrefab";
 
         public const string PORTAL_PREFAB = "Portal";
-        public const string PORTAL_GUN = "PortalGun";
         public const string PORTAL_GUN_VIEW_PREFAB = "PortalGunView";
         public const string GRAVITY_GUN_VIEW_PREFAB = "GravityGunView";
         public const string SCALE_GUN_VIEW_PREFAB = "ScaleGunView";
         public const string MOUNT_REMOTE_VIEW = "MountRemoteView";
         
-        public const string MOUNT_TARGET_PREFAB = "Target";
+        public const string INVENTORY_PANEL = "InventoryPanel";
+        public const string SLOT = "Slot";
 
         public const string MOUNT_VIEW_PREFAB = "MountViewPrefab";
     }

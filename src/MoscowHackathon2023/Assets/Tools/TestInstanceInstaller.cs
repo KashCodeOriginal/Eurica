@@ -1,7 +1,7 @@
-﻿using Infrastructure;
-using Infrastructure.ProjectStateMachine.States;
-using Services.Factories;
+﻿using Infrastructure.ProjectStateMachine.States;
+using Services.Factories.GunsFactory;
 using Unit.Portal;
+using Unit.WeaponInventory;
 using UnityEngine;
 using Zenject;
 
@@ -23,7 +23,7 @@ namespace Tools
 
         private void BindGunFactory() 
         { 
-            Container.Bind<GunFactory>().AsSingle().NonLazy();
+            Container.BindInterfacesTo<GunFactory>().AsSingle().NonLazy();
         }
 
         private void BindPortalFactory() 

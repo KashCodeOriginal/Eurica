@@ -1,5 +1,4 @@
-﻿using System;
-using Tools.FirstPersonCharacter.Scripts;
+﻿using Unit.Player;
 using UnityEngine;
 
 namespace Unit.Portal
@@ -33,13 +32,20 @@ namespace Unit.Portal
                 return;
             }
             
+            var rigidBodyTransform =  rigidbodyObject.transform;
+            
             if (rigidbodyObject.CompareTag("Player"))
             {
                 var turnAngle = Quaternion.Angle(_other.transform.rotation, rigidbodyObject.transform.rotation);
-                rigidbodyObject.GetComponent<RigidbodyFirstPersonController>().mouseLook.ForceTurnAngle(turnAngle);
-            }
+                
+                rigidbodyObject.GetComponent<PlayerRotation>().ForceTurnAngle(turnAngle);
 
-            var rigidBodyTransform =  rigidbodyObject.transform;
+                rigidBodyTransform.position = _other.transform.position + (_other.transform.forward * _offset);
+                
+                rigidbodyObject.velocity = rigidbodyObject.velocity.magnitude * _other.transform.forward;
+                
+                return;
+            }
 
             rigidBodyTransform.position = _other.transform.position + (_other.transform.forward * _offset);
             rigidBodyTransform.rotation = _other.transform.rotation;

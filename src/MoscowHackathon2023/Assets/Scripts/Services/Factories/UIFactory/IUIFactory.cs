@@ -1,4 +1,5 @@
 using System.Threading.Tasks;
+using Unit.WeaponInventory;
 using UnityEngine;
 
 namespace Services.Factories.UIFactory
@@ -16,5 +17,11 @@ namespace Services.Factories.UIFactory
         
         public Task<GameObject> CreateGameplayScreen();
         public void DestroyGameplayScreen();
+        
+        public Task<InventoryView> CreateInventoryPanel(Transform placemarker);        
+        public void DestroyInventoryPanel();
+
+        public Task<SlotView> CreateSlot(Transform placeMarker, Sprite spriteWeapon);
+        public void DestroySlot();
     }
 }

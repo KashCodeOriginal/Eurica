@@ -1,15 +1,15 @@
 using System.Collections.Generic;
 using Data.AssetsAddressablesConstants;
 using Services.Factories.AbstractFactory;
-using System.Threading.Tasks;
 using UnityEngine;
-using Services.Input;
 
-namespace Unit.Portal { 
+namespace Unit.Portal 
+{ 
     public class PortalFactory
     {
         private IAbstractFactory _abstractFactory;        
-        private Dictionary<PortalType, Portal> _pullPortals = new Dictionary<PortalType, Portal>();        
+        
+        private Dictionary<PortalType, Portal> _pullPortals = new();        
 
         public Portal Portal { get; private set; }
         
@@ -26,14 +26,14 @@ namespace Unit.Portal {
             Portal createdPortal = null;
             Portal oppositePortal = null;
 
-            if (_pullPortals.ContainsKey(portalView)) 
+            if (_pullPortals.TryGetValue(portalView, out var portal)) 
             { 
-                createdPortal = _pullPortals[portalView]; 
+                createdPortal = portal; 
             }
 
-            if (_pullPortals.ContainsKey(typeOppositePortal)) 
+            if (_pullPortals.TryGetValue(typeOppositePortal, out var pullPortal)) 
             { 
-                oppositePortal = _pullPortals[typeOppositePortal]; 
+                oppositePortal = pullPortal; 
             }
 
             if (createdPortal == null) 
@@ -47,6 +47,7 @@ namespace Unit.Portal {
 
             createdPortal.transform.position = position;
             createdPortal.transform.rotation = Quaternion.FromToRotation(Vector3.forward, face);
+            
             SetUpPortal(createdPortal, portalView, oppositePortal);
         }
 

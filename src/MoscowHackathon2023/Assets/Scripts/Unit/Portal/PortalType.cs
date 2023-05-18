@@ -1,6 +1,7 @@
 ﻿namespace Unit.Portal
 {
-    public enum PortalType { 
+    public enum PortalType
+    { 
         Blue,
         Red
     }

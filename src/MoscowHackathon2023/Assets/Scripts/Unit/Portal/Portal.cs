@@ -1,7 +1,8 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-namespace Unit.Portal { 
+namespace Unit.Portal 
+{ 
     public class Portal : MonoBehaviour
     {
         [SerializeField] private Camera _portalСamera;
@@ -10,10 +11,11 @@ namespace Unit.Portal {
         [SerializeField] private Teleport teleport;
 
         private Coroutine _portalBroadcast;
-        public Camera PortalСamera { get => _portalСamera; }
-        public Teleport Teleport { get => teleport; }
+        public Camera PortalСamera => _portalСamera;
+        public Teleport Teleport => teleport;
 
-        public void Construct(Portal oppositePortal) {
+        public void Construct(Portal oppositePortal) 
+        {
             
             if (oppositePortal != null) 
             {
@@ -37,7 +39,8 @@ namespace Unit.Portal {
             
         }
         //Closes if the second portal is missing
-        private void Close() {
+        private void Close()
+        {
 
             if (_portalBroadcast != null) 
             {
@@ -48,22 +51,25 @@ namespace Unit.Portal {
             teleport.TurnOff();
         }
 
-        private IEnumerator PortalBroadcast(Portal otherPortal) {
-
+        private IEnumerator PortalBroadcast(Portal otherPortal)
+        {
             while (true) 
             {
                 yield return null;
-                if (Camera.main != null) 
-                { 
-                    Vector3 lookerPosition = otherPortal.transform.worldToLocalMatrix.MultiplyPoint3x4(Camera.main.transform.position);
-                    lookerPosition = new Vector3(-lookerPosition.x, lookerPosition.y, -lookerPosition.z);
-                    _portalСamera.transform.localPosition = lookerPosition;
+                if (Camera.main == null)
+                {
+                    continue;
+                }
+                
+                Vector3 lookerPosition = otherPortal.transform.worldToLocalMatrix.MultiplyPoint3x4(Camera.main.transform.position);
+                lookerPosition = new Vector3(-lookerPosition.x, lookerPosition.y, -lookerPosition.z);
+                _portalСamera.transform.localPosition = lookerPosition;
 
-                    Quaternion difference = transform.rotation * Quaternion.Inverse(otherPortal.transform.rotation * Quaternion.Euler(0,180,0));
-                    _portalСamera.transform.rotation = difference * Camera.main.transform.rotation;
+                Quaternion difference = transform.rotation * Quaternion.Inverse(otherPortal.transform.rotation * Quaternion.Euler(0,180,0));
+                
+                _portalСamera.transform.rotation = difference * Camera.main.transform.rotation;
 
-                    _portalСamera.nearClipPlane = lookerPosition.magnitude;
-                }  
+                _portalСamera.nearClipPlane = lookerPosition.magnitude;
             }
         }        
     }

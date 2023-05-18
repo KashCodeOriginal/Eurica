@@ -1,7 +1,6 @@
 using Services.Containers;
 using Unit.Weapon;
 using UnityEngine;
-using Zenject;
 
 namespace Tools
 {
@@ -13,7 +12,9 @@ namespace Tools
         private LayerMask _layerMask;
 
         private ICameraContainer _cameraContainer;
-        
+
+        public Transform PlaceInHand => _placeInHand;
+
         public void Construct(ICameraContainer cameraContainer)
         {
             _cameraContainer = cameraContainer;
@@ -47,7 +48,7 @@ namespace Tools
                 return;
             }
             
-            IWeaponedView weaponedView = hit.collider.gameObject.GetComponent<IWeaponedView>();
+            var weaponedView = hit.collider.gameObject.GetComponent<IWeaponedView>();
 
             if (weaponedView == null)
             {
@@ -56,7 +57,7 @@ namespace Tools
 
             _currentWeaponView?.Release();
             
-            weaponedView.PickUp(_placeInHand);
+            weaponedView.PickUp();
             
             _currentWeaponView = weaponedView;
         }

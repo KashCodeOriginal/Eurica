@@ -80,6 +80,33 @@ public partial class @PlayerInputAction : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""PlayerAcceleration"",
+                    ""type"": ""Button"",
+                    ""id"": ""6c4a9064-76b6-47d3-a801-eba059b75555"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""PlayerJump"",
+                    ""type"": ""Button"",
+                    ""id"": ""f585be68-3554-4b4a-8b7b-a4a7c80d074a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""PlayerCrouch"",
+                    ""type"": ""Button"",
+                    ""id"": ""b2172d24-4e1a-46f6-847f-baac643b666e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -192,6 +219,39 @@ public partial class @PlayerInputAction : IInputActionCollection2, IDisposable
                     ""action"": ""PlayerInteraction"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2251d359-429d-4b7e-b2ea-e80f3e91cd8b"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PlayerAcceleration"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""385b81e7-5ce1-4c90-8642-76860cbb3a51"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PlayerJump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""312fe639-543c-4117-a800-303c0bf8bfd8"",
+                    ""path"": ""<Keyboard>/ctrl"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PlayerCrouch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -206,6 +266,9 @@ public partial class @PlayerInputAction : IInputActionCollection2, IDisposable
         m_PlayerInput_MouseRightButtonClick = m_PlayerInput.FindAction("MouseRightButtonClick", throwIfNotFound: true);
         m_PlayerInput_MouseWheelScroll = m_PlayerInput.FindAction("MouseWheelScroll", throwIfNotFound: true);
         m_PlayerInput_PlayerInteraction = m_PlayerInput.FindAction("PlayerInteraction", throwIfNotFound: true);
+        m_PlayerInput_PlayerAcceleration = m_PlayerInput.FindAction("PlayerAcceleration", throwIfNotFound: true);
+        m_PlayerInput_PlayerJump = m_PlayerInput.FindAction("PlayerJump", throwIfNotFound: true);
+        m_PlayerInput_PlayerCrouch = m_PlayerInput.FindAction("PlayerCrouch", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -271,6 +334,9 @@ public partial class @PlayerInputAction : IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerInput_MouseRightButtonClick;
     private readonly InputAction m_PlayerInput_MouseWheelScroll;
     private readonly InputAction m_PlayerInput_PlayerInteraction;
+    private readonly InputAction m_PlayerInput_PlayerAcceleration;
+    private readonly InputAction m_PlayerInput_PlayerJump;
+    private readonly InputAction m_PlayerInput_PlayerCrouch;
     public struct PlayerInputActions
     {
         private @PlayerInputAction m_Wrapper;
@@ -281,6 +347,9 @@ public partial class @PlayerInputAction : IInputActionCollection2, IDisposable
         public InputAction @MouseRightButtonClick => m_Wrapper.m_PlayerInput_MouseRightButtonClick;
         public InputAction @MouseWheelScroll => m_Wrapper.m_PlayerInput_MouseWheelScroll;
         public InputAction @PlayerInteraction => m_Wrapper.m_PlayerInput_PlayerInteraction;
+        public InputAction @PlayerAcceleration => m_Wrapper.m_PlayerInput_PlayerAcceleration;
+        public InputAction @PlayerJump => m_Wrapper.m_PlayerInput_PlayerJump;
+        public InputAction @PlayerCrouch => m_Wrapper.m_PlayerInput_PlayerCrouch;
         public InputActionMap Get() { return m_Wrapper.m_PlayerInput; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -308,6 +377,15 @@ public partial class @PlayerInputAction : IInputActionCollection2, IDisposable
                 @PlayerInteraction.started -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnPlayerInteraction;
                 @PlayerInteraction.performed -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnPlayerInteraction;
                 @PlayerInteraction.canceled -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnPlayerInteraction;
+                @PlayerAcceleration.started -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnPlayerAcceleration;
+                @PlayerAcceleration.performed -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnPlayerAcceleration;
+                @PlayerAcceleration.canceled -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnPlayerAcceleration;
+                @PlayerJump.started -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnPlayerJump;
+                @PlayerJump.performed -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnPlayerJump;
+                @PlayerJump.canceled -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnPlayerJump;
+                @PlayerCrouch.started -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnPlayerCrouch;
+                @PlayerCrouch.performed -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnPlayerCrouch;
+                @PlayerCrouch.canceled -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnPlayerCrouch;
             }
             m_Wrapper.m_PlayerInputActionsCallbackInterface = instance;
             if (instance != null)
@@ -330,6 +408,15 @@ public partial class @PlayerInputAction : IInputActionCollection2, IDisposable
                 @PlayerInteraction.started += instance.OnPlayerInteraction;
                 @PlayerInteraction.performed += instance.OnPlayerInteraction;
                 @PlayerInteraction.canceled += instance.OnPlayerInteraction;
+                @PlayerAcceleration.started += instance.OnPlayerAcceleration;
+                @PlayerAcceleration.performed += instance.OnPlayerAcceleration;
+                @PlayerAcceleration.canceled += instance.OnPlayerAcceleration;
+                @PlayerJump.started += instance.OnPlayerJump;
+                @PlayerJump.performed += instance.OnPlayerJump;
+                @PlayerJump.canceled += instance.OnPlayerJump;
+                @PlayerCrouch.started += instance.OnPlayerCrouch;
+                @PlayerCrouch.performed += instance.OnPlayerCrouch;
+                @PlayerCrouch.canceled += instance.OnPlayerCrouch;
             }
         }
     }
@@ -342,5 +429,8 @@ public partial class @PlayerInputAction : IInputActionCollection2, IDisposable
         void OnMouseRightButtonClick(InputAction.CallbackContext context);
         void OnMouseWheelScroll(InputAction.CallbackContext context);
         void OnPlayerInteraction(InputAction.CallbackContext context);
+        void OnPlayerAcceleration(InputAction.CallbackContext context);
+        void OnPlayerJump(InputAction.CallbackContext context);
+        void OnPlayerCrouch(InputAction.CallbackContext context);
     }
 }

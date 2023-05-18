@@ -6,17 +6,27 @@ namespace Unit.Portal
 {
     public class PortalGunView : MonoBehaviour, IWeaponedView
     {
-        public UnityEvent PickedUp { get; } = new UnityEvent();
-        public UnityEvent Released { get; } = new UnityEvent();
+        public UnityEvent PickedUp { get; } = new();
+        public UnityEvent Released { get; } = new();
 
-        public void PickUp(Transform placeInHand) 
+        public void PickUp() 
         {
             PickedUp?.Invoke();
-            
+        }
+        
+        public void ShowInHand(Transform placeInHand) 
+        {
             gameObject.transform.parent = placeInHand;
             gameObject.transform.localPosition = Vector3.zero;
             gameObject.transform.localRotation = Quaternion.identity;
+            gameObject.SetActive(true);
         }
+        
+        public void HideInHand()
+        {
+            gameObject.SetActive(false);
+        }
+
         public void Release() 
         {            
             gameObject.transform.parent = null;
