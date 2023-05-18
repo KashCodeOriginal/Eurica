@@ -12,6 +12,8 @@ namespace Unit.Portal {
         private Dictionary<PortalType, Portal> _pullPortals = new Dictionary<PortalType, Portal>();        
 
         public Portal Portal { get; private set; }
+        
+        private LayerMask _portalLayer = LayerMask.NameToLayer("Portal");
 
         public PortalFactory(IAbstractFactory abstractFactory)
         {
@@ -37,6 +39,9 @@ namespace Unit.Portal {
             if (createdPortal == null) 
             {                
                 var createdPortalGO = await _abstractFactory.CreateInstance<GameObject>(AssetsAddressablesConstants.PORTAL_PREFAB);
+
+                createdPortalGO.layer = _portalLayer;
+                
                 createdPortal = createdPortalGO.GetComponent<Portal>();
             }  
 
