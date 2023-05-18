@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-namespace PortalMechanics { 
+namespace Unit.Portal { 
     public class Portal : MonoBehaviour
     {
         [SerializeField] private Camera _portalСamera;
@@ -9,46 +9,46 @@ namespace PortalMechanics {
         [SerializeField] private Texture _closeViewTexture;
         [SerializeField] private Teleporter _teleporter;
 
+        private PortalType _portalType;
         private Coroutine _portalBroadcast;
         public Camera PortalСamera { get => _portalСamera; }
         public Teleporter Teleporter { get => _teleporter; }
 
-        public void Construct(Portal oppositePortal) {
-            
-            if (oppositePortal != null) 
-            {
+        public void Construct(PortalType portalType, Portal oppositePortal) {
+            _portalType = portalType;
+            if (oppositePortal != null)
                 Open(oppositePortal);
-                oppositePortal.Open(this);
-            } 
-            else 
-            { 
+            else
                 Close();
-            }   
         }
 
         //Opens only when the second portal appears
         private void Open(Portal oppositePortal)
         {            
             oppositePortal.PortalСamera.targetTexture = new RenderTexture(Screen.width, Screen.height, 24);
-            _portalView.material.mainTexture = oppositePortal.PortalСamera.targetTexture;
+            _portalView.sharedMaterial.mainTexture = oppositePortal.PortalСamera.targetTexture;
             _portalBroadcast = StartCoroutine(PortalBroadcast(oppositePortal));
             _teleporter.TurnOn(oppositePortal.Teleporter);
+            oppositePortal.Teleporter.TurnOn(_teleporter);
             
         }
         //Closes if the second portal is missing
         private void Close() {
-            StopCoroutine(_portalBroadcast);
+
+            if (_portalBroadcast != null) 
+            {
+                StopCoroutine(_portalBroadcast);
+            }
+            
             _portalView.sharedMaterial.mainTexture = _closeViewTexture;
             _teleporter.TurnOff();
         }
 
         private IEnumerator PortalBroadcast(Portal otherPortal) {
 
-            while (true) 
-            {
+            while (true) {
                 yield return null;
-                if (Camera.main != null) 
-                { 
+                if (Camera.main != null) { 
                     Vector3 lookerPosition = otherPortal.transform.worldToLocalMatrix.MultiplyPoint3x4(Camera.main.transform.position);
                     lookerPosition = new Vector3(-lookerPosition.x, lookerPosition.y, -lookerPosition.z);
                     _portalСamera.transform.localPosition = lookerPosition;

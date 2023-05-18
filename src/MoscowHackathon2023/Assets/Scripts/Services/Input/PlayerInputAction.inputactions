@@ -1,5 +1,5 @@
 {
-    "name": "PlayerInputActions",
+    "name": "PlayerInputAction",
     "maps": [
         {
             "name": "PlayerInput",
@@ -13,6 +13,33 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "MousePosition",
+                    "type": "Value",
+                    "id": "6e454d84-3cc8-4d5d-9663-32fcadffb155",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "MouseLeftButtonClick",
+                    "type": "Button",
+                    "id": "72381ced-b1ac-4de4-b894-cbe88d8e452e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "MouseRightButtonClick",
+                    "type": "Button",
+                    "id": "93a683aa-5953-46c7-8258-45cc3a988cc3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -70,6 +97,39 @@
                     "action": "PlayerInput",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "38d3a77f-cdad-4e27-b649-b4842b1bfd80",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MousePosition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b694c377-cb5c-4ea1-bc3c-7e544528cd65",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "Press(behavior=1)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MouseLeftButtonClick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "faa3bceb-6b17-46f4-8922-e1106c4c5f19",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MouseRightButtonClick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
