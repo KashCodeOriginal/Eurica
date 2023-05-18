@@ -7,11 +7,11 @@ namespace Unit.Portal {
         [SerializeField] private Camera _portalСamera;
         [SerializeField] private MeshRenderer _portalView;
         [SerializeField] private Texture _closeViewTexture;
-        [SerializeField] private Teleporter _teleporter;
+        [SerializeField] private Teleport teleport;
 
         private Coroutine _portalBroadcast;
         public Camera PortalСamera { get => _portalСamera; }
-        public Teleporter Teleporter { get => _teleporter; }
+        public Teleport Teleport { get => teleport; }
 
         public void Construct(Portal oppositePortal) {
             
@@ -32,8 +32,8 @@ namespace Unit.Portal {
             oppositePortal.PortalСamera.targetTexture = new RenderTexture(Screen.width, Screen.height, 24);
             _portalView.material.mainTexture = oppositePortal.PortalСamera.targetTexture;
             _portalBroadcast = StartCoroutine(PortalBroadcast(oppositePortal));
-            _teleporter.TurnOn(oppositePortal.Teleporter);
-            oppositePortal.Teleporter.TurnOn(_teleporter);
+            teleport.TurnOn(oppositePortal.Teleport);
+            oppositePortal.Teleport.TurnOn(teleport);
             
         }
         //Closes if the second portal is missing
@@ -45,7 +45,7 @@ namespace Unit.Portal {
             }
             
             _portalView.sharedMaterial.mainTexture = _closeViewTexture;
-            _teleporter.TurnOff();
+            teleport.TurnOff();
         }
 
         private IEnumerator PortalBroadcast(Portal otherPortal) {

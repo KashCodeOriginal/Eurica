@@ -9,18 +9,14 @@ namespace Unit.Portal
     {
         private PortalFactory _portalFactory;
         private readonly PortalGunView _portalGunView;
-        private readonly PlayerInputActionReader _playerInputActionReader;
-        private Timer _timer;
-        private bool _isDelayFire = false;        
+        private readonly PlayerInputActionReader _playerInputActionReader;             
         private LayerMask _layerMask = LayerMask.NameToLayer("Walls");
 
         public PortalGun(PortalFactory portalFactory, PortalGunView portalGunView, PlayerInputActionReader playerInputActionReader)
         {
             _portalFactory = portalFactory;
             _portalGunView = portalGunView;
-            _playerInputActionReader = playerInputActionReader;
-            _timer = new Timer(1000);            
-            _timer.Elapsed += SetDelayFireStatus;
+            _playerInputActionReader = playerInputActionReader;            
             _portalGunView.PickedUp.AddListener(PickUp);
             _portalGunView.Released.AddListener(Release);
         }
@@ -46,21 +42,13 @@ namespace Unit.Portal
         { 
             var ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f));//Center the screen in the crosshairs
 
-            if (Physics.Raycast(ray, out var hit) /*&& _isDelayFire == false*/)
+            if (Physics.Raycast(ray, out var hit))
             {
                 if (hit.collider.gameObject.layer == _layerMask)
                 {
-                    _portalFactory.CreatePortal(hit.point, hit.normal, portalType);
-                    //_isDelayFire = true;
-                    //_timer.Start(); 
+                    _portalFactory.CreatePortal(hit.point, hit.normal, portalType);                    
                 }                 
             }     
-        }
-
-        private void SetDelayFireStatus(System.Object source, ElapsedEventArgs e) 
-        {            
-            _isDelayFire = false;
-            _timer.Stop();
         }
     }
 }
