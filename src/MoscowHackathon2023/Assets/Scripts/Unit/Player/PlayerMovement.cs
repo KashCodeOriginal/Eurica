@@ -17,8 +17,6 @@ namespace Unit.Player
             _playerInputActionReader = playerInputActionReader;
 
             _playerInputActionReader.OnMovementInput += OnMovementInput;
-            
-            
         }
 
         private void Update()

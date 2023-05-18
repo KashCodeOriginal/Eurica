@@ -35,33 +35,6 @@ public partial class @PlayerInputAction : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""MousePosition"",
-                    ""type"": ""Value"",
-                    ""id"": ""6e454d84-3cc8-4d5d-9663-32fcadffb155"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""MouseLeftButtonClick"",
-                    ""type"": ""Button"",
-                    ""id"": ""72381ced-b1ac-4de4-b894-cbe88d8e452e"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""MouseRightButtonClick"",
-                    ""type"": ""Button"",
-                    ""id"": ""93a683aa-5953-46c7-8258-45cc3a988cc3"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -119,39 +92,6 @@ public partial class @PlayerInputAction : IInputActionCollection2, IDisposable
                     ""action"": ""PlayerInput"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""38d3a77f-cdad-4e27-b649-b4842b1bfd80"",
-                    ""path"": ""<Mouse>/position"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""MousePosition"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""b694c377-cb5c-4ea1-bc3c-7e544528cd65"",
-                    ""path"": ""<Mouse>/leftButton"",
-                    ""interactions"": ""Press(behavior=1)"",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""MouseLeftButtonClick"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""faa3bceb-6b17-46f4-8922-e1106c4c5f19"",
-                    ""path"": ""<Mouse>/rightButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""MouseRightButtonClick"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -161,9 +101,6 @@ public partial class @PlayerInputAction : IInputActionCollection2, IDisposable
         // PlayerInput
         m_PlayerInput = asset.FindActionMap("PlayerInput", throwIfNotFound: true);
         m_PlayerInput_PlayerInput = m_PlayerInput.FindAction("PlayerInput", throwIfNotFound: true);
-        m_PlayerInput_MousePosition = m_PlayerInput.FindAction("MousePosition", throwIfNotFound: true);
-        m_PlayerInput_MouseLeftButtonClick = m_PlayerInput.FindAction("MouseLeftButtonClick", throwIfNotFound: true);
-        m_PlayerInput_MouseRightButtonClick = m_PlayerInput.FindAction("MouseRightButtonClick", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -224,17 +161,11 @@ public partial class @PlayerInputAction : IInputActionCollection2, IDisposable
     private readonly InputActionMap m_PlayerInput;
     private IPlayerInputActions m_PlayerInputActionsCallbackInterface;
     private readonly InputAction m_PlayerInput_PlayerInput;
-    private readonly InputAction m_PlayerInput_MousePosition;
-    private readonly InputAction m_PlayerInput_MouseLeftButtonClick;
-    private readonly InputAction m_PlayerInput_MouseRightButtonClick;
     public struct PlayerInputActions
     {
         private @PlayerInputAction m_Wrapper;
         public PlayerInputActions(@PlayerInputAction wrapper) { m_Wrapper = wrapper; }
         public InputAction @PlayerInput => m_Wrapper.m_PlayerInput_PlayerInput;
-        public InputAction @MousePosition => m_Wrapper.m_PlayerInput_MousePosition;
-        public InputAction @MouseLeftButtonClick => m_Wrapper.m_PlayerInput_MouseLeftButtonClick;
-        public InputAction @MouseRightButtonClick => m_Wrapper.m_PlayerInput_MouseRightButtonClick;
         public InputActionMap Get() { return m_Wrapper.m_PlayerInput; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -247,15 +178,6 @@ public partial class @PlayerInputAction : IInputActionCollection2, IDisposable
                 @PlayerInput.started -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnPlayerInput;
                 @PlayerInput.performed -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnPlayerInput;
                 @PlayerInput.canceled -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnPlayerInput;
-                @MousePosition.started -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnMousePosition;
-                @MousePosition.performed -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnMousePosition;
-                @MousePosition.canceled -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnMousePosition;
-                @MouseLeftButtonClick.started -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnMouseLeftButtonClick;
-                @MouseLeftButtonClick.performed -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnMouseLeftButtonClick;
-                @MouseLeftButtonClick.canceled -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnMouseLeftButtonClick;
-                @MouseRightButtonClick.started -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnMouseRightButtonClick;
-                @MouseRightButtonClick.performed -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnMouseRightButtonClick;
-                @MouseRightButtonClick.canceled -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnMouseRightButtonClick;
             }
             m_Wrapper.m_PlayerInputActionsCallbackInterface = instance;
             if (instance != null)
@@ -263,15 +185,6 @@ public partial class @PlayerInputAction : IInputActionCollection2, IDisposable
                 @PlayerInput.started += instance.OnPlayerInput;
                 @PlayerInput.performed += instance.OnPlayerInput;
                 @PlayerInput.canceled += instance.OnPlayerInput;
-                @MousePosition.started += instance.OnMousePosition;
-                @MousePosition.performed += instance.OnMousePosition;
-                @MousePosition.canceled += instance.OnMousePosition;
-                @MouseLeftButtonClick.started += instance.OnMouseLeftButtonClick;
-                @MouseLeftButtonClick.performed += instance.OnMouseLeftButtonClick;
-                @MouseLeftButtonClick.canceled += instance.OnMouseLeftButtonClick;
-                @MouseRightButtonClick.started += instance.OnMouseRightButtonClick;
-                @MouseRightButtonClick.performed += instance.OnMouseRightButtonClick;
-                @MouseRightButtonClick.canceled += instance.OnMouseRightButtonClick;
             }
         }
     }
@@ -279,8 +192,5 @@ public partial class @PlayerInputAction : IInputActionCollection2, IDisposable
     public interface IPlayerInputActions
     {
         void OnPlayerInput(InputAction.CallbackContext context);
-        void OnMousePosition(InputAction.CallbackContext context);
-        void OnMouseLeftButtonClick(InputAction.CallbackContext context);
-        void OnMouseRightButtonClick(InputAction.CallbackContext context);
     }
 }

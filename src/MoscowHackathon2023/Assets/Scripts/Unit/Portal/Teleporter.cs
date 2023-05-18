@@ -1,16 +1,14 @@
 ﻿using UnityEngine;
 
-namespace Unit.Portal
+namespace PortalMechanics
 {
     public class Teleporter : MonoBehaviour
     {
         private Teleporter _other;
-        private LayerMask _layerMaskForTeleport;
-        private LayerMask _currentLayerMaskObject;
-        private void Awake()
-        {
-            _layerMaskForTeleport = LayerMask.NameToLayer("Teleporting");
-        }
+        private Vector3 _direction;
+        private float _force;
+        private Rigidbody _currentRigidbody;
+
         public void TurnOn(Teleporter other) {
             enabled = true;
             _other = other;
@@ -27,24 +25,34 @@ namespace Unit.Portal
         }
 
         private void Teleport(Transform obj)
-        {
+        {            
             Vector3 localPos = transform.worldToLocalMatrix.MultiplyPoint3x4(obj.position);
             localPos = new Vector3(-localPos.x, localPos.y, -localPos.z);
             obj.position = _other.transform.localToWorldMatrix.MultiplyPoint3x4(localPos);
 
             Quaternion difference = _other.transform.rotation * Quaternion.Inverse(transform.rotation * Quaternion.Euler(0, 180, 0));
             obj.rotation = difference * obj.rotation;
-        }
 
+            if (_currentRigidbody != null) 
+            {
+                _direction = new Vector3(_direction.x *-1, _direction.y, _direction.z *-1);
+                _currentRigidbody.AddForce(_direction * _force, ForceMode.Impulse);                
+            }
+        }
         private void OnTriggerEnter(Collider other)
         {
-            _currentLayerMaskObject = other.gameObject.layer;
-            other.gameObject.layer = _layerMaskForTeleport;
+            _currentRigidbody = other.GetComponent<Rigidbody>();            
+            if (_currentRigidbody != null) 
+            {
+                Vector3 velocity = _currentRigidbody.velocity;       
+                _direction = velocity.normalized;  
+                _force = velocity.magnitude;                  
+            }            
         }
 
         private void OnTriggerExit(Collider other)
         {
-            other.gameObject.layer = _currentLayerMaskObject;
+            _currentRigidbody = null;            
         }
     }
 }
