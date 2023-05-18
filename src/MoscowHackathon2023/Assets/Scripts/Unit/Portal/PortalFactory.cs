@@ -4,7 +4,6 @@ using Services.Factories.AbstractFactory;
 using System.Threading.Tasks;
 using UnityEngine;
 using Zenject.Installers;
-using PortalMechanics;
 using Services.Input;
 
 namespace Unit.Portal { 
@@ -37,15 +36,14 @@ namespace Unit.Portal {
             }
 
             if (createdPortal == null) 
-            {
-                //Debug.Log("Создание портала: " + portalView + " - " + _pullPortals.ContainsKey(PortalType.Red) + " : " + _pullPortals.ContainsKey(PortalType.Blue));
+            {                
                 var createdPortalGO = await _abstractFactory.CreateInstance<GameObject>(AssetsAddressablesConstants.PORTAL_PREFAB);
                 createdPortal = createdPortalGO.GetComponent<Portal>();
-            }                               
-            //Debug.Log("Перемещение портала: " + portalView + " - " + _pullPortals.ContainsKey(PortalType.Red) + " : " + _pullPortals.ContainsKey(PortalType.Blue));
-            createdPortal.transform.rotation = Quaternion.LookRotation(face);
+            }  
+            createdPortal.transform.rotation = Quaternion.LookRotation(face);            
             createdPortal.transform.position = position + createdPortal.transform.forward * 0.6f;
             SetUpPortal(createdPortal, portalView, oppositePortal);
+
         }
 
         private void SetUpPortal(Portal portalInstance,  PortalType portalView, Portal oppositePortal)
@@ -53,11 +51,6 @@ namespace Unit.Portal {
             portalInstance.Construct(portalView, oppositePortal);
             _pullPortals[portalView] = portalInstance;       
         }
-    }
-
-    public enum PortalType { 
-        Blue,
-        Red
     }
 }
 

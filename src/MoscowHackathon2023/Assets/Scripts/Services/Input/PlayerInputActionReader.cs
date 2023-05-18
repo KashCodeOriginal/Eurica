@@ -11,10 +11,18 @@ namespace Services.Input
 
         public Action<Vector2> OnMovementInput;
 
-        public Action<Vector2> OnMousePositionInput;
+        public Vector2 OnMousePositionInput { get; private set; }
 
         public Action IsLeftButtonClicked;
         public Action IsRightButtonClicked;
+
+        public Action IsLeftButtonClickStarted;
+        public Action IsLeftButtonClickEnded;
+        
+        public Action IsRightButtonClickStarted;
+        public Action IsRightButtonClickEnded;
+
+        public Action<float> IsMouseScroll;
 
         private void OnEnable()
         {
@@ -36,17 +44,48 @@ namespace Services.Input
 
         public void OnMousePosition(InputAction.CallbackContext context)
         {
-            OnMousePositionInput?.Invoke(context.ReadValue<Vector2>());
+            OnMousePositionInput = context.ReadValue<Vector2>();
         }
 
         public void OnMouseLeftButtonClick(InputAction.CallbackContext context)
         {
-            IsLeftButtonClicked?.Invoke();
+            if (context.started)
+            {
+                IsLeftButtonClickStarted?.Invoke();
+            }
+            
+            if (context.performed)
+            {
+                IsLeftButtonClicked?.Invoke();
+            }
+            
+            if (context.canceled)
+            {
+                IsLeftButtonClickEnded?.Invoke();
+            }
         }
 
         public void OnMouseRightButtonClick(InputAction.CallbackContext context)
         {
-            IsRightButtonClicked?.Invoke();
+            if (context.started)
+            {
+                IsRightButtonClickStarted?.Invoke();
+            }
+            
+            if (context.performed)
+            {
+                IsRightButtonClicked?.Invoke();
+            }
+            
+            if (context.canceled)
+            {
+                IsRightButtonClickEnded?.Invoke();
+            }
+        }
+
+        public void OnMouseWheelScroll(InputAction.CallbackContext context)
+        {
+            IsMouseScroll?.Invoke(context.ReadValue<float>()); ;
         }
     }
 }

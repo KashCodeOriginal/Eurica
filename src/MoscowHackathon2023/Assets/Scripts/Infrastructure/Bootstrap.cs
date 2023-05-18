@@ -1,9 +1,9 @@
 using Infrastructure.ProjectStateMachine.Base;
 using Infrastructure.ProjectStateMachine.States;
-using PortalMechanics;
 using Services.Factories.AbstractFactory;
 using Services.Factories.UIFactory;
 using Services.Input;
+using Unit.ScaleGun;
 
 namespace Infrastructure
 {
@@ -20,8 +20,7 @@ namespace Infrastructure
                 new GameLoadingState(this),
                 new GameSetUpState(this, abstractFactory, playerInputActionReader),
                 new TestState(),
-                new GameplayState(this, uiFactory));                
-
+                new GameplayState(this, uiFactory));  
                 StateMachine.SwitchState<BootstrapState>();
         }
 

@@ -1,36 +1,49 @@
-using Unit.Portal;
+using Unit.Weapon;
 using UnityEngine;
-using UnityEngine.Events;
 
-public class PlayerPickUp : MonoBehaviour
+namespace Tools
 {
-    [SerializeField] private Transform _placeInHand;
-    private IWeaponedView _currentWeaponView;
-    private LayerMask _layerMask;
-
-    private void Start()
+    public class PlayerPickUp : MonoBehaviour
     {
-        _layerMask = LayerMask.NameToLayer("PickUp");
-    }
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.E)) { 
-            var ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f));//Center the screen in the crosshairs
+        [SerializeField] private Transform _placeInHand;
+        private IWeaponedView _currentWeaponView;
+        private LayerMask _layerMask;
 
-            if (Physics.Raycast(ray, out var hit))
+        private void Start()
+        {
+            _layerMask = LayerMask.NameToLayer("PickUp");
+        }
+        private void Update()
+        {
+            if (!Input.GetKeyDown(KeyCode.E))
             {
-                if (hit.collider.gameObject.layer == _layerMask)
-                {
-                    IWeaponedView weaponedView = hit.collider.gameObject.GetComponent<IWeaponedView>();
-                    if (weaponedView != null) {
-                        if (_currentWeaponView != null) {
-                            _currentWeaponView.Release();
-                        }
-                        weaponedView.PickUp(_placeInHand);
-                        _currentWeaponView = weaponedView;
-                    }                                        
-                }                 
-            }  
+                return;
+            }
+        
+            var ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f)); //Center the screen in the crosshairs
+
+            if (!Physics.Raycast(ray, out var hit))
+            {
+                return;
+            }
+
+            if (hit.collider.gameObject.layer != _layerMask)
+            {
+                return;
+            }
+            
+            IWeaponedView weaponedView = hit.collider.gameObject.GetComponent<IWeaponedView>();
+
+            if (weaponedView == null)
+            {
+                return;
+            }
+
+            _currentWeaponView?.Release();
+            
+            weaponedView.PickUp(_placeInHand);
+            
+            _currentWeaponView = weaponedView;
         }
     }
 }
