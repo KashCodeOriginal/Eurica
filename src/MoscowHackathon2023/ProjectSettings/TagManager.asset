@@ -11,15 +11,15 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Floor
+  - Portal
+  - Player
+  - Teleporting
+  - Walls
+  - InteractiveObjectForGravity
+  - PickUp
+  - Grabbed
+  - WallForAim
   - 
   - 
   - 
