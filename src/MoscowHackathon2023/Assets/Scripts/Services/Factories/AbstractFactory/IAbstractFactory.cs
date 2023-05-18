@@ -5,6 +5,6 @@ namespace Services.Factories.AbstractFactory
 {
     public interface IAbstractFactory
     {
-        Task<T> CreateInstance<T>(string path) where T : Object;
+        public Task<T>  CreateInstance<T>(string path) where T : Object;
     }
 }

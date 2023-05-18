@@ -16,7 +16,7 @@
                 },
                 {
                     "name": "MousePosition",
-                    "type": "Value",
+                    "type": "PassThrough",
                     "id": "6e454d84-3cc8-4d5d-9663-32fcadffb155",
                     "expectedControlType": "Vector2",
                     "processors": "",
@@ -37,6 +37,15 @@
                     "type": "Button",
                     "id": "93a683aa-5953-46c7-8258-45cc3a988cc3",
                     "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "MouseWheelScroll",
+                    "type": "PassThrough",
+                    "id": "19cc146b-71e3-4fe9-bc97-695c42958990",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -101,7 +110,7 @@
                 {
                     "name": "",
                     "id": "38d3a77f-cdad-4e27-b649-b4842b1bfd80",
-                    "path": "<Mouse>/position",
+                    "path": "<Mouse>/delta",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -128,6 +137,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "MouseRightButtonClick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "918f7bbb-57b8-4d12-81f4-36b53894bd6e",
+                    "path": "<Mouse>/scroll/y",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MouseWheelScroll",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
