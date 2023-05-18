@@ -86,6 +86,7 @@ MonoBehaviour:
     m_ProfileVersion: 1
   m_LabelTable:
     m_LabelNames:
+    - PortalGunView
     - default
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
