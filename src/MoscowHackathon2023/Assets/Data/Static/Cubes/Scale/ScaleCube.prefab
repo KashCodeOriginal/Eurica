@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3130288914518766690}
   - component: {fileID: 2992689784793863151}
   - component: {fileID: 2992689784793863148}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ScaleCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 4432113193656905356}
   - component: {fileID: 733485181414072617}
   - component: {fileID: 3299216215668561379}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ScaleBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
