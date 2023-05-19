@@ -12549,6 +12549,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: Quest_1_Reworked
       objectReference: {fileID: 0}
+    - target: {fileID: 2523009819074387512, guid: 95b9f2c092a469f468194609e11dcea6, type: 3}
+      propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2523009819074387512, guid: 95b9f2c092a469f468194609e11dcea6, type: 3}
+      propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2523009819074387512, guid: 95b9f2c092a469f468194609e11dcea6, type: 3}
+      propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2992689783895766459}
+    - target: {fileID: 2523009819074387512, guid: 95b9f2c092a469f468194609e11dcea6, type: 3}
+      propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2523009819074387512, guid: 95b9f2c092a469f468194609e11dcea6, type: 3}
+      propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: StartVoiceMessage
+      objectReference: {fileID: 0}
+    - target: {fileID: 2523009819074387512, guid: 95b9f2c092a469f468194609e11dcea6, type: 3}
+      propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Unit.TriggerSystem.TriggerTaskHelper, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2523009819074387512, guid: 95b9f2c092a469f468194609e11dcea6, type: 3}
+      propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2523009819074387512, guid: 95b9f2c092a469f468194609e11dcea6, type: 3}
+      propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3635352241030372892, guid: 95b9f2c092a469f468194609e11dcea6, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -12610,6 +12642,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95b9f2c092a469f468194609e11dcea6, type: 3}
+--- !u!114 &2992689783895766459 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9151439680053315848, guid: 95b9f2c092a469f468194609e11dcea6, type: 3}
+  m_PrefabInstance: {fileID: 2992689783895766458}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a044e845b3fc7794d80f1d514a8a6efb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3065401286412464673
 GameObject:
   m_ObjectHideFlags: 0

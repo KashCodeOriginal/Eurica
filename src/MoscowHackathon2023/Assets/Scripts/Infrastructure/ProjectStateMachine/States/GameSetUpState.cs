@@ -9,6 +9,7 @@ using Services.Factories.GunsFactory;
 using Services.Factories.PortalFactory;
 using Services.Factories.UIFactory;
 using Services.Input;
+using Services.PlaySounds;
 using Services.StaticData;
 using Unit.CameraContainer;
 using Unit.GravityGun;
@@ -35,6 +36,7 @@ namespace Infrastructure.ProjectStateMachine.States
         private readonly IUIFactory _uiFactory;
         private readonly IPlayerContainer _playerContainer;
         private readonly IStaticDataService _staticDataService;
+        private readonly IPlaySoundsService _playSoundsService;
 
         private Inventory _inventory;
         private PortalGun _portalGun;
@@ -51,7 +53,8 @@ namespace Infrastructure.ProjectStateMachine.States
             PlayerBaseSettings playerSettings,
             IUIFactory uiFactory,
             IPlayerContainer playerContainer,
-            IStaticDataService staticDataService)
+            IStaticDataService staticDataService,
+            IPlaySoundsService playSoundsService)
         {
             Initializer = initializer;
             _gunFactory = gunFactory;
@@ -62,6 +65,7 @@ namespace Infrastructure.ProjectStateMachine.States
             _uiFactory = uiFactory;
             _playerContainer = playerContainer;
             _staticDataService = staticDataService;
+            _playSoundsService = playSoundsService;
         }
 
         public async void OnEnter(string arg)
@@ -73,10 +77,13 @@ namespace Infrastructure.ProjectStateMachine.States
 
             var cameraInstance = await
                 _abstractFactory.CreateInstance<GameObject>(AssetsAddressablesConstants.CAMERA_PREFAB);
+            
+            var audioSourceInstance = await 
+                _abstractFactory.CreateInstance<GameObject>(AssetsAddressablesConstants.AUDIO_SOURCE_PREFAB);
 
             var cameraChildContainer = cameraInstance.GetComponentInChildren<CameraChildContainer>();
 
-            SetUp(playerInstance, cameraInstance, cameraChildContainer.WeaponContainer);
+            SetUp(playerInstance, cameraInstance, cameraChildContainer.WeaponContainer, audioSourceInstance);
 
             playerInstance.transform.position = levelData.PlayerSpawnPoint;
 
@@ -114,9 +121,12 @@ namespace Infrastructure.ProjectStateMachine.States
             Initializer.StateMachine.SwitchState<GameplayState>();
         }
 
-        private void SetUp(GameObject playerInstance, GameObject cameraInstance, Transform weaponContainer)
+        private void SetUp(GameObject playerInstance, GameObject cameraInstance, Transform weaponContainer,
+            GameObject audioSource)
         {
             _playerContainer.SetUp(playerInstance);
+            
+            _playSoundsService.SetUp(audioSource.GetComponent<AudioSource>());
             
             var virtualCamera = cameraInstance.GetComponentInChildren<CinemachineVirtualCamera>();
             
