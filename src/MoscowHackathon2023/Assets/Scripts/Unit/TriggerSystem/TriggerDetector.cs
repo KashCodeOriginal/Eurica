@@ -4,6 +4,7 @@ using UnityEngine.Events;
 namespace Unit.TriggerSystem
 {
     [RequireComponent(typeof(TriggerTaskHelper))]
+    [RequireComponent(typeof(BoxCollider))]
     public class TriggerDetector : MonoBehaviour
     {
         public UnityEvent OnEnter;
@@ -28,6 +29,14 @@ namespace Unit.TriggerSystem
             OnExit?.Invoke();
 
             _isTriggered = false;
+        }
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = Color.green;
+            var collider = GetComponent<BoxCollider>();
+            Gizmos.matrix = transform.localToWorldMatrix;
+            Gizmos.DrawWireCube(collider.center, collider.size);
         }
     }
 }
