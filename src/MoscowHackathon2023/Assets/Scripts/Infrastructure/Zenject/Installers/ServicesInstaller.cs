@@ -11,6 +11,7 @@ using Services.Factories.GunsFactory;
 using Services.Factories.PortalFactory;
 using Services.Factories.UIFactory;
 using Services.Input;
+using Services.PlaySounds;
 using Services.StaticData;
 using Unit.Portal;
 using UnityEditor;
@@ -40,6 +41,7 @@ namespace Infrastructure.Zenject.Installers
             BindCameraContainer();
             BindCoroutineRunner();
             BindGunsStaticDataData();
+            BindPlaySoundService();
             BindAddressablesProvider();
             BindPlayerInputActionsReader();
         }
@@ -57,6 +59,11 @@ namespace Infrastructure.Zenject.Installers
         private void BindAddressablesProvider()
         {
             Container.BindInterfacesTo<AssetsAddressablesProvider>().AsSingle();
+        }
+        
+        private void BindPlaySoundService()
+        {
+            Container.BindInterfacesTo<PlaySoundsService>().AsSingle();
         }
 
         private void BindPlayerInputActionsReader()
