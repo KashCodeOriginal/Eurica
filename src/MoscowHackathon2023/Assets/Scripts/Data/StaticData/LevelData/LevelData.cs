@@ -1,5 +1,4 @@
-﻿using Data.StaticData.LevelData.NPCData;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Data.StaticData.LevelData
 {
@@ -8,6 +7,5 @@ namespace Data.StaticData.LevelData
     {
         [field: SerializeField] public string LevelName { get; private set; }
         [field: SerializeField] public Vector3 PlayerSpawnPoint { get; private set; }
-        [field: SerializeField] public LevelNPCData LevelNpcData { get; private set; }
     }
 }

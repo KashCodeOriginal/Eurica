@@ -2,11 +2,9 @@ using Cinemachine;
 using Data.AssetsAddressablesConstants;
 using Data.StaticData.PlayerData;
 using Infrastructure.ProjectStateMachine.Base;
-using PixelCrushers.DialogueSystem;
 using Services.Containers;
 using Services.Factories.AbstractFactory;
 using Services.Factories.GunsFactory;
-using Services.Factories.PortalFactory;
 using Services.Factories.UIFactory;
 using Services.Input;
 using Services.PlaySounds;
@@ -17,9 +15,7 @@ using Unit.MountRemote;
 using Unit.Player;
 using Unit.Portal;
 using Unit.ScaleGun;
-using Unit.UniversalGun;
 using Unit.WeaponInventory;
-using UnityEditor;
 using UnityEngine;
 
 namespace Infrastructure.ProjectStateMachine.States
@@ -86,19 +82,6 @@ namespace Infrastructure.ProjectStateMachine.States
             SetUp(playerInstance, cameraInstance, cameraChildContainer.WeaponContainer, audioSourceInstance);
 
             playerInstance.transform.position = levelData.PlayerSpawnPoint;
-
-            foreach (var npc in levelData.LevelNpcData.NPCOnLevel)
-            {
-                var npcInstance = 
-                    await _abstractFactory.CreateInstance<GameObject>(npc.NPCPrefab);
-
-                npcInstance.transform.position = npc.NPCSpawnPoint;
-
-                if (npcInstance.TryGetComponent(out DialogueSystemTrigger dialogueSystemTrigger))
-                {
-                    dialogueSystemTrigger.conversationActor = playerInstance.transform;
-                }
-            }
 
             await _gunFactory.CreateUniversalGunView();
 
