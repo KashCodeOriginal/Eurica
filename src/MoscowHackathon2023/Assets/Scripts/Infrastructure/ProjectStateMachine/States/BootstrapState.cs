@@ -1,12 +1,16 @@
 using Zenject;
 using Infrastructure.ProjectStateMachine.Base;
+using Services.StaticData;
 
 namespace Infrastructure.ProjectStateMachine.States
 {
     public class BootstrapState : IState<Bootstrap>, IInitializable
     {
-        public BootstrapState(Bootstrap initializer)
+        private readonly IStaticDataService _staticDataService;
+
+        public BootstrapState(Bootstrap initializer, IStaticDataService staticDataService)
         {
+            _staticDataService = staticDataService;
             Initializer = initializer;
         }
 
@@ -14,6 +18,8 @@ namespace Infrastructure.ProjectStateMachine.States
 
         public void Initialize()
         {
+            _staticDataService.LoadStaticData();
+            
             Initializer.StateMachine.SwitchState<MenuLoadingState>();
         }
     }
