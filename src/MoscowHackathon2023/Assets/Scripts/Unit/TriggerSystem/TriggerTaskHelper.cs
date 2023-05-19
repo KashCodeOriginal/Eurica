@@ -1,5 +1,6 @@
 using Infrastructure;
 using Infrastructure.ProjectStateMachine.States;
+using Services.PlaySounds;
 using Services.StaticData;
 using UI.GameplayScreen;
 using UnityEngine;
@@ -10,13 +11,18 @@ namespace Unit.TriggerSystem
     public class TriggerTaskHelper : MonoBehaviour
     {
         [Inject]
-        public void Construct(Bootstrap bootstrap, IStaticDataService staticDataService)
+        public void Construct(Bootstrap bootstrap, 
+            IStaticDataService staticDataService,
+            IPlaySoundsService playSoundsService)
         {
             _bootstrap = bootstrap;
+            _staticDataService = staticDataService;
+            _playSoundsService = playSoundsService;
         }
 
         private Bootstrap _bootstrap;
         private IStaticDataService _staticDataService;
+        private IPlaySoundsService _playSoundsService;
 
         public void ShowHint(string hint)
         {
@@ -38,9 +44,11 @@ namespace Unit.TriggerSystem
             GameplayScreen.Instance.GameplayTaskView.RequestTaskFail();
         }
 
-        public void StartMonologue(string speechId)
+        public void StartVoiceMessage(string audioID)
         {
-            var voiceMessage = _staticDataService.GetVoiceMessageByID(speechId);
+            var voiceMessage = _staticDataService.GetVoiceMessageByID(audioID);
+            
+            _playSoundsService.PlayOneShot(voiceMessage.AudioClip, 1f);
         }
 
         public void ChangeScene(string sceneName)

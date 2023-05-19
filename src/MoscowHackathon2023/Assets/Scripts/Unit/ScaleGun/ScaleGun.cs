@@ -64,6 +64,8 @@ namespace Unit.ScaleGun
 
             _playerInputActionReader.IsRightButtonClickStarted += StartRightMouseHeld;
             _playerInputActionReader.IsRightButtonClickEnded += EndRightMouseHeld;
+            
+            _universalGunView.ChangeActiveGun(GunTypes.Scale);
         }
 
         public void Deselect() 
