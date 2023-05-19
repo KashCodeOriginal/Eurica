@@ -9,17 +9,7 @@ namespace Data.StaticData.PlayerData
         [field: SerializeField] public float BackwardWalkSpeed { get; private set; }
         [field: SerializeField] public float SideWalkSpeed { get; private set; }
         
-        [field: SerializeField] public float CrouchWalkSpeed { get; private set; }
-
         [field: SerializeField] public float RunMultiplier { get; private set; }
-        
-        [field: SerializeField] public float Stamina { get; private set; }
-        
-        [field: SerializeField] public float StaminaWaste { get; private set; }
-        
-        [field: SerializeField] public float StaminaRecovery { get; private set; }
-        
-        [field: SerializeField] public float MinStaminaToRun { get; private set; }
 
         [field: SerializeField] public float JumpPower { get; private set; }
         

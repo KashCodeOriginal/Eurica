@@ -10,12 +10,15 @@ namespace Unit.Portal
         [SerializeField] private Texture _closeViewTexture;
         [SerializeField] private Teleport teleport;
 
+        private Transform _playerTransform;
+
         private Coroutine _portalBroadcast;
         public Camera PortalСamera => _portalСamera;
         public Teleport Teleport => teleport;
 
-        public void Construct(Portal oppositePortal) 
+        public void Construct(Portal oppositePortal, Transform playerTransform)
         {
+            _playerTransform = playerTransform;
             
             if (oppositePortal != null) 
             {
@@ -25,7 +28,7 @@ namespace Unit.Portal
             else 
             { 
                 Close();
-            }   
+            }
         }
 
         //Opens only when the second portal appears

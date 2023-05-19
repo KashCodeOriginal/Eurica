@@ -15,10 +15,5 @@ MonoBehaviour:
   <ForwardWalkSpeed>k__BackingField: 0.6
   <BackwardWalkSpeed>k__BackingField: 0.5
   <SideWalkSpeed>k__BackingField: 0.5
-  <CrouchWalkSpeed>k__BackingField: 0.3
-  <RunMultiplier>k__BackingField: 1.5
-  <Stamina>k__BackingField: 100
-  <StaminaWaste>k__BackingField: 25
-  <StaminaRecovery>k__BackingField: 12
-  <MinStaminaToRun>k__BackingField: 20
+  <RunMultiplier>k__BackingField: 2
   <JumpPower>k__BackingField: 11

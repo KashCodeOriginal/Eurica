@@ -2,7 +2,7 @@ using Services.Containers;
 using Unit.Weapon;
 using UnityEngine;
 
-namespace Tools
+namespace Unit.Player
 {
     public class PlayerPickUp : MonoBehaviour
     {

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Data.AssetsAddressablesConstants;
+using Services.Containers;
 using Services.Factories.AbstractFactory;
 using Unit.Portal;
 using UnityEngine;
@@ -8,17 +9,19 @@ namespace Services.Factories.PortalFactory
 {
     public class PortalFactory : IPortalFactory
     {
-        private IAbstractFactory _abstractFactory;        
-        
+        private IAbstractFactory _abstractFactory;
+        private readonly IPlayerContainer _playerContainer;
+
         private Dictionary<PortalType, Portal> _pullPortals = new();        
 
         public Portal Portal { get; private set; }
         
         private LayerMask _portalLayer = LayerMask.NameToLayer("Portal");
 
-        public PortalFactory(IAbstractFactory abstractFactory)
+        public PortalFactory(IAbstractFactory abstractFactory, IPlayerContainer playerContainer)
         {
-            _abstractFactory = abstractFactory;            
+            _abstractFactory = abstractFactory;
+            _playerContainer = playerContainer;
         }
 
         public async void CreatePortal(Vector3 position, Vector3 face, PortalType portalView)
@@ -49,12 +52,12 @@ namespace Services.Factories.PortalFactory
             createdPortal.transform.position = position;
             createdPortal.transform.rotation = Quaternion.FromToRotation(Vector3.forward, face);
             
-            SetUpPortal(createdPortal, portalView, oppositePortal);
+            SetUpPortal(createdPortal, portalView, oppositePortal, _playerContainer.Player.transform);
         }
 
-        private void SetUpPortal(Portal portalInstance,  PortalType portalView, Portal oppositePortal)
+        private void SetUpPortal(Portal portalInstance,  PortalType portalView, Portal oppositePortal, Transform playerTransform)
         {
-            portalInstance.Construct(oppositePortal);
+            portalInstance.Construct(oppositePortal, playerTransform);
             _pullPortals[portalView] = portalInstance; 
         }
     }

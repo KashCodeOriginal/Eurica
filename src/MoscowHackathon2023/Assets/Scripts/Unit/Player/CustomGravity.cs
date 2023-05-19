@@ -1,20 +1,23 @@
 using UnityEngine;
 
-public class CustomGravity : MonoBehaviour
+namespace Unit.Player
 {
-    public float gravity = 9.8f;
-
-    private Rigidbody rb;
-
-    private void Start()
+    public class CustomGravity : MonoBehaviour
     {
-        rb = GetComponent<Rigidbody>();
-        rb.useGravity = false;
-    }
+        public float gravity = 9.8f;
 
-    private void Update()
-    {
-        Vector3 customGravity = -transform.up * gravity;
-        rb.AddForce(customGravity / Time.fixedDeltaTime * Time.deltaTime, ForceMode.Acceleration);
+        private Rigidbody rb;
+
+        private void Start()
+        {
+            rb = GetComponent<Rigidbody>();
+            rb.useGravity = false;
+        }
+
+        private void Update()
+        {
+            Vector3 customGravity = -transform.up * gravity;
+            rb.AddForce(customGravity / Time.fixedDeltaTime * Time.deltaTime, ForceMode.Acceleration);
+        }
     }
 }

@@ -4,9 +4,9 @@ using Infrastructure.ProjectStateMachine.States;
 using Services.Containers;
 using Services.Factories.AbstractFactory;
 using Services.Factories.GunsFactory;
+using Services.Factories.PortalFactory;
 using Services.Factories.UIFactory;
 using Services.Input;
-using Tools;
 using Unit.ScaleGun;
 using UnityEditor;
 
@@ -19,7 +19,8 @@ namespace Infrastructure
             PlayerInputActionReader playerInputActionReader,
             PlayerBaseSettings playerSettings,
             IGunFactory gunFactory,
-            ICameraContainer cameraContainer)
+            ICameraContainer cameraContainer,
+            IPlayerContainer playerContainer)
         {
             StateMachine = new StateMachine<Bootstrap>(
                 new BootstrapState(this),
@@ -27,7 +28,9 @@ namespace Infrastructure
                 new MainMenuState(this, uiFactory),
                 new GameLoadingState(this),
                 new GameSetUpState(this, gunFactory,
-                    abstractFactory, playerInputActionReader, cameraContainer, playerSettings, uiFactory),
+                    abstractFactory, playerInputActionReader, 
+                    cameraContainer, playerSettings, uiFactory, 
+                    playerContainer),
                 new GameplayState(this, uiFactory));  
             
                 StateMachine.SwitchState<BootstrapState>();

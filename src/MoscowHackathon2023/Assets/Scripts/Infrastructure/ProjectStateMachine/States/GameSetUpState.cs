@@ -6,9 +6,9 @@ using PixelCrushers.DialogueSystem;
 using Services.Containers;
 using Services.Factories.AbstractFactory;
 using Services.Factories.GunsFactory;
+using Services.Factories.PortalFactory;
 using Services.Factories.UIFactory;
 using Services.Input;
-using Tools;
 using Unit.CameraContainer;
 using Unit.GravityGun;
 using Unit.MountRemote;
@@ -31,6 +31,7 @@ namespace Infrastructure.ProjectStateMachine.States
         private readonly ICameraContainer _cameraContainer;
         private readonly PlayerBaseSettings _playerSettings;
         private readonly IUIFactory _uiFactory;
+        private readonly IPlayerContainer _playerContainer;
 
         private Inventory _inventory;
         private PortalGun _portalGun;
@@ -43,7 +44,8 @@ namespace Infrastructure.ProjectStateMachine.States
             PlayerInputActionReader playerInputActionReader,
             ICameraContainer cameraContainer,
             PlayerBaseSettings playerSettings,
-            IUIFactory uiFactory)
+            IUIFactory uiFactory,
+            IPlayerContainer playerContainer)
         {
             Initializer = initializer;
             _gunFactory = gunFactory;
@@ -52,6 +54,7 @@ namespace Infrastructure.ProjectStateMachine.States
             _cameraContainer = cameraContainer;
             _playerSettings = playerSettings;
             _uiFactory = uiFactory;
+            _playerContainer = playerContainer;
         }
 
         public async void OnEnter()
@@ -93,6 +96,8 @@ namespace Infrastructure.ProjectStateMachine.States
         private void SetUp(GameObject playerInstance, GameObject cameraInstance, Transform weaponContainer,
             GameObject demoNPC)
         {
+            _playerContainer.SetUp(playerInstance);
+            
             var virtualCamera = cameraInstance.GetComponentInChildren<CinemachineVirtualCamera>();
             
             var mainCamera = cameraInstance.GetComponentInChildren<Camera>();

@@ -1,4 +1,3 @@
-using System;
 using System.Linq;
 using Data.StaticData.PlayerData;
 using UnityEngine;
@@ -9,17 +8,11 @@ namespace Unit.Player
     public class PlayerMovement : MonoBehaviour
     {
         [SerializeField] private Rigidbody _rigidbody;
-        [SerializeField] private Collider _fullStandingCollider;
-        [SerializeField] private Collider _crouchingCollider;
 
         private bool _isRunning;
-        private bool _canRun;
         private bool _canJump;
-        private bool _isCrouching;
         private bool _isGrounded;
         private bool _isJumping;
-
-        [SerializeField] private float _currentStamina;
 
         private float _currentSpeed;
 
@@ -45,45 +38,6 @@ namespace Unit.Player
             _playerInputActionReader.IsPlayerAccelerationButtonClickEnded += OnPlayerWalk;
 
             _playerInputActionReader.IsPlayerJumpButtonClicked += OnPlayerJump;
-
-            _playerInputActionReader.IsPlayerCrouchButtonClickStarted += OnPlayerCrouch;
-            _playerInputActionReader.IsPlayerCrouchButtonClickEnded += OnPlayerCrouchEnded;
-            
-            _currentStamina = _playerSettings.Stamina;
-        }
-        
-        private void Update()
-        {
-            if (_playerSettings == null)
-            {
-                return;
-            }
-            
-            if (!_canRun)
-            {
-                _canRun = _currentStamina > _playerSettings.MinStaminaToRun;
-            }
-            else
-            {
-                _canRun = _isRunning && _currentStamina > 0;
-            }
-
-            if (_currentDirection.magnitude < 0.5f)
-            {
-                _isRunning = false;
-            }
-
-            if (!_isRunning && _currentStamina <= _playerSettings.Stamina)
-            {
-                _currentStamina += _playerSettings.StaminaRecovery * Time.deltaTime;
-            }
-
-            if (_isRunning && _canRun && !_isJumping)
-            {
-                _currentStamina -= _playerSettings.StaminaWaste * Time.deltaTime;
-            }
-
-            _currentStamina = Mathf.Clamp(_currentStamina, 0f, _playerSettings.Stamina);
         }
 
         private void FixedUpdate()
@@ -147,23 +101,7 @@ namespace Unit.Player
         {
             _canJump = isJumping;
         }
-
-        private void OnPlayerCrouch()
-        {
-            _isCrouching = true;
-
-            _fullStandingCollider.enabled = false;
-            _crouchingCollider.enabled = true;
-        }
-
-        private void OnPlayerCrouchEnded()
-        {
-            _isCrouching = false;
-
-            _fullStandingCollider.enabled = true;
-            _crouchingCollider.enabled = false;
-        }
-
+        
         private void UpdateCurrentSpeed()
         {
             if (_currentDirection.x is > 0 or < 0)
@@ -181,14 +119,9 @@ namespace Unit.Player
                 _currentSpeed = _playerSettings.ForwardWalkSpeed;
             }
 
-            if (_isRunning && !_isCrouching && _canRun && !_isJumping)
+            if (_isRunning && !_isJumping)
             {
                 _currentSpeed *= _playerSettings.RunMultiplier;
-            }
-
-            if (_isCrouching)
-            {
-                _currentSpeed = _playerSettings.CrouchWalkSpeed;
             }
         }
 
@@ -228,6 +161,8 @@ namespace Unit.Player
 
             _playerInputActionReader.IsPlayerAccelerationButtonClickStarted -= OnPlayerRun;
             _playerInputActionReader.IsPlayerAccelerationButtonClickEnded -= OnPlayerWalk;
+            
+            _playerInputActionReader.IsPlayerJumpButtonClicked -= OnPlayerJump;
         }
     }
 }
