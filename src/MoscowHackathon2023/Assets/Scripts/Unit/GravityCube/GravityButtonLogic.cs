@@ -23,6 +23,14 @@ namespace Unit.GravityCube
                 }
             }
 
+            if (other.TryGetComponent(out ScaleCubeMK2 scaleCube))
+            {
+                if (!_isPressed)
+                {
+                    Press();
+                    return;
+                }
+            }
 
             if (other.TryGetComponent(out PlayerMovement player))
             {
@@ -31,6 +39,7 @@ namespace Unit.GravityCube
                     if (!_isPressed)
                     {
                         Press();
+                        return;
                     }
                 }
             }
@@ -50,7 +59,14 @@ namespace Unit.GravityCube
                 }
             }
 
-
+            if (other.TryGetComponent(out ScaleCubeMK2 scaleCube))
+            {
+                if (_isPressed)
+                {
+                    Release();
+                    return;
+                }
+            }
 
             if (other.TryGetComponent(out PlayerMovement player))
             {
@@ -59,6 +75,7 @@ namespace Unit.GravityCube
                     if (_isPressed)
                     {
                         Release();
+                        return;
                     }
                 }
             }

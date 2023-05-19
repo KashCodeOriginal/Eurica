@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3130288914518766690}
   - component: {fileID: 2992689784793863151}
   - component: {fileID: 2992689784793863148}
+  - component: {fileID: 5123148268810849714}
   m_Layer: 11
   m_Name: ScaleCube
   m_TagString: Untagged
@@ -97,6 +98,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5123148268810849714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 640418780824518122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a71dd66c42b7174f864c7d2a7afc388, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3947923884947125302
 GameObject:
   m_ObjectHideFlags: 0
