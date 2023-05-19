@@ -17,13 +17,15 @@ namespace Unit.MountRemote
         public MountRemote(PlayerInputActionReader playerInputActionReader,
             ICameraContainer cameraContainer,
             MountRemoveData mountRemoveData, 
-            UniversalGunView universalGunView)
+            UniversalGunView universalGunView,
+            MountView mountView)
         {
             _playerInputActionReader = playerInputActionReader;
             
             _cameraContainer = cameraContainer;
             _mountRemoveData = mountRemoveData;
             _universalGunView = universalGunView;
+            _mountView = mountView;
         }
 
         private readonly PlayerInputActionReader _playerInputActionReader;
@@ -33,6 +35,7 @@ namespace Unit.MountRemote
         private readonly ICameraContainer _cameraContainer;
         private readonly BaseGunData _mountRemoveData;
         private readonly UniversalGunView _universalGunView;
+        private readonly MountView _mountView;
 
         public void Select()
         {
@@ -41,10 +44,11 @@ namespace Unit.MountRemote
             
             _universalGunView.ChangeActiveGun(GunTypes.Mount);
 
-            /*_currentTarget = Object.Instantiate(_mountView.TargetPrefab, _mountView.transform.position, Quaternion.identity);
+            _currentTarget = Object.Instantiate(_mountView.TargetPrefab, _mountView.transform.position, Quaternion.identity);
             
-            _mountView.SetTarget(_currentTarget.transform);*/
+            _mountView.SetTarget(_currentTarget.transform);
             
+            _currentTarget.SetActive(false);
         }
 
         public void Deselect()
@@ -56,14 +60,14 @@ namespace Unit.MountRemote
             
             Object.Destroy(_currentTarget);
             
-            //_mountView.SetTarget(null);
+            _mountView.SetTarget(null);
         }
 
         public void MainFire()
         {
             Cursor.lockState = CursorLockMode.None;
             
-            //_mountView.MountCamera.Priority = _cameraContainer.CinemachineBrain.ActiveVirtualCamera.Priority + 1;
+            _mountView.MountCamera.Priority = _cameraContainer.CinemachineBrain.ActiveVirtualCamera.Priority + 1;
 
             var ray = _cameraContainer.Camera.ScreenPointToRay(Mouse.current.position.ReadValue());
 
@@ -72,14 +76,14 @@ namespace Unit.MountRemote
                 return;
             }
 
-            //_mountView.Target.position = hit.point;
+            _mountView.Target.position = hit.point;
         }
 
         public void AlternateFire()
         {
             Cursor.lockState = CursorLockMode.Locked;
             
-            //_mountView.MountCamera.Priority = 0;
+            _mountView.MountCamera.Priority = 0;
         }
     }
 }

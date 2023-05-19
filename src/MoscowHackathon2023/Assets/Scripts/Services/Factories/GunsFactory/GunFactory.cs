@@ -10,6 +10,7 @@ using Services.Factories.AbstractFactory;
 using Services.Factories.PortalFactory;
 using Services.Input;
 using Unit.GravityGun;
+using Unit.Mount;
 using Unit.MountRemote;
 using Unit.Portal;
 using Unit.ScaleGun;
@@ -39,6 +40,11 @@ namespace Services.Factories.GunsFactory
             _cameraContainer = cameraContainer;
             _portalFactory = portalFactory;
             _coroutineRunner = coroutineRunner;
+        }
+
+        public void Construct(Transform playerPickPlaceInHand)
+        {
+            _positionInHand = playerPickPlaceInHand;
         }
 
         private readonly IAbstractFactory _abstractFactory;
@@ -74,17 +80,18 @@ namespace Services.Factories.GunsFactory
             return new GravityGun(_coroutineRunner,
                 _playerInputActionReader, _gravityGunData, _cameraContainer, _universalGunView);
         }
-        
+
         public ScaleGun CreateScaleGun()
         {
             return new ScaleGun(_playerInputActionReader,
                 _scaleGunData, _cameraContainer, _universalGunView);
         }
 
-        public MountRemote CreateMountRemove()
+        public async Task<MountRemote> CreateMountRemove()
         {
             return new MountRemote(_playerInputActionReader, 
-                _cameraContainer, _mountRemoveData, _universalGunView);
+                _cameraContainer, _mountRemoveData, _universalGunView, 
+                await CreateView<MountView>(AssetsAddressablesConstants.MOUNT_VIEW_PREFAB));
         }
 
         public async Task<UniversalGunView> CreateUniversalGunView()
@@ -99,11 +106,6 @@ namespace Services.Factories.GunsFactory
             transform.rotation = _positionInHand.rotation;
 
             return _universalGunView;
-        }
-
-        public void Construct(Transform playerPickPlaceInHand)
-        {
-            _positionInHand = playerPickPlaceInHand;
         }
 
         private async Task<T> CreateView<T>(string viewPath)
