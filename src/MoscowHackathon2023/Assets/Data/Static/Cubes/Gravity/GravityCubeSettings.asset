@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: ae17455dc18582c4daef37f3d239a453, type: 3}
   m_Name: GravityCubeSettings
-  m_EditorClassIdentifier: Assembly-CSharp::GravityCubeSettings
+  m_EditorClassIdentifier: 
   ColorVariants:
   - {r: 0, g: 1, b: 0.083333254, a: 1}
-  - {r: 1, g: 0.9166666, b: 0, a: 1}
-  - {r: 1, g: 0, b: 0.66871786, a: 1}
-  - {r: 0, g: 0.57450485, b: 1, a: 1}
+  - {r: 0.91666675, g: 1, b: 0, a: 1}
+  - {r: 1, g: 0, b: 0.832973, a: 1}
+  - {r: 0, g: 0.9194927, b: 1, a: 1}
