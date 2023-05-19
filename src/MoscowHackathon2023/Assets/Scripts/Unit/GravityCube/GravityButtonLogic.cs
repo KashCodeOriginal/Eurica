@@ -3,14 +3,13 @@ using UnityEngine;
 
 namespace Unit.DoorButton
 {
-    public class ButtonLogicDoor : ButtonLogic
+    public class GravityButtonLogic : ButtonLogic
     {
         [SerializeField] private DoorLogic _door;
 
         private void OnTriggerEnter(Collider other)
         {
             // Detect Gravity Cube colission
-
             GravityCubeLogic gravityCube = other.GetComponent<GravityCubeLogic>();
             if (gravityCube != null && gravityCube._colorId == base.GetColorId())
             {

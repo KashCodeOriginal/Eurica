@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3951083725855844896}
   - component: {fileID: 8945459654663080065}
   m_Layer: 0
-  m_Name: Button
+  m_Name: GravityButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
