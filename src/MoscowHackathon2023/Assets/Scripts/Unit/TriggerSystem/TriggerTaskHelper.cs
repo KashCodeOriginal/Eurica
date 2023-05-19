@@ -1,5 +1,6 @@
 using Infrastructure;
 using Infrastructure.ProjectStateMachine.States;
+using Services.StaticData;
 using UI.GameplayScreen;
 using UnityEngine;
 using Zenject;
@@ -9,12 +10,13 @@ namespace Unit.TriggerSystem
     public class TriggerTaskHelper : MonoBehaviour
     {
         [Inject]
-        public void Construct(Bootstrap bootstrap)
+        public void Construct(Bootstrap bootstrap, IStaticDataService staticDataService)
         {
             _bootstrap = bootstrap;
         }
 
         private Bootstrap _bootstrap;
+        private IStaticDataService _staticDataService;
 
         public void ShowHint(string hint)
         {
@@ -38,7 +40,7 @@ namespace Unit.TriggerSystem
 
         public void StartMonologue(string speechId)
         {
-            // TODO: Start monologue with audio file and subtitles in a custom system.
+            var voiceMessage = _staticDataService.GetVoiceMessageByID(speechId);
         }
 
         public void ChangeScene(string sceneName)
