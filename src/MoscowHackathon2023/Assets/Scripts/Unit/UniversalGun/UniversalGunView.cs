@@ -1,20 +1,19 @@
 ﻿using System;
 using UnityEngine;
+using static UnityEngine.Rendering.DebugUI;
 
 namespace Unit.UniversalGun
 {
     public class UniversalGunView : MonoBehaviour
     {
         [SerializeField] private Transform _gravityAttachPoint;
-        
+
         [SerializeField] private GameObject _portalGun;
         [SerializeField] private GameObject _gravityGun;
         [SerializeField] private GameObject _scaleGun;
         [SerializeField] private GameObject _mountGun;
 
         private GameObject _currentGun;
-        
-        private static readonly int EmissiveExposureWeight = Shader.PropertyToID("_EmissiveExposureWeight");
 
         private void Start()
         {
@@ -26,7 +25,7 @@ namespace Unit.UniversalGun
             ChangeCurrentGunEmission(1);
 
             SetNewGun(gunType);
-            
+
             ChangeCurrentGunEmission(0);
         }
 
@@ -34,7 +33,7 @@ namespace Unit.UniversalGun
 
         private void ChangeCurrentGunEmission(float value)
         {
-            _currentGun.GetComponent<MeshRenderer>().material.SetFloat(EmissiveExposureWeight, value);
+            _currentGun.GetComponent<UniversalGunLamp>().SetCurrentState(value);
         }
 
         private void SetNewGun(GunTypes gunType)
