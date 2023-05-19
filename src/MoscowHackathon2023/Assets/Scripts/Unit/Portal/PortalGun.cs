@@ -46,6 +46,8 @@ namespace Unit.Portal
         {         
             _playerInputActionReader.IsRightButtonClicked += MainFire;
             _playerInputActionReader.IsLeftButtonClicked += AlternateFire;
+            
+            _universalGunView.ChangeActiveGun(GunTypes.Portal);
         }
 
         public void Deselect() 

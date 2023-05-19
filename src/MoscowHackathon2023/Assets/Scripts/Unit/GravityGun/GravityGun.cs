@@ -131,6 +131,8 @@ namespace Unit.GravityGun
         {
             _playerInputActionReader.IsLeftButtonClicked += MainFire;
             _playerInputActionReader.IsRightButtonClicked += AlternateFire;
+            
+            _universalGunView.ChangeActiveGun(GunTypes.Gravity);
         }
 
         public void Deselect()

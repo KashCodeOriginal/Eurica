@@ -16,12 +16,14 @@ namespace Unit.MountRemote
 
         public MountRemote(PlayerInputActionReader playerInputActionReader,
             ICameraContainer cameraContainer,
-            MountRemoveData mountRemoveData, UniversalGunView universalGunView)
+            MountRemoveData mountRemoveData, 
+            UniversalGunView universalGunView)
         {
             _playerInputActionReader = playerInputActionReader;
             
             _cameraContainer = cameraContainer;
             _mountRemoveData = mountRemoveData;
+            _universalGunView = universalGunView;
         }
 
         private readonly PlayerInputActionReader _playerInputActionReader;
@@ -30,11 +32,14 @@ namespace Unit.MountRemote
 
         private readonly ICameraContainer _cameraContainer;
         private readonly BaseGunData _mountRemoveData;
+        private readonly UniversalGunView _universalGunView;
 
         public void Select()
         {
             _playerInputActionReader.IsLeftButtonClicked += MainFire;
             _playerInputActionReader.IsRightButtonClicked += AlternateFire;
+            
+            _universalGunView.ChangeActiveGun(GunTypes.Mount);
 
             /*_currentTarget = Object.Instantiate(_mountView.TargetPrefab, _mountView.transform.position, Quaternion.identity);
             
