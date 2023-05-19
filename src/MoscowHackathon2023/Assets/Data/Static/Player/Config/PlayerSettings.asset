@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a30ec1902e1c4aa3bdcd7d9c43c4f1ec, type: 3}
   m_Name: PlayerSettings
   m_EditorClassIdentifier: 
-  <ForwardWalkSpeed>k__BackingField: 0.75
-  <BackwardWalkSpeed>k__BackingField: 0.5
-  <SideWalkSpeed>k__BackingField: 0.6
-  <CrouchWalkSpeed>k__BackingField: 0.4
-  <RunMultiplier>k__BackingField: 2
-  <JumpPower>k__BackingField: 3
+  <ForwardWalkSpeed>k__BackingField: 0.5
+  <BackwardWalkSpeed>k__BackingField: 0.33
+  <SideWalkSpeed>k__BackingField: 0.4
+  <CrouchWalkSpeed>k__BackingField: 0.26
+  <RunMultiplier>k__BackingField: 1
+  <JumpPower>k__BackingField: 5
   <GroundCheckDistance>k__BackingField: 1

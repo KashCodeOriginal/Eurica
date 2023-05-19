@@ -58,15 +58,8 @@ namespace Unit.Player
             }
 
             UpdateCurrentSpeed();
-            
-            if (!IsGrounded())
-            {
-                return;
-            }
 
-            _rigidbody.drag = 5f;
-
-            if (_canJump)
+            if (_canJump && IsGrounded())
             {
                 Jump();
             }
@@ -86,9 +79,7 @@ namespace Unit.Player
         }
 
         private void Jump()
-        {
-            _rigidbody.drag = 1f;
-
+        { 
             _rigidbody.velocity = new Vector3(_rigidbody.velocity.x, 0f, _rigidbody.velocity.z);
 
             _rigidbody.AddForce(new Vector3(0f, _playerSettings.JumpPower, 0f), ForceMode.Impulse);
