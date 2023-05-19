@@ -15,7 +15,7 @@ namespace Unit.TriggerSystem
         }
 
         private Bootstrap _bootstrap;
-        
+
         public void ShowHint(string hint)
         {
             GameplayScreen.Instance.GameplayHintView.RequestShowingHint(hint);
