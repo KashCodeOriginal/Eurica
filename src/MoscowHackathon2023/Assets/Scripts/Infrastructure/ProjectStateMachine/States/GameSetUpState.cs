@@ -9,6 +9,7 @@ using Services.Factories.GunsFactory;
 using Services.Factories.PortalFactory;
 using Services.Factories.UIFactory;
 using Services.Input;
+using Services.StaticData;
 using Unit.CameraContainer;
 using Unit.GravityGun;
 using Unit.MountRemote;
@@ -22,7 +23,7 @@ using UnityEngine;
 
 namespace Infrastructure.ProjectStateMachine.States
 {
-    public class GameSetUpState : IState<Bootstrap>, IEnterable
+    public class GameSetUpState : IState<Bootstrap>, IEnterableWithOneArg<string>
     {
         public Bootstrap Initializer { get; }
 
@@ -33,6 +34,7 @@ namespace Infrastructure.ProjectStateMachine.States
         private readonly PlayerBaseSettings _playerSettings;
         private readonly IUIFactory _uiFactory;
         private readonly IPlayerContainer _playerContainer;
+        private readonly IStaticDataService _staticDataService;
 
         private Inventory _inventory;
         private PortalGun _portalGun;
@@ -48,7 +50,8 @@ namespace Infrastructure.ProjectStateMachine.States
             ICameraContainer cameraContainer,
             PlayerBaseSettings playerSettings,
             IUIFactory uiFactory,
-            IPlayerContainer playerContainer)
+            IPlayerContainer playerContainer,
+            IStaticDataService staticDataService)
         {
             Initializer = initializer;
             _gunFactory = gunFactory;
@@ -58,24 +61,37 @@ namespace Infrastructure.ProjectStateMachine.States
             _playerSettings = playerSettings;
             _uiFactory = uiFactory;
             _playerContainer = playerContainer;
+            _staticDataService = staticDataService;
         }
 
-        public async void OnEnter()
+        public async void OnEnter(string arg)
         {
+            var levelData = _staticDataService.ForLevel(arg);
+            
             var playerInstance = await
                 _abstractFactory.CreateInstance<GameObject>(AssetsAddressablesConstants.PLAYER_PREFAB);
 
             var cameraInstance = await
                 _abstractFactory.CreateInstance<GameObject>(AssetsAddressablesConstants.CAMERA_PREFAB);
-            
-            var demoNPC = await
-                _abstractFactory.CreateInstance<GameObject>(AssetsAddressablesConstants.DEMO_NPC);
-            
+
             var cameraChildContainer = cameraInstance.GetComponentInChildren<CameraChildContainer>();
 
-            SetUp(playerInstance, cameraInstance, cameraChildContainer.WeaponContainer, demoNPC);
+            SetUp(playerInstance, cameraInstance, cameraChildContainer.WeaponContainer);
 
-            playerInstance.transform.position = new Vector3(-200, 1, -100);
+            playerInstance.transform.position = levelData.PlayerSpawnPoint;
+
+            foreach (var npc in levelData.LevelNpcData.NPCOnLevel)
+            {
+                var npcInstance = 
+                    await _abstractFactory.CreateInstance<GameObject>(npc.NPCPrefab);
+
+                npcInstance.transform.position = npc.NPCSpawnPoint;
+
+                if (npcInstance.TryGetComponent(out DialogueSystemTrigger dialogueSystemTrigger))
+                {
+                    dialogueSystemTrigger.conversationActor = playerInstance.transform;
+                }
+            }
 
             await _gunFactory.CreateUniversalGunView();
 
@@ -98,8 +114,7 @@ namespace Infrastructure.ProjectStateMachine.States
             Initializer.StateMachine.SwitchState<GameplayState>();
         }
 
-        private void SetUp(GameObject playerInstance, GameObject cameraInstance, Transform weaponContainer,
-            GameObject demoNPC)
+        private void SetUp(GameObject playerInstance, GameObject cameraInstance, Transform weaponContainer)
         {
             _playerContainer.SetUp(playerInstance);
             
@@ -134,10 +149,6 @@ namespace Infrastructure.ProjectStateMachine.States
                 playerRotation.Construct(mainCamera);
             }
 
-            if (demoNPC.TryGetComponent(out DialogueSystemTrigger dialogueSystemTrigger))
-            {
-                dialogueSystemTrigger.conversationActor = playerInstance.transform;
-            }
         }
     }
 }

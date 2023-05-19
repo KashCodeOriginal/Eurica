@@ -25,7 +25,7 @@ namespace Services.AssetsAddressables
 
             return await RunWinCacheOnComplete(Addressables.LoadAssetAsync<T>(address), address);
         }
-        
+
         public async Task<T> GetAsset<T>(AssetReference assetReference) where T : Object
         {
             if (_completedOperations.TryGetValue(assetReference.AssetGUID, out var completed))

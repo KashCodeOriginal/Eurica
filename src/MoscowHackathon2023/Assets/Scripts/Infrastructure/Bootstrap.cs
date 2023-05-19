@@ -7,6 +7,7 @@ using Services.Factories.GunsFactory;
 using Services.Factories.PortalFactory;
 using Services.Factories.UIFactory;
 using Services.Input;
+using Services.StaticData;
 using Unit.ScaleGun;
 using UnityEditor;
 
@@ -20,17 +21,18 @@ namespace Infrastructure
             PlayerBaseSettings playerSettings,
             IGunFactory gunFactory,
             ICameraContainer cameraContainer,
-            IPlayerContainer playerContainer)
+            IPlayerContainer playerContainer,
+            IStaticDataService staticDataService)
         {
             StateMachine = new StateMachine<Bootstrap>(
-                new BootstrapState(this),
+                new BootstrapState(this, staticDataService),
                 new MenuLoadingState(this, uiFactory),
                 new MainMenuState(this, uiFactory),
                 new GameLoadingState(this),
                 new GameSetUpState(this, gunFactory,
                     abstractFactory, playerInputActionReader, 
                     cameraContainer, playerSettings, uiFactory, 
-                    playerContainer),
+                    playerContainer, staticDataService),
                 new GameplayState(this, uiFactory));  
             
                 StateMachine.SwitchState<BootstrapState>();

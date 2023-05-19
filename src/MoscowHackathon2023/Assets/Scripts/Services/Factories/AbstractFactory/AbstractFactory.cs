@@ -1,6 +1,7 @@
 using System.Threading.Tasks;
 using Services.AssetsAddressables;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using Zenject;
 
 namespace Services.Factories.AbstractFactory
@@ -15,6 +16,15 @@ namespace Services.Factories.AbstractFactory
         }
         
         public async Task<T> CreateInstance<T>(string path) where T : Object
+        {
+            var prefab = await _assetsAddressablesProvider.GetAsset<T>(path);
+
+            var instance = Object.Instantiate(prefab);
+
+            return instance;
+        }
+
+        public async Task<T> CreateInstance<T>(AssetReference path) where T : Object
         {
             var prefab = await _assetsAddressablesProvider.GetAsset<T>(path);
 

@@ -19,7 +19,7 @@ namespace Infrastructure.ProjectStateMachine.States
 
             await asyncOperationHandler.Task;
             
-            Initializer.StateMachine.SwitchState<GameSetUpState>();
+            Initializer.StateMachine.SwitchState<GameSetUpState, string>(arg);
         }
 
         public void OnExit()
