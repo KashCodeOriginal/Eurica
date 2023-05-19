@@ -1,14 +1,43 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class ButtonLogic : MonoBehaviour
+namespace Unit.DoorButton
 {
-    protected bool _isPressed = false;
-    public UnityAction<bool> OnStateChanged;
-
-    public virtual void Press()
+    public class ButtonLogic : MonoBehaviour
     {
-        _isPressed = true;
-        OnStateChanged?.Invoke(_isPressed);
+        protected bool _isPressed = false;
+        public UnityAction<bool> OnStateChanged;
+        
+        [SerializeField] private GravityCubeSettings _buttonGravitySettings;
+        [SerializeField] private int _colorId;
+        [SerializeField] private GravityCubeLogic _gravityCube;
+
+        private void Start()
+        {
+            _gravityCube.Init(_colorId, GetCubeColor());
+        }
+
+        protected virtual void Press()
+        {
+            _isPressed = true;
+            OnStateChanged?.Invoke(_isPressed);
+        }
+
+        protected virtual void Release()
+        {
+            _isPressed = false;
+            OnStateChanged?.Invoke(_isPressed);
+        }
+
+        public Color GetCubeColor()
+        {
+            if (_colorId < 0 || _colorId >= _buttonGravitySettings.ColorVariants.Length)
+            {
+                Debug.LogError("Color id is out of range in _buttonGravitySettings");
+                return Color.white;
+            }
+
+            return _buttonGravitySettings.ColorVariants[_colorId];
+        }
     }
 }

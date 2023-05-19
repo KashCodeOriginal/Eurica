@@ -1,40 +1,43 @@
 using UnityEngine;
 
-public class DoorVisuals : MonoBehaviour
+namespace Unit.DoorButton
 {
-    [SerializeField] private DoorLogic _doorLogic;
-    [SerializeField] private Transform _movingPart;
-
-    [SerializeField] private float _speed = 1f;
-    [SerializeField] private Vector3 _localPosOpened;
-    [SerializeField] private Vector3 _localPosClosed;
-    private Vector3 _targetPosition;
-
-    private void Start()
+    public class DoorVisuals : MonoBehaviour
     {
-        OnStateChanged(_doorLogic.IsOpened);
-    }
+        [SerializeField] private DoorLogic _doorLogic;
+        [SerializeField] private Transform _movingPart;
 
-    private void OnEnable()
-    {
-        _doorLogic.OnStateChanged += OnStateChanged;
-    }
+        [SerializeField] private float _speed = 1f;
+        [SerializeField] private Vector3 _localPosOpened;
+        [SerializeField] private Vector3 _localPosClosed;
+        private Vector3 _targetPosition;
 
-    private void OnDisable()
-    {
-        _doorLogic.OnStateChanged -= OnStateChanged;
-    }
+        private void Start()
+        {
+            OnStateChanged(_doorLogic.IsOpened);
+        }
 
-    private void OnStateChanged(bool state)
-    {
-        _targetPosition = state ? _localPosOpened : _localPosClosed;
-    }
+        private void OnEnable()
+        {
+            _doorLogic.OnStateChanged += OnStateChanged;
+        }
 
-    private void Update()
-    {
-        if (_movingPart.localPosition == _targetPosition)
-            return;
+        private void OnDisable()
+        {
+            _doorLogic.OnStateChanged -= OnStateChanged;
+        }
 
-        _movingPart.localPosition = Vector3.Lerp(_movingPart.localPosition, _targetPosition, _speed * Time.deltaTime);
+        private void OnStateChanged(bool state)
+        {
+            _targetPosition = state ? _localPosOpened : _localPosClosed;
+        }
+
+        private void Update()
+        {
+            if (_movingPart.localPosition == _targetPosition)
+                return;
+
+            _movingPart.localPosition = Vector3.Lerp(_movingPart.localPosition, _targetPosition, _speed * Time.deltaTime);
+        }
     }
 }

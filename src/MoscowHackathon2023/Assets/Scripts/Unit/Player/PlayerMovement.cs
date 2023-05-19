@@ -50,7 +50,7 @@ namespace Unit.Player
             _colliderHeight = _fullStandingCollider.bounds.extents.y;
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
             if (IsCameraInactive())
             {

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7a83882a53c57ed4498a64fd379cef72
+guid: 18041a56efca46c49ba352ef295ffb3b
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -8,17 +8,52 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Emissiv
-    second: {fileID: 2100000, guid: f2e82011f472a794fbe2ca8f18352249, type: 2}
+    second: {fileID: 2100000, guid: 4846fea727c7ef443a6868850ad76e10, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Emissiv_2
-    second: {fileID: 2100000, guid: 0bcbefa726048ee49a45674e64e78983, type: 2}
+      name: Glass
+    second: {fileID: 2100000, guid: a96c6dca4c624824aa289ae140fe3b09, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pipe
+    second: {fileID: 2100000, guid: c94904b5c2aae8d4da95f8a8d97d5e7a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Portal_Wall
+    second: {fileID: 2100000, guid: 13aa7934f68c26b43bac573aff420d3c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static Floor
+    second: {fileID: 2100000, guid: a67597996465c7c48bf68dfc55107320, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static Floor_2
+    second: {fileID: 2100000, guid: 10952d2588186c440adb9f582b473dcf, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Static Roof
     second: {fileID: 2100000, guid: e873b694bd2512f46aa7d454c7dea850, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static Wall
+    second: {fileID: 2100000, guid: 3faa59f97d4419e438fdceee371d848d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_Wall_2
+    second: {fileID: 2100000, guid: 80d2ae9733b667b46a63e3eca6589b00, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Static_Wall_3
+    second: {fileID: 2100000, guid: 5409ea5b57ad3ec40adc9142eed842e5, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -50,7 +85,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 2
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -104,7 +139,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 2
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

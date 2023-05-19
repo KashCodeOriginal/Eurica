@@ -1,25 +1,47 @@
+using System;
 using UnityEngine;
 
-public class ButtonLogicDoor : ButtonLogic
+namespace Unit.DoorButton
 {
-    [SerializeField] private DoorLogic _door;
-
-    private void OnTriggerEnter(Collider other)
+    public class ButtonLogicDoor : ButtonLogic
     {
-        // Detect Gravity Cube colission
-        if (other.gameObject.layer == LayerMask.NameToLayer("InteractiveObjectForGravity")
-            || other.gameObject.layer == LayerMask.NameToLayer("Grabbed"))
+        [SerializeField] private DoorLogic _door;
+
+        private void OnTriggerEnter(Collider other)
         {
-            if (!_isPressed)
+            // Detect Gravity Cube colission
+            if (other.gameObject.layer == LayerMask.NameToLayer("InteractiveObjectForGravity") 
+                || other.gameObject.layer == LayerMask.NameToLayer("Grabbed"))
             {
-                Press();
+                if (!_isPressed)
+                {
+                    Press();
+                }
             }
         }
-    }
 
-    public override void Press()
-    {
-        base.Press();
-        _door.Open();
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.gameObject.layer == LayerMask.NameToLayer("InteractiveObjectForGravity") 
+                || other.gameObject.layer == LayerMask.NameToLayer("Grabbed"))
+            {
+                if (_isPressed)
+                {
+                    Release();
+                }
+            }
+        }
+
+        protected override void Press()
+        {
+            base.Press();
+            _door.Open();
+        }
+
+        protected override void Release()
+        {
+            base.Release();
+            _door.Close();
+        }
     }
 }

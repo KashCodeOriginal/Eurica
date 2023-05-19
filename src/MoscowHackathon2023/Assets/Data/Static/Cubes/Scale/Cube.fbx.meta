@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7a83882a53c57ed4498a64fd379cef72
+guid: 4559532abe19fd4438f49910cacae6cf
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,18 +7,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Emissiv
-    second: {fileID: 2100000, guid: f2e82011f472a794fbe2ca8f18352249, type: 2}
+      name: Emissiv.001
+    second: {fileID: 2100000, guid: 223fc674fa080d24782bd10d66b906c5, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Emissiv_2
-    second: {fileID: 2100000, guid: 0bcbefa726048ee49a45674e64e78983, type: 2}
+      name: "\u041C\u0430\u0442\u0435\u0440\u0438\u0430\u043B"
+    second: {fileID: 2100000, guid: 2709d0bf48e69f54ba2736e229f2caed, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Static Roof
-    second: {fileID: 2100000, guid: e873b694bd2512f46aa7d454c7dea850, type: 2}
+      name: "\u041C\u0430\u0442\u0435\u0440\u0438\u0430\u043B.001"
+    second: {fileID: 2100000, guid: c57e14dcf8dc75a40a73920f315c0ea1, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -50,7 +50,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 2
+    globalScale: 50
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -104,7 +104,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 2
+    globalScale: 0.5
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
