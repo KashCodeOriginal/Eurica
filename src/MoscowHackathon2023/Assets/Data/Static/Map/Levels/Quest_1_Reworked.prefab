@@ -208,6 +208,10 @@ PrefabInstance:
       propertyPath: _gravityCube
       value: 
       objectReference: {fileID: 807958389618991827}
+    - target: {fileID: 3951083725855844896, guid: f02432717bc260b48a8a86a4414548a1, type: 3}
+      propertyPath: _buttonGravitySettings
+      value: 
+      objectReference: {fileID: 11400000, guid: 945b7cc2fd280974a928bf7dcfc0e028, type: 2}
     - target: {fileID: 3951083725855844897, guid: f02432717bc260b48a8a86a4414548a1, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -286,6 +290,10 @@ PrefabInstance:
       propertyPath: _gravityCube
       value: 
       objectReference: {fileID: 4746594225247965716}
+    - target: {fileID: 3951083725855844896, guid: f02432717bc260b48a8a86a4414548a1, type: 3}
+      propertyPath: _buttonGravitySettings
+      value: 
+      objectReference: {fileID: 11400000, guid: 945b7cc2fd280974a928bf7dcfc0e028, type: 2}
     - target: {fileID: 3951083725855844897, guid: f02432717bc260b48a8a86a4414548a1, type: 3}
       propertyPath: m_RootOrder
       value: -1
