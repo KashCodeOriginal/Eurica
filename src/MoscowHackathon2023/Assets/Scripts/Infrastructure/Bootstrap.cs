@@ -26,6 +26,7 @@ namespace Infrastructure
                 new TestState(),
                 new GameplayState(this, uiFactory));  
             
+            
                 StateMachine.SwitchState<BootstrapState>();
         }
 
