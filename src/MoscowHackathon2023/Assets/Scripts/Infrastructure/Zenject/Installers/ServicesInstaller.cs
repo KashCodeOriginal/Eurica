@@ -11,6 +11,7 @@ using Services.Factories.GunsFactory;
 using Services.Factories.PortalFactory;
 using Services.Factories.UIFactory;
 using Services.Input;
+using Services.StaticData;
 using Unit.Portal;
 using UnityEditor;
 using UnityEngine;
@@ -34,6 +35,7 @@ namespace Infrastructure.Zenject.Installers
             BindPortalFactory();
             BindPlayerContainer();
             BindPlayerSettings();
+            BindStaticDataService();
             BindAbstractFactory();
             BindCameraContainer();
             BindCoroutineRunner();
@@ -64,12 +66,17 @@ namespace Infrastructure.Zenject.Installers
         
         private void BindCameraContainer()
         {
-            Container.BindInterfacesTo<CameraContainer>().AsSingle().NonLazy();
+            Container.BindInterfacesTo<CameraContainer>().AsSingle();
         }
         
         private void BindPlayerContainer()
         {
-            Container.BindInterfacesTo<PlayerContainer>().AsSingle().NonLazy();
+            Container.BindInterfacesTo<PlayerContainer>().AsSingle();
+        }
+        
+        private void BindStaticDataService()
+        {
+            Container.BindInterfacesTo<StaticDataService>().AsSingle();
         }
         
         private void BindGunsStaticDataData()

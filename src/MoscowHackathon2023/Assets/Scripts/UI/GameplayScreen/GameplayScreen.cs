@@ -8,7 +8,6 @@ namespace UI.GameplayScreen
         
         public GameplayTaskView GameplayTaskView;
         public GameplayHintView GameplayHintView;
-        public GameplaySubtitlesView GameplaySubtitlesView;
 
         private void Awake()
         {
