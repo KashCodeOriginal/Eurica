@@ -32,6 +32,17 @@ namespace Infrastructure.ProjectStateMachine.Base
         
             TryTickNewState<TState>();
         }
+        
+        public void SwitchState<TState, T0>(T0 arg) where TState : IState<TInitializer>
+        {
+            TryExitPreviousState<TState>();
+
+            GetNewState<TState>();
+        
+            TryEnterNewState<TState, T0>(arg);
+        
+            TryTickNewState<TState>();
+        }
 
         private void TryExitPreviousState<TState>() where TState : IState<TInitializer>
         {
@@ -46,6 +57,14 @@ namespace Infrastructure.ProjectStateMachine.Base
             if (_currentState is IEnterable enterable)
             {
                 enterable.OnEnter();
+            }
+        }
+        
+        private void TryEnterNewState<TState, T0>(T0 arg) where TState : IState<TInitializer>
+        {
+            if (_currentState is IEnterableWithOneArg<T0> enterable)
+            {
+                enterable.OnEnter(arg);
             }
         }
 

@@ -1,21 +1,23 @@
-using TriggerSystem;
 using UnityEngine;
 
-public class PlayerMovementTrigger : MonoBehaviour
+namespace Unit.TriggerSystem
 {
-    private void OnTriggerEnter(Collider other)
+    public class PlayerMovementTrigger : MonoBehaviour
     {
-        if (other.TryGetComponent(out TriggerDetector trigger))
+        private void OnTriggerEnter(Collider other)
         {
-            trigger.Enter();
+            if (other.TryGetComponent(out TriggerDetector trigger))
+            {
+                trigger.Enter();
+            }
         }
-    }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.TryGetComponent(out TriggerDetector trigger))
+        private void OnTriggerExit(Collider other)
         {
-            trigger.Exit();
+            if (other.TryGetComponent(out TriggerDetector trigger))
+            {
+                trigger.Exit();
+            }
         }
     }
 }

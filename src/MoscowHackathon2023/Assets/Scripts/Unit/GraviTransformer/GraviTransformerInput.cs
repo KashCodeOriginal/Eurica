@@ -2,15 +2,18 @@ using Unit.GravityCube;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class GraviTransformerInput : MonoBehaviour
+namespace Unit.GraviTransformer
 {
-    public UnityAction<GravityCubeLogic> OnCubeInside;
-
-    private void OnCollisionEnter(Collision collision)
+    public class GraviTransformerInput : MonoBehaviour
     {
-        if (collision.gameObject.TryGetComponent<GravityCubeLogic>(out var cube))
+        public UnityAction<GravityCubeLogic> OnCubeInside;
+
+        private void OnCollisionEnter(Collision collision)
         {
-            OnCubeInside?.Invoke(cube);
+            if (collision.gameObject.TryGetComponent<GravityCubeLogic>(out var cube))
+            {
+                OnCubeInside?.Invoke(cube);
+            }
         }
     }
 }

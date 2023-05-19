@@ -1,21 +1,23 @@
-using Data.AssetsAddressablesConstants;
 using Infrastructure.ProjectStateMachine.Base;
+using UnityEngine;
 using UnityEngine.AddressableAssets;
 
 namespace Infrastructure.ProjectStateMachine.States
 {
-    public class GameLoadingState : IState<Bootstrap>, IEnterable, IExitable
+    public class GameLoadingState : IState<Bootstrap>, IEnterableWithOneArg<string>, IExitable
     {
         public Bootstrap Initializer { get; }
-        
+
         public GameLoadingState(Bootstrap initializer)
         {
             Initializer = initializer;
         }
 
-        public async void OnEnter()
+        public async void OnEnter(string arg)
         {
-            var asyncOperationHandler = Addressables.LoadSceneAsync(AssetsAddressablesConstants.MGU_OUTSIDE);
+            var asyncOperationHandler = Addressables.LoadSceneAsync(arg);
+            
+            Debug.Log(arg);
 
             await asyncOperationHandler.Task;
             

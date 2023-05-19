@@ -152,7 +152,7 @@ namespace Unit.GravityGun
                 if (_currentRigidbody)
                 {
                     _currentRigidbody.velocity =
-                    _universalGunView.GravityAttachPoint.position -
+                        (_universalGunView.GravityAttachPoint.position -
                          (_currentRigidbody.transform.position + _currentRigidbody.centerOfMass)) * _gravityGunGravityGunData.CatchPower;
                 }
                 yield return new WaitForFixedUpdate();

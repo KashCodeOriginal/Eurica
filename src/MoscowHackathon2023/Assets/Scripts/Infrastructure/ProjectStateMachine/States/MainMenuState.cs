@@ -1,3 +1,4 @@
+using Data.AssetsAddressablesConstants;
 using Infrastructure.ProjectStateMachine.Base;
 using Services.Factories.UIFactory;
 using UI.MainMenuScreen;
@@ -35,9 +36,8 @@ namespace Infrastructure.ProjectStateMachine.States
 
         private void SwitchStateToGameLoading()
         {
-            Initializer.StateMachine.SwitchState<GameLoadingState>();
+            Initializer.StateMachine.SwitchState<GameLoadingState, string>(AssetsAddressablesConstants.MGU_OUTSIDE);
         }
-        
 
         public void OnExit()
         {

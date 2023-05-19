@@ -1,25 +1,28 @@
 using Unit.GravityCube;
 using UnityEngine;
 
-public class GraviTransformerController : MonoBehaviour
+namespace Unit.GraviTransformer
 {
-    [SerializeField] private GraviTransformerInput _input;
-    [SerializeField] private GameObject _scalableCubePrefab;
-    [SerializeField] private Transform _outputPosition;
-
-    private void OnEnable()
+    public class GraviTransformerController : MonoBehaviour
     {
-        _input.OnCubeInside += OnCubeInside;
-    }
+        [SerializeField] private GraviTransformerInput _input;
+        [SerializeField] private GameObject _scalableCubePrefab;
+        [SerializeField] private Transform _outputPosition;
 
-    private void OnDisable()
-    {
-        _input.OnCubeInside -= OnCubeInside;
-    }
+        private void OnEnable()
+        {
+            _input.OnCubeInside += OnCubeInside;
+        }
 
-    private void OnCubeInside(GravityCubeLogic cube)
-    {
-        Destroy(cube.gameObject);
-        Instantiate(_scalableCubePrefab, _outputPosition.position, _outputPosition.rotation);
+        private void OnDisable()
+        {
+            _input.OnCubeInside -= OnCubeInside;
+        }
+
+        private void OnCubeInside(GravityCubeLogic cube)
+        {
+            Destroy(cube.gameObject);
+            Instantiate(_scalableCubePrefab, _outputPosition.position, _outputPosition.rotation);
+        }
     }
 }
