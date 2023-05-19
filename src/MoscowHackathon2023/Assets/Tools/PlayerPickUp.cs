@@ -6,14 +6,10 @@ namespace Tools
 {
     public class PlayerPickUp : MonoBehaviour
     {
-        [SerializeField] private Transform _placeInHand;
-        
         private IWeaponedView _currentWeaponView;
         private LayerMask _layerMask;
 
         private ICameraContainer _cameraContainer;
-
-        public Transform PlaceInHand => _placeInHand;
 
         public void Construct(ICameraContainer cameraContainer)
         {

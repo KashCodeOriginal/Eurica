@@ -13,7 +13,3 @@ MonoBehaviour:
   m_Name: GravityCubeSettings
   m_EditorClassIdentifier: 
   ColorVariants:
-  - {r: 0, g: 1, b: 0.083333254, a: 1}
-  - {r: 0.91666675, g: 1, b: 0, a: 1}
-  - {r: 1, g: 0, b: 0.832973, a: 1}
-  - {r: 0, g: 0.9194927, b: 1, a: 1}

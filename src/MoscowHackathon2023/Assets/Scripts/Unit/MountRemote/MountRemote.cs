@@ -56,6 +56,8 @@ namespace Unit.MountRemote
             _mountView.SetTarget(_currentTarget.transform);
             
             _mountRemoteView.ShowInHand(_placeWeaponInHand);
+            
+            _placeWeaponInHand.gameObject.SetActive(false);
         }
 
         public void Release()
@@ -70,6 +72,8 @@ namespace Unit.MountRemote
             _mountView.SetTarget(null);
             
             _mountRemoteView.HideInHand();
+            
+            _placeWeaponInHand.gameObject.SetActive(true);
         }
 
         public void MainFire()
