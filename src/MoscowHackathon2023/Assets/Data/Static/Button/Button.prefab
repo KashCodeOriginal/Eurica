@@ -46,9 +46,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _buttonLogic: {fileID: 5400301518596169691}
-  _buttonMesh: {fileID: 2380960070288497479}
+  _movingPart: {fileID: 2380960070288497479}
+  _speed: 0.25
   _localPosUnpressed: {x: 0, y: 0.4697792, z: 0}
-  _localPosPressed: {x: 0, y: 0.15, z: 0}
+  _localPosPressed: {x: 0, y: 0.2, z: 0}
 --- !u!1 &5400301518596169685
 GameObject:
   m_ObjectHideFlags: 0
@@ -115,7 +116,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.5, y: 1, z: 2.5}
+  m_Size: {x: 2.8, y: 1, z: 2.8}
   m_Center: {x: 0, y: 0.35, z: 0}
 --- !u!1001 &5400301517312300824
 PrefabInstance:

@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 public class ButtonLogic : MonoBehaviour
 {
-    private bool _isPressed = false;
+    protected bool _isPressed = false;
     public UnityAction<bool> OnStateChanged;
 
     public virtual void Press()

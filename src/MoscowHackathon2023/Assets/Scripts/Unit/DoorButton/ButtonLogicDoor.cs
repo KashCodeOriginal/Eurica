@@ -6,10 +6,14 @@ public class ButtonLogicDoor : ButtonLogic
 
     private void OnTriggerEnter(Collider other)
     {
-        var interactiveLayer = LayerMask.NameToLayer("InteractiveObjectForGravity"); // Gravity Cube
-        if (other.gameObject.layer == interactiveLayer)
+        // Detect Gravity Cube colission
+        if (other.gameObject.layer == LayerMask.NameToLayer("InteractiveObjectForGravity")
+            || other.gameObject.layer == LayerMask.NameToLayer("Grabbed"))
         {
-            Press();
+            if (!_isPressed)
+            {
+                Press();
+            }
         }
     }
 

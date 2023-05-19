@@ -92,9 +92,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _doorLogic: {fileID: 3606869690554187963}
-  _doorMesh: {fileID: 3606869690704897955}
+  _movingPart: {fileID: 3856371706404837501}
+  _speed: 0.8
+  _localPosOpened: {x: 0, y: 5, z: 0}
   _localPosClosed: {x: 0, y: 0, z: 0}
-  _localPosOpened: {x: 0, y: 8, z: 0}
 --- !u!1001 &3606869691829452694
 PrefabInstance:
   m_ObjectHideFlags: 0
