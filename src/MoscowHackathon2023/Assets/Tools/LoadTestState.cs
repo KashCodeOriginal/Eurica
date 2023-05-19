@@ -57,22 +57,17 @@ namespace Tools
 
             var cameraInstance = await
                 _abstractFactory.CreateInstance<GameObject>(AssetsAddressablesConstants.CAMERA_PREFAB);
-
-            SetUp(playerInstance, cameraInstance);
             
-            var inventoryContainer = cameraInstance.GetComponentInChildren<CameraChildContainer>().InventoryContainer;
-
-            if (playerInstance.TryGetComponent(out PlayerPickUp playerPick))
-            {
-                _gunFactory.Construct(playerPick.PlaceInHand);
-            }
+            var cameraChildContainer = cameraInstance.GetComponentInChildren<CameraChildContainer>();
+            
+            SetUp(playerInstance, cameraInstance, cameraChildContainer.WeaponContainer);
 
             _portalGun = await _gunFactory.CreatePortalGun();
             _gravityGun = await _gunFactory.CreateGravityGun();
             _scaleGun = await _gunFactory.CreateScaleGun();
             _mountRemote = await _gunFactory.CreateMountRemove();
 
-            _inventory = new Inventory(_uiFactory, _playerInputActionReader, inventoryContainer);
+            _inventory = new Inventory(_uiFactory, _playerInputActionReader, cameraChildContainer.InventoryContainer);
 
             await _inventory.ShowPanel();
 
@@ -84,7 +79,7 @@ namespace Tools
             Cursor.lockState = CursorLockMode.Locked;
         }
 
-        private void SetUp(GameObject playerInstance, GameObject cameraInstance)
+        private void SetUp(GameObject playerInstance, GameObject cameraInstance, Transform weaponContainer)
         {
             var virtualCamera = cameraInstance.GetComponentInChildren<CinemachineVirtualCamera>();
             
@@ -108,6 +103,8 @@ namespace Tools
             if (playerInstance.TryGetComponent(out PlayerPickUp playerPick))
             {
                 playerPick.Construct(_cameraContainer);   
+                
+                _gunFactory.Construct(weaponContainer);
             }
 
             if (playerInstance.TryGetComponent(out PlayerMovement playerMovement))
@@ -120,7 +117,7 @@ namespace Tools
                 playerRotation.Construct(mainCamera);
             }
 
-            playerInstance.transform.position = new Vector3(-200, 1f, -100);
+            playerInstance.transform.position = new Vector3(-200, 1f, -75);
         }
     }
 }
