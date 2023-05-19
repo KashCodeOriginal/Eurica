@@ -57,7 +57,7 @@ namespace Services.Factories.PortalFactory
 
         private void SetUpPortal(Portal portalInstance,  PortalType portalView, Portal oppositePortal, Transform playerTransform)
         {
-            portalInstance.Construct(oppositePortal, playerTransform);
+            portalInstance.Construct(oppositePortal, playerTransform, portalView);
             _pullPortals[portalView] = portalInstance; 
         }
     }

@@ -325,7 +325,10 @@ VisualEffect:
     m_Vector3f:
       m_Array: []
     m_Vector4f:
-      m_Array: []
+      m_Array:
+      - m_Value: {x: 1, y: 0.38385567, z: 0, w: 0}
+        m_Name: MainColor
+        m_Overridden: 1
     m_Uint:
       m_Array: []
     m_Int:
@@ -455,6 +458,9 @@ MonoBehaviour:
   _portalView: {fileID: 3063776145873317128}
   _closeViewTexture: {fileID: 2800000, guid: 6b951e1595102914585bb5a11d5527f9, type: 3}
   teleport: {fileID: 3720218505227559865}
+  _ringVfx: {fileID: 4858958373878935336}
+  _portalColorRed: {r: 1, g: 0.38431373, b: 0, a: 1}
+  _portalColorBlue: {r: 0, g: 0.23137255, b: 1, a: 1}
 --- !u!114 &3720218505227559865
 MonoBehaviour:
   m_ObjectHideFlags: 0
