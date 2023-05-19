@@ -21,4 +21,4 @@ MonoBehaviour:
         m_SubObjectName: 
         m_SubObjectType: 
         m_EditorAssetChanged: 0
-      <NPCSpawnPoint>k__BackingField: {x: 10, y: 10, z: 10}
+      <NPCSpawnPoint>k__BackingField: {x: -200, y: 0, z: -100}
