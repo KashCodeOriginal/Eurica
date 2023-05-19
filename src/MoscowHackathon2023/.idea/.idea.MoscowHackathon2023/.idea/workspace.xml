@@ -4,25 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="796ee9ce-5b7d-4e10-92ca-ade5b0f8e2d9" name="Changes" comment="">
-      
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MoscowHackathon2023/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MoscowHackathon2023/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Data/Static/Guns/Configs/MountRemoveStaticData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Static/Guns/Configs/MountRemoveStaticData.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Data/Static/Guns/Prefabs/UniversalGunView.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Static/Guns/Prefabs/UniversalGunView.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Data/Static/Mount/Prefab/Mount.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Static/Mount/Prefab/Mount.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/StaticData/GunData/MountRemoveData/MountRemoveData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/StaticData/GunData/MountRemoveData/MountRemoveData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Services/Factories/GunsFactory/GunFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Services/Factories/GunsFactory/GunFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Services/Input/PlayerInputAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Services/Input/PlayerInputAction.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Services/Input/PlayerInputAction.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Services/Input/PlayerInputAction.inputactions" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Services/Input/PlayerInputActionReader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Services/Input/PlayerInputActionReader.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit/Mount/MountView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit/Mount/MountView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit/MountRemote/MountRemote.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit/MountRemote/MountRemote.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit/UniversalGun/UniversalGunView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit/UniversalGun/UniversalGunView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/VoiceMessagesData/VoiceMessage.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/VoiceMessagesData/VoiceMessage.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Services/PlaySounds/IPlaySoundsService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Services/PlaySounds/IPlaySoundsService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Services/PlaySounds/PlaySoundsService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Services/PlaySounds/PlaySoundsService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit/TriggerSystem/TriggerTaskHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit/TriggerSystem/TriggerTaskHelper.cs" afterDir="false" />
-    </list>
+    <list default="true" id="796ee9ce-5b7d-4e10-92ca-ade5b0f8e2d9" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,6 +12,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Services/PlaySounds/VolumeLevel.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="2Pyiw7vG8xg4lu4Ul1yqdWYa9qO" />
   <component name="ProjectViewState">
@@ -40,7 +25,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Add-mount-view",
+    "git-widget-placeholder": "main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
