@@ -15,6 +15,7 @@ using Unit.MountRemote;
 using Unit.Player;
 using Unit.Portal;
 using Unit.ScaleGun;
+using Unit.UniversalGun;
 using Unit.WeaponInventory;
 using UnityEditor;
 using UnityEngine;
@@ -38,6 +39,8 @@ namespace Infrastructure.ProjectStateMachine.States
         private GravityGun _gravityGun;
         private ScaleGun _scaleGun;
         private MountRemote _mountRemote;
+        
+        private GameObject _universalGunView;
 
         public GameSetUpState(Bootstrap initializer,IGunFactory gunFactory,
             IAbstractFactory abstractFactory,
@@ -74,10 +77,12 @@ namespace Infrastructure.ProjectStateMachine.States
 
             playerInstance.transform.position = new Vector3(-200, 1, -100);
 
-            _portalGun = await _gunFactory.CreatePortalGun();
-            _gravityGun = await _gunFactory.CreateGravityGun();
-            _scaleGun = await _gunFactory.CreateScaleGun();
-            _mountRemote = await _gunFactory.CreateMountRemove();
+            await _gunFactory.CreateUniversalGunView();
+
+            _portalGun = _gunFactory.CreatePortalGun();
+            _gravityGun = _gunFactory.CreateGravityGun();
+            _scaleGun = _gunFactory.CreateScaleGun();
+            _mountRemote = _gunFactory.CreateMountRemove();
 
             _inventory = new Inventory(_uiFactory, _playerInputActionReader, cameraChildContainer.InventoryContainer);
 
@@ -117,12 +122,7 @@ namespace Infrastructure.ProjectStateMachine.States
                 playerInteraction.Construct(_playerInputActionReader, _cameraContainer);   
             }
             
-            if (playerInstance.TryGetComponent(out PlayerPickUp playerPick))
-            {
-                playerPick.Construct(_cameraContainer);   
-                
-                _gunFactory.Construct(weaponContainer);
-            }
+            _gunFactory.Construct(weaponContainer);
 
             if (playerInstance.TryGetComponent(out PlayerMovement playerMovement))
             {

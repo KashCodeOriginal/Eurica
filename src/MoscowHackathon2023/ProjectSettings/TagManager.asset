@@ -15,7 +15,7 @@ TagManager:
   - Portal
   - Player
   - Teleporting
-  - Walls
+  - WallForPortal
   - InteractiveObjectForGravity
   - PickUp
   - Grabbed

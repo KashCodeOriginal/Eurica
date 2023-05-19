@@ -1,9 +1,9 @@
 ﻿using Data.StaticData.GunData;
-using Data.StaticData.GunData.GravityGunData;
 using Data.StaticData.GunData.MountRemoveData;
 using Services.Containers;
 using Services.Input;
 using Unit.Mount;
+using Unit.UniversalGun;
 using Unit.Weapon;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -15,52 +15,34 @@ namespace Unit.MountRemote
         public BaseGunData GunData  => _mountRemoveData;
 
         public MountRemote(PlayerInputActionReader playerInputActionReader,
-            MountRemoteView mountRemoteView, 
-            MountView mountView,
             ICameraContainer cameraContainer,
-            MountRemoveData mountRemoveData,
-            Transform placeWeaponInHand)
+            MountRemoveData mountRemoveData, UniversalGunView universalGunView)
         {
             _playerInputActionReader = playerInputActionReader;
-            _mountRemoteView = mountRemoteView;
-
-            _mountView = mountView;
+            
             _cameraContainer = cameraContainer;
             _mountRemoveData = mountRemoveData;
-            _placeWeaponInHand = placeWeaponInHand;
-
-            _mountRemoteView.PickedUp.AddListener(PickUp);
-            _mountRemoteView.Released.AddListener(Release);
         }
 
         private readonly PlayerInputActionReader _playerInputActionReader;
-        
-        private readonly MountRemoteView _mountRemoteView;
 
         private GameObject _currentTarget;
 
-        private readonly MountView _mountView;
-
         private readonly ICameraContainer _cameraContainer;
         private readonly BaseGunData _mountRemoveData;
-        private readonly Transform _placeWeaponInHand;
 
-
-        public void PickUp()
+        public void Select()
         {
             _playerInputActionReader.IsLeftButtonClicked += MainFire;
             _playerInputActionReader.IsRightButtonClicked += AlternateFire;
 
-            _currentTarget = Object.Instantiate(_mountView.TargetPrefab, _mountView.transform.position, Quaternion.identity);
+            /*_currentTarget = Object.Instantiate(_mountView.TargetPrefab, _mountView.transform.position, Quaternion.identity);
             
-            _mountView.SetTarget(_currentTarget.transform);
+            _mountView.SetTarget(_currentTarget.transform);*/
             
-            _mountRemoteView.ShowInHand(_placeWeaponInHand);
-            
-            _placeWeaponInHand.gameObject.SetActive(false);
         }
 
-        public void Release()
+        public void Deselect()
         {
             _playerInputActionReader.IsLeftButtonClicked -= MainFire;
             _playerInputActionReader.IsRightButtonClicked -= AlternateFire;
@@ -69,18 +51,14 @@ namespace Unit.MountRemote
             
             Object.Destroy(_currentTarget);
             
-            _mountView.SetTarget(null);
-            
-            _mountRemoteView.HideInHand();
-            
-            _placeWeaponInHand.gameObject.SetActive(true);
+            //_mountView.SetTarget(null);
         }
 
         public void MainFire()
         {
             Cursor.lockState = CursorLockMode.None;
             
-            _mountView.MountCamera.Priority = _cameraContainer.CinemachineBrain.ActiveVirtualCamera.Priority + 1;
+            //_mountView.MountCamera.Priority = _cameraContainer.CinemachineBrain.ActiveVirtualCamera.Priority + 1;
 
             var ray = _cameraContainer.Camera.ScreenPointToRay(Mouse.current.position.ReadValue());
 
@@ -89,14 +67,14 @@ namespace Unit.MountRemote
                 return;
             }
 
-            _mountView.Target.position = hit.point;
+            //_mountView.Target.position = hit.point;
         }
 
         public void AlternateFire()
         {
             Cursor.lockState = CursorLockMode.Locked;
             
-            _mountView.MountCamera.Priority = 0;
+            //_mountView.MountCamera.Priority = 0;
         }
     }
 }

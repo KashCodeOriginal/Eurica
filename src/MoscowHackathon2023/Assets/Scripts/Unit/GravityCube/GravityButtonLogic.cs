@@ -1,5 +1,6 @@
 using Unit.DoorButton;
 using Unit.Player;
+using Unit.ScaleGun;
 using UnityEngine;
 
 namespace Unit.GravityCube
