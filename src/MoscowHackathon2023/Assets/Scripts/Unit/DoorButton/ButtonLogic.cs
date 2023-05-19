@@ -7,9 +7,10 @@ namespace Unit.DoorButton
     {
         protected bool _isPressed = false;
         public UnityAction<bool> OnStateChanged;
-        
+
         [SerializeField] private GravityCubeSettings _buttonGravitySettings;
         [SerializeField] private int _colorId;
+        public int GetColorId() => _colorId;
         [SerializeField] private GravityCubeLogic _gravityCube;
 
         private void Start()
@@ -27,7 +28,7 @@ namespace Unit.DoorButton
         {
             _isPressed = false;
             OnStateChanged?.Invoke(_isPressed);
-        }
+        }        
 
         public Color GetCubeColor()
         {
