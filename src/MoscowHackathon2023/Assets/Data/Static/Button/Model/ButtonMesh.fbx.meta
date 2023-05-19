@@ -18,7 +18,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Static Roof
-    second: {fileID: 2100000, guid: e78d687ae6678df42a8811d68db075b4, type: 2}
+    second: {fileID: 2100000, guid: e873b694bd2512f46aa7d454c7dea850, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -104,7 +104,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.02
+    globalScale: 2
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

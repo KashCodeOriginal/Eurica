@@ -1,14 +1,23 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class ButtonLogic : MonoBehaviour
+namespace Unit.DoorButton
 {
-    protected bool _isPressed = false;
-    public UnityAction<bool> OnStateChanged;
-
-    public virtual void Press()
+    public class ButtonLogic : MonoBehaviour
     {
-        _isPressed = true;
-        OnStateChanged?.Invoke(_isPressed);
+        protected bool _isPressed = false;
+        public UnityAction<bool> OnStateChanged;
+
+        protected virtual void Press()
+        {
+            _isPressed = true;
+            OnStateChanged?.Invoke(_isPressed);
+        }
+
+        protected virtual void Release()
+        {
+            _isPressed = false;
+            OnStateChanged?.Invoke(_isPressed);
+        }
     }
 }
