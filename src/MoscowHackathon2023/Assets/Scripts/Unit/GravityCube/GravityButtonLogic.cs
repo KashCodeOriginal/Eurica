@@ -1,33 +1,65 @@
-using Unit.GravityCube;
+using Unit.DoorButton;
+using Unit.Player;
 using UnityEngine;
 
-namespace Unit.DoorButton
+namespace Unit.GravityCube
 {
     public class GravityButtonLogic : ButtonLogic
     {
         [SerializeField] private DoorLogic _door;
+        [SerializeField] private bool _canPlayerPress;
 
         private void OnTriggerEnter(Collider other)
         {
-            // Detect Gravity Cube colission
-            GravityCubeLogic gravityCube = other.GetComponent<GravityCubeLogic>();
-            if (gravityCube != null && gravityCube._colorId == base.GetColorId())
+            if (other.TryGetComponent(out GravityCubeLogic gravityCubeLogic))
             {
-                if (!_isPressed)
+                if (gravityCubeLogic.ColorId == GetColorId())
                 {
-                    Press();
+                    if (!_isPressed)
+                    {
+                        Press();
+                        return;
+                    }
+                }
+            }
+
+
+            if (other.TryGetComponent(out PlayerMovement player))
+            {
+                if (_canPlayerPress)
+                {
+                    if (!_isPressed)
+                    {
+                        Press();
+                    }
                 }
             }
         }
 
         private void OnTriggerExit(Collider other)
         {
-            GravityCubeLogic gravityCube = other.GetComponent<GravityCubeLogic>();
-            if (gravityCube != null && gravityCube._colorId == base.GetColorId())
+            if (other.TryGetComponent(out GravityCubeLogic gravityCubeLogic))
             {
-                if (_isPressed)
+                if (gravityCubeLogic.ColorId == GetColorId())
                 {
-                    Release();
+                    if (_isPressed)
+                    {
+                        Release();
+                        return;
+                    }
+                }
+            }
+
+
+
+            if (other.TryGetComponent(out PlayerMovement player))
+            {
+                if (_canPlayerPress)
+                {
+                    if (_isPressed)
+                    {
+                        Release();
+                    }
                 }
             }
         }

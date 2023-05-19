@@ -2,6 +2,7 @@
 using Data.AssetsAddressablesConstants;
 using Data.StaticData.PlayerData;
 using Infrastructure.ProjectStateMachine.Base;
+using PixelCrushers.DialogueSystem;
 using Services.Containers;
 using Services.Factories.AbstractFactory;
 using Services.Factories.GunsFactory;
@@ -58,9 +59,12 @@ namespace Tools
             var cameraInstance = await
                 _abstractFactory.CreateInstance<GameObject>(AssetsAddressablesConstants.CAMERA_PREFAB);
             
-            var cameraChildContainer = cameraInstance.GetComponentInChildren<CameraChildContainer>();
+            var demoNPC = await
+                _abstractFactory.CreateInstance<GameObject>(AssetsAddressablesConstants.DEMO_NPC);
             
-            SetUp(playerInstance, cameraInstance, cameraChildContainer.WeaponContainer);
+            var cameraChildContainer = cameraInstance.GetComponentInChildren<CameraChildContainer>();
+
+            SetUp(playerInstance, cameraInstance, cameraChildContainer.WeaponContainer, demoNPC);
 
             _portalGun = await _gunFactory.CreatePortalGun();
             _gravityGun = await _gunFactory.CreateGravityGun();
@@ -79,7 +83,8 @@ namespace Tools
             Cursor.lockState = CursorLockMode.Locked;
         }
 
-        private void SetUp(GameObject playerInstance, GameObject cameraInstance, Transform weaponContainer)
+        private void SetUp(GameObject playerInstance, GameObject cameraInstance, Transform weaponContainer,
+            GameObject demoNPC)
         {
             var virtualCamera = cameraInstance.GetComponentInChildren<CinemachineVirtualCamera>();
             
@@ -118,6 +123,11 @@ namespace Tools
             }
 
             playerInstance.transform.position = new Vector3(-200, 1f, -75);
+
+            if (demoNPC.TryGetComponent(out DialogueSystemTrigger dialogueSystemTrigger))
+            {
+                dialogueSystemTrigger.conversationActor = playerInstance.transform;
+            }
         }
     }
 }
