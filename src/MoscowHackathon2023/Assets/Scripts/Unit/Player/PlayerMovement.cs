@@ -1,3 +1,4 @@
+using System;
 using Data.StaticData.PlayerData;
 using UnityEngine;
 using Services.Input;
@@ -9,13 +10,16 @@ namespace Unit.Player
         [SerializeField] private Rigidbody _rigidbody;
         [SerializeField] private Collider _fullStandingCollider;
         [SerializeField] private Collider _crouchingCollider;
-
+        
         private float _colliderHeight;
 
         private bool _isRunning;
+        private bool _canRun;
         private bool _canJump;
         private bool _isCrouching; 
         private bool _isGrounded = false;
+
+        [SerializeField] private float _currentStamina;
 
         private float _currentSpeed;
         
@@ -48,7 +52,24 @@ namespace Unit.Player
 
         private void Start()
         {
+            _currentStamina = _playerSettings.Stamina;
+            
             _colliderHeight = _fullStandingCollider.bounds.extents.y;
+        }
+
+        private void Update()
+        {
+            _canRun = _currentStamina > 0;
+            
+            if (!_isRunning && _currentStamina <= _playerSettings.Stamina)
+            {
+                _currentStamina += _playerSettings.StaminaRecovery * Time.deltaTime;
+            }
+            
+            if (_isRunning && _canRun)
+            {
+                _currentStamina -= _playerSettings.StaminaWaste * Time.deltaTime;
+            }
         }
 
         private void FixedUpdate()
@@ -76,7 +97,7 @@ namespace Unit.Player
 
             newDirection.y = 0f;
 
-            _rigidbody.AddForce(newDirection * _currentSpeed, ForceMode.Impulse);
+            _rigidbody.AddForce(newDirection.normalized * _currentSpeed, ForceMode.Impulse);
         }
 
         private void Jump()
@@ -144,7 +165,7 @@ namespace Unit.Player
                 _currentSpeed = _playerSettings.ForwardWalkSpeed;
             }
 
-            if (_isRunning && !_isCrouching)
+            if (_isRunning && !_isCrouching && _canRun)
             {
                 _currentSpeed *= _playerSettings.RunMultiplier;
             }

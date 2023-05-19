@@ -47,9 +47,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _buttonGravitySettings: {fileID: 11400000, guid: 3852605b0bc4e464ab4e6101ca94b910, type: 2}
-  _colorId: 0
+  _colorId: 3
   _gravityCube: {fileID: 0}
   _door: {fileID: 0}
+  _canPlayerPress: 1
 --- !u!65 &8945459654663080065
 BoxCollider:
   m_ObjectHideFlags: 0

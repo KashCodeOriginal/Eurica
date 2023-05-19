@@ -5,12 +5,13 @@ namespace Unit.GravityCube
     [SelectionBase]
     public class GravityCubeLogic : MonoBehaviour
     {
-        public int _colorId { get; private set; }
+        public int ColorId { get; private set; }
+        
         [SerializeField] private GravityCubeView _gravityCubeView;
 
         public void Init(int colorId, Color indicationColor)
         {
-            _colorId = colorId;
+            ColorId = colorId;
             _gravityCubeView.SetColor(indicationColor);
         }
     }

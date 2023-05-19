@@ -15,6 +15,8 @@ namespace Data.AssetsAddressablesConstants
         public const string PLAYER_PREFAB = "PlayerPrefab";
         public const string CAMERA_PREFAB = "CameraPrefab";
 
+        public const string DEMO_NPC = "DemoNPC";
+
         public const string PORTAL_PREFAB = "Portal";
         public const string PORTAL_GUN_VIEW_PREFAB = "PortalGunView";
         public const string GRAVITY_GUN_VIEW_PREFAB = "GravityGunView";
