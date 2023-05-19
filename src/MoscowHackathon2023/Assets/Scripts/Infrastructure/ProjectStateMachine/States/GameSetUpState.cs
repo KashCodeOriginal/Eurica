@@ -88,7 +88,7 @@ namespace Infrastructure.ProjectStateMachine.States
             _portalGun = _gunFactory.CreatePortalGun();
             _gravityGun = _gunFactory.CreateGravityGun();
             _scaleGun = _gunFactory.CreateScaleGun();
-            _mountRemote = _gunFactory.CreateMountRemove();
+            _mountRemote = await _gunFactory.CreateMountRemove();
 
             _inventory = new Inventory(_uiFactory, _playerInputActionReader, cameraChildContainer.InventoryContainer);
 

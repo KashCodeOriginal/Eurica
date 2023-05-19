@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp:Data.StaticData.GunData.GravityGunData:MountRemoveData
   <InventoryIcon>k__BackingField: {fileID: 21300000, guid: 3b44085a9adf7c74bb9cd872bcfd0f42, type: 3}
   <IndexWeapon>k__BackingField: 4
+  <DropForce>k__BackingField: 5

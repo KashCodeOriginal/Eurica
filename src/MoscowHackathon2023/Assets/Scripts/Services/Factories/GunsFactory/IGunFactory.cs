@@ -15,7 +15,7 @@ namespace Services.Factories.GunsFactory
         public PortalGun CreatePortalGun();
         public GravityGun CreateGravityGun();
         public ScaleGun CreateScaleGun();
-        public MountRemote CreateMountRemove();
+        public Task<MountRemote> CreateMountRemove();
         public Task<UniversalGunView> CreateUniversalGunView();
     }
 }
