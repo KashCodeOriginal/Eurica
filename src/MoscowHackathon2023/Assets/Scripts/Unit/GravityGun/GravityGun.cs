@@ -156,9 +156,12 @@ namespace Unit.GravityGun
         {
             while (true)
             {
-                _currentRigidbody.velocity =
-                    (_gravityGunView.PointGravity.position -
-                     (_currentRigidbody.transform.position + _currentRigidbody.centerOfMass)) * _gravityGunGravityGunData.CatchPower;
+                if (_currentRigidbody)
+                {
+                    _currentRigidbody.velocity =
+                        (_gravityGunView.PointGravity.position -
+                         (_currentRigidbody.transform.position + _currentRigidbody.centerOfMass)) * _gravityGunGravityGunData.CatchPower;
+                }
                 yield return new WaitForFixedUpdate();
             }
         }

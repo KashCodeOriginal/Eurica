@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 3130288914518766690}
   - component: {fileID: 2992689784793863151}
   - component: {fileID: 2992689784793863148}
-  m_Layer: 0
+  - component: {fileID: 5123148268810849714}
+  m_Layer: 11
   m_Name: ScaleCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,8 +96,20 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.9427048, y: 0.9427048, z: 0.9427048}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5123148268810849714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 640418780824518122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a71dd66c42b7174f864c7d2a7afc388, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3947923884947125302
 GameObject:
   m_ObjectHideFlags: 0
@@ -108,7 +121,7 @@ GameObject:
   - component: {fileID: 4432113193656905356}
   - component: {fileID: 733485181414072617}
   - component: {fileID: 3299216215668561379}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ScaleBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +137,7 @@ Transform:
   m_GameObject: {fileID: 3947923884947125302}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 6606590179481658405}
