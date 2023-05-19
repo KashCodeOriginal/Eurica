@@ -11750,14 +11750,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChangeSceneTrigger
       objectReference: {fileID: 0}
-    - target: {fileID: 1602849521589668789, guid: e1477bb16e5af4d47ba247c399d98af3, type: 3}
-      propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1602849521589668789, guid: e1477bb16e5af4d47ba247c399d98af3, type: 3}
-      propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: MGUInside
-      objectReference: {fileID: 0}
     - target: {fileID: 1602849521589668791, guid: e1477bb16e5af4d47ba247c399d98af3, type: 3}
       propertyPath: m_RootOrder
       value: 18

@@ -16,8 +16,6 @@ namespace Infrastructure.ProjectStateMachine.States
         public async void OnEnter(string arg)
         {
             var asyncOperationHandler = Addressables.LoadSceneAsync(arg);
-            
-            Debug.Log(arg);
 
             await asyncOperationHandler.Task;
             
