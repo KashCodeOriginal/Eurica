@@ -1,8 +1,10 @@
+using Unit.GravityCube;
 using UnityEngine;
 using UnityEngine.Events;
 
 namespace Unit.DoorButton
 {
+    [SelectionBase]
     public class ButtonLogic : MonoBehaviour
     {
         protected bool _isPressed = false;
