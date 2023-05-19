@@ -70,6 +70,7 @@ namespace Unit.GravityGun
                 Debug.LogError("InteractiveObjectForGravity does not have a Rigidbody");
             }
 
+            _currentRigidbody.constraints = RigidbodyConstraints.FreezeRotation;
             _currentRigidbody.gameObject.layer = _grabbedLayer;
         }
 
@@ -81,7 +82,9 @@ namespace Unit.GravityGun
 
             if (_currentRigidbody != null)
             {
+                _currentRigidbody.constraints = RigidbodyConstraints.None;
                 _currentRigidbody.gameObject.layer = _interactiveLayer;
+                _currentRigidbody = null;
             }
         }
 
@@ -95,8 +98,9 @@ namespace Unit.GravityGun
             _coroutineRunner.StopCoroutine(_dragIn);
             _currentRigidbody.velocity = _gravityGunView.PointGravity.forward * _gravityGunGravityGunData.DropPower;
                 
+            _currentRigidbody.constraints = RigidbodyConstraints.None;
             _currentRigidbody.gameObject.layer = _interactiveLayer;
-                
+
             _currentRigidbody = null;
         }
 
