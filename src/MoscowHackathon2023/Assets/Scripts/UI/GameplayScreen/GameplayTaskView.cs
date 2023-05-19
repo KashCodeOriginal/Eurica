@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 namespace UI.GameplayScreen
@@ -6,15 +7,33 @@ namespace UI.GameplayScreen
     {
         private string currentTask;
 
+        [SerializeField] private GameObject taskViewParent;
+        [SerializeField] private TextMeshProUGUI taskOutput;
+
+        private void Awake()
+        {
+            RequestHidingTask();
+        }
+
         public void RequestShowingTask(string task)
         {
             if (currentTask == task)
                 return;
 
             currentTask = task;
+            taskOutput.text = task;
+            taskViewParent.SetActive(true);
 
             Debug.Log("<color=cyan>Show task: </color>" + task);
-            // Show task text
+        }
+
+        public void RequestHidingTask()
+        {
+            taskOutput.text = "";
+            currentTask = "";
+            taskViewParent.SetActive(false);
+
+            Debug.Log("<color=cyan>Request hiding task </color>");
         }
 
         public void RequestTaskFail()

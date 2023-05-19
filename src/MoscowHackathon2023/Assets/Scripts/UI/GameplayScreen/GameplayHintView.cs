@@ -1,3 +1,5 @@
+using TMPro;
+using Unity.Burst.CompilerServices;
 using UnityEngine;
 
 namespace UI.GameplayScreen
@@ -6,24 +8,33 @@ namespace UI.GameplayScreen
     {
         private string currentHint;
 
-        public void RequestShowingHint(string hint, float time = -1)
+        [SerializeField] private GameObject hintViewParent;
+        [SerializeField] private TextMeshProUGUI hintOutput;
+
+        private void Awake()
+        {
+            RequestHidingHint();
+        }
+
+        public void RequestShowingHint(string hint)
         {
             if (currentHint == hint)
                 return;
 
             currentHint = hint;
+            hintOutput.text = hint;
+            hintViewParent.SetActive(true);
 
-            Debug.Log("<color=yellow>Show hint: </color>" + hint + " for " + time + " seconds");
-            // Queue of hints
-
-            // if -1 then show forever
+            Debug.Log("<color=yellow>Show hint: </color>" + hint);
         }
 
         public void RequestHidingHint()
         {
-            Debug.Log("<color=yellow>Request hiding hint</color>");
+            hintOutput.text = "";
+            currentHint = "";
+            hintViewParent.SetActive(false);
 
-            // Hide hint with text from current or queue
+            Debug.Log("<color=yellow>Request hiding hint</color>");
         }
     }
 }

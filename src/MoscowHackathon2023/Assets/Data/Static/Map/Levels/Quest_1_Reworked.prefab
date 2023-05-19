@@ -435,7 +435,7 @@ PrefabInstance:
       propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: "\u042D\u0442\u0443 \u043A\u043D\u043E\u043F\u043A\u0443 \u043C\u043E\u0436\u0435\u0442
         \u043D\u0430\u0436\u0430\u0442\u044C \u0442\u043E\u043B\u044C\u043A\u043E
-        \u0436\u0435\u043B\u0442\u044B\u0439 \u043A\u0443\u0431"
+        \u0437\u0435\u043B\u0435\u043D\u044B\u0439 \u043A\u0443\u0431"
       objectReference: {fileID: 0}
     - target: {fileID: 3085561194875432644, guid: 2bd48415f1ba5f746ae419ab189d431c, type: 3}
       propertyPath: Triggered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
