@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:src/MoscowHackathon2023/Assets/Data/Static/Map/Levels/First/Texture/Pipe_Metallic.png.meta
 guid: f7aa4b4abc60086489089fadd90fd51b
+========
+guid: b769bcf69f8519947bd15f99aff6abea
+>>>>>>>> main:src/MoscowHackathon2023/Assets/Data/Static/Map/Levels/First/Texture/Pipe_Base_Color.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
