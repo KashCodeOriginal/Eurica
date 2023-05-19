@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="796ee9ce-5b7d-4e10-92ca-ade5b0f8e2d9" name="Changes" comment="">
+      
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MoscowHackathon2023/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MoscowHackathon2023/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Data/Static/Guns/Configs/MountRemoveStaticData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Static/Guns/Configs/MountRemoveStaticData.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Data/Static/Guns/Prefabs/UniversalGunView.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Static/Guns/Prefabs/UniversalGunView.prefab" afterDir="false" />
@@ -17,6 +18,10 @@
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit/Mount/MountView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit/Mount/MountView.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit/MountRemote/MountRemote.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit/MountRemote/MountRemote.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit/UniversalGun/UniversalGunView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit/UniversalGun/UniversalGunView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/VoiceMessagesData/VoiceMessage.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/VoiceMessagesData/VoiceMessage.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Services/PlaySounds/IPlaySoundsService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Services/PlaySounds/IPlaySoundsService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Services/PlaySounds/PlaySoundsService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Services/PlaySounds/PlaySoundsService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit/TriggerSystem/TriggerTaskHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit/TriggerSystem/TriggerTaskHelper.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +104,7 @@
       <workItem from="1684435961624" duration="272000" />
       <workItem from="1684436243922" duration="37000" />
       <workItem from="1684437207603" duration="1064000" />
-      <workItem from="1684532767966" duration="297000" />
+      <workItem from="1684532767966" duration="1224000" />
     </task>
     <servers />
   </component>

@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using static UnityEngine.Rendering.DebugUI;
 
 namespace Unit.UniversalGun
 {
@@ -14,8 +15,6 @@ namespace Unit.UniversalGun
         [SerializeField] private GameObject _mountGun;
 
         private GameObject _currentGun;
-        
-        private static readonly int EmissiveExposureWeight = Shader.PropertyToID("_EmissiveExposureWeight");
 
         private void Start()
         {
@@ -27,13 +26,13 @@ namespace Unit.UniversalGun
             ChangeCurrentGunEmission(1);
 
             SetNewGun(gunType);
-            
+
             ChangeCurrentGunEmission(0);
         }
 
         private void ChangeCurrentGunEmission(float value)
         {
-            _currentGun.GetComponent<MeshRenderer>().material.SetFloat(EmissiveExposureWeight, value);
+            _currentGun.GetComponent<UniversalGunLamp>().SetCurrentState(value);
         }
 
         private void SetNewGun(GunTypes gunType)

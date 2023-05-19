@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: VoiceMessage
   m_EditorClassIdentifier: 
   <ID>k__BackingField: 1
-  <AudioClip>k__BackingField: {fileID: 8300000, guid: bf8bf2dc1326c3146a055cab973090fe, type: 3}
+  <AudioClip>k__BackingField: {fileID: 8300000, guid: a274c6bc4fd16304f8762089b1f53fb8, type: 3}
   <Phrases>k__BackingField: []
