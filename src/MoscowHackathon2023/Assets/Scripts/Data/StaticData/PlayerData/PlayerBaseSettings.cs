@@ -15,6 +15,5 @@ namespace Data.StaticData.PlayerData
 
         [field: SerializeField] public float JumpPower { get; private set; }
         
-        [field: SerializeField] public float GroundCheckDistance { get; private set; }
     }
 }

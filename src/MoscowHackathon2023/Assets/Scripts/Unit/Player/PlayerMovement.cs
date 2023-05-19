@@ -14,8 +14,9 @@ namespace Unit.Player
 
         private bool _isRunning;
         private bool _canJump;
-        private bool _isCrouching;
-        
+        private bool _isCrouching; 
+        private bool _isGrounded = false;
+
         private float _currentSpeed;
         
         private Camera _camera;
@@ -58,15 +59,8 @@ namespace Unit.Player
             }
 
             UpdateCurrentSpeed();
-            
-            if (!IsGrounded())
-            {
-                return;
-            }
 
-            _rigidbody.drag = 5f;
-
-            if (_canJump)
+            if (_canJump && IsGrounded())
             {
                 Jump();
             }
@@ -86,9 +80,7 @@ namespace Unit.Player
         }
 
         private void Jump()
-        {
-            _rigidbody.drag = 1f;
-
+        { 
             _rigidbody.velocity = new Vector3(_rigidbody.velocity.x, 0f, _rigidbody.velocity.z);
 
             _rigidbody.AddForce(new Vector3(0f, _playerSettings.JumpPower, 0f), ForceMode.Impulse);
@@ -163,12 +155,31 @@ namespace Unit.Player
             }
         }
 
+        #region Ground Detection
+
         private bool IsGrounded()
         {
-            return Physics.Raycast(transform.position, 
-                Vector3.down, 
-                _colliderHeight + _playerSettings.GroundCheckDistance);
+            return _isGrounded;
         }
+
+        private void OnCollisionStay(Collision collision)
+        {
+            foreach (ContactPoint contact in collision.contacts)
+            {
+                if (Vector3.Dot(contact.normal, Vector3.up) > 0.7f)
+                {
+                    _isGrounded = true;
+                    return;
+                }
+            }
+        }
+
+        private void OnCollisionExit(Collision collision)
+        {
+            _isGrounded = false;
+        }
+
+        #endregion
 
         private void OnDisable()
         {
