@@ -5,7 +5,8 @@ namespace Unit.UniversalGun
 {
     public class UniversalGunView : MonoBehaviour
     {
-        [SerializeField] private Transform _gravityAttachPoint;
+        [field: SerializeField] public Transform GravityAttachPoint { get; private set; }
+        [field: SerializeField] public Transform GuineaPigAttachPoint { get; private set; }
         
         [SerializeField] private GameObject _portalGun;
         [SerializeField] private GameObject _gravityGun;
@@ -29,8 +30,6 @@ namespace Unit.UniversalGun
             
             ChangeCurrentGunEmission(0);
         }
-
-        public Transform GravityAttachPoint => _gravityAttachPoint;
 
         private void ChangeCurrentGunEmission(float value)
         {

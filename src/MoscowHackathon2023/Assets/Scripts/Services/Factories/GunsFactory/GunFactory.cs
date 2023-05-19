@@ -91,7 +91,9 @@ namespace Services.Factories.GunsFactory
         {
             return new MountRemote(_playerInputActionReader, 
                 _cameraContainer, _mountRemoveData, _universalGunView, 
-                await CreateView<MountView>(AssetsAddressablesConstants.MOUNT_VIEW_PREFAB));
+                await CreateView<MountView>(AssetsAddressablesConstants.MOUNT_VIEW_PREFAB), 
+                _positionInHand,
+                _coroutineRunner);
         }
 
         public async Task<UniversalGunView> CreateUniversalGunView()

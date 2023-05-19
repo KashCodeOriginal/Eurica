@@ -34,6 +34,8 @@ namespace Services.Input
 
         public Action<bool> IsPlayerJumpButtonClicked;
 
+        public Action IsPlayerTabClicked;
+
         private void OnEnable()
         {
             if (_playerInputAction != null)
@@ -131,6 +133,14 @@ namespace Services.Input
             if (context.canceled)
             {
                 IsPlayerCrouchButtonClickEnded?.Invoke();
+            }
+        }
+
+        public void OnPlayerTab(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                IsPlayerTabClicked?.Invoke();
             }
         }
     }

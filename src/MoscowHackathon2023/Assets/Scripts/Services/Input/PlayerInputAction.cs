@@ -107,6 +107,15 @@ public partial class @PlayerInputAction : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""PlayerTab"",
+                    ""type"": ""Button"",
+                    ""id"": ""e6d33b54-b50b-4567-bc97-8181dad29473"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -252,6 +261,17 @@ public partial class @PlayerInputAction : IInputActionCollection2, IDisposable
                     ""action"": ""PlayerCrouch"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9afe411e-46ad-4552-8326-8948cf14e4b6"",
+                    ""path"": ""<Keyboard>/tab"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PlayerTab"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -269,6 +289,7 @@ public partial class @PlayerInputAction : IInputActionCollection2, IDisposable
         m_PlayerInput_PlayerAcceleration = m_PlayerInput.FindAction("PlayerAcceleration", throwIfNotFound: true);
         m_PlayerInput_PlayerJump = m_PlayerInput.FindAction("PlayerJump", throwIfNotFound: true);
         m_PlayerInput_PlayerCrouch = m_PlayerInput.FindAction("PlayerCrouch", throwIfNotFound: true);
+        m_PlayerInput_PlayerTab = m_PlayerInput.FindAction("PlayerTab", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -337,6 +358,7 @@ public partial class @PlayerInputAction : IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerInput_PlayerAcceleration;
     private readonly InputAction m_PlayerInput_PlayerJump;
     private readonly InputAction m_PlayerInput_PlayerCrouch;
+    private readonly InputAction m_PlayerInput_PlayerTab;
     public struct PlayerInputActions
     {
         private @PlayerInputAction m_Wrapper;
@@ -350,6 +372,7 @@ public partial class @PlayerInputAction : IInputActionCollection2, IDisposable
         public InputAction @PlayerAcceleration => m_Wrapper.m_PlayerInput_PlayerAcceleration;
         public InputAction @PlayerJump => m_Wrapper.m_PlayerInput_PlayerJump;
         public InputAction @PlayerCrouch => m_Wrapper.m_PlayerInput_PlayerCrouch;
+        public InputAction @PlayerTab => m_Wrapper.m_PlayerInput_PlayerTab;
         public InputActionMap Get() { return m_Wrapper.m_PlayerInput; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -386,6 +409,9 @@ public partial class @PlayerInputAction : IInputActionCollection2, IDisposable
                 @PlayerCrouch.started -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnPlayerCrouch;
                 @PlayerCrouch.performed -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnPlayerCrouch;
                 @PlayerCrouch.canceled -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnPlayerCrouch;
+                @PlayerTab.started -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnPlayerTab;
+                @PlayerTab.performed -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnPlayerTab;
+                @PlayerTab.canceled -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnPlayerTab;
             }
             m_Wrapper.m_PlayerInputActionsCallbackInterface = instance;
             if (instance != null)
@@ -417,6 +443,9 @@ public partial class @PlayerInputAction : IInputActionCollection2, IDisposable
                 @PlayerCrouch.started += instance.OnPlayerCrouch;
                 @PlayerCrouch.performed += instance.OnPlayerCrouch;
                 @PlayerCrouch.canceled += instance.OnPlayerCrouch;
+                @PlayerTab.started += instance.OnPlayerTab;
+                @PlayerTab.performed += instance.OnPlayerTab;
+                @PlayerTab.canceled += instance.OnPlayerTab;
             }
         }
     }
@@ -432,5 +461,6 @@ public partial class @PlayerInputAction : IInputActionCollection2, IDisposable
         void OnPlayerAcceleration(InputAction.CallbackContext context);
         void OnPlayerJump(InputAction.CallbackContext context);
         void OnPlayerCrouch(InputAction.CallbackContext context);
+        void OnPlayerTab(InputAction.CallbackContext context);
     }
 }

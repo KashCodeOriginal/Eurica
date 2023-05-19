@@ -1,5 +1,8 @@
-﻿using Data.StaticData.GunData;
+﻿using System.Collections;
+using System.Timers;
+using Data.StaticData.GunData;
 using Data.StaticData.GunData.MountRemoveData;
+using Infrastructure;
 using Services.Containers;
 using Services.Input;
 using Unit.Mount;
@@ -16,9 +19,11 @@ namespace Unit.MountRemote
 
         public MountRemote(PlayerInputActionReader playerInputActionReader,
             ICameraContainer cameraContainer,
-            MountRemoveData mountRemoveData, 
+            MountRemoveData mountRemoveData,
             UniversalGunView universalGunView,
-            MountView mountView)
+            MountView mountView, 
+            Transform positionInHand,
+            ICoroutineRunner coroutineRunner)
         {
             _playerInputActionReader = playerInputActionReader;
             
@@ -26,29 +31,44 @@ namespace Unit.MountRemote
             _mountRemoveData = mountRemoveData;
             _universalGunView = universalGunView;
             _mountView = mountView;
+            _positionInHand = positionInHand;
+            _coroutineRunner = coroutineRunner;
         }
-
+        
+        private readonly MountRemoveData _mountRemoveData;
+        
         private readonly PlayerInputActionReader _playerInputActionReader;
+        
+        private readonly ICameraContainer _cameraContainer;
+
+        private readonly UniversalGunView _universalGunView;
+
+        private readonly MountView _mountView;
+        private readonly Transform _positionInHand;
+        private readonly ICoroutineRunner _coroutineRunner;
 
         private GameObject _currentTarget;
 
-        private readonly ICameraContainer _cameraContainer;
-        private readonly BaseGunData _mountRemoveData;
-        private readonly UniversalGunView _universalGunView;
-        private readonly MountView _mountView;
+        private bool _isMountCameraActive;
+
+        private bool _isMountInGun = true;
 
         public void Select()
         {
             _playerInputActionReader.IsLeftButtonClicked += MainFire;
             _playerInputActionReader.IsRightButtonClicked += AlternateFire;
+
+            _playerInputActionReader.IsPlayerTabClicked += OnTabClicked;
             
             _universalGunView.ChangeActiveGun(GunTypes.Mount);
 
             _currentTarget = Object.Instantiate(_mountView.TargetPrefab, _mountView.transform.position, Quaternion.identity);
-            
+
+            SetMountToGun();
+
             _mountView.SetTarget(_currentTarget.transform);
             
-            _currentTarget.SetActive(false);
+            _mountView.gameObject.SetActive(false);
         }
 
         public void Deselect()
@@ -56,18 +76,65 @@ namespace Unit.MountRemote
             _playerInputActionReader.IsLeftButtonClicked -= MainFire;
             _playerInputActionReader.IsRightButtonClicked -= AlternateFire;
             
+            _playerInputActionReader.IsPlayerTabClicked -= OnTabClicked;
+            
             AlternateFire();
             
             Object.Destroy(_currentTarget);
             
+            _isMountInGun = true;
+            
             _mountView.SetTarget(null);
+        }
+
+        private void SetMountToGun()
+        {
+            var transform = _mountView.transform;
+
+            transform.position = _universalGunView.GuineaPigAttachPoint.position;
+
+            _mountView.transform.SetParent(_positionInHand);
+        }
+
+        private void OnTabClicked()
+        {
+            if (_mountView.gameObject.activeSelf == false)
+            {
+                return;
+            }
+            
+            if (_isMountCameraActive)
+            {
+                AlternateFire();
+
+                _isMountCameraActive = false;
+                
+                return;
+            }
+            
+            Cursor.lockState = CursorLockMode.None;
+            _mountView.MountCamera.Priority = _cameraContainer.CinemachineBrain.ActiveVirtualCamera.Priority + 1;
+            
+            _isMountCameraActive = true;
         }
 
         public void MainFire()
         {
-            Cursor.lockState = CursorLockMode.None;
+            if (_isMountInGun)
+            {
+                _mountView.transform.SetParent(null);
+                _mountView.gameObject.SetActive(true);
+
+                _mountView.transform.rotation = new Quaternion(0, 0, 0, 0);
             
-            _mountView.MountCamera.Priority = _cameraContainer.CinemachineBrain.ActiveVirtualCamera.Priority + 1;
+                _mountView.MountRigidbody.AddForce(_universalGunView.GuineaPigAttachPoint.forward * _mountRemoveData.DropForce, ForceMode.Impulse);
+
+                _isMountInGun = false;
+
+                _coroutineRunner.StartCoroutine(WaitForMountFall());
+
+                return;
+            }
 
             var ray = _cameraContainer.Camera.ScreenPointToRay(Mouse.current.position.ReadValue());
 
@@ -81,9 +148,17 @@ namespace Unit.MountRemote
 
         public void AlternateFire()
         {
-            Cursor.lockState = CursorLockMode.Locked;
+            _isMountInGun = true;
             
+            Cursor.lockState = CursorLockMode.Locked;
             _mountView.MountCamera.Priority = 0;
+        }
+
+        private IEnumerator WaitForMountFall()
+        {
+            yield return new WaitForSeconds(1f);
+
+            _mountView.AiPath.enabled = true;
         }
     }
 }
