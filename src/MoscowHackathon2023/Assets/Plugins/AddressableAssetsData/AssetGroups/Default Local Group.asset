@@ -52,15 +52,8 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: c82321505cb30d045a4c577aa0463882
-    m_Address: PortalGunView
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PortalGunView
-    - default
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9911d39109caf1d4da3046f7fae6e2e7
-    m_Address: GravityGunView
+    m_Address: UniversalGunView
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -69,18 +62,8 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: ff185df104b4ac4478cd082c791f97c3
-    m_Address: ScaleGunView
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 1695a28fb06243c4e966fd4a288e9f60
     m_Address: Portal
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 03aee60fd627cbb44a6130afee716670
-    m_Address: MountRemoteView
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

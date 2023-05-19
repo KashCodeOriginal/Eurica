@@ -1,6 +1,9 @@
 using UnityEngine;
 
-public class ScaleCubeMK2 : MonoBehaviour
+namespace Unit.ScaleGun
 {
+    public class ScaleCubeMK2 : MonoBehaviour
+    {
     
+    }
 }

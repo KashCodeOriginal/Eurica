@@ -36,7 +36,6 @@ namespace Unit.WeaponInventory
         public async Task ShowPanel() 
         {            
             _inventoryView =  await _uiFactory.CreateInventoryPanel(_placeMarker);
-            Debug.Log(_inventoryView);
         }
 
         public void HidePanel() 
@@ -87,11 +86,11 @@ namespace Unit.WeaponInventory
         {
             if (_currentWeaponed != null) 
             {
-                _currentWeaponed.Release();                
+                _currentWeaponed.Deselect();                
             }
             
             _currentWeaponed = weapon;
-            _currentWeaponed.PickUp();
+            _currentWeaponed.Select();
             
             _inventoryView.ChangeCurrentActiveWeapon(_currentWeaponed.GunData.IndexWeapon);
         }

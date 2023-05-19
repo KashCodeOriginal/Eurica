@@ -10,10 +10,13 @@ namespace Unit.ScaleGun
 
         private void OnDrawGizmos()
         {
-            Gizmos.color = new Color(1f, 0, 0, 0.2f);
+            Gizmos.color = new Color(1f, 0, 0, 1f);
                 
-            Gizmos.DrawCube(transform.position + new Vector3(0, _maxScale / 2 - 0.5f, 0) , 
+            Gizmos.DrawWireCube(transform.position + new Vector3(0, _maxScale / 2 - 0.5f, 0) , 
                 Vector3.one * _maxScale);
+
+            Gizmos.DrawWireCube(transform.position + new Vector3(0, _minScale / 2 - 0.5f, 0),
+            Vector3.one * _minScale);
         }
 
         public void UpScale(float resizeValue)

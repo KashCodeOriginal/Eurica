@@ -5,6 +5,7 @@ using Infrastructure;
 using Services.Containers;
 using Services.Input;
 using Unit.GravityCube;
+using Unit.UniversalGun;
 using Unit.Weapon;
 using UnityEngine;
 
@@ -15,32 +16,28 @@ namespace Unit.GravityGun
         public BaseGunData GunData => _gravityGunGravityGunData;
 
         private Rigidbody _currentRigidbody;
-        private GravityGunView _gravityGunView;
         private ICoroutineRunner _coroutineRunner;
         private Coroutine _dragIn;
         private PlayerInputActionReader _playerInputActionReader;
         private readonly GravityGunData _gravityGunGravityGunData;
         private readonly ICameraContainer _cameraContainer;
-        private readonly Transform _placeWeaponInHand;
+        private readonly UniversalGunView _universalGunView;
+        
         private LayerMask _interactiveLayer = LayerMask.NameToLayer("InteractiveObjectForGravity");
         private LayerMask _grabbedLayer = LayerMask.NameToLayer("Grabbed");
 
 
         public GravityGun(ICoroutineRunner coroutineRunner,
-            GravityGunView gravityGunView,
             PlayerInputActionReader playerInputActionReader,
             GravityGunData gravityGunGravityGunData,
             ICameraContainer cameraContainer,
-            Transform placeWeaponInHand)
+            UniversalGunView universalGunView)
         {
-            _gravityGunView = gravityGunView;
             _coroutineRunner = coroutineRunner;
             _playerInputActionReader = playerInputActionReader;
             _gravityGunGravityGunData = gravityGunGravityGunData;
             _cameraContainer = cameraContainer;
-            _placeWeaponInHand = placeWeaponInHand;
-            _gravityGunView.PickedUp.AddListener(PickUp);
-            _gravityGunView.Released.AddListener(Release);
+            _universalGunView = universalGunView;
         }
 
         public void MainFire()
@@ -113,12 +110,12 @@ namespace Unit.GravityGun
             }
 
             _coroutineRunner.StopCoroutine(_dragIn);
-            _currentRigidbody.velocity = _gravityGunView.PointGravity.forward * _gravityGunGravityGunData.DropPower;
+            _currentRigidbody.velocity = _universalGunView.GravityAttachPoint.forward * _gravityGunGravityGunData.DropPower;
 
             _currentRigidbody.constraints = RigidbodyConstraints.None;
             _currentRigidbody.gameObject.layer = _interactiveLayer;
 
-            float rAng = 15f; // Max random rotation angle.
+            float rAng = 15f;
             Quaternion randomRotation = Quaternion.Euler(Random.Range(-rAng, rAng), Random.Range(-rAng, rAng), Random.Range(-rAng, rAng));
             _currentRigidbody.AddTorque(randomRotation.eulerAngles, ForceMode.Impulse);
 
@@ -130,15 +127,13 @@ namespace Unit.GravityGun
             _currentRigidbody = null;
         }
 
-        public void PickUp()
+        public void Select()
         {
             _playerInputActionReader.IsLeftButtonClicked += MainFire;
             _playerInputActionReader.IsRightButtonClicked += AlternateFire;
-
-            _gravityGunView.ShowInHand(_placeWeaponInHand);
         }
 
-        public void Release()
+        public void Deselect()
         {
             if (_dragIn != null)
             {
@@ -148,8 +143,6 @@ namespace Unit.GravityGun
             _playerInputActionReader.IsLeftButtonClicked -= StopMainFire;
             _playerInputActionReader.IsLeftButtonClicked -= MainFire;
             _playerInputActionReader.IsRightButtonClicked -= AlternateFire;
-
-            _gravityGunView.HideInHand();
         }
 
         private IEnumerator DragIn()
@@ -159,7 +152,7 @@ namespace Unit.GravityGun
                 if (_currentRigidbody)
                 {
                     _currentRigidbody.velocity =
-                        (_gravityGunView.PointGravity.position -
+                    _universalGunView.GravityAttachPoint.position -
                          (_currentRigidbody.transform.position + _currentRigidbody.centerOfMass)) * _gravityGunGravityGunData.CatchPower;
                 }
                 yield return new WaitForFixedUpdate();

@@ -17,11 +17,9 @@ namespace Data.AssetsAddressablesConstants
         public const string DEMO_NPC = "DemoNPC";
 
         public const string PORTAL_PREFAB = "Portal";
-        public const string PORTAL_GUN_VIEW_PREFAB = "PortalGunView";
-        public const string GRAVITY_GUN_VIEW_PREFAB = "GravityGunView";
-        public const string SCALE_GUN_VIEW_PREFAB = "ScaleGunView";
-        public const string MOUNT_REMOTE_VIEW = "MountRemoteView";
         
+        public const string UNIVERSAL_GUN_VIEW = "UniversalGunView";
+
         public const string INVENTORY_PANEL = "InventoryPanel";
         public const string SLOT = "Slot";
 

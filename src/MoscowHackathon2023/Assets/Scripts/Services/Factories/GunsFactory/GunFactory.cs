@@ -10,29 +10,16 @@ using Services.Factories.AbstractFactory;
 using Services.Factories.PortalFactory;
 using Services.Input;
 using Unit.GravityGun;
-using Unit.Mount;
 using Unit.MountRemote;
 using Unit.Portal;
 using Unit.ScaleGun;
-using Unit.WeaponInventory;
+using Unit.UniversalGun;
 using UnityEngine;
 
 namespace Services.Factories.GunsFactory
 {
     public class GunFactory : IGunFactory
     {
-        private readonly IAbstractFactory _abstractFactory;
-        private readonly PlayerInputActionReader _playerInputActionReader;
-        private readonly GravityGunData _gravityGunData;
-        private readonly ScaleGunData _scaleGunData;
-        private readonly PortalGunData _portalGunData;
-        private readonly MountRemoveData _mountRemoveData;
-        private readonly ICameraContainer _cameraContainer;
-        private readonly IPortalFactory _portalFactory;
-        private readonly ICoroutineRunner _coroutineRunner;
-
-        private Transform _positionInHand;
-
         public GunFactory(ICoroutineRunner coroutineRunner,
             IPortalFactory portalFactory,
             IAbstractFactory abstractFactory, 
@@ -54,37 +41,64 @@ namespace Services.Factories.GunsFactory
             _coroutineRunner = coroutineRunner;
         }
 
-        public async Task<PortalGun> CreatePortalGun()
+        private readonly IAbstractFactory _abstractFactory;
+
+        private readonly PlayerInputActionReader _playerInputActionReader;
+
+        private readonly GravityGunData _gravityGunData;
+
+        private readonly ScaleGunData _scaleGunData;
+
+        private readonly PortalGunData _portalGunData;
+
+        private readonly MountRemoveData _mountRemoveData;
+
+        private readonly ICameraContainer _cameraContainer;
+
+        private readonly IPortalFactory _portalFactory;
+
+        private readonly ICoroutineRunner _coroutineRunner;
+
+        private UniversalGunView _universalGunView;
+
+        private Transform _positionInHand;
+
+        public PortalGun CreatePortalGun()
         {
             return new PortalGun(_portalFactory, 
-                await CreateView<PortalGunView>(AssetsAddressablesConstants.PORTAL_GUN_VIEW_PREFAB,
-                    null),
-                _playerInputActionReader, _cameraContainer, _portalGunData, _positionInHand);
+                _playerInputActionReader, _cameraContainer, _portalGunData, _universalGunView);
         }
 
-        public async Task<GravityGun> CreateGravityGun()
+        public GravityGun CreateGravityGun()
         {
-            return new GravityGun(_coroutineRunner, 
-                await CreateView<GravityGunView>(AssetsAddressablesConstants.GRAVITY_GUN_VIEW_PREFAB,
-                    null),
-                _playerInputActionReader, _gravityGunData, _cameraContainer, _positionInHand);
+            return new GravityGun(_coroutineRunner,
+                _playerInputActionReader, _gravityGunData, _cameraContainer, _universalGunView);
         }
         
-        public async Task<ScaleGun> CreateScaleGun()
+        public ScaleGun CreateScaleGun()
         {
             return new ScaleGun(_playerInputActionReader,
-                await CreateView<ScaleGunView>(AssetsAddressablesConstants.SCALE_GUN_VIEW_PREFAB,
-                    null),
-                _scaleGunData, _cameraContainer, _positionInHand);
+                _scaleGunData, _cameraContainer, _universalGunView);
         }
 
-        public async Task<MountRemote> CreateMountRemove()
+        public MountRemote CreateMountRemove()
         {
             return new MountRemote(_playerInputActionReader, 
-                await CreateView<MountRemoteView>(AssetsAddressablesConstants.MOUNT_REMOTE_VIEW,
-                    null),
-                await CreateView<MountView>(AssetsAddressablesConstants.MOUNT_VIEW_PREFAB,
-                    null), _cameraContainer, _mountRemoveData, _positionInHand);
+                _cameraContainer, _mountRemoveData, _universalGunView);
+        }
+
+        public async Task<UniversalGunView> CreateUniversalGunView()
+        {
+            _universalGunView = await CreateView<UniversalGunView>(AssetsAddressablesConstants.UNIVERSAL_GUN_VIEW);
+
+            var transform = _universalGunView.transform;
+
+            transform.parent = _positionInHand;
+            
+            transform.position = _positionInHand.position;
+            transform.rotation = _positionInHand.rotation;
+
+            return _universalGunView;
         }
 
         public void Construct(Transform playerPickPlaceInHand)
@@ -92,7 +106,7 @@ namespace Services.Factories.GunsFactory
             _positionInHand = playerPickPlaceInHand;
         }
 
-        private async Task<T> CreateView<T>(string viewPath, Transform viewTransform)
+        private async Task<T> CreateView<T>(string viewPath)
         {
             var view =
                 await _abstractFactory.CreateInstance<GameObject>(viewPath);

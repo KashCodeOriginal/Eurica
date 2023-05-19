@@ -5,7 +5,7 @@ namespace Unit.Weapon
     public interface IWeaponed
     {
         public BaseGunData GunData { get; }
-        public void PickUp();
-        public void Release();
+        public void Select();
+        public void Deselect();
     }
 }
