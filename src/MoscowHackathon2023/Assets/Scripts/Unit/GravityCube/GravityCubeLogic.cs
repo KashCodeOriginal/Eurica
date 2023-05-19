@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 
 namespace Unit.GravityCube
 {
@@ -6,6 +7,7 @@ namespace Unit.GravityCube
     public class GravityCubeLogic : MonoBehaviour
     {
         public int ColorId { get; private set; }
+        public UnityAction RequestDetach;
         
         [SerializeField] private GravityCubeView _gravityCubeView;
 
@@ -13,6 +15,14 @@ namespace Unit.GravityCube
         {
             ColorId = colorId;
             _gravityCubeView.SetColor(indicationColor);
+        }
+
+        private void OnCollisionEnter(Collision collision)
+        {
+            if (collision.gameObject.layer == LayerMask.NameToLayer("GravityCubeBlocker"))
+            {
+                RequestDetach?.Invoke();
+            }
         }
     }
 }

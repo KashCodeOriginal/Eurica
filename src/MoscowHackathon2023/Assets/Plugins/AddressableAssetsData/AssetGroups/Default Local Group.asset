@@ -27,11 +27,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: efbad64c78ec3034e9fdb265331e7bfc
-    m_Address: Gameplay
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: bf61249f9c69ad947a15782496ea0cfd
     m_Address: GameplayScreen
     m_ReadOnly: 0
@@ -109,13 +104,8 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 303fae77537ad364e97be5951aa67b16
-    m_Address: TestScene1
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 371e112b625e95d4bbea25890a87be5a
-    m_Address: TestScene
+    m_Address: MGUOutside
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

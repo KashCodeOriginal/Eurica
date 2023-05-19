@@ -32,18 +32,13 @@ namespace Infrastructure.ProjectStateMachine.States
             _mainMenuScreenController = mainMenuScreenController;
 
             _mainMenuScreenController.OnPlayButtonClicked += SwitchStateToGameLoading;
-            _mainMenuScreenController.OnTestButtonClicked += SwitchStateToTestScene;
         }
 
         private void SwitchStateToGameLoading()
         {
             Initializer.StateMachine.SwitchState<GameLoadingState>();
         }
-
-        private void SwitchStateToTestScene()
-        {
-            Initializer.StateMachine.SwitchState<TestState>();
-        }
+        
 
         public void OnExit()
         {

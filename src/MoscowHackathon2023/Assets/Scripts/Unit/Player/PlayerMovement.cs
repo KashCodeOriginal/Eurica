@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using Data.StaticData.PlayerData;
 using UnityEngine;
 using Services.Input;
@@ -10,19 +11,18 @@ namespace Unit.Player
         [SerializeField] private Rigidbody _rigidbody;
         [SerializeField] private Collider _fullStandingCollider;
         [SerializeField] private Collider _crouchingCollider;
-        
-        private float _colliderHeight;
 
         private bool _isRunning;
         private bool _canRun;
         private bool _canJump;
-        private bool _isCrouching; 
-        private bool _isGrounded = false;
+        private bool _isCrouching;
+        private bool _isGrounded;
+        private bool _isJumping;
 
         [SerializeField] private float _currentStamina;
 
         private float _currentSpeed;
-        
+
         private Camera _camera;
 
         private Vector2 _currentDirection;
@@ -48,28 +48,42 @@ namespace Unit.Player
 
             _playerInputActionReader.IsPlayerCrouchButtonClickStarted += OnPlayerCrouch;
             _playerInputActionReader.IsPlayerCrouchButtonClickEnded += OnPlayerCrouchEnded;
-        }
-
-        private void Start()
-        {
-            _currentStamina = _playerSettings.Stamina;
             
-            _colliderHeight = _fullStandingCollider.bounds.extents.y;
+            _currentStamina = _playerSettings.Stamina;
         }
-
+        
         private void Update()
         {
-            _canRun = _currentStamina > 0;
+            if (_playerSettings == null)
+            {
+                return;
+            }
             
+            if (!_canRun)
+            {
+                _canRun = _currentStamina > _playerSettings.MinStaminaToRun;
+            }
+            else
+            {
+                _canRun = _isRunning && _currentStamina > 0;
+            }
+
+            if (_currentDirection.magnitude < 0.5f)
+            {
+                _isRunning = false;
+            }
+
             if (!_isRunning && _currentStamina <= _playerSettings.Stamina)
             {
                 _currentStamina += _playerSettings.StaminaRecovery * Time.deltaTime;
             }
-            
-            if (_isRunning && _canRun)
+
+            if (_isRunning && _canRun && !_isJumping)
             {
                 _currentStamina -= _playerSettings.StaminaWaste * Time.deltaTime;
             }
+
+            _currentStamina = Mathf.Clamp(_currentStamina, 0f, _playerSettings.Stamina);
         }
 
         private void FixedUpdate()
@@ -101,7 +115,9 @@ namespace Unit.Player
         }
 
         private void Jump()
-        { 
+        {
+            _isJumping = true;
+            
             _rigidbody.velocity = new Vector3(_rigidbody.velocity.x, 0f, _rigidbody.velocity.z);
 
             _rigidbody.AddForce(new Vector3(0f, _playerSettings.JumpPower, 0f), ForceMode.Impulse);
@@ -135,7 +151,7 @@ namespace Unit.Player
         private void OnPlayerCrouch()
         {
             _isCrouching = true;
-            
+
             _fullStandingCollider.enabled = false;
             _crouchingCollider.enabled = true;
         }
@@ -143,7 +159,7 @@ namespace Unit.Player
         private void OnPlayerCrouchEnded()
         {
             _isCrouching = false;
-            
+
             _fullStandingCollider.enabled = true;
             _crouchingCollider.enabled = false;
         }
@@ -165,7 +181,7 @@ namespace Unit.Player
                 _currentSpeed = _playerSettings.ForwardWalkSpeed;
             }
 
-            if (_isRunning && !_isCrouching && _canRun)
+            if (_isRunning && !_isCrouching && _canRun && !_isJumping)
             {
                 _currentSpeed *= _playerSettings.RunMultiplier;
             }
@@ -185,14 +201,13 @@ namespace Unit.Player
 
         private void OnCollisionStay(Collision collision)
         {
-            foreach (ContactPoint contact in collision.contacts)
+            if (!collision.contacts.Any(contact => Vector3.Dot(contact.normal, Vector3.up) > 0.7f))
             {
-                if (Vector3.Dot(contact.normal, Vector3.up) > 0.7f)
-                {
-                    _isGrounded = true;
-                    return;
-                }
+                return;
             }
+            
+            _isJumping = false;
+            _isGrounded = true;
         }
 
         private void OnCollisionExit(Collision collision)
@@ -208,9 +223,9 @@ namespace Unit.Player
             {
                 return;
             }
-            
+
             _playerInputActionReader.OnMovementInput -= OnMovementInput;
-                
+
             _playerInputActionReader.IsPlayerAccelerationButtonClickStarted -= OnPlayerRun;
             _playerInputActionReader.IsPlayerAccelerationButtonClickEnded -= OnPlayerWalk;
         }
