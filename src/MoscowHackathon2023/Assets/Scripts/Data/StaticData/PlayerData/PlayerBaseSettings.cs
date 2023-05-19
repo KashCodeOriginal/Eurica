@@ -18,6 +18,8 @@ namespace Data.StaticData.PlayerData
         [field: SerializeField] public float StaminaWaste { get; private set; }
         
         [field: SerializeField] public float StaminaRecovery { get; private set; }
+        
+        [field: SerializeField] public float MinStaminaToRun { get; private set; }
 
         [field: SerializeField] public float JumpPower { get; private set; }
         

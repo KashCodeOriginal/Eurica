@@ -3,6 +3,7 @@ using System.Timers;
 using Data.StaticData.GunData;
 using Data.StaticData.GunData.PortalGunData;
 using Services.Containers;
+using Services.Factories.PortalFactory;
 using Unit.Weapon;
 using UnityEngine;
 
@@ -12,7 +13,7 @@ namespace Unit.Portal
     {
         public BaseGunData GunData => _portalGunData;
         
-        private PortalFactory _portalFactory;
+        private IPortalFactory _portalFactory;
         private readonly PortalGunView _portalGunView;
         private readonly PlayerInputActionReader _playerInputActionReader;
         private readonly ICameraContainer _cameraContainer;
@@ -21,7 +22,7 @@ namespace Unit.Portal
         private LayerMask _layerMask = LayerMask.NameToLayer("Walls");
 
 
-        public PortalGun(PortalFactory portalFactory, 
+        public PortalGun(IPortalFactory portalFactory, 
             PortalGunView portalGunView, 
             PlayerInputActionReader playerInputActionReader,
             ICameraContainer cameraContainer,

@@ -15,7 +15,7 @@ namespace Infrastructure.ProjectStateMachine.States
 
         public async void OnEnter()
         {
-            var asyncOperationHandler = Addressables.LoadSceneAsync(AssetsAddressablesConstants.GAMEPLAY_LEVEL);
+            var asyncOperationHandler = Addressables.LoadSceneAsync(AssetsAddressablesConstants.MGU_OUTSIDE);
 
             await asyncOperationHandler.Task;
             

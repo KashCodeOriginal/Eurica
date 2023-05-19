@@ -7,15 +7,19 @@ using Data.StaticData.PlayerData;
 using Services.AssetsAddressables;
 using Services.Containers;
 using Services.Factories.AbstractFactory;
+using Services.Factories.GunsFactory;
+using Services.Factories.PortalFactory;
 using Services.Factories.UIFactory;
 using Services.Input;
+using Tools;
+using Unit.Portal;
 using UnityEditor;
 using UnityEngine;
 using Zenject;
 
 namespace Infrastructure.Zenject.Installers
 {
-    public class ServicesInstaller : MonoInstaller
+    public class ServicesInstaller : MonoInstaller, ICoroutineRunner
     {
         [SerializeField] private PlayerInputActionReader _playerInputActionReader;
         [SerializeField] private GravityGunData _gravityGunData;
@@ -27,9 +31,12 @@ namespace Infrastructure.Zenject.Installers
         public override void InstallBindings()
         {
             BindUIFactory();
+            BindGunFactory();
+            BindPortalFactory();
             BindPlayerSettings();
             BindAbstractFactory();
             BindCameraContainer();
+            BindCoroutineRunner();
             BindGunsStaticDataData();
             BindAddressablesProvider();
             BindPlayerInputActionsReader();
@@ -71,6 +78,21 @@ namespace Infrastructure.Zenject.Installers
         private void BindPlayerSettings()
         {
             Container.Bind<PlayerBaseSettings>().FromInstance(_playerSettings).AsSingle();
+        }
+        
+        private void BindGunFactory()
+        {
+            Container.BindInterfacesTo<GunFactory>().AsSingle();
+        }
+
+        private void BindPortalFactory()
+        {
+            Container.BindInterfacesTo<PortalFactory>().AsSingle();
+        }
+
+        private void BindCoroutineRunner()
+        {
+            Container.Bind<ICoroutineRunner>().FromInstance(this).AsSingle();
         }
     }
 }
