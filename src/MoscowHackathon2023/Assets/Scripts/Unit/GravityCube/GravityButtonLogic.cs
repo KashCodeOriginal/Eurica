@@ -1,17 +1,17 @@
-using System;
+using Unit.GravityCube;
 using UnityEngine;
 
 namespace Unit.DoorButton
 {
-    public class ButtonLogicDoor : ButtonLogic
+    public class GravityButtonLogic : ButtonLogic
     {
         [SerializeField] private DoorLogic _door;
 
         private void OnTriggerEnter(Collider other)
         {
             // Detect Gravity Cube colission
-            if (other.gameObject.layer == LayerMask.NameToLayer("InteractiveObjectForGravity") 
-                || other.gameObject.layer == LayerMask.NameToLayer("Grabbed"))
+            GravityCubeLogic gravityCube = other.GetComponent<GravityCubeLogic>();
+            if (gravityCube != null && gravityCube._colorId == base.GetColorId())
             {
                 if (!_isPressed)
                 {
@@ -22,8 +22,8 @@ namespace Unit.DoorButton
 
         private void OnTriggerExit(Collider other)
         {
-            if (other.gameObject.layer == LayerMask.NameToLayer("InteractiveObjectForGravity") 
-                || other.gameObject.layer == LayerMask.NameToLayer("Grabbed"))
+            GravityCubeLogic gravityCube = other.GetComponent<GravityCubeLogic>();
+            if (gravityCube != null && gravityCube._colorId == base.GetColorId())
             {
                 if (_isPressed)
                 {

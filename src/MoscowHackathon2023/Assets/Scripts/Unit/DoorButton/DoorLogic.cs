@@ -3,6 +3,7 @@ using UnityEngine.Events;
 
 namespace Unit.DoorButton
 {
+    [SelectionBase]
     public class DoorLogic : MonoBehaviour
     {
         [SerializeField] private bool _isOpened;

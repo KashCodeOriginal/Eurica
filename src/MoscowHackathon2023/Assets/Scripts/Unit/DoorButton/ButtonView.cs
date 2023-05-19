@@ -7,14 +7,21 @@ namespace Unit.DoorButton
         [SerializeField] private ButtonLogic _buttonLogic;
         [SerializeField] private Transform _movingPart;
 
+        [Header("Press Movement")]
         [SerializeField] private float _speed = 1f;
         [SerializeField] private Vector3 _localPosUnpressed;
         [SerializeField] private Vector3 _localPosPressed;
         private Vector3 _targetPosition;
 
+        [Header("Color Indication")]
+        [SerializeField] private MeshRenderer meshColorIndication;
+        [SerializeField] private int meshMatId = 0;
+
         private void Start()
         {
             OnStateChanged(false);
+
+            meshColorIndication.materials[meshMatId].SetColor("_EmissiveColor", _buttonLogic.GetCubeColor() * 100);
         }
 
         private void OnEnable()
