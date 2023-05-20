@@ -88,7 +88,7 @@ namespace Infrastructure.ProjectStateMachine.States
             _portalGun = _gunFactory.CreatePortalGun();
             _gravityGun = _gunFactory.CreateGravityGun();
             _scaleGun = _gunFactory.CreateScaleGun();
-            _mountRemote = await _gunFactory.CreateMountRemove();
+            //_mountRemote = await _gunFactory.CreateMountRemove();
 
             _inventory = new Inventory(_uiFactory, _playerInputActionReader, cameraChildContainer.InventoryContainer);
 
@@ -97,7 +97,7 @@ namespace Infrastructure.ProjectStateMachine.States
             _inventory.CollectWeapon(_portalGun);
             _inventory.CollectWeapon(_gravityGun);
             _inventory.CollectWeapon(_scaleGun);
-            _inventory.CollectWeapon(_mountRemote);
+            //_inventory.CollectWeapon(_mountRemote);
 
             Cursor.lockState = CursorLockMode.Locked;
 
