@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63c1a6b84750a5942a178beb21f92ac6, type: 3}
   m_Name: GameplaySettings
   m_EditorClassIdentifier: 
-  <SoundVolume>k__BackingField: 0.5
-  <MouseSens>k__BackingField: 5
-  <Subtitles>k__BackingField: 1
+  SoundVolume: 0.3
+  MouseSens: 5
+  Subtitles: 1
