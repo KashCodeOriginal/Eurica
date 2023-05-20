@@ -151,6 +151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _inventoryContainer: {fileID: 7482734792528154871}
   _weaponContainer: {fileID: 8839376849813819686}
+  _cinemachineInputProvider: {fileID: 3247089286928134877}
 --- !u!1 &7508106654813939697
 GameObject:
   m_ObjectHideFlags: 0
