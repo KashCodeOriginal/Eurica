@@ -14,7 +14,8 @@ public class SettingsManager : MonoBehaviour
         _playerInputActionReader = playerInputActionReader;
     }
 
-    public UnityAction<bool> OnUpdatePanelState;
+    public UnityAction<bool> OnChangePanelState;
+    public UnityAction<bool> OnChangeSettingsData;
     
     [Header("Settings Panel")]
     [SerializeField] private GameObject _settingsPanel;
@@ -71,6 +72,6 @@ public class SettingsManager : MonoBehaviour
     private void UpdatePanelState()
     {
         _settingsPanel.SetActive(_isPanelOpened);
-        OnUpdatePanelState?.Invoke(_isPanelOpened);
+        OnChangePanelState?.Invoke(_isPanelOpened);
     }
 }
