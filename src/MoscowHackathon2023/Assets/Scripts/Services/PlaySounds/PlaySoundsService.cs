@@ -17,9 +17,9 @@ namespace Services.PlaySounds
             _coroutineRunner = coroutineRunner;
         }
 
-        public void PlayOneShot(AudioClip audioClip, VolumeLevel volume, bool canPlayMultiple = false)
+        public void PlayAudioClip(AudioClip audioClip, VolumeLevel volume, bool canPlayMultiple = false, bool playOnlyOnce = true)
         {
-            if (IsNotPlaying(audioClip) || canPlayMultiple)
+            if (IsNotPlaying(audioClip, playOnlyOnce) || canPlayMultiple)
             {
                 float volumeLevel = GetVolumeLevel(volume);
                 _audioSource.PlayOneShot(audioClip, volumeLevel);
@@ -29,9 +29,16 @@ namespace Services.PlaySounds
             }
         }
 
-        private bool IsNotPlaying(AudioClip audioClip)
+        private bool IsNotPlaying(AudioClip audioClip, bool playOnlyOnce)
         {
-            return !_soundStates.ContainsKey(audioClip) || !_soundStates[audioClip];
+            if (playOnlyOnce)
+            {
+                return !_soundStates.ContainsKey(audioClip);
+            }
+            else
+            {
+                return !_soundStates.ContainsKey(audioClip) || !_soundStates[audioClip];
+            }
         }
 
         private IEnumerator WaitForSoundFinish(float soundLength, AudioClip audioClip)
@@ -57,6 +64,11 @@ namespace Services.PlaySounds
         public void SetUp(AudioSource audioSource)
         {
             _audioSource = audioSource;
+        }
+
+        public bool CanPlay(AudioClip audioClip, bool canPlayMultiple = false, bool playOnlyOnce = true)
+        {
+            return (IsNotPlaying(audioClip, playOnlyOnce) || canPlayMultiple);
         }
     }
 }
