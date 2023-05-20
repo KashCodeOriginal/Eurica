@@ -48,7 +48,8 @@ namespace Unit.TriggerSystem
         {
             var voiceMessage = _staticDataService.GetVoiceMessageByID(audioID);
             
-            _playSoundsService.PlayOneShot(voiceMessage.AudioClip, VolumeLevel.VoiceOver);
+            if (voiceMessage != null)
+                _playSoundsService.PlayOneShot(voiceMessage.AudioClip, VolumeLevel.VoiceOver);
         }
 
         public void ChangeScene(string sceneName)
