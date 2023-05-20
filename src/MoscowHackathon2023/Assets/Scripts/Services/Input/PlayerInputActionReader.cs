@@ -35,6 +35,8 @@ namespace Services.Input
         public Action<bool> IsPlayerJumpButtonClicked;
 
         public Action IsPlayerTabClicked;
+        
+        public Action IsPlayerEscClicked;
 
         private void OnEnable()
         {
@@ -141,6 +143,14 @@ namespace Services.Input
             if (context.performed)
             {
                 IsPlayerTabClicked?.Invoke();
+            }
+        }
+
+        public void OnPlayerEsc(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                IsPlayerEscClicked?.Invoke();
             }
         }
     }
