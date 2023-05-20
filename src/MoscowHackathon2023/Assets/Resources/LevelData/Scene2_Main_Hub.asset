@@ -10,15 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 84b255dfc5b4463f9937cd9780b8a956, type: 3}
-  m_Name: MGUOutside
+  m_Name: Scene2_Main_Hub
   m_EditorClassIdentifier: 
-  <LevelName>k__BackingField: MGUOutside
+  <LevelName>k__BackingField: Scene2_Main_Hub
   <PlayerSpawnPoint>k__BackingField: {x: -200, y: 1, z: -100}
-  <LevelNpcData>k__BackingField:
-    <NPCOnLevel>k__BackingField:
-    - <NPCPrefab>k__BackingField:
-        m_AssetGUID: b413b590e6c28814d9b3512606d8602a
-        m_SubObjectName: 
-        m_SubObjectType: 
-        m_EditorAssetChanged: 0
-      <NPCSpawnPoint>k__BackingField: {x: -200, y: 0, z: -100}

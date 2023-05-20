@@ -88,7 +88,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 371e112b625e95d4bbea25890a87be5a
-    m_Address: MGUOutside
+    m_Address: Scene2_Main_Hub
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -99,6 +99,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8190ad46b5cae4d439f76388096439a9
     m_Address: AudioSourcePrefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cb6c65f46edbca74289a6fc87bdf61b5
+    m_Address: Scene1_MGU_Outside
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

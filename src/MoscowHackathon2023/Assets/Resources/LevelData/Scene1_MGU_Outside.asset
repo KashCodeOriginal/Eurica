@@ -10,9 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 84b255dfc5b4463f9937cd9780b8a956, type: 3}
-  m_Name: MGUInside
+  m_Name: Scene1_MGU_Outside
   m_EditorClassIdentifier: 
-  <LevelName>k__BackingField: MGUInside
+  <LevelName>k__BackingField: Scene1_MGU_Outside
   <PlayerSpawnPoint>k__BackingField: {x: -295.6186, y: 2, z: 641.27}
-  <LevelNpcData>k__BackingField:
-    <NPCOnLevel>k__BackingField: []
