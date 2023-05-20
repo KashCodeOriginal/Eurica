@@ -27,22 +27,22 @@ namespace Unit.TriggerSystem
 
         public void ShowHint(string hint)
         {
-            GameplayScreen.Instance.GameplayHintView.RequestShowingHint(hint);
+            GameplayScreen.Instance?.GameplayHintView.RequestShowingHint(hint);
         }
 
         public void HideHint()
         {
-            GameplayScreen.Instance.GameplayHintView.RequestHidingHint();
+            GameplayScreen.Instance?.GameplayHintView.RequestHidingHint();
         }
 
         public void ShowTask(string task)
         {
-            GameplayScreen.Instance.GameplayTaskView.RequestShowingTask(task);
+            GameplayScreen.Instance?.GameplayTaskView.RequestShowingTask(task);
         }
 
         public void FailTask()
         {
-            GameplayScreen.Instance.GameplayTaskView.RequestTaskFail();
+            GameplayScreen.Instance?.GameplayTaskView.RequestTaskFail();
         }
 
         public void StartVoiceMessage(string audioID)
@@ -58,7 +58,7 @@ namespace Unit.TriggerSystem
             {
                 if (_playSoundsService.CanPlay(voiceMessage.AudioClip, canPlayMultiple: false, playOnlyOnce: true))
                 {
-                    GameplayScreen.Instance.GameplaySubtitlesView.ShowSubtitles(voiceMessage);
+                    GameplayScreen.Instance?.GameplaySubtitlesView.ShowSubtitles(voiceMessage);
                     _playSoundsService.PlayAudioClip(voiceMessage.AudioClip, VolumeLevel.VoiceOver);
                 }
             }                

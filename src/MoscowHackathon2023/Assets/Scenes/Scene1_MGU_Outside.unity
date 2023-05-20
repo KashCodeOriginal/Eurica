@@ -91191,6 +91191,7 @@ GameObject:
   - component: {fileID: 7209448431979962457}
   - component: {fileID: 2579456593689612018}
   - component: {fileID: 4533856040188500335}
+  - component: {fileID: 7209448431979962458}
   m_Layer: 0
   m_Name: DP_HWS_RoadBarrier_1
   m_TagString: Untagged
@@ -94086,6 +94087,27 @@ Transform:
   m_Father: {fileID: 7664701062388898177}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 40.837, z: 0}
+--- !u!65 &7209448431979962458
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 485574785316509068}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0718468, y: 0.12336681, z: 0.17135337}
+  m_Center: {x: 0.0010916797, y: 0.061683394, z: -0.00014042853}
 --- !u!23 &7214656606711103046
 MeshRenderer:
   m_ObjectHideFlags: 0
