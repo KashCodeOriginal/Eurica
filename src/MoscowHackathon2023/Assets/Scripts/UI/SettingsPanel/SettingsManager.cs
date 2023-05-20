@@ -1,6 +1,6 @@
+using Data.StaticData.PlayerData;
 using Services.Input;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -15,7 +15,6 @@ public class SettingsManager : MonoBehaviour
     }
 
     public UnityAction<bool> OnChangePanelState;
-    public UnityAction<bool> OnChangeSettingsData;
     
     [Header("Settings Panel")]
     [SerializeField] private GameObject _settingsPanel;
@@ -23,6 +22,7 @@ public class SettingsManager : MonoBehaviour
     private bool _isPanelOpened = false;
 
     [Header("Settings Data")]
+    [SerializeField] private GameplaySettings _gameplaySettings;
     [SerializeField] private Slider _volumeSlider;
     [SerializeField] private TextMeshProUGUI _volumeOutput;
     [SerializeField] private Slider _mouseSensSlider;
@@ -37,8 +37,8 @@ public class SettingsManager : MonoBehaviour
     {
         _playerInputActionReader.IsPlayerEscClicked += EscClicked;
 
-        _volumeSlider.value = PlayerPrefs.GetFloat("GameVolume", 0.5f);
-        _mouseSensSlider.value = PlayerPrefs.GetFloat("MouseSensivity", 8f);
+        _volumeSlider.value = _gameplaySettings.SoundVolume;
+        _mouseSensSlider.value = _gameplaySettings.MouseSens;
     }
 
     private void OnDisable()
@@ -60,13 +60,11 @@ public class SettingsManager : MonoBehaviour
 
     private void Update()
     {
-        PlayerPrefs.SetFloat("GameVolume", _volumeSlider.value);
-        PlayerPrefs.SetFloat("MouseSensivity", _mouseSensSlider.value);
+        _gameplaySettings.SoundVolume = _volumeSlider.value;
+        _gameplaySettings.MouseSens = _mouseSensSlider.value;
 
         _volumeOutput.text = Mathf.RoundToInt(_volumeSlider.value * 100) + "%";
         _mouseSensOutput.text = _mouseSensSlider.value.ToString("0.0");
-
-        // TODO: Invoke OnSettingsData updated.
     }
 
     private void UpdatePanelState()

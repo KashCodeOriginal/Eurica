@@ -2086,7 +2086,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameplayTaskView: {fileID: 906533847288329361}
   GameplayHintView: {fileID: 8182034679670141290}
-  GameplaySubtitlesView: {fileID: 0}
+  GameplaySubtitlesView: {fileID: 579786604444019315}
 --- !u!1 &4695833742992996720
 GameObject:
   m_ObjectHideFlags: 0
@@ -2334,6 +2334,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _settingsPanel: {fileID: 4332192535919418373}
+  _gameplaySettings: {fileID: 11400000, guid: 2e6f6e524f1244447830e6197dba5aa8, type: 2}
   _volumeSlider: {fileID: 160600295902463083}
   _volumeOutput: {fileID: 5131701064711827972}
   _mouseSensSlider: {fileID: 8309763512326028050}
