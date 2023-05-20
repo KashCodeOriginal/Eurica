@@ -150,7 +150,7 @@ namespace Unit.Player
 
         #endregion
 
-        private void OnDisable()
+        private void OnDestroy()
         {
             if (_playerInputActionReader == null)
             {
