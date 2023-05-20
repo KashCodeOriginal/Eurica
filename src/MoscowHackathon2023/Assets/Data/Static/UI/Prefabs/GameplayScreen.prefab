@@ -184,7 +184,7 @@ GameObject:
   - component: {fileID: 8635880373180169979}
   - component: {fileID: 8309763512326028050}
   m_Layer: 0
-  m_Name: Slider
+  m_Name: SliderMouseSens
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -257,10 +257,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 5223347692744041269}
   m_HandleRect: {fileID: 4097417904656585044}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: 1
+  m_MaxValue: 15
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -932,7 +932,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -20, y: 0}
+  m_SizeDelta: {x: -60, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2270205332570953605
 GameObject:
@@ -1041,7 +1041,7 @@ GameObject:
   - component: {fileID: 4883021864048648527}
   - component: {fileID: 7848552341031429314}
   m_Layer: 0
-  m_Name: Value
+  m_Name: ValueMouseSens
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1064,7 +1064,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 450, y: -34}
+  m_AnchoredPosition: {x: 460, y: -34}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8818185458676790113
@@ -1095,7 +1095,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 30%
+  m_text: 5.0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1129,7 +1129,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1197,7 +1197,7 @@ GameObject:
   - component: {fileID: 5131701064711827972}
   - component: {fileID: 6629665471050611661}
   m_Layer: 0
-  m_Name: Value (1)
+  m_Name: ValueVolume
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1220,7 +1220,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 450, y: -34}
+  m_AnchoredPosition: {x: 460, y: -34}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1456039657919119682
@@ -1285,7 +1285,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1629,7 +1629,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -20, y: 0}
+  m_SizeDelta: {x: -60, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &3857255445631086037
 GameObject:
@@ -1662,8 +1662,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8569651970000561296}
-  - {fileID: 1615883868821072807}
   - {fileID: 8635880373180169979}
+  - {fileID: 1615883868821072807}
   m_Father: {fileID: 3021965504045253100}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1917,7 +1917,7 @@ GameObject:
   - component: {fileID: 5830824117702231298}
   - component: {fileID: 160600295902463083}
   m_Layer: 0
-  m_Name: Slider
+  m_Name: SliderVolume
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1991,7 +1991,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 878114171213097549}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 0.99
   m_WholeNumbers: 0
   m_Value: 0.3
   m_OnValueChanged:
@@ -2334,6 +2334,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _settingsPanel: {fileID: 4332192535919418373}
+  _volumeSlider: {fileID: 160600295902463083}
+  _volumeOutput: {fileID: 5131701064711827972}
+  _mouseSensSlider: {fileID: 8309763512326028050}
+  _mouseSensOutput: {fileID: 4883021864048648527}
 --- !u!223 &508240048916906351
 Canvas:
   m_ObjectHideFlags: 0
@@ -2889,8 +2893,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6146641155074928795}
-  - {fileID: 7506983840317815865}
   - {fileID: 1004280602842506072}
+  - {fileID: 7506983840317815865}
   - {fileID: 7422646785794410853}
   m_Father: {fileID: 6299755127768254176}
   m_RootOrder: -1
