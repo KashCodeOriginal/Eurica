@@ -15,10 +15,10 @@ namespace UI.GameplayScreen
 
         private void Awake()
         {
-            RequestHidingSubtitles();
+            HideSubtitles();
         }
 
-        public void RequestShowSubtitles(VoiceMessage voiceMessage)
+        public void ShowSubtitles(VoiceMessage voiceMessage)
         {
             StopAllCoroutines();
 
@@ -46,10 +46,10 @@ namespace UI.GameplayScreen
                 subtitlesViewParent.SetActive(true);
             }
 
-            subtitlesViewParent.SetActive(false);
+            HideSubtitles();
         }
 
-        public void RequestHidingSubtitles()
+        public void HideSubtitles()
         {
             subtitlesViewParent.SetActive(false);
         }

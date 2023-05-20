@@ -1,3 +1,4 @@
+using Data.StaticData.VoicePhrases;
 using Infrastructure;
 using Infrastructure.ProjectStateMachine.States;
 using Services.PlaySounds;
@@ -46,12 +47,21 @@ namespace Unit.TriggerSystem
 
         public void StartVoiceMessage(string audioID)
         {
-            var voiceMessage = _staticDataService.GetVoiceMessageByID(audioID);
+            VoiceMessage voiceMessage = _staticDataService.GetVoiceMessageByID(audioID);
 
-            if (voiceMessage != null)
-                _playSoundsService.PlayAudioClip(voiceMessage.AudioClip, VolumeLevel.VoiceOver);
-            else
+            if (voiceMessage == null)
+            {
                 Debug.LogError("No sound by id " + audioID);
+                return;
+            }
+            else
+            {
+                if (_playSoundsService.CanPlay(voiceMessage.AudioClip, canPlayMultiple: false, playOnlyOnce: true))
+                {
+                    GameplayScreen.Instance.GameplaySubtitlesView.ShowSubtitles(voiceMessage);
+                    _playSoundsService.PlayAudioClip(voiceMessage.AudioClip, VolumeLevel.VoiceOver);
+                }
+            }                
         }
 
         public void ChangeScene(string sceneName)

@@ -65,5 +65,10 @@ namespace Services.PlaySounds
         {
             _audioSource = audioSource;
         }
+
+        public bool CanPlay(AudioClip audioClip, bool canPlayMultiple = false, bool playOnlyOnce = true)
+        {
+            return (IsNotPlaying(audioClip, playOnlyOnce) || canPlayMultiple);
+        }
     }
 }
