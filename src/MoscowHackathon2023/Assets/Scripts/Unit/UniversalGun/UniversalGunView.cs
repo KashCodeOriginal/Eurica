@@ -12,8 +12,7 @@ namespace Unit.UniversalGun
         [SerializeField] private GameObject _portalGun;
         [SerializeField] private GameObject _gravityGun;
         [SerializeField] private GameObject _scaleGun;
-        [SerializeField] private GameObject _mountGun;
-
+        
         private GameObject _currentGun;
 
         private void Start()
@@ -49,7 +48,6 @@ namespace Unit.UniversalGun
                     _currentGun = _scaleGun;
                     break;
                 case GunTypes.Mount:
-                    _currentGun = _mountGun;
                     break;
             }
         }
