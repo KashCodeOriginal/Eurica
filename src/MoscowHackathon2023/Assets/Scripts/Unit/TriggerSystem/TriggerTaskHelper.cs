@@ -49,7 +49,7 @@ namespace Unit.TriggerSystem
             var voiceMessage = _staticDataService.GetVoiceMessageByID(audioID);
 
             if (voiceMessage != null)
-                _playSoundsService.PlayOneShot(voiceMessage.AudioClip, VolumeLevel.VoiceOver);
+                _playSoundsService.PlayAudioClip(voiceMessage.AudioClip, VolumeLevel.VoiceOver);
             else
                 Debug.LogError("No sound by id " + audioID);
         }
