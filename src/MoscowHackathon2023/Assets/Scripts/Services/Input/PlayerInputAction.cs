@@ -116,6 +116,15 @@ public partial class @PlayerInputAction : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""PlayerEsc"",
+                    ""type"": ""Button"",
+                    ""id"": ""ef8ac863-ad08-4728-8cb1-fd5a51d018d0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -272,6 +281,17 @@ public partial class @PlayerInputAction : IInputActionCollection2, IDisposable
                     ""action"": ""PlayerTab"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8930d6eb-992c-4231-91c4-ce5a4b76918d"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PlayerEsc"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -290,6 +310,7 @@ public partial class @PlayerInputAction : IInputActionCollection2, IDisposable
         m_PlayerInput_PlayerJump = m_PlayerInput.FindAction("PlayerJump", throwIfNotFound: true);
         m_PlayerInput_PlayerCrouch = m_PlayerInput.FindAction("PlayerCrouch", throwIfNotFound: true);
         m_PlayerInput_PlayerTab = m_PlayerInput.FindAction("PlayerTab", throwIfNotFound: true);
+        m_PlayerInput_PlayerEsc = m_PlayerInput.FindAction("PlayerEsc", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -359,6 +380,7 @@ public partial class @PlayerInputAction : IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerInput_PlayerJump;
     private readonly InputAction m_PlayerInput_PlayerCrouch;
     private readonly InputAction m_PlayerInput_PlayerTab;
+    private readonly InputAction m_PlayerInput_PlayerEsc;
     public struct PlayerInputActions
     {
         private @PlayerInputAction m_Wrapper;
@@ -373,6 +395,7 @@ public partial class @PlayerInputAction : IInputActionCollection2, IDisposable
         public InputAction @PlayerJump => m_Wrapper.m_PlayerInput_PlayerJump;
         public InputAction @PlayerCrouch => m_Wrapper.m_PlayerInput_PlayerCrouch;
         public InputAction @PlayerTab => m_Wrapper.m_PlayerInput_PlayerTab;
+        public InputAction @PlayerEsc => m_Wrapper.m_PlayerInput_PlayerEsc;
         public InputActionMap Get() { return m_Wrapper.m_PlayerInput; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -412,6 +435,9 @@ public partial class @PlayerInputAction : IInputActionCollection2, IDisposable
                 @PlayerTab.started -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnPlayerTab;
                 @PlayerTab.performed -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnPlayerTab;
                 @PlayerTab.canceled -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnPlayerTab;
+                @PlayerEsc.started -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnPlayerEsc;
+                @PlayerEsc.performed -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnPlayerEsc;
+                @PlayerEsc.canceled -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnPlayerEsc;
             }
             m_Wrapper.m_PlayerInputActionsCallbackInterface = instance;
             if (instance != null)
@@ -446,6 +472,9 @@ public partial class @PlayerInputAction : IInputActionCollection2, IDisposable
                 @PlayerTab.started += instance.OnPlayerTab;
                 @PlayerTab.performed += instance.OnPlayerTab;
                 @PlayerTab.canceled += instance.OnPlayerTab;
+                @PlayerEsc.started += instance.OnPlayerEsc;
+                @PlayerEsc.performed += instance.OnPlayerEsc;
+                @PlayerEsc.canceled += instance.OnPlayerEsc;
             }
         }
     }
@@ -462,5 +491,6 @@ public partial class @PlayerInputAction : IInputActionCollection2, IDisposable
         void OnPlayerJump(InputAction.CallbackContext context);
         void OnPlayerCrouch(InputAction.CallbackContext context);
         void OnPlayerTab(InputAction.CallbackContext context);
+        void OnPlayerEsc(InputAction.CallbackContext context);
     }
 }
