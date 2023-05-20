@@ -47,8 +47,11 @@ namespace Unit.TriggerSystem
         public void StartVoiceMessage(string audioID)
         {
             var voiceMessage = _staticDataService.GetVoiceMessageByID(audioID);
-            
-            _playSoundsService.PlayOneShot(voiceMessage.AudioClip, VolumeLevel.VoiceOver);
+
+            if (voiceMessage != null)
+                _playSoundsService.PlayOneShot(voiceMessage.AudioClip, VolumeLevel.VoiceOver);
+            else
+                Debug.LogError("No sound by id " + audioID);
         }
 
         public void ChangeScene(string sceneName)

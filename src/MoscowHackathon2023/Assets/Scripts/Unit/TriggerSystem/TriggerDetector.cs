@@ -7,6 +7,7 @@ namespace Unit.TriggerSystem
     [RequireComponent(typeof(BoxCollider))]
     public class TriggerDetector : MonoBehaviour
     {
+        [SerializeField] private Color _gizmoColor = Color.green;
         public UnityEvent OnEnter;
         public UnityEvent OnExit;
         
@@ -33,7 +34,7 @@ namespace Unit.TriggerSystem
 
         private void OnDrawGizmos()
         {
-            Gizmos.color = Color.green;
+            Gizmos.color = _gizmoColor;
             var collider = GetComponent<BoxCollider>();
             Gizmos.matrix = transform.localToWorldMatrix;
             Gizmos.DrawWireCube(collider.center, collider.size);
