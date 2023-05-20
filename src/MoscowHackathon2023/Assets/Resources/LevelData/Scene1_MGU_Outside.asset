@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Scene1_MGU_Outside
   m_EditorClassIdentifier: 
   <LevelName>k__BackingField: Scene1_MGU_Outside
-  <PlayerSpawnPoint>k__BackingField: {x: -295.6186, y: 2, z: 641.27}
+  <PlayerSpawnPoint>k__BackingField: {x: -234.284, y: 2, z: 632.85}
