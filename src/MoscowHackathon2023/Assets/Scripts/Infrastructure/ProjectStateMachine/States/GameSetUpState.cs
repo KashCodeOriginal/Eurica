@@ -27,9 +27,8 @@ namespace Infrastructure.ProjectStateMachine.States
         private readonly IGunFactory _gunFactory;
         private readonly IAbstractFactory _abstractFactory;
         private readonly PlayerInputActionReader _playerInputActionReader;
-        private readonly ICameraContainer _cameraContainer;
         private readonly PlayerBaseSettings _playerSettings;
-        private readonly IPlayerContainer _playerContainer;
+        private readonly IGameInstancesContainer _gameInstancesContainer;
         private readonly IStaticDataService _staticDataService;
         private readonly IPlaySoundsService _playSoundsService;
         private readonly IUIFactory _uiFactory;
@@ -45,9 +44,8 @@ namespace Infrastructure.ProjectStateMachine.States
         public GameSetUpState(Bootstrap initializer,IGunFactory gunFactory,
             IAbstractFactory abstractFactory,
             PlayerInputActionReader playerInputActionReader,
-            ICameraContainer cameraContainer,
             PlayerBaseSettings playerSettings,
-            IPlayerContainer playerContainer,
+            IGameInstancesContainer gameInstancesContainer,
             IStaticDataService staticDataService,
             IPlaySoundsService playSoundsService,
             IUIFactory uiFactory)
@@ -56,9 +54,8 @@ namespace Infrastructure.ProjectStateMachine.States
             _gunFactory = gunFactory;
             _abstractFactory = abstractFactory;
             _playerInputActionReader = playerInputActionReader;
-            _cameraContainer = cameraContainer;
             _playerSettings = playerSettings;
-            _playerContainer = playerContainer;
+            _gameInstancesContainer = gameInstancesContainer;
             _staticDataService = staticDataService;
             _playSoundsService = playSoundsService;
             _uiFactory = uiFactory;
@@ -100,18 +97,18 @@ namespace Infrastructure.ProjectStateMachine.States
         private void SetUp(GameObject playerInstance, GameObject cameraInstance, Transform weaponContainer,
             GameObject audioSource)
         {
-            _playerContainer.SetUp(playerInstance, _uiFactory, weaponContainer);
+            _gameInstancesContainer.SetUpPlayer(playerInstance, _uiFactory, weaponContainer);
             
             _playSoundsService.SetUp(audioSource.GetComponent<AudioSource>());
             
             var mainCamera = cameraInstance.GetComponentInChildren<Camera>();
 
-            _cameraContainer.SetUpCamera(cameraInstance.GetComponentInChildren<Camera>(), 
+            _gameInstancesContainer.SetUpCamera(cameraInstance.GetComponentInChildren<Camera>(), 
                 cameraInstance.GetComponentInChildren<CinemachineBrain>());
             
             if (playerInstance.TryGetComponent(out PlayerInteraction playerInteraction))
             {
-                playerInteraction.Construct(_playerInputActionReader, _cameraContainer);   
+                playerInteraction.Construct(_playerInputActionReader, _gameInstancesContainer);   
             }
             
             _gunFactory.Construct(weaponContainer);

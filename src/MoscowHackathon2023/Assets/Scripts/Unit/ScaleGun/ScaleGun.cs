@@ -13,11 +13,12 @@ namespace Unit.ScaleGun
     {
         public ScaleGun(PlayerInputActionReader playerInputActionReader,
             ScaleGunData scaleGunData,
-            ICameraContainer cameraContainer, UniversalGunView universalGunView)
+            IGameInstancesContainer gameInstancesContainer, 
+            UniversalGunView universalGunView)
         {
             _playerInputActionReader = playerInputActionReader;
 
-            _cameraContainer = cameraContainer;
+            _gameInstancesContainer = gameInstancesContainer;
             _universalGunView = universalGunView;
 
             _scaleGunData = scaleGunData;
@@ -31,7 +32,7 @@ namespace Unit.ScaleGun
 
         private readonly ScaleGunData _scaleGunData;
 
-        private readonly ICameraContainer _cameraContainer;
+        private readonly IGameInstancesContainer _gameInstancesContainer;
         private readonly UniversalGunView _universalGunView;
 
         private bool _isLeftMouseHeld;
@@ -42,7 +43,7 @@ namespace Unit.ScaleGun
 
         private void TryFindScalableObject()
         {
-            var ray = _cameraContainer.Camera.ViewportPointToRay(new Vector3(0.5f, 0.5f));
+            var ray = _gameInstancesContainer.Camera.ViewportPointToRay(new Vector3(0.5f, 0.5f));
 
             if (!Physics.Raycast(ray, out var hit))
             {

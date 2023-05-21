@@ -1,20 +1,29 @@
-﻿using Services.Factories.UIFactory;
+﻿using Cinemachine;
+using Services.Factories.UIFactory;
 using UnityEngine;
 
 namespace Services.Containers
 {
-    public class PlayerContainer : IPlayerContainer
+    public class GameInstancesContainer : IGameInstancesContainer
     {
         public GameObject Player { get; private set; }
-
         private IUIFactory _uiFactory;
         private Transform _weaponContainer;
+        
+        public Camera Camera { get; private set; }
+        public CinemachineBrain CinemachineBrain { get; private set; }
 
-        public void SetUp(GameObject player, IUIFactory uiFactory, Transform weaponContainer)
+        public void SetUpPlayer(GameObject player, IUIFactory uiFactory, Transform weaponContainer)
         {
             Player = player;
             _uiFactory = uiFactory;
             _weaponContainer = weaponContainer;
+        }
+        
+        public void SetUpCamera(Camera camera, CinemachineBrain cinemachineBrain)
+        {
+            Camera = camera;
+            CinemachineBrain = cinemachineBrain;
         }
 
         public void TurnOnPlayer()

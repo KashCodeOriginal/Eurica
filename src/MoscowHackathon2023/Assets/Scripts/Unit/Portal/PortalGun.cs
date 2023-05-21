@@ -16,7 +16,7 @@ namespace Unit.Portal
         
         private IPortalFactory _portalFactory;
         private readonly PlayerInputActionReader _playerInputActionReader;
-        private readonly ICameraContainer _cameraContainer;
+        private readonly IGameInstancesContainer _gameInstancesContainer;
         private readonly PortalGunData _portalGunData;
         private readonly UniversalGunView _universalGunView;
         
@@ -25,13 +25,13 @@ namespace Unit.Portal
 
         public PortalGun(IPortalFactory portalFactory,
             PlayerInputActionReader playerInputActionReader,
-            ICameraContainer cameraContainer,
+            IGameInstancesContainer gameInstancesContainer,
             PortalGunData portalGunData,
             UniversalGunView universalGunView)
         {
             _portalFactory = portalFactory;
             _playerInputActionReader = playerInputActionReader;
-            _cameraContainer = cameraContainer;
+            _gameInstancesContainer = gameInstancesContainer;
             _portalGunData = portalGunData;
             _universalGunView = universalGunView;
         }
@@ -58,7 +58,7 @@ namespace Unit.Portal
 
         private void Fire(PortalType portalType) 
         { 
-            var ray = _cameraContainer.Camera.ViewportPointToRay(new Vector3(0.5f, 0.5f));//Center the screen in the crosshairs
+            var ray = _gameInstancesContainer.Camera.ViewportPointToRay(new Vector3(0.5f, 0.5f));//Center the screen in the crosshairs
 
             if (!Physics.Raycast(ray, out var hit))
             {

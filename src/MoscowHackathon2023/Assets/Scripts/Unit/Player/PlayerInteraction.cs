@@ -9,11 +9,11 @@ namespace Unit.Player
     public class PlayerInteraction : MonoBehaviour
     {
         public void Construct(PlayerInputActionReader playerInputActionReader, 
-            ICameraContainer cameraContainer)
+            IGameInstancesContainer cameraContainer)
         {
             _playerInputActionReader = playerInputActionReader;
 
-            _cameraContainer = cameraContainer;
+            _gameInstancesContainer = cameraContainer;
 
             _playerInputActionReader.IsPlayerInteractionButtonClicked += IsPlayerInteract;
         }
@@ -22,16 +22,16 @@ namespace Unit.Player
 
         private PlayerInputActionReader _playerInputActionReader;
 
-        private ICameraContainer _cameraContainer;
+        private IGameInstancesContainer _gameInstancesContainer;
 
         private void Update()
         {
-            if (_cameraContainer == null)
+            if (_gameInstancesContainer == null)
             {
                 return;
             }
             
-            var ray = _cameraContainer.Camera.ViewportPointToRay(new Vector3(0.5f, 0.5f));
+            var ray = _gameInstancesContainer.Camera.ViewportPointToRay(new Vector3(0.5f, 0.5f));
 
             if (!Physics.Raycast(ray, out var hit))
             {

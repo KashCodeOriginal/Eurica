@@ -18,7 +18,7 @@ namespace Unit.MountRemote
         public BaseGunData GunData  => _mountRemoveData;
 
         public MountRemote(PlayerInputActionReader playerInputActionReader,
-            ICameraContainer cameraContainer,
+            IGameInstancesContainer gameInstancesContainer,
             MountRemoveData mountRemoveData,
             UniversalGunView universalGunView,
             MountView mountView, 
@@ -27,7 +27,7 @@ namespace Unit.MountRemote
         {
             _playerInputActionReader = playerInputActionReader;
             
-            _cameraContainer = cameraContainer;
+            _gameInstancesContainer = gameInstancesContainer;
             _mountRemoveData = mountRemoveData;
             _universalGunView = universalGunView;
             _mountView = mountView;
@@ -39,7 +39,7 @@ namespace Unit.MountRemote
         
         private readonly PlayerInputActionReader _playerInputActionReader;
         
-        private readonly ICameraContainer _cameraContainer;
+        private readonly IGameInstancesContainer _gameInstancesContainer;
 
         private readonly UniversalGunView _universalGunView;
 
@@ -113,7 +113,7 @@ namespace Unit.MountRemote
             }
             
             Cursor.lockState = CursorLockMode.None;
-            _mountView.MountCamera.Priority = _cameraContainer.CinemachineBrain.ActiveVirtualCamera.Priority + 1;
+            _mountView.MountCamera.Priority = _gameInstancesContainer.CinemachineBrain.ActiveVirtualCamera.Priority + 1;
             
             _isMountCameraActive = true;
         }
@@ -136,7 +136,7 @@ namespace Unit.MountRemote
                 return;
             }
 
-            var ray = _cameraContainer.Camera.ScreenPointToRay(Mouse.current.position.ReadValue());
+            var ray = _gameInstancesContainer.Camera.ScreenPointToRay(Mouse.current.position.ReadValue());
 
             if (!Physics.Raycast(ray, out var hit))
             {

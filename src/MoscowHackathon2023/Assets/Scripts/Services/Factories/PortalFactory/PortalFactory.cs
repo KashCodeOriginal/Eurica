@@ -10,7 +10,7 @@ namespace Services.Factories.PortalFactory
     public class PortalFactory : IPortalFactory
     {
         private IAbstractFactory _abstractFactory;
-        private readonly IPlayerContainer _playerContainer;
+        private readonly IGameInstancesContainer _gameInstancesContainer;
 
         private Dictionary<PortalType, Portal> _pullPortals = new();        
 
@@ -18,10 +18,10 @@ namespace Services.Factories.PortalFactory
         
         private LayerMask _portalLayer = LayerMask.NameToLayer("Portal");
 
-        public PortalFactory(IAbstractFactory abstractFactory, IPlayerContainer playerContainer)
+        public PortalFactory(IAbstractFactory abstractFactory, IGameInstancesContainer gameInstancesContainer)
         {
             _abstractFactory = abstractFactory;
-            _playerContainer = playerContainer;
+            _gameInstancesContainer = gameInstancesContainer;
         }
 
         public async void CreatePortal(Vector3 position, Vector3 face, PortalType portalView)
@@ -52,7 +52,7 @@ namespace Services.Factories.PortalFactory
             createdPortal.transform.position = position;
             createdPortal.transform.rotation = Quaternion.FromToRotation(Vector3.forward, face);
             
-            SetUpPortal(createdPortal, portalView, oppositePortal, _playerContainer.Player.transform);
+            SetUpPortal(createdPortal, portalView, oppositePortal, _gameInstancesContainer.Player.transform);
         }
 
         private void SetUpPortal(Portal portalInstance,  PortalType portalView, Portal oppositePortal, Transform playerTransform)
