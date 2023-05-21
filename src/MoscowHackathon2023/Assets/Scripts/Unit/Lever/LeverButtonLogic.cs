@@ -1,4 +1,5 @@
 using System.Collections;
+using Unit.Base;
 using Unit.TriggerSystem;
 using UnityEngine;
 using UnityEngine.Events;
@@ -6,14 +7,16 @@ using UnityEngine.Events;
 namespace Unit.Lever
 {
     [RequireComponent(typeof(TriggerTaskHelper))]
-    public class LeverButtonLogic : MonoBehaviour
+    [RequireComponent(typeof(BoxCollider))]
+    public class LeverButtonLogic : MonoBehaviour, IInteractable
     {
-        public UnityAction OnPress;
+        public UnityEvent OnPress;
         public UnityAction<bool> OnStateChanged;
         private bool _canPress = true;
         private bool _pressing = false;
         [SerializeField] private float _pressTime = 0.2f;
         [SerializeField] private float _releaseTime = 1f;
+        [SerializeField] private Color _gizmoColor;
 
         public void TryPressing()
         {
@@ -26,6 +29,11 @@ namespace Unit.Lever
             {
                 // Wait till animation ends.
             }
+        }
+
+        public void Interact()
+        {
+            TryPressing();
         }
 
         private IEnumerator PressAndReturn()
@@ -49,14 +57,14 @@ namespace Unit.Lever
             _canPress = true;
         }
 
-        public void Press()
+        private void Press()
         {
             _pressing = true;
             OnPress?.Invoke();
             OnStateChanged?.Invoke(true);
         }
 
-        public void Release()
+        private void Release()
         {
             _pressing = false;
             OnStateChanged?.Invoke(false);
@@ -68,6 +76,14 @@ namespace Unit.Lever
                 return 1f / _pressTime;
             else
                 return 1f / _releaseTime;
+        }
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = _gizmoColor;
+            var collider = GetComponent<BoxCollider>();
+            Gizmos.matrix = transform.localToWorldMatrix;
+            Gizmos.DrawWireCube(collider.center, collider.size);
         }
     }
 }
