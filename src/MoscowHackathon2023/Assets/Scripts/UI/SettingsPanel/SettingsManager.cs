@@ -1,8 +1,9 @@
+using Cinemachine;
 using Data.StaticData.PlayerData;
 using Services.Containers;
 using Services.Input;
+using Services.PlaySounds;
 using TMPro;
-using Unit.CameraContainer;
 using Unit.Player;
 using UnityEngine;
 using UnityEngine.Events;
@@ -15,10 +16,12 @@ namespace UI.SettingsPanel
     {
         [Inject]
         public void Construct(PlayerInputActionReader playerInputActionReader,
-            IGameInstancesContainer gameInstancesContainer)
+            IGameInstancesContainer gameInstancesContainer,
+            IPlaySoundsService playSoundsService)
         {
             _playerInputActionReader = playerInputActionReader;
             _gameInstancesContainer = gameInstancesContainer;
+            _playSoundsService = playSoundsService;
         }
 
         public UnityAction<bool> OnChangePanelState;
@@ -29,6 +32,7 @@ namespace UI.SettingsPanel
         private bool _isPanelOpened = false;
 
         private IGameInstancesContainer _gameInstancesContainer;
+        private IPlaySoundsService _playSoundsService;
 
         [Header("Settings Data")]
         [SerializeField] private GameplaySettings _gameplaySettings;
@@ -36,10 +40,17 @@ namespace UI.SettingsPanel
         [SerializeField] private TextMeshProUGUI _volumeOutput;
         [SerializeField] private Slider _mouseSensSlider;
         [SerializeField] private TextMeshProUGUI _mouseSensOutput;
+
+        [SerializeField] private Button _applyButton;
     
         private void Awake()
         {
             _settingsPanel.SetActive(false);
+        }
+
+        private void Start()
+        {
+            ApplyCurrentSettings();
         }
 
         private void OnEnable()
@@ -48,11 +59,36 @@ namespace UI.SettingsPanel
 
             _volumeSlider.value = _gameplaySettings.SoundVolume;
             _mouseSensSlider.value = _gameplaySettings.MouseSens;
+            
+            _applyButton.onClick.AddListener(ApplyCurrentSettings);
         }
 
         private void OnDisable()
         {
             _playerInputActionReader.IsPlayerEscClicked -= EscClicked;
+            
+            _applyButton.onClick.AddListener(ApplyCurrentSettings);
+        }
+
+        private void Update()
+        {
+            _gameplaySettings.SoundVolume = _volumeSlider.value;
+            _gameplaySettings.MouseSens = _mouseSensSlider.value;
+
+            _volumeOutput.text = Mathf.RoundToInt(_volumeSlider.value * 100) + "%";
+            _mouseSensOutput.text = _mouseSensSlider.value.ToString("0.0");
+        }
+        
+        private void ApplyCurrentSettings()
+        {
+            _playSoundsService.SetUpVolumeMultiplier(_gameplaySettings.SoundVolume);
+            
+            var cinemachineComponent = _gameInstancesContainer.Player.GetComponent<PlayerChildContainer>()
+                .CinemachineVirtualCamera. GetCinemachineComponent<CinemachinePOV>();
+
+            cinemachineComponent.m_HorizontalAxis.m_MaxSpeed = _gameplaySettings.MouseSens / 100f;
+            cinemachineComponent.m_VerticalAxis.m_MaxSpeed = _gameplaySettings.MouseSens / 100f;
+
         }
 
         private void EscClicked()
@@ -65,15 +101,6 @@ namespace UI.SettingsPanel
         {
             _isPanelOpened = false;
             UpdatePanelState();
-        }
-
-        private void Update()
-        {
-            _gameplaySettings.SoundVolume = _volumeSlider.value;
-            _gameplaySettings.MouseSens = _mouseSensSlider.value;
-
-            _volumeOutput.text = Mathf.RoundToInt(_volumeSlider.value * 100) + "%";
-            _mouseSensOutput.text = _mouseSensSlider.value.ToString("0.0");
         }
 
         private void UpdatePanelState()
