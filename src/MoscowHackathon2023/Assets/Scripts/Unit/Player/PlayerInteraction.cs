@@ -54,7 +54,7 @@ namespace Unit.Player
             _canInteract = condition;
         }
 
-        private void OnDisable()
+        private void OnDestroy()
         {
             _playerInputActionReader.IsPlayerInteractionButtonClicked -= IsPlayerInteract;
         }

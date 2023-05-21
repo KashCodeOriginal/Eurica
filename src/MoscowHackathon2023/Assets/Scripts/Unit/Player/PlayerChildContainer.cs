@@ -1,11 +1,12 @@
+using Cinemachine;
 using UnityEngine;
 
 namespace Unit.Player
 {
     public class PlayerChildContainer : MonoBehaviour
     {
-        [SerializeField] private Transform _headTransform;
+        [SerializeField] private CinemachineInputProvider _cinemachineInputProvider;
 
-        public Transform HeadTransform => _headTransform;   
+        public CinemachineInputProvider CinemachineInputProvider => _cinemachineInputProvider;   
     }
 }
