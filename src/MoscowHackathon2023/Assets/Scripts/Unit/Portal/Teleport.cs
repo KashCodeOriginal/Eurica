@@ -37,8 +37,6 @@ namespace Unit.Portal
             if (rigidbodyObject.CompareTag("Player"))
             {
                 var turnAngle = Quaternion.Angle(_other.transform.rotation, rigidbodyObject.transform.rotation);
-                
-                rigidbodyObject.GetComponent<PlayerRotation>().ForceTurnAngle(turnAngle);
 
                 rigidBodyTransform.position = _other.transform.position + (_other.transform.forward * _offset);
                 

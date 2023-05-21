@@ -10,6 +10,10 @@ namespace UI.GameplayScreen
         public GameplayHintView GameplayHintView;
         public GameplaySubtitlesView GameplaySubtitlesView;
 
+        [SerializeField] private Transform _inventoryTransform;
+
+        public Transform InventoryTransform => _inventoryTransform;
+
         private void Awake()
         {
             if (Instance == null)

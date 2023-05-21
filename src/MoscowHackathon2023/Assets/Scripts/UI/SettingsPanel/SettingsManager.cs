@@ -87,13 +87,13 @@ namespace UI.SettingsPanel
             if (_isPanelOpened)
             {
                 _playerContainer.Player.GetComponent<PlayerMovement>().enabled = false;
-                _cameraContainer.Camera.GetComponentInParent<CameraChildContainer>().CinemachineInputProvider.enabled = false;
+                _playerContainer.Player.GetComponent<PlayerChildContainer>().CinemachineInputProvider.enabled = false;
                 Cursor.lockState = CursorLockMode.None;
                 return;
             }
             
             _playerContainer.Player.GetComponent<PlayerMovement>().enabled = true;
-            _cameraContainer.Camera.GetComponentInParent<CameraChildContainer>().CinemachineInputProvider.enabled = true;
+            _playerContainer.Player.GetComponent<PlayerChildContainer>().CinemachineInputProvider.enabled = true;
             Cursor.lockState = CursorLockMode.Locked;
         }
     }
