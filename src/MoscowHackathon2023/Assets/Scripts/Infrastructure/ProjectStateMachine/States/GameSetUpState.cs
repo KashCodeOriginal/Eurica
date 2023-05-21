@@ -77,9 +77,6 @@ namespace Infrastructure.ProjectStateMachine.States
                     _abstractFactory.CreateInstance<GameObject>(AssetsAddressablesConstants.AUDIO_SOURCE_PREFAB);
 
                 var cameraChildContainer = cameraInstance.GetComponentInChildren<CameraChildContainer>();
-                
-                playerInstance.SetActive(false);
-                cameraChildContainer.WeaponContainer.gameObject.SetActive(false);
 
                 SetUp(playerInstance, cameraInstance, cameraChildContainer.WeaponContainer, audioSourceInstance);
 
@@ -87,6 +84,9 @@ namespace Infrastructure.ProjectStateMachine.States
                 playerInstance.transform.rotation = levelData.PlayerSpawnRotation;
 
                 await _gunFactory.CreateUniversalGunView();
+                
+                playerInstance.SetActive(false);
+                cameraChildContainer.WeaponContainer.gameObject.SetActive(false);
 
                 Cursor.lockState = CursorLockMode.Locked;
             }

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace UI.GameplayScreen
 {
@@ -11,8 +12,10 @@ namespace UI.GameplayScreen
         public GameplaySubtitlesView GameplaySubtitlesView;
 
         [SerializeField] private Transform _inventoryTransform;
+        [SerializeField] private GameObject _staticCanvas;
 
         public Transform InventoryTransform => _inventoryTransform;
+        public GameObject StaticCanvas => _staticCanvas;
 
         private void Awake()
         {

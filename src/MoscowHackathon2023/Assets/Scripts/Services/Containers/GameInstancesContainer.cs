@@ -1,5 +1,6 @@
 ﻿using Cinemachine;
 using Services.Factories.UIFactory;
+using UI.GameplayScreen;
 using UnityEngine;
 
 namespace Services.Containers
@@ -9,7 +10,6 @@ namespace Services.Containers
         public GameObject Player { get; private set; }
         private IUIFactory _uiFactory;
         private Transform _weaponContainer;
-        
         public Camera Camera { get; private set; }
         public CinemachineBrain CinemachineBrain { get; private set; }
 
@@ -29,15 +29,27 @@ namespace Services.Containers
         public void TurnOnPlayer()
         {
             Player.SetActive(true);
-            _weaponContainer.gameObject.SetActive(true);
+            _uiFactory.GameplayScreen.GetComponent<GameplayScreen>().InventoryTransform.gameObject.SetActive(true);
+            _uiFactory.GameplayScreen.GetComponent<GameplayScreen>().StaticCanvas.SetActive(true);
             _uiFactory.GameplayScreen.SetActive(true);
         }
 
         public void TurnOffPlayer()
         {
             Player.SetActive(false);
-            _weaponContainer.gameObject.SetActive(false);
+            _uiFactory.GameplayScreen.GetComponent<GameplayScreen>().InventoryTransform.gameObject.SetActive(false);
+            _uiFactory.GameplayScreen.GetComponent<GameplayScreen>().StaticCanvas.SetActive(false);
             _uiFactory.GameplayScreen.SetActive(false);
+        }
+
+        public void TurnOnWeapon()
+        {
+            _weaponContainer.gameObject.SetActive(true);
+        }
+
+        public void TurnOffWeapon()
+        {
+            _weaponContainer.gameObject.SetActive(false);
         }
     }
 }

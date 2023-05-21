@@ -13,6 +13,8 @@ namespace Services.Containers
         public void SetUpPlayer(GameObject player, IUIFactory uiFactory, Transform weaponContainer);
         public void SetUpCamera(Camera camera, CinemachineBrain cinemachineBrain);
         public void TurnOnPlayer();
-        public void TurnOffPlayer();
+        public void TurnOffPlayer();  
+        public void TurnOnWeapon();
+        public void TurnOffWeapon();
     }
 }
