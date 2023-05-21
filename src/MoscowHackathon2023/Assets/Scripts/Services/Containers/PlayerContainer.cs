@@ -19,16 +19,16 @@ namespace Services.Containers
 
         public void TurnOnPlayer()
         {
-            Player.SetActive(false);
-            _weaponContainer.gameObject.SetActive(false);
-            _uiFactory.GameplayScreen.SetActive(false);
+            Player.SetActive(true);
+            _weaponContainer.gameObject.SetActive(true);
+            _uiFactory.GameplayScreen.SetActive(true);
         }
 
         public void TurnOffPlayer()
         {
-            Player.SetActive(true);
-            _weaponContainer.gameObject.SetActive(true);
-            _uiFactory.GameplayScreen.SetActive(true);
+            Player.SetActive(false);
+            _weaponContainer.gameObject.SetActive(false);
+            _uiFactory.GameplayScreen.SetActive(false);
         }
     }
 }
