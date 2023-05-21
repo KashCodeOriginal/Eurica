@@ -11,10 +11,17 @@ namespace Services.PlaySounds
         private ICoroutineRunner _coroutineRunner;
         private Dictionary<AudioClip, bool> _soundStates;
 
+        private float _currentVolumeMultiplier;
+
         public PlaySoundsService(ICoroutineRunner coroutineRunner)
         {
             _soundStates = new Dictionary<AudioClip, bool>();
             _coroutineRunner = coroutineRunner;
+        }
+
+        public void SetUpVolumeMultiplier(float volume)
+        {
+            _currentVolumeMultiplier = volume;
         }
 
         public void PlayAudioClip(AudioClip audioClip, VolumeLevel volume, bool canPlayMultiple = false, bool playOnlyOnce = true)
@@ -47,11 +54,11 @@ namespace Services.PlaySounds
             _soundStates[audioClip] = false;
         }
 
-        private static float GetVolumeLevel(VolumeLevel volume)
+        private float GetVolumeLevel(VolumeLevel volume)
         {
-            float OVERALL_VOLUME = 0.3f; // TODO: Add to settings.
-
-            var volumeLevel = OVERALL_VOLUME * volume switch
+            
+            
+            var volumeLevel = _currentVolumeMultiplier * volume switch
             {
                 VolumeLevel.Default => 1f,
                 VolumeLevel.VoiceOver => 0.5f,
