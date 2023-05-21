@@ -34,7 +34,6 @@ namespace Unit.Lever
             _targetTransform = state ? _transformPressed : _transformUnpressed;
         }
 
-
         private void Update()
         {
             _speed = _leverLogic.GetSpeed();
@@ -43,8 +42,8 @@ namespace Unit.Lever
                 && _movingPart.rotation == _targetTransform.rotation)
                 return;
 
-            _movingPart.localPosition = Vector3.Lerp(_movingPart.localPosition, _targetTransform.localPosition, _speed * Time.deltaTime);
-            _movingPart.localRotation = Quaternion.Lerp(_movingPart.localRotation, _targetTransform.localRotation, _speed * Time.deltaTime);
+            _movingPart.position = Vector3.Lerp(_movingPart.position, _targetTransform.position, _speed * Time.deltaTime);
+            _movingPart.rotation = Quaternion.Lerp(_movingPart.rotation, _targetTransform.rotation, _speed * Time.deltaTime);
         }
     }
 }

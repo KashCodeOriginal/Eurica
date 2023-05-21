@@ -228,8 +228,8 @@ MonoBehaviour:
           m_StringArgument: "\u0412\u043E\u0439\u0442\u0438 \u0432 \u041C\u0413\u0423"
           m_BoolArgument: 0
         m_CallState: 2
-  _pressTime: 0.2
-  _releaseTime: 0.4
+  _pressTime: 0.3
+  _releaseTime: 0.7
   _gizmoColor: {r: 1, g: 0, b: 0.15532255, a: 1}
 --- !u!114 &936311286590493722
 MonoBehaviour:

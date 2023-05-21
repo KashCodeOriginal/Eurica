@@ -38,15 +38,21 @@ namespace Unit.Lever
 
         private IEnumerator PressAndReturn()
         {
+            Debug.Log("Pressing lever");
+
             _canPress = false;
 
             Press();
 
             yield return new WaitForSeconds(_pressTime);
-            
+
+            Debug.Log("Releasing lever");
+
             Release();
 
             yield return new WaitForSeconds(_releaseTime);
+
+            Debug.Log("Lever can be pressed again");
 
             _canPress = true;
         }
@@ -67,9 +73,9 @@ namespace Unit.Lever
         public float GetSpeed()
         {
             if (_pressing)
-                return 1f / _pressTime;
+                return 1f / Mathf.Sqrt(_pressTime) * 10;
             else
-                return 1f / _releaseTime;
+                return 1f / Mathf.Sqrt(_releaseTime) * 10;
         }
 
         private void OnDrawGizmos()
