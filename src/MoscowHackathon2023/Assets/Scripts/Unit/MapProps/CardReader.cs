@@ -7,9 +7,12 @@ namespace Unit.MapProps
 {
     public class CardReader : MonoBehaviour, IInteractable
     {
-        [SerializeField] private MeshRenderer _mesh;
-        [SerializeField] private Material _notWorkingMat;
-        [SerializeField] private Material _workingMat;
+        [SerializeField] private MeshRenderer _indicatorMesh;
+        [SerializeField] private Material _indicatorNotWorking;
+        [SerializeField] private Material _indicatorWorking;
+        [SerializeField] private MeshRenderer _displayMesh;
+        [SerializeField] private Material _displayNotWorking;
+        [SerializeField] private Material _displayWorking;
         private bool _working = false;
 
         public void Interact()
@@ -23,7 +26,8 @@ namespace Unit.MapProps
         public void SetWorkingStatus(bool working)
         {
             _working = working;
-            _mesh.material = working ? _workingMat : _notWorkingMat;
+            _indicatorMesh.material = working ? _indicatorWorking : _indicatorNotWorking;
+            _displayMesh.material = working ? _displayWorking : _displayNotWorking;
         }
     }
 }
