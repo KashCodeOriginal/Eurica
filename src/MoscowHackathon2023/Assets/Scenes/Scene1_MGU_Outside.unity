@@ -11874,6 +11874,7 @@ GameObject:
   m_Component:
   - component: {fileID: 254069904}
   - component: {fileID: 254069905}
+  - component: {fileID: 254069906}
   m_Layer: 0
   m_Name: CardReader
   m_TagString: Untagged
@@ -11912,6 +11913,27 @@ MonoBehaviour:
   _mesh: {fileID: 2029112849}
   _notWorkingMat: {fileID: 2100000, guid: f04f95c33d319f04d8ef32a8dd175d10, type: 2}
   _workingMat: {fileID: 2100000, guid: a043475307691fd4f955c246b9d3473b, type: 2}
+--- !u!65 &254069906
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 254069903}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.4, y: 0.4, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &255146368
 GameObject:
   m_ObjectHideFlags: 0
@@ -13582,6 +13604,7 @@ GameObject:
   m_Component:
   - component: {fileID: 292820093}
   - component: {fileID: 292820094}
+  - component: {fileID: 292820095}
   m_Layer: 0
   m_Name: CardReader (2)
   m_TagString: Untagged
@@ -13620,6 +13643,27 @@ MonoBehaviour:
   _mesh: {fileID: 2126533550}
   _notWorkingMat: {fileID: 2100000, guid: f04f95c33d319f04d8ef32a8dd175d10, type: 2}
   _workingMat: {fileID: 2100000, guid: a043475307691fd4f955c246b9d3473b, type: 2}
+--- !u!65 &292820095
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 292820092}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.4, y: 0.4, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &293439058 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0c25bdfc408db4c4c83033355041204b, type: 3}
@@ -87649,6 +87693,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2020288437}
   - component: {fileID: 2020288438}
+  - component: {fileID: 2020288439}
   m_Layer: 0
   m_Name: CardReader (1)
   m_TagString: Untagged
@@ -87687,6 +87732,27 @@ MonoBehaviour:
   _mesh: {fileID: 1092117584}
   _notWorkingMat: {fileID: 2100000, guid: f04f95c33d319f04d8ef32a8dd175d10, type: 2}
   _workingMat: {fileID: 2100000, guid: a043475307691fd4f955c246b9d3473b, type: 2}
+--- !u!65 &2020288439
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020288436}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.4, y: 0.4, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &2021534271
 PrefabInstance:
   m_ObjectHideFlags: 0
