@@ -39,29 +39,18 @@ namespace Unit.Lever
         private IEnumerator PressAndReturn()
         {
             _canPress = false;
+            _pressing = true;
+            OnStateChanged?.Invoke(true);
 
             yield return new WaitForSeconds(_pressTime);
 
-            Press();
+            OnPress?.Invoke();
+            _pressing = false;
+            OnStateChanged?.Invoke(false);
 
             yield return new WaitForSeconds(_releaseTime);
 
-            Release();
-
             _canPress = true;
-        }
-
-        private void Press()
-        {
-            _pressing = true;
-            OnPress?.Invoke();
-            OnStateChanged?.Invoke(true);
-        }
-
-        private void Release()
-        {
-            _pressing = false;
-            OnStateChanged?.Invoke(false);
         }
 
         public float GetSpeed()
