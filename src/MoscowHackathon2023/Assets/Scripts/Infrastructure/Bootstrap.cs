@@ -34,7 +34,7 @@ namespace Infrastructure
                 new GameSetUpState(this, gunFactory,
                     abstractFactory, playerInputActionReader, 
                     cameraContainer, playerSettings,
-                    playerContainer, staticDataService, playSoundsService),
+                    playerContainer, staticDataService, playSoundsService, uiFactory),
                 new GameplayState(this, uiFactory, playerInputActionReader));  
             
                 StateMachine.SwitchState<BootstrapState>();

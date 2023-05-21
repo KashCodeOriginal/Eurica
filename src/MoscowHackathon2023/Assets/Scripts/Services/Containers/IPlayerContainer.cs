@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Services.Factories.UIFactory;
+using UnityEngine;
 
 namespace Services.Containers
 {
@@ -6,6 +7,8 @@ namespace Services.Containers
     {
         public GameObject Player { get; }
 
-        public void SetUp(GameObject player);
+        public void SetUp(GameObject player, IUIFactory uiFactory, Transform weaponContainer);
+        public void TurnOnPlayer();
+        public void TurnOffPlayer();
     }
 }
