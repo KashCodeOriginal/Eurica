@@ -15,12 +15,10 @@ namespace UI.SettingsPanel
     {
         [Inject]
         public void Construct(PlayerInputActionReader playerInputActionReader,
-            IPlayerContainer playerContainer,
-            ICameraContainer cameraContainer)
+            IGameInstancesContainer gameInstancesContainer)
         {
             _playerInputActionReader = playerInputActionReader;
-            _playerContainer = playerContainer;
-            _cameraContainer = cameraContainer;
+            _gameInstancesContainer = gameInstancesContainer;
         }
 
         public UnityAction<bool> OnChangePanelState;
@@ -30,8 +28,7 @@ namespace UI.SettingsPanel
         private PlayerInputActionReader _playerInputActionReader;
         private bool _isPanelOpened = false;
 
-        private IPlayerContainer _playerContainer;
-        private ICameraContainer _cameraContainer;
+        private IGameInstancesContainer _gameInstancesContainer;
 
         [Header("Settings Data")]
         [SerializeField] private GameplaySettings _gameplaySettings;
@@ -86,14 +83,14 @@ namespace UI.SettingsPanel
 
             if (_isPanelOpened)
             {
-                _playerContainer.Player.GetComponent<PlayerMovement>().enabled = false;
-                _playerContainer.Player.GetComponent<PlayerChildContainer>().CinemachineInputProvider.enabled = false;
+                _gameInstancesContainer.Player.GetComponent<PlayerMovement>().enabled = false;
+                _gameInstancesContainer.Player.GetComponent<PlayerChildContainer>().CinemachineInputProvider.enabled = false;
                 Cursor.lockState = CursorLockMode.None;
                 return;
             }
             
-            _playerContainer.Player.GetComponent<PlayerMovement>().enabled = true;
-            _playerContainer.Player.GetComponent<PlayerChildContainer>().CinemachineInputProvider.enabled = true;
+            _gameInstancesContainer.Player.GetComponent<PlayerMovement>().enabled = true;
+            _gameInstancesContainer.Player.GetComponent<PlayerChildContainer>().CinemachineInputProvider.enabled = true;
             Cursor.lockState = CursorLockMode.Locked;
         }
     }

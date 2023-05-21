@@ -21,8 +21,7 @@ namespace Infrastructure
             PlayerInputActionReader playerInputActionReader,
             PlayerBaseSettings playerSettings,
             IGunFactory gunFactory,
-            ICameraContainer cameraContainer,
-            IPlayerContainer playerContainer,
+            IGameInstancesContainer gameInstancesContainer,
             IStaticDataService staticDataService,
             IPlaySoundsService playSoundsService)
         {
@@ -32,10 +31,9 @@ namespace Infrastructure
                 new MainMenuState(this, uiFactory),
                 new GameLoadingState(this),
                 new GameSetUpState(this, gunFactory,
-                    abstractFactory, playerInputActionReader, 
-                    cameraContainer, playerSettings,
-                    playerContainer, staticDataService, playSoundsService, uiFactory),
-                new GameplayState(this, uiFactory, playerInputActionReader));  
+                    abstractFactory, playerInputActionReader, playerSettings,
+                    gameInstancesContainer, staticDataService, playSoundsService, uiFactory),
+                new GameplayState(this, uiFactory, playerInputActionReader, gameInstancesContainer));  
             
                 StateMachine.SwitchState<BootstrapState>();
         }

@@ -34,11 +34,10 @@ namespace Infrastructure.Zenject.Installers
             BindUIFactory();
             BindGunFactory();
             BindPortalFactory();
-            BindPlayerContainer();
+            BindGameInstancesContainer();
             BindPlayerSettings();
             BindStaticDataService();
             BindAbstractFactory();
-            BindCameraContainer();
             BindCoroutineRunner();
             BindGunsStaticDataData();
             BindPlaySoundService();
@@ -71,14 +70,10 @@ namespace Infrastructure.Zenject.Installers
             Container.Bind<PlayerInputActionReader>().FromInstance(_playerInputActionReader).AsSingle();
         }
         
-        private void BindCameraContainer()
-        {
-            Container.BindInterfacesTo<CameraContainer>().AsSingle();
-        }
         
-        private void BindPlayerContainer()
+        private void BindGameInstancesContainer()
         {
-            Container.BindInterfacesTo<PlayerContainer>().AsSingle();
+            Container.BindInterfacesTo<GameInstancesContainer>().AsSingle();
         }
         
         private void BindStaticDataService()

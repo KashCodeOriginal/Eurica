@@ -20,8 +20,8 @@ namespace Unit.GravityGun
         private Coroutine _dragIn;
         private PlayerInputActionReader _playerInputActionReader;
         private readonly GravityGunData _gravityGunGravityGunData;
-        private readonly ICameraContainer _cameraContainer;
         private readonly UniversalGunView _universalGunView;
+        private readonly IGameInstancesContainer _gameInstancesContainer;
         
         private LayerMask _interactiveLayer = LayerMask.NameToLayer("InteractiveObjectForGravity");
         private LayerMask _grabbedLayer = LayerMask.NameToLayer("Grabbed");
@@ -30,19 +30,19 @@ namespace Unit.GravityGun
         public GravityGun(ICoroutineRunner coroutineRunner,
             PlayerInputActionReader playerInputActionReader,
             GravityGunData gravityGunGravityGunData,
-            ICameraContainer cameraContainer,
+            IGameInstancesContainer gameInstancesContainer,
             UniversalGunView universalGunView)
         {
             _coroutineRunner = coroutineRunner;
             _playerInputActionReader = playerInputActionReader;
             _gravityGunGravityGunData = gravityGunGravityGunData;
-            _cameraContainer = cameraContainer;
+            _gameInstancesContainer = gameInstancesContainer;
             _universalGunView = universalGunView;
         }
 
         public void MainFire()
         {
-            var ray = _cameraContainer.Camera.ViewportPointToRay(new Vector3(0.5f, 0.5f));
+            var ray = _gameInstancesContainer.Camera.ViewportPointToRay(new Vector3(0.5f, 0.5f));
 
             if (!Physics.Raycast(ray, out var hit, _gravityGunGravityGunData.CatchDistance))
             {

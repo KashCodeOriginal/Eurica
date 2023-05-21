@@ -2270,6 +2270,7 @@ MonoBehaviour:
   GameplayHintView: {fileID: 8182034679670141290}
   GameplaySubtitlesView: {fileID: 579786604444019315}
   _inventoryTransform: {fileID: 3425652960814026842}
+  _staticCanvas: {fileID: 2402701981541903637}
 --- !u!1 &4695833742992996720
 GameObject:
   m_ObjectHideFlags: 0

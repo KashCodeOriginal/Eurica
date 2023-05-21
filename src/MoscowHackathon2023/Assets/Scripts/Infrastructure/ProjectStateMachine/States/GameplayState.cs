@@ -1,4 +1,5 @@
 using Infrastructure.ProjectStateMachine.Base;
+using Services.Containers;
 using Services.Factories.UIFactory;
 using Services.Input;
 using UI.GameplayScreen;
@@ -10,16 +11,19 @@ namespace Infrastructure.ProjectStateMachine.States
     {
         private readonly IUIFactory _uiFactory;
         private readonly PlayerInputActionReader _playerInputActionReader;
+        private readonly IGameInstancesContainer _gameInstancesContainer;
         public Bootstrap Initializer { get; }
         
         private Inventory _inventory;
 
         public GameplayState(Bootstrap initializer,
             IUIFactory uiFactory, 
-            PlayerInputActionReader playerInputActionReader)
+            PlayerInputActionReader playerInputActionReader,
+            IGameInstancesContainer gameInstancesContainer)
         {
             _uiFactory = uiFactory;
             _playerInputActionReader = playerInputActionReader;
+            _gameInstancesContainer = gameInstancesContainer;
             Initializer = initializer;
         }
 
@@ -27,9 +31,10 @@ namespace Infrastructure.ProjectStateMachine.States
         {
             var gameplayScreen = await _uiFactory.CreateGameplayScreen();
             
-            gameplayScreen.SetActive(false);
-            
             var gameplayScreenComponent = gameplayScreen.GetComponent<GameplayScreen>();
+            
+            _gameInstancesContainer.TurnOffPlayer();
+            _gameInstancesContainer.TurnOffWeapon();
             
             /*_portalGun = _gunFactory.CreatePortalGun();
             _gravityGun = _gunFactory.CreateGravityGun();
