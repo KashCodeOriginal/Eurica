@@ -32,13 +32,14 @@ namespace Infrastructure.ProjectStateMachine.States
         private readonly IPlayerContainer _playerContainer;
         private readonly IStaticDataService _staticDataService;
         private readonly IPlaySoundsService _playSoundsService;
+        private readonly IUIFactory _uiFactory;
 
 
         private PortalGun _portalGun;
         private GravityGun _gravityGun;
         private ScaleGun _scaleGun;
         private MountRemote _mountRemote;
-        
+
         private GameObject _universalGunView;
 
         public GameSetUpState(Bootstrap initializer,IGunFactory gunFactory,
@@ -48,7 +49,8 @@ namespace Infrastructure.ProjectStateMachine.States
             PlayerBaseSettings playerSettings,
             IPlayerContainer playerContainer,
             IStaticDataService staticDataService,
-            IPlaySoundsService playSoundsService)
+            IPlaySoundsService playSoundsService,
+            IUIFactory uiFactory)
         {
             Initializer = initializer;
             _gunFactory = gunFactory;
@@ -59,6 +61,7 @@ namespace Infrastructure.ProjectStateMachine.States
             _playerContainer = playerContainer;
             _staticDataService = staticDataService;
             _playSoundsService = playSoundsService;
+            _uiFactory = uiFactory;
         }
 
         public async void OnEnter(string arg)
@@ -89,7 +92,6 @@ namespace Infrastructure.ProjectStateMachine.States
                 await _gunFactory.CreateUniversalGunView();
 
                 Cursor.lockState = CursorLockMode.Locked;
-              
             }
 
             Initializer.StateMachine.SwitchState<GameplayState>();
@@ -98,7 +100,7 @@ namespace Infrastructure.ProjectStateMachine.States
         private void SetUp(GameObject playerInstance, GameObject cameraInstance, Transform weaponContainer,
             GameObject audioSource)
         {
-            _playerContainer.SetUp(playerInstance);
+            _playerContainer.SetUp(playerInstance, _uiFactory, weaponContainer);
             
             _playSoundsService.SetUp(audioSource.GetComponent<AudioSource>());
             
