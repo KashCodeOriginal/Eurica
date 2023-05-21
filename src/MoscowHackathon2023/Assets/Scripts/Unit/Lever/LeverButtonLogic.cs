@@ -38,21 +38,15 @@ namespace Unit.Lever
 
         private IEnumerator PressAndReturn()
         {
-            Debug.Log("Pressing lever");
-
             _canPress = false;
 
             Press();
 
             yield return new WaitForSeconds(_pressTime);
-
-            Debug.Log("Releasing lever");
-
+            
             Release();
 
             yield return new WaitForSeconds(_releaseTime);
-
-            Debug.Log("Lever can be pressed again");
 
             _canPress = true;
         }

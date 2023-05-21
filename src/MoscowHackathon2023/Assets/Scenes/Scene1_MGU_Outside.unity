@@ -92751,6 +92751,10 @@ PrefabInstance:
       value: LeverButton
       objectReference: {fileID: 0}
     - target: {fileID: 8078142021148482131, guid: cbc12a56a4caa7c4d81ab39ceb196c6f, type: 3}
+      propertyPath: _releaseTime
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8078142021148482131, guid: cbc12a56a4caa7c4d81ab39ceb196c6f, type: 3}
       propertyPath: OnPress.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 5
       objectReference: {fileID: 0}
