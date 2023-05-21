@@ -337,16 +337,54 @@ PrefabInstance:
       propertyPath: m_Name
       value: LeverButton (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8078142021148482131, guid: cbc12a56a4caa7c4d81ab39ceb196c6f, type: 3}
+      propertyPath: OnPress.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8078142021148482131, guid: cbc12a56a4caa7c4d81ab39ceb196c6f, type: 3}
+      propertyPath: OnPress.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6752169}
+    - target: {fileID: 8078142021148482131, guid: cbc12a56a4caa7c4d81ab39ceb196c6f, type: 3}
+      propertyPath: OnPress.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Press
+      objectReference: {fileID: 0}
+    - target: {fileID: 8078142021148482131, guid: cbc12a56a4caa7c4d81ab39ceb196c6f, type: 3}
+      propertyPath: OnPress.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Unit.Scene2.Task1.QuizLampLever, Assembly-CSharp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3951083725855844910, guid: cbc12a56a4caa7c4d81ab39ceb196c6f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6752169}
   m_SourcePrefab: {fileID: 100100000, guid: cbc12a56a4caa7c4d81ab39ceb196c6f, type: 3}
 --- !u!4 &6752167 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3951083725855844897, guid: cbc12a56a4caa7c4d81ab39ceb196c6f, type: 3}
   m_PrefabInstance: {fileID: 6752166}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6752168 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3951083725855844910, guid: cbc12a56a4caa7c4d81ab39ceb196c6f, type: 3}
+  m_PrefabInstance: {fileID: 6752166}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6752169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6752168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f10af574f7de6234799865cfd8169557, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _quizLampLogic: {fileID: 2102914654}
+  _changes: ffffffffffffffff0100000001000000ffffffff
 --- !u!1001 &6896199
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17286,7 +17324,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3951083725855844897, guid: cbc12a56a4caa7c4d81ab39ceb196c6f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.25
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 3951083725855844897, guid: cbc12a56a4caa7c4d81ab39ceb196c6f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -17318,18 +17356,56 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3951083725855844910, guid: cbc12a56a4caa7c4d81ab39ceb196c6f, type: 3}
       propertyPath: m_Name
-      value: LeverButton (2)
+      value: LeverButton (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8078142021148482131, guid: cbc12a56a4caa7c4d81ab39ceb196c6f, type: 3}
+      propertyPath: OnPress.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8078142021148482131, guid: cbc12a56a4caa7c4d81ab39ceb196c6f, type: 3}
+      propertyPath: OnPress.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 379418141}
+    - target: {fileID: 8078142021148482131, guid: cbc12a56a4caa7c4d81ab39ceb196c6f, type: 3}
+      propertyPath: OnPress.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Press
+      objectReference: {fileID: 0}
+    - target: {fileID: 8078142021148482131, guid: cbc12a56a4caa7c4d81ab39ceb196c6f, type: 3}
+      propertyPath: OnPress.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Unit.Scene2.Task1.QuizLampLever, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3951083725855844910, guid: cbc12a56a4caa7c4d81ab39ceb196c6f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 379418141}
   m_SourcePrefab: {fileID: 100100000, guid: cbc12a56a4caa7c4d81ab39ceb196c6f, type: 3}
 --- !u!4 &379418139 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3951083725855844897, guid: cbc12a56a4caa7c4d81ab39ceb196c6f, type: 3}
   m_PrefabInstance: {fileID: 379418138}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &379418140 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3951083725855844910, guid: cbc12a56a4caa7c4d81ab39ceb196c6f, type: 3}
+  m_PrefabInstance: {fileID: 379418138}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &379418141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 379418140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f10af574f7de6234799865cfd8169557, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _quizLampLogic: {fileID: 2102914654}
+  _changes: 00000000ffffffffffffffff0100000001000000
 --- !u!4 &379905654 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0c25bdfc408db4c4c83033355041204b, type: 3}
@@ -26101,7 +26177,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3951083725855844897, guid: cbc12a56a4caa7c4d81ab39ceb196c6f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1
+      value: -0.25
       objectReference: {fileID: 0}
     - target: {fileID: 3951083725855844897, guid: cbc12a56a4caa7c4d81ab39ceb196c6f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -26133,18 +26209,56 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3951083725855844910, guid: cbc12a56a4caa7c4d81ab39ceb196c6f, type: 3}
       propertyPath: m_Name
-      value: LeverButton (3)
+      value: LeverButton (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8078142021148482131, guid: cbc12a56a4caa7c4d81ab39ceb196c6f, type: 3}
+      propertyPath: OnPress.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8078142021148482131, guid: cbc12a56a4caa7c4d81ab39ceb196c6f, type: 3}
+      propertyPath: OnPress.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 598519752}
+    - target: {fileID: 8078142021148482131, guid: cbc12a56a4caa7c4d81ab39ceb196c6f, type: 3}
+      propertyPath: OnPress.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Press
+      objectReference: {fileID: 0}
+    - target: {fileID: 8078142021148482131, guid: cbc12a56a4caa7c4d81ab39ceb196c6f, type: 3}
+      propertyPath: OnPress.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Unit.Scene2.Task1.QuizLampLever, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3951083725855844910, guid: cbc12a56a4caa7c4d81ab39ceb196c6f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 598519752}
   m_SourcePrefab: {fileID: 100100000, guid: cbc12a56a4caa7c4d81ab39ceb196c6f, type: 3}
 --- !u!4 &598519750 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3951083725855844897, guid: cbc12a56a4caa7c4d81ab39ceb196c6f, type: 3}
   m_PrefabInstance: {fileID: 598519749}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &598519751 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3951083725855844910, guid: cbc12a56a4caa7c4d81ab39ceb196c6f, type: 3}
+  m_PrefabInstance: {fileID: 598519749}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &598519752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598519751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f10af574f7de6234799865cfd8169557, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _quizLampLogic: {fileID: 2102914654}
+  _changes: 0000000000000000000000000000000000000000
 --- !u!1001 &599490215
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -70138,8 +70252,8 @@ Transform:
   m_Children:
   - {fileID: 2448138641027193273}
   - {fileID: 6752167}
-  - {fileID: 379418139}
   - {fileID: 598519750}
+  - {fileID: 379418139}
   m_Father: {fileID: 2102914653}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -91349,8 +91463,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2102914653}
+  - component: {fileID: 2102914654}
   m_Layer: 0
-  m_Name: Scene2_FirstTask
+  m_Name: Scene2_Task1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -91374,6 +91489,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2102914654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2102914652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0a87e20e51c62d4d8f34701e71277ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _indicators:
+  - {fileID: 15990456}
+  - {fileID: 1374608106}
+  - {fileID: 1297793562}
+  - {fileID: 113403895}
+  - {fileID: 899455520}
+  _indicatorOn: {fileID: 2100000, guid: 2b88e3a88f99ebd41ae8edf24eeb374b, type: 2}
+  _indicatorOff: {fileID: 2100000, guid: b37ae207d097f4949a013eb9bd80a43c, type: 2}
 --- !u!4 &2103426567 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0c25bdfc408db4c4c83033355041204b, type: 3}
@@ -93440,16 +93575,54 @@ PrefabInstance:
       propertyPath: m_Name
       value: LeverButton
       objectReference: {fileID: 0}
+    - target: {fileID: 8078142021148482131, guid: cbc12a56a4caa7c4d81ab39ceb196c6f, type: 3}
+      propertyPath: OnPress.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8078142021148482131, guid: cbc12a56a4caa7c4d81ab39ceb196c6f, type: 3}
+      propertyPath: OnPress.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2448138641027193275}
+    - target: {fileID: 8078142021148482131, guid: cbc12a56a4caa7c4d81ab39ceb196c6f, type: 3}
+      propertyPath: OnPress.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Press
+      objectReference: {fileID: 0}
+    - target: {fileID: 8078142021148482131, guid: cbc12a56a4caa7c4d81ab39ceb196c6f, type: 3}
+      propertyPath: OnPress.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Unit.Scene2.Task1.QuizLampLever, Assembly-CSharp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3951083725855844910, guid: cbc12a56a4caa7c4d81ab39ceb196c6f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2448138641027193275}
   m_SourcePrefab: {fileID: 100100000, guid: cbc12a56a4caa7c4d81ab39ceb196c6f, type: 3}
 --- !u!4 &2448138641027193273 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3951083725855844897, guid: cbc12a56a4caa7c4d81ab39ceb196c6f, type: 3}
   m_PrefabInstance: {fileID: 2448138641027193272}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2448138641027193274 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3951083725855844910, guid: cbc12a56a4caa7c4d81ab39ceb196c6f, type: 3}
+  m_PrefabInstance: {fileID: 2448138641027193272}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2448138641027193275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2448138641027193274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f10af574f7de6234799865cfd8169557, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _quizLampLogic: {fileID: 2102914654}
+  _changes: 01000000010000000000000000000000ffffffff
 --- !u!33 &2579456593689612018
 MeshFilter:
   m_ObjectHideFlags: 0
