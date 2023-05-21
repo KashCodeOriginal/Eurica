@@ -7,5 +7,6 @@ namespace Data.StaticData.LevelData
     {
         [field: SerializeField] public string LevelName { get; private set; }
         [field: SerializeField] public Vector3 PlayerSpawnPoint { get; private set; }
+        [field: SerializeField] public Quaternion PlayerSpawnRotation { get; private set; }
     }
 }
