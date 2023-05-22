@@ -10,7 +10,7 @@ namespace Unit.Player
         [SerializeField] private Rigidbody _rigidbody;
 
         private bool _isRunning;
-        private bool _canJump;
+        private bool _pressingJump;
         private bool _isGrounded;
         private bool _isJumping;
 
@@ -49,13 +49,12 @@ namespace Unit.Player
 
             UpdateCurrentSpeed();
 
-            if (_canJump && IsGrounded())
+            if (_pressingJump && IsGrounded())
             {
                 Jump();
-            } else if (_canJump)
-            {
-                _canJump = false;
             }
+
+            _pressingJump = false;
 
             MovePlayer();
         }
@@ -102,7 +101,7 @@ namespace Unit.Player
 
         private void OnPlayerJump(bool isJumping)
         {
-            _canJump = isJumping;
+            _pressingJump = isJumping;
         }
         
         private void UpdateCurrentSpeed()

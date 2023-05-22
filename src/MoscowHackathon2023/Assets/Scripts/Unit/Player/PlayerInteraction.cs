@@ -18,7 +18,7 @@ namespace Unit.Player
             _playerInputActionReader.IsPlayerInteractionButtonClicked += IsPlayerInteract;
         }
 
-        private bool _canInteract;
+        private bool _pressingInteract;
 
         private PlayerInputActionReader _playerInputActionReader;
 
@@ -43,15 +43,17 @@ namespace Unit.Player
                 return;
             }
 
-            if (_canInteract)
+            if (_pressingInteract)
             {
                 interactable.Interact();
             }
+
+            _pressingInteract = false;
         }
 
         private void IsPlayerInteract(bool condition)
         {
-            _canInteract = condition;
+            _pressingInteract = condition;
         }
 
         private void OnDestroy()
