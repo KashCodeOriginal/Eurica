@@ -40,6 +40,7 @@ namespace UI.SettingsPanel
         [SerializeField] private TextMeshProUGUI _volumeOutput;
         [SerializeField] private Slider _mouseSensSlider;
         [SerializeField] private TextMeshProUGUI _mouseSensOutput;
+        [SerializeField] private GameObject _subtitlesCheckmark;
 
         private void OnEnable()
         {
@@ -49,6 +50,7 @@ namespace UI.SettingsPanel
 
             _volumeSlider.onValueChanged.AddListener(OnVolumeChanged);
             _mouseSensSlider.onValueChanged.AddListener(OnMouseSensChanged);
+            _subtitlesCheckmark.SetActive(_gameplaySettings.Subtitles);
 
             _settingsPanel.SetActive(false);
         }
@@ -89,12 +91,21 @@ namespace UI.SettingsPanel
             ApplyCurrentSettings();
         }
 
+        public void ClickSubtitles()
+        {
+            _gameplaySettings.Subtitles = !_gameplaySettings.Subtitles;
+            _subtitlesCheckmark.SetActive(_gameplaySettings.Subtitles);
+            ApplyCurrentSettings();
+        }
+
         private void ApplyCurrentSettings()
         {
             _playSoundsService.SetUpVolumeMultiplier(_gameplaySettings.SoundVolume);
 
             var cinemachineComponent = _gameInstancesContainer.Player.GetComponent<PlayerChildContainer>()
                 .CinemachineVirtualCamera.GetCinemachineComponent<CinemachinePOV>();
+
+            UI.GameplayScreen.GameplayScreen.Instance?.GameplaySubtitlesView.SetSettings(_gameplaySettings.Subtitles);
 
             cinemachineComponent.m_HorizontalAxis.m_MaxSpeed = _gameplaySettings.MouseSens / 100f;
             cinemachineComponent.m_VerticalAxis.m_MaxSpeed = _gameplaySettings.MouseSens / 100f;
