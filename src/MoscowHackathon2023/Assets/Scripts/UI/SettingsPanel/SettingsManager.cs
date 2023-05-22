@@ -25,7 +25,7 @@ namespace UI.SettingsPanel
         }
 
         public UnityAction<bool> OnChangePanelState;
-    
+
         [Header("Settings Panel")]
         [SerializeField] private GameObject _settingsPanel;
         private PlayerInputActionReader _playerInputActionReader;
@@ -40,34 +40,34 @@ namespace UI.SettingsPanel
         [SerializeField] private TextMeshProUGUI _volumeOutput;
         [SerializeField] private Slider _mouseSensSlider;
         [SerializeField] private TextMeshProUGUI _mouseSensOutput;
-
-        [SerializeField] private Button _applyButton;
-    
-        private void Awake()
-        {
-            _settingsPanel.SetActive(false);
-        }
-
-        private void Start()
-        {
-            ApplyCurrentSettings();
-        }
+        [SerializeField] private GameObject _subtitlesCheckmark;
 
         private void OnEnable()
         {
+            InitValues();
+
             _playerInputActionReader.IsPlayerEscClicked += EscClicked;
 
+            _volumeSlider.onValueChanged.AddListener(OnVolumeChanged);
+            _mouseSensSlider.onValueChanged.AddListener(OnMouseSensChanged);
+            _subtitlesCheckmark.SetActive(_gameplaySettings.Subtitles);
+
+            _settingsPanel.SetActive(false);
+        }
+
+        private void InitValues()
+        {
             _volumeSlider.value = _gameplaySettings.SoundVolume;
             _mouseSensSlider.value = _gameplaySettings.MouseSens;
-            
-            _applyButton.onClick.AddListener(ApplyCurrentSettings);
+            ApplyCurrentSettings();
         }
 
         private void OnDisable()
         {
             _playerInputActionReader.IsPlayerEscClicked -= EscClicked;
-            
-            _applyButton.onClick.AddListener(ApplyCurrentSettings);
+
+            _mouseSensSlider.onValueChanged.RemoveListener(OnVolumeChanged);
+            _volumeSlider.onValueChanged.RemoveListener(OnMouseSensChanged);
         }
 
         private void Update()
@@ -76,19 +76,39 @@ namespace UI.SettingsPanel
             _gameplaySettings.MouseSens = _mouseSensSlider.value;
 
             _volumeOutput.text = Mathf.RoundToInt(_volumeSlider.value * 100) + "%";
-            _mouseSensOutput.text = _mouseSensSlider.value.ToString("0.0");
+            _mouseSensOutput.text = ((int)_mouseSensSlider.value).ToString();
         }
-        
+
+        private void OnVolumeChanged(float value)
+        {
+            _gameplaySettings.SoundVolume = value;
+            ApplyCurrentSettings();
+        }
+
+        private void OnMouseSensChanged(float value)
+        {
+            _gameplaySettings.MouseSens = value;
+            ApplyCurrentSettings();
+        }
+
+        public void ClickSubtitles()
+        {
+            _gameplaySettings.Subtitles = !_gameplaySettings.Subtitles;
+            _subtitlesCheckmark.SetActive(_gameplaySettings.Subtitles);
+            ApplyCurrentSettings();
+        }
+
         private void ApplyCurrentSettings()
         {
             _playSoundsService.SetUpVolumeMultiplier(_gameplaySettings.SoundVolume);
-            
+
             var cinemachineComponent = _gameInstancesContainer.Player.GetComponent<PlayerChildContainer>()
-                .CinemachineVirtualCamera. GetCinemachineComponent<CinemachinePOV>();
+                .CinemachineVirtualCamera.GetCinemachineComponent<CinemachinePOV>();
+
+            UI.GameplayScreen.GameplayScreen.Instance?.GameplaySubtitlesView.SetSettings(_gameplaySettings.Subtitles);
 
             cinemachineComponent.m_HorizontalAxis.m_MaxSpeed = _gameplaySettings.MouseSens / 100f;
             cinemachineComponent.m_VerticalAxis.m_MaxSpeed = _gameplaySettings.MouseSens / 100f;
-
         }
 
         private void EscClicked()
@@ -113,12 +133,13 @@ namespace UI.SettingsPanel
                 _gameInstancesContainer.Player.GetComponent<PlayerMovement>().enabled = false;
                 _gameInstancesContainer.Player.GetComponent<PlayerChildContainer>().CinemachineInputProvider.enabled = false;
                 Cursor.lockState = CursorLockMode.None;
-                return;
             }
-            
-            _gameInstancesContainer.Player.GetComponent<PlayerMovement>().enabled = true;
-            _gameInstancesContainer.Player.GetComponent<PlayerChildContainer>().CinemachineInputProvider.enabled = true;
-            Cursor.lockState = CursorLockMode.Locked;
+            else
+            {
+                _gameInstancesContainer.Player.GetComponent<PlayerMovement>().enabled = true;
+                _gameInstancesContainer.Player.GetComponent<PlayerChildContainer>().CinemachineInputProvider.enabled = true;
+                Cursor.lockState = CursorLockMode.Locked;
+            }
         }
     }
 }

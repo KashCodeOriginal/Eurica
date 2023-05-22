@@ -12,10 +12,16 @@ namespace UI.GameplayScreen
         [SerializeField] private GameObject subtitlesViewParent;
         [SerializeField] private TextMeshProUGUI subtitlesOutput;
         private VoiceMessage _voiceMessage;
+        private bool _subtitlesEnabled;
 
         private void Awake()
         {
             HideSubtitles();
+        }
+
+        public void SetSettings(bool subtitlesEnabled)
+        {
+            _subtitlesEnabled = subtitlesEnabled;
         }
 
         public void ShowSubtitles(VoiceMessage voiceMessage)
@@ -28,6 +34,12 @@ namespace UI.GameplayScreen
 
         private IEnumerator PlaySubtitles()
         {
+            if (!_subtitlesEnabled)
+            {
+                HideSubtitles();
+                yield break;
+            }
+
             subtitlesViewParent.SetActive(true);
 
             foreach (var phrase in _voiceMessage.Phrases)
