@@ -52,6 +52,9 @@ namespace Unit.Player
             if (_canJump && IsGrounded())
             {
                 Jump();
+            } else if (_canJump)
+            {
+                _canJump = false;
             }
 
             MovePlayer();

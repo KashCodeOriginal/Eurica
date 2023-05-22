@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: GameplaySettings
   m_EditorClassIdentifier: 
   SoundVolume: 0.3
-  MouseSens: 5
+  MouseSens: 15
   Subtitles: 1
