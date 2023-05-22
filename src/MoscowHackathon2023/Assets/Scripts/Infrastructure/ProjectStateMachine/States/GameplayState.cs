@@ -55,6 +55,7 @@ namespace Infrastructure.ProjectStateMachine.States
             if (levelData.IsPlayerInstancingAtStart)
             {
                 _gameInstancesContainer.TurnOnPlayer();
+                _gameInstancesContainer.TurnOnWeapon();
             }
         }
     }
