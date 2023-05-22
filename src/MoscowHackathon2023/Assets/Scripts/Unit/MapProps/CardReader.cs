@@ -1,7 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using Data.AssetsAddressablesConstants;
+using Infrastructure;
+using Infrastructure.ProjectStateMachine.States;
 using Unit.Base;
 using UnityEngine;
+using Zenject;
 
 namespace Unit.MapProps
 {
@@ -15,11 +19,19 @@ namespace Unit.MapProps
         [SerializeField] private Material _displayWorking;
         private bool _working = false;
 
+        private Bootstrap _bootstrap;
+
+        [Inject]
+        public void Construct(Bootstrap bootstrap)
+        {
+            _bootstrap = bootstrap;
+        }
+
         public void Interact()
         {
             if (_working)
             {
-                Debug.Log("<color=purple>LEVEL COMPLETED</color>");
+                _bootstrap.StateMachine.SwitchState<GameLoadingState, string>(AssetsAddressablesConstants.LIFT_SCENE);
             }
         }
 

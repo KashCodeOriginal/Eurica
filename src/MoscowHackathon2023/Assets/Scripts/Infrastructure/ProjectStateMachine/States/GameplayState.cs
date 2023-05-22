@@ -1,13 +1,15 @@
+using Data.StaticData.LevelData;
 using Infrastructure.ProjectStateMachine.Base;
 using Services.Containers;
 using Services.Factories.UIFactory;
 using Services.Input;
 using UI.GameplayScreen;
 using Unit.WeaponInventory;
+using UnityEngine;
 
 namespace Infrastructure.ProjectStateMachine.States
 {
-    public class GameplayState : IState<Bootstrap>, IEnterable
+    public class GameplayState : IState<Bootstrap>, IEnterableWithOneArg<LevelData>
     {
         private readonly IUIFactory _uiFactory;
         private readonly PlayerInputActionReader _playerInputActionReader;
@@ -27,14 +29,11 @@ namespace Infrastructure.ProjectStateMachine.States
             Initializer = initializer;
         }
 
-        public async void OnEnter()
+        public async void OnEnter(LevelData levelData)
         {
             var gameplayScreen = await _uiFactory.CreateGameplayScreen();
             
             var gameplayScreenComponent = gameplayScreen.GetComponent<GameplayScreen>();
-            
-            _gameInstancesContainer.TurnOffPlayer();
-            _gameInstancesContainer.TurnOffWeapon();
             
             /*_portalGun = _gunFactory.CreatePortalGun();
             _gravityGun = _gunFactory.CreateGravityGun();
@@ -43,6 +42,11 @@ namespace Infrastructure.ProjectStateMachine.States
             _inventory = new Inventory(_uiFactory, _playerInputActionReader, gameplayScreenComponent.InventoryTransform);
 
             await _inventory.ShowPanel();
+            
+            if (levelData.IsPlayerInstancingAtStart)
+            {
+                _gameInstancesContainer.TurnOnPlayer();
+            }
         }
     }
 }

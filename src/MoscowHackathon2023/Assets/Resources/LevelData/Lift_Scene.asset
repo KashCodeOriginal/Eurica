@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 84b255dfc5b4463f9937cd9780b8a956, type: 3}
-  m_Name: Scene1_MGU_Outside
+  m_Name: Lift_Scene
   m_EditorClassIdentifier: 
-  <LevelName>k__BackingField: Scene1_MGU_Outside
+  <LevelName>k__BackingField: Lift_Scene
   <IsPlayerOnScene>k__BackingField: 1
-  <IsPlayerInstancingAtStart>k__BackingField: 0
-  <PlayerSpawnPoint>k__BackingField: {x: -234.284, y: 2, z: 632.85}
-  <PlayerSpawnRotation>k__BackingField: {x: 0, y: 1, z: 0, w: -0.00000004371139}
+  <IsPlayerInstancingAtStart>k__BackingField: 1
+  <PlayerSpawnPoint>k__BackingField: {x: 0, y: 1, z: -7.3}
+  <PlayerSpawnRotation>k__BackingField: {x: 0, y: 0, z: 0, w: 1}
