@@ -93,7 +93,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 513fa4880e04c244c9088e1cfa065615
-    m_Address: MGUInside
+    m_Address: Scene3_MGU_Inside
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
