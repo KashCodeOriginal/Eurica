@@ -76,7 +76,7 @@ namespace UI.SettingsPanel
             _gameplaySettings.MouseSens = _mouseSensSlider.value;
 
             _volumeOutput.text = Mathf.RoundToInt(_volumeSlider.value * 100) + "%";
-            _mouseSensOutput.text = _mouseSensSlider.value.ToString("0.0");
+            _mouseSensOutput.text = ((int)_mouseSensSlider.value).ToString();
         }
 
         private void OnVolumeChanged(float value)
