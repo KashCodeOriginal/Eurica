@@ -1,5 +1,6 @@
 using Cinemachine;
 using Data.AssetsAddressablesConstants;
+using Data.StaticData.LevelData;
 using Data.StaticData.PlayerData;
 using Infrastructure.ProjectStateMachine.Base;
 using Services.Containers;
@@ -91,7 +92,7 @@ namespace Infrastructure.ProjectStateMachine.States
                 Cursor.lockState = CursorLockMode.Locked;
             }
 
-            Initializer.StateMachine.SwitchState<GameplayState>();
+            Initializer.StateMachine.SwitchState<GameplayState, LevelData>(levelData);
         }
 
         private void SetUp(GameObject playerInstance, GameObject cameraInstance, Transform weaponContainer,
