@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Scene2_Main_Hub
   m_EditorClassIdentifier: 
   <LevelName>k__BackingField: Scene2_Main_Hub
-  <IsPlayerOnScene>k__BackingField: 0
-  <IsPlayerInstancingAtStart>k__BackingField: 0
+  <IsPlayerOnScene>k__BackingField: 1
+  <IsPlayerInstancingAtStart>k__BackingField: 1
   <PlayerSpawnPoint>k__BackingField: {x: -200, y: 1, z: -100}
   <PlayerSpawnRotation>k__BackingField: {x: 0, y: 0, z: 0, w: 0}
