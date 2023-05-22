@@ -1,6 +1,7 @@
 using Data.StaticData.LevelData;
 using Infrastructure.ProjectStateMachine.Base;
 using Services.Containers;
+using Services.Factories.GunsFactory;
 using Services.Factories.UIFactory;
 using Services.Input;
 using UI.GameplayScreen;
@@ -14,6 +15,8 @@ namespace Infrastructure.ProjectStateMachine.States
         private readonly IUIFactory _uiFactory;
         private readonly PlayerInputActionReader _playerInputActionReader;
         private readonly IGameInstancesContainer _gameInstancesContainer;
+        private readonly IGunFactory _gunFactory;
+        
         public Bootstrap Initializer { get; }
         
         private Inventory _inventory;
@@ -21,11 +24,13 @@ namespace Infrastructure.ProjectStateMachine.States
         public GameplayState(Bootstrap initializer,
             IUIFactory uiFactory, 
             PlayerInputActionReader playerInputActionReader,
-            IGameInstancesContainer gameInstancesContainer)
+            IGameInstancesContainer gameInstancesContainer,
+            IGunFactory gunFactory)
         {
             _uiFactory = uiFactory;
             _playerInputActionReader = playerInputActionReader;
             _gameInstancesContainer = gameInstancesContainer;
+            _gunFactory = gunFactory;
             Initializer = initializer;
         }
 
@@ -35,13 +40,17 @@ namespace Infrastructure.ProjectStateMachine.States
             
             var gameplayScreenComponent = gameplayScreen.GetComponent<GameplayScreen>();
             
-            /*_portalGun = _gunFactory.CreatePortalGun();
-            _gravityGun = _gunFactory.CreateGravityGun();
-            _scaleGun = _gunFactory.CreateScaleGun();*/
+            var portalGun = _gunFactory.CreatePortalGun();
+            var gravityGun = _gunFactory.CreateGravityGun();
+            var scaleGun = _gunFactory.CreateScaleGun();
 
             _inventory = new Inventory(_uiFactory, _playerInputActionReader, gameplayScreenComponent.InventoryTransform);
 
             await _inventory.ShowPanel();
+            
+            _inventory.CollectWeapon(portalGun);
+            _inventory.CollectWeapon(gravityGun);
+            _inventory.CollectWeapon(scaleGun);
             
             if (levelData.IsPlayerInstancingAtStart)
             {
