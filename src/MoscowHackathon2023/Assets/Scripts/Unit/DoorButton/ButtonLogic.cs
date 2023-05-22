@@ -7,7 +7,7 @@ namespace Unit.DoorButton
     [SelectionBase]
     public class ButtonLogic : MonoBehaviour
     {
-        protected bool _isPressed = false;
+        public bool _isPressed { get; private set; }
         public UnityAction<bool> OnStateChanged;
 
         [SerializeField] private GravityCubeSettings _buttonGravitySettings;
