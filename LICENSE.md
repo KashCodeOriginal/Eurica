@@ -16,3 +16,12 @@
 - Old Car - VAZ 2107 by Arkady Gribachev (https://sketchfab.com/3d-models/old-car-vaz-2107-91270dab9d1a47c7ba7ffaaf8c8b0beb)
 - Tallinn Tram Card Reader by mike.jader (https://sketchfab.com/3d-models/tallinn-tram-card-reader-0f54d5d4d1d74073b727d3dd322cd938)
 - Also thanks to [@Aid2901](https://github.com/Aid2901) for creating his own models and editing some of the existing ones!
+
+# Sounds
+
+- ECspezi
+- Additional sound effects from https://www.zapsplat.com
+
+## Usage
+
+Credits must be added to the project itself, for example in your YouTube video description, app or game credits page or your projects related website or blog etc. 
