@@ -2,12 +2,14 @@ using Unit.DoorButton;
 using Unit.Player;
 using Unit.ScaleGun;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Unit.GravityCube
 {
     public class GravityButtonLogic : ButtonLogic
     {
-        [SerializeField] private DoorLogic _door;
+        public UnityEvent OnPress;
+        public UnityEvent OnRelease;
         [SerializeField] private bool _canPlayerPress;
 
         private void OnTriggerEnter(Collider other)
@@ -85,13 +87,13 @@ namespace Unit.GravityCube
         protected override void Press()
         {
             base.Press();
-            _door.Open();
+            OnPress?.Invoke();
         }
 
         protected override void Release()
         {
             base.Release();
-            _door.Close();
+            OnRelease?.Invoke();
         }
     }
 }
