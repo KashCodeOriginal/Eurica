@@ -4,9 +4,11 @@ using UnityEngine.Events;
 
 namespace SceneControllers.Scene3
 {
-    public class Scene3Task2 : MonoBehaviour
+    public class Scene3Task3 : MonoBehaviour
     {
-        // Игрок кладет два куба на две кнопки для куба. В этот момент потолок раздвигается. Пространство расширяется.
+        // На покатой странной стене, под потолком, видны две кнопки.
+        // Рядом с кнопками горят красные лампочки. Игроку надо взять куб и кинуть его в обе кнопки по очереди.
+        // Когда игрок попадает в кнопку, лампочка загорается зеленым цветом.
 
         [SerializeField] private GravityButtonLogic _gravityButton1;
         [SerializeField] private GravityButtonLogic _gravityButton2;
@@ -24,13 +26,18 @@ namespace SceneControllers.Scene3
 
         private void OnStateChanged(bool state)
         {
-            _pressed1 = _gravityButton1._isPressed;
-            _pressed2 = _gravityButton2._isPressed;
+            if (_gravityButton1._isPressed)
+                _pressed1 = true;
+            if (_gravityButton2._isPressed)
+                _pressed2 = true;
 
+            // Press true forever, do not reset.
+            
             if (_pressed1 && _pressed2)
             {
                 if (!_isTaskCompleted)
                 {
+                    Debug.Log("Level completed");
                     _isTaskCompleted = true;
                     OnTaskCompleted?.Invoke();
                 }
