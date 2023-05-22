@@ -14589,6 +14589,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3951083725855844897, guid: f02432717bc260b48a8a86a4414548a1, type: 3}
   m_PrefabInstance: {fileID: 480802474}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &480802476 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3951083725855844896, guid: f02432717bc260b48a8a86a4414548a1, type: 3}
+  m_PrefabInstance: {fileID: 480802474}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0111fa656706f0d478df8c1370ec1472, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &482012977
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17324,6 +17335,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3951083725855844897, guid: f02432717bc260b48a8a86a4414548a1, type: 3}
   m_PrefabInstance: {fileID: 547205820}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &547205822 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3951083725855844896, guid: f02432717bc260b48a8a86a4414548a1, type: 3}
+  m_PrefabInstance: {fileID: 547205820}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0111fa656706f0d478df8c1370ec1472, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &550271595
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40958,6 +40980,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1373750344}
+  - component: {fileID: 1373750345}
   m_Layer: 0
   m_Name: Task3
   m_TagString: Untagged
@@ -40982,6 +41005,35 @@ Transform:
   m_Father: {fileID: 1790208997}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1373750345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1373750343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 227d59ce2d9b83548a0544626b76571d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gravityButton1: {fileID: 480802476}
+  _gravityButton2: {fileID: 547205822}
+  OnTaskCompleted:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1028822548}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1373992176
 PrefabInstance:
   m_ObjectHideFlags: 0
