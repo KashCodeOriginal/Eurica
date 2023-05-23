@@ -31,7 +31,7 @@ namespace Unit.MapProps
         {
             if (_working)
             {
-                _bootstrap.StateMachine.SwitchState<GameLoadingState, string>(AssetsAddressablesConstants.LIFT_SCENE);
+                _bootstrap.StateMachine.SwitchState<GameLoadingState, string>(AssetsAddressablesConstants.SCENE2_MAIN_HUB);
             }
         }
 
