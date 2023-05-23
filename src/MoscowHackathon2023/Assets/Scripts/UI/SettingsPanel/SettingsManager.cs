@@ -117,6 +117,13 @@ namespace UI.SettingsPanel
             UpdatePanelState();
         }
 
+        public void RestartLevel()
+        {
+            // TODO: Restart level.
+
+            throw new System.NotImplementedException();
+        }
+
         public void ClosePanel()
         {
             _isPanelOpened = false;
