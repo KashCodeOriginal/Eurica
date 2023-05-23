@@ -139,6 +139,11 @@ namespace Unit.GravityGun
 
         public void Select()
         {
+            if (_universalGunView == null)
+            {
+                return;
+            }
+            
             _playerInputActionReader.IsLeftButtonClicked += MainFire;
             _playerInputActionReader.IsRightButtonClicked += AlternateFire;
             

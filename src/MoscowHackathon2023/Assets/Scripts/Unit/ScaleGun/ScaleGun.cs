@@ -63,6 +63,11 @@ namespace Unit.ScaleGun
 
         public void Select() 
         {
+            if (_universalGunView == null)
+            {
+                return;
+            }
+            
             _playerInputActionReader.IsLeftButtonClickStarted += StartLeftMouseHeld;
             _playerInputActionReader.IsLeftButtonClickEnded += EndLeftMouseHeld;
 
