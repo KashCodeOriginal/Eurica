@@ -13,39 +13,42 @@ namespace Unit.WeaponInventory
         private List<IWeaponed> _weapons = new List<IWeaponed>();
         private InventoryView _inventoryView;
         private IUIFactory _uiFactory;
-        private Transform _placeMarker;
         private IWeaponed _currentWeaponed;
         private int _currentIndexWeapon;
 
+        public List<IWeaponed> Weapons => _weapons;
+
         public Inventory(IUIFactory uiFactory, 
             PlayerInputActionReader playerInputActionReader, 
-            Transform placeMarker, 
             List<IWeaponed> weapons = null)
         {
             _uiFactory = uiFactory;
-            _placeMarker = placeMarker;
 
             if (weapons != null)
             {
-                _weapons.ForEach(weapon => SetupWeaponInInventory(weapon.GunData));
+                weapons.ForEach(weapon => SetupWeaponInInventory(weapon.GunData));
             }
             
             playerInputActionReader.IsMouseScroll += Switch;            
         }
 
-        public async Task ShowPanel() 
+        /*public async Task ShowPanel(Transform panel) 
         {            
-            _inventoryView =  await _uiFactory.CreateInventoryPanel(_placeMarker);
+            _inventoryView =  await _uiFactory.CreateInventoryPanel(panel);
         }
 
         public void HidePanel() 
         {
             _uiFactory.DestroyInventoryPanel();
-        }
+        }*/
 
-        public void CollectWeapon(IWeaponed weapon) 
+        public void AddWeaponToInventory(IWeaponed weapon) 
         {            
             _weapons.Add(weapon);
+        }
+        
+        public void DisplayGunViewInInventory(IWeaponed weapon)
+        {
             SetupWeaponInInventory(weapon.GunData);
         }
 
@@ -92,12 +95,12 @@ namespace Unit.WeaponInventory
             _currentWeaponed = weapon;
             _currentWeaponed.Select();
             
-            _inventoryView.ChangeCurrentActiveWeapon(_currentWeaponed.GunData.IndexWeapon);
+            //_inventoryView.ChangeCurrentActiveWeapon(_currentWeaponed.GunData.IndexWeapon);
         }
 
         private void SetupWeaponInInventory(BaseGunData dataWeapon) 
         {            
-            _inventoryView.AddWeapon(dataWeapon.InventoryIcon, dataWeapon.IndexWeapon);
+            //_inventoryView.AddWeapon(dataWeapon.InventoryIcon, dataWeapon.IndexWeapon);
         }
     }
 }

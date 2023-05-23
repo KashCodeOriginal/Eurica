@@ -72,19 +72,19 @@ namespace Services.Factories.GunsFactory
         public PortalGun CreatePortalGun()
         {
             return new PortalGun(_portalFactory, 
-                _playerInputActionReader, _gameInstancesContainer, _portalGunData, _universalGunView);
+                _playerInputActionReader, _gameInstancesContainer, _portalGunData);
         }
 
         public GravityGun CreateGravityGun()
         {
             return new GravityGun(_coroutineRunner,
-                _playerInputActionReader, _gravityGunData, _gameInstancesContainer, _universalGunView);
+                _playerInputActionReader, _gravityGunData, _gameInstancesContainer);
         }
 
         public ScaleGun CreateScaleGun()
         {
             return new ScaleGun(_playerInputActionReader,
-                _scaleGunData, _gameInstancesContainer, _universalGunView);
+                _scaleGunData, _gameInstancesContainer);
         }
 
         public async Task<MountRemote> CreateMountRemove()

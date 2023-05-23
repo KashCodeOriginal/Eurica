@@ -15,6 +15,11 @@ namespace Unit.MountRemote
 {
     public class MountRemote : IWeaponed
     {
+        public void SetUpUniversalView(UniversalGunView universalGunView)
+        {
+            throw new System.NotImplementedException();
+        }
+
         public BaseGunData GunData  => _mountRemoveData;
 
         public MountRemote(PlayerInputActionReader playerInputActionReader,

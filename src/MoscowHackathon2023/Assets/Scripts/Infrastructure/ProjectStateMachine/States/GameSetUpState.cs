@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using Cinemachine;
 using Data.AssetsAddressablesConstants;
 using Data.StaticData.LevelData;
@@ -68,31 +69,31 @@ namespace Infrastructure.ProjectStateMachine.States
 
             if (levelData.IsPlayerOnScene)
             {
-                var playerInstance = await
-                    _abstractFactory.CreateInstance<GameObject>(AssetsAddressablesConstants.PLAYER_PREFAB);
-
-                var cameraInstance = await
-                    _abstractFactory.CreateInstance<GameObject>(AssetsAddressablesConstants.CAMERA_PREFAB);
-            
-                var audioSourceInstance = await 
-                    _abstractFactory.CreateInstance<GameObject>(AssetsAddressablesConstants.AUDIO_SOURCE_PREFAB);
-
-                var cameraChildContainer = cameraInstance.GetComponentInChildren<CameraChildContainer>();
-
-                SetUp(playerInstance, cameraInstance, cameraChildContainer.WeaponContainer, audioSourceInstance);
-
-                playerInstance.transform.position = levelData.PlayerSpawnPoint;
-                playerInstance.transform.rotation = levelData.PlayerSpawnRotation;
-
-                await _gunFactory.CreateUniversalGunView();
-                
-                playerInstance.SetActive(false);
-                cameraChildContainer.WeaponContainer.gameObject.SetActive(false);
-
-                Cursor.lockState = CursorLockMode.Locked;
+                await CreatePlayerAndOtherEnvironment(levelData);
             }
 
-            Initializer.StateMachine.SwitchState<GameplayState, LevelData>(levelData);
+            Initializer.StateMachine.SwitchState<GameplayState>();
+        }
+
+        private async Task CreatePlayerAndOtherEnvironment(LevelData levelData)
+        {
+            var playerInstance = await
+                _abstractFactory.CreateInstance<GameObject>(AssetsAddressablesConstants.PLAYER_PREFAB);
+
+            var cameraInstance = await
+                _abstractFactory.CreateInstance<GameObject>(AssetsAddressablesConstants.CAMERA_PREFAB);
+
+            var audioSourceInstance = await
+                _abstractFactory.CreateInstance<GameObject>(AssetsAddressablesConstants.AUDIO_SOURCE_PREFAB);
+
+            var cameraChildContainer = cameraInstance.GetComponentInChildren<CameraChildContainer>();
+
+            SetUp(playerInstance, cameraInstance, cameraChildContainer.WeaponContainer, audioSourceInstance);
+
+            playerInstance.transform.position = levelData.PlayerSpawnPoint;
+            playerInstance.transform.rotation = levelData.PlayerSpawnRotation;
+
+            Cursor.lockState = CursorLockMode.Locked;
         }
 
         private void SetUp(GameObject playerInstance, GameObject cameraInstance, Transform weaponContainer,

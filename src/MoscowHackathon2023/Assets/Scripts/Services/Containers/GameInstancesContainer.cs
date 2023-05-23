@@ -1,6 +1,7 @@
 ﻿using Cinemachine;
 using Services.Factories.UIFactory;
 using UI.GameplayScreen;
+using Unit.WeaponInventory;
 using UnityEngine;
 
 namespace Services.Containers
@@ -12,6 +13,7 @@ namespace Services.Containers
         private Transform _weaponContainer;
         public Camera Camera { get; private set; }
         public CinemachineBrain CinemachineBrain { get; private set; }
+        public Inventory Inventory { get; private set; }
 
         public void SetUpPlayer(GameObject player, IUIFactory uiFactory, Transform weaponContainer)
         {
@@ -26,17 +28,30 @@ namespace Services.Containers
             CinemachineBrain = cinemachineBrain;
         }
 
+        public void SetUpInventory(Inventory inventory)
+        {
+            Inventory = inventory;
+        }
+
         public void TurnOnPlayer()
         {
             Player.SetActive(true);
-            _uiFactory.GameplayScreen.GetComponent<GameplayScreen>().InventoryTransform.gameObject.SetActive(true);
-            _uiFactory.GameplayScreen.GetComponent<GameplayScreen>().StaticCanvas.SetActive(true);
-            _uiFactory.GameplayScreen.SetActive(true);
         }
 
         public void TurnOffPlayer()
         {
             Player.SetActive(false);
+            
+        }
+        public void TurnOnPlayerUI()
+        {
+            _uiFactory.GameplayScreen.GetComponent<GameplayScreen>().InventoryTransform.gameObject.SetActive(true);
+            _uiFactory.GameplayScreen.GetComponent<GameplayScreen>().StaticCanvas.SetActive(true);
+            _uiFactory.GameplayScreen.SetActive(true);
+        }
+
+        public void TurnOffPlayerIU()
+        {
             _uiFactory.GameplayScreen.GetComponent<GameplayScreen>().InventoryTransform.gameObject.SetActive(false);
             _uiFactory.GameplayScreen.GetComponent<GameplayScreen>().StaticCanvas.SetActive(false);
             _uiFactory.GameplayScreen.SetActive(false);

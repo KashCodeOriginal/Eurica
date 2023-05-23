@@ -7,7 +7,7 @@ namespace Unit.WeaponInventory
 {
     public class InventoryView : MonoBehaviour
     {
-        [SerializeField] private Transform _placeSlots;
+        /*[SerializeField] private Transform _placeSlots;
         
         private Dictionary<int, SlotView> _slots = new Dictionary<int, SlotView>();
         private IUIFactory _uiFactory;
@@ -36,6 +36,6 @@ namespace Unit.WeaponInventory
         {
             var slotView = await _uiFactory.CreateSlot(_placeSlots, spriteWeapon);
             _slots.Add(indexWeapon, slotView);            
-        }
+        }*/
     }
 }

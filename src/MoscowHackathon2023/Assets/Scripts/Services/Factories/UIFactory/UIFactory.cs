@@ -25,7 +25,7 @@ namespace Services.Factories.UIFactory
         
         public GameObject InventoryPanel { get; private set; }
         
-        public GameObject Slot { get; private set; }
+        //public GameObject Slot { get; private set; }
 
         public async void CreateMenuLoadingScreen()
         {
@@ -83,7 +83,7 @@ namespace Services.Factories.UIFactory
             Object.Destroy(GameplayScreen);
         }
         
-        public async Task<InventoryView> CreateInventoryPanel(Transform placeMarker)
+        /*public async Task<InventoryView> CreateInventoryPanel(Transform placeMarker)
         {
             var inventoryPanelPrefabs =
                 await _assetsAddressableService.GetAsset<GameObject>(AssetsAddressablesConstants.INVENTORY_PANEL);
@@ -104,9 +104,9 @@ namespace Services.Factories.UIFactory
         public void DestroyInventoryPanel()
         {
             Object.Destroy(InventoryPanel);
-        }
+        }*/
         
-        public async Task<SlotView> CreateSlot(Transform placeMarker, Sprite spriteWeapon)
+        /*public async Task<SlotView> CreateSlot(Transform placeMarker, Sprite spriteWeapon)
         {
             var slotPrefab =
                 await _assetsAddressableService.GetAsset<GameObject>(AssetsAddressablesConstants.SLOT);
@@ -118,11 +118,11 @@ namespace Services.Factories.UIFactory
             slotView.SetIcon(spriteWeapon);            
             
             return slotView;
-        }
+        }*/
 
-        public void DestroySlot()
+        /*public void DestroySlot()
         {
             throw new System.NotImplementedException();
-        }
+        }*/
     }
 }
