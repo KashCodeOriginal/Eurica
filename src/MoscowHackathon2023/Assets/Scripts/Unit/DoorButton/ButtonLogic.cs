@@ -17,7 +17,7 @@ namespace Unit.DoorButton
 
         private void Start()
         {
-            _gravityCube.Init(_colorId, GetCubeColor());
+            _gravityCube?.Init(_colorId, GetCubeColor());
         }
 
         protected virtual void Press()
