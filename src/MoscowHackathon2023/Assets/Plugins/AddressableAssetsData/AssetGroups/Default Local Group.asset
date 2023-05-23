@@ -108,12 +108,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9300e686d85cb0a4bb5410d8dd326ba1
-    m_Address: Scene1_MGU_Outside
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: aa1ff2b1da5c02e418af1f993fa435d0
-    m_Address: Lift_Scene
+    m_Address: Scene2_Main_Hub
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
