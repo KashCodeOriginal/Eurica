@@ -77,11 +77,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 0148362c253a2ca49999914a8a5019eb
-    m_Address: Slot
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8706916be1837c74fb701716bfaefd5c
     m_Address: InventoryPanel
     m_ReadOnly: 0
