@@ -155,6 +155,11 @@ namespace Unit.GravityGun
             _playerInputActionReader.IsLeftButtonClicked -= StopMainFire;
             _playerInputActionReader.IsLeftButtonClicked -= MainFire;
             _playerInputActionReader.IsRightButtonClicked -= AlternateFire;
+
+            if (_currentRigidbody != null)
+            {
+                _currentRigidbody.gameObject.layer = _interactiveLayer;
+            }
         }
 
         private IEnumerator DragIn()
