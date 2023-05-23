@@ -10,6 +10,7 @@ using Services.Factories.AbstractFactory;
 using Services.Factories.GunsFactory;
 using Services.Factories.PortalFactory;
 using Services.Factories.UIFactory;
+using Services.GameProgress;
 using Services.Input;
 using Services.PlaySounds;
 using Services.StaticData;
@@ -34,20 +35,26 @@ namespace Infrastructure.Zenject.Installers
             BindUIFactory();
             BindGunFactory();
             BindPortalFactory();
-            BindGameInstancesContainer();
             BindPlayerSettings();
             BindStaticDataService();
             BindAbstractFactory();
+            BindGameProgress();
             BindCoroutineRunner();
             BindGunsStaticDataData();
             BindPlaySoundService();
             BindAddressablesProvider();
+            BindGameInstancesContainer();
             BindPlayerInputActionsReader();
         }
 
         private void BindUIFactory()
         {
             Container.BindInterfacesTo<UIFactory>().AsSingle();
+        }
+        
+        private void BindGameProgress()
+        {
+            Container.BindInterfacesTo<GameProgressService>().AsSingle();
         }
 
         private void BindAbstractFactory()
