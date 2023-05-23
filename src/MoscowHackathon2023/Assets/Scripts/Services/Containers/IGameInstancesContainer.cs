@@ -1,5 +1,6 @@
 ﻿using Cinemachine;
 using Services.Factories.UIFactory;
+using Unit.UniversalGun;
 using Unit.WeaponInventory;
 using UnityEngine;
 
@@ -11,10 +12,12 @@ namespace Services.Containers
         public Camera Camera { get; }
         public CinemachineBrain CinemachineBrain { get; }
         public Inventory Inventory { get;}
+        public UniversalGunView UniversalGunView { get; }
 
         public void SetUpPlayer(GameObject player, IUIFactory uiFactory, Transform weaponContainer);
         public void SetUpCamera(Camera camera, CinemachineBrain cinemachineBrain);
         public void SetUpInventory(Inventory inventory);
+        public void SetUpUniversalGunView(UniversalGunView universalGunView);
         public void TurnOnPlayer();
         public void TurnOffPlayer();  
         public void TurnOnPlayerUI();

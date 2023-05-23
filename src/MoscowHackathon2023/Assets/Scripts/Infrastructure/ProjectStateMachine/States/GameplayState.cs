@@ -10,7 +10,6 @@ namespace Infrastructure.ProjectStateMachine.States
     public class GameplayState : IState<Bootstrap>, IEnterable
     {
         private readonly IUIFactory _uiFactory;
-        private readonly PlayerInputActionReader _playerInputActionReader;
         private readonly IGameInstancesContainer _gameInstancesContainer;
         private readonly IGunFactory _gunFactory;
         
@@ -18,12 +17,10 @@ namespace Infrastructure.ProjectStateMachine.States
         
         public GameplayState(Bootstrap initializer,
             IUIFactory uiFactory, 
-            PlayerInputActionReader playerInputActionReader,
             IGameInstancesContainer gameInstancesContainer,
             IGunFactory gunFactory)
         {
             _uiFactory = uiFactory;
-            _playerInputActionReader = playerInputActionReader;
             _gameInstancesContainer = gameInstancesContainer;
             _gunFactory = gunFactory;
             Initializer = initializer;
@@ -36,14 +33,12 @@ namespace Infrastructure.ProjectStateMachine.States
             var gameplayScreenComponent = gameplayScreen.GetComponent<GameplayScreen>();
             
             var universalGunView = await _gunFactory.CreateUniversalGunView();
+            
+            _gameInstancesContainer.SetUpUniversalGunView(universalGunView);
 
             //await _gameInstancesContainer.Inventory.ShowPanel(gameplayScreenComponent.InventoryTransform);
 
             _gameInstancesContainer.TurnOnPlayerUI();
-            
-            _gameInstancesContainer.Inventory.Weapons[0].SetUpUniversalView(universalGunView);
-            _gameInstancesContainer.Inventory.Weapons[1].SetUpUniversalView(universalGunView);
-            _gameInstancesContainer.Inventory.Weapons[2].SetUpUniversalView(universalGunView);
 
             /*_gameInstancesContainer.Inventory.DisplayGunViewInInventory
                 (_gameInstancesContainer.Inventory.Weapons[0]);
