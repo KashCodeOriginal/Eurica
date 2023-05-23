@@ -29,6 +29,8 @@ namespace Infrastructure.ProjectStateMachine.States
 
         public async void OnEnter()
         {
+            _uiFactory.DestroyGameLoadingScreen();
+
             var gameplayScreen = await _uiFactory.CreateGameplayScreen();
             
             var gameplayScreenComponent = gameplayScreen.GetComponent<GameplayScreen>();
