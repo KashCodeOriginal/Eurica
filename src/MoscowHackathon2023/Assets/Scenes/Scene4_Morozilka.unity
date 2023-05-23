@@ -6462,19 +6462,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OnQuizCompleted:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1055855271}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+  OnDoorOpened:
+    m_PersistentCalls:
+      m_Calls: []
   _indicators:
   - {fileID: 692063126}
   - {fileID: 1196787861}
@@ -6484,6 +6475,9 @@ MonoBehaviour:
   - {fileID: 1038238345}
   _indicatorOn: {fileID: 2100000, guid: 2b88e3a88f99ebd41ae8edf24eeb374b, type: 2}
   _indicatorOff: {fileID: 2100000, guid: b37ae207d097f4949a013eb9bd80a43c, type: 2}
+  _secretDoor: {fileID: 1055855272}
+  _openedLocalPos: {x: 3, y: 0, z: 0}
+  _openingTime: 3
 --- !u!1 &1859655103
 GameObject:
   m_ObjectHideFlags: 1

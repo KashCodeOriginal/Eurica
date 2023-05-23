@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.Events;
 
 namespace Unit.Scene4.Task1
@@ -6,11 +7,16 @@ namespace Unit.Scene4.Task1
     public class QuizLampLogic : MonoBehaviour
     {
         public UnityEvent OnQuizCompleted;
+        public UnityEvent OnDoorOpened;
 
         private int[] _progress;
         [SerializeField] private MeshRenderer[] _indicators;
         [SerializeField] private Material _indicatorOn;
         [SerializeField] private Material _indicatorOff;
+
+        [SerializeField] private Transform _secretDoor;
+        [SerializeField] private Vector3 _openedLocalPos;
+        [SerializeField] private float _openingTime = 5f;
 
         private bool _isCompletedAlready = false;
 
@@ -39,7 +45,24 @@ namespace Unit.Scene4.Task1
             {
                 _isCompletedAlready = true;
                 OnQuizCompleted?.Invoke();
+
+                StartCoroutine(OpenDoor());
             }
+        }
+
+        private IEnumerator OpenDoor()
+        {
+            float elapsedTime = 0;
+
+            while (elapsedTime < _openingTime)
+            {
+                _secretDoor.localPosition = Vector3.Lerp(Vector3.zero, _openedLocalPos, elapsedTime / _openingTime);
+                elapsedTime += Time.deltaTime;
+                yield return null;
+            }
+
+            _secretDoor.localPosition = _openedLocalPos;
+            OnDoorOpened?.Invoke();
         }
 
         private bool IsCompleted()
