@@ -32,7 +32,7 @@ namespace Unit.WeaponInventory
             playerInputActionReader.IsMouseScroll += Switch;            
         }
 
-        public async Task ShowPanel(Transform panel) 
+        /*public async Task ShowPanel(Transform panel) 
         {            
             _inventoryView =  await _uiFactory.CreateInventoryPanel(panel);
         }
@@ -40,7 +40,7 @@ namespace Unit.WeaponInventory
         public void HidePanel() 
         {
             _uiFactory.DestroyInventoryPanel();
-        }
+        }*/
 
         public void AddWeaponToInventory(IWeaponed weapon) 
         {            
@@ -95,12 +95,12 @@ namespace Unit.WeaponInventory
             _currentWeaponed = weapon;
             _currentWeaponed.Select();
             
-            _inventoryView.ChangeCurrentActiveWeapon(_currentWeaponed.GunData.IndexWeapon);
+            //_inventoryView.ChangeCurrentActiveWeapon(_currentWeaponed.GunData.IndexWeapon);
         }
 
         private void SetupWeaponInInventory(BaseGunData dataWeapon) 
         {            
-            _inventoryView.AddWeapon(dataWeapon.InventoryIcon, dataWeapon.IndexWeapon);
+            //_inventoryView.AddWeapon(dataWeapon.InventoryIcon, dataWeapon.IndexWeapon);
         }
     }
 }

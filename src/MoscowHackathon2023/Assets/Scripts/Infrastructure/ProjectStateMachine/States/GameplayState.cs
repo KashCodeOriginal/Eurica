@@ -1,12 +1,9 @@
-using Data.StaticData.LevelData;
 using Infrastructure.ProjectStateMachine.Base;
 using Services.Containers;
 using Services.Factories.GunsFactory;
 using Services.Factories.UIFactory;
 using Services.Input;
 using UI.GameplayScreen;
-using Unit.WeaponInventory;
-using UnityEngine;
 
 namespace Infrastructure.ProjectStateMachine.States
 {
@@ -40,7 +37,7 @@ namespace Infrastructure.ProjectStateMachine.States
             
             var universalGunView = await _gunFactory.CreateUniversalGunView();
 
-            await _gameInstancesContainer.Inventory.ShowPanel(gameplayScreenComponent.InventoryTransform);
+            //await _gameInstancesContainer.Inventory.ShowPanel(gameplayScreenComponent.InventoryTransform);
 
             _gameInstancesContainer.TurnOnPlayerUI();
             
@@ -48,14 +45,14 @@ namespace Infrastructure.ProjectStateMachine.States
             _gameInstancesContainer.Inventory.Weapons[1].SetUpUniversalView(universalGunView);
             _gameInstancesContainer.Inventory.Weapons[2].SetUpUniversalView(universalGunView);
 
-            _gameInstancesContainer.Inventory.DisplayGunViewInInventory
+            /*_gameInstancesContainer.Inventory.DisplayGunViewInInventory
                 (_gameInstancesContainer.Inventory.Weapons[0]);
             
             _gameInstancesContainer.Inventory.DisplayGunViewInInventory
                 (_gameInstancesContainer.Inventory.Weapons[1]);
             
             _gameInstancesContainer.Inventory.DisplayGunViewInInventory
-                (_gameInstancesContainer.Inventory.Weapons[2]);
+                (_gameInstancesContainer.Inventory.Weapons[2]);*/
 
         }
     }
