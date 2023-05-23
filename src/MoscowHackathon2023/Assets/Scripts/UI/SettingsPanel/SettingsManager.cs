@@ -1,5 +1,7 @@
 using Cinemachine;
 using Data.StaticData.PlayerData;
+using Infrastructure;
+using Infrastructure.ProjectStateMachine.States;
 using Services.Containers;
 using Services.Input;
 using Services.PlaySounds;
@@ -7,6 +9,7 @@ using TMPro;
 using Unit.Player;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Zenject;
 
@@ -17,11 +20,13 @@ namespace UI.SettingsPanel
         [Inject]
         public void Construct(PlayerInputActionReader playerInputActionReader,
             IGameInstancesContainer gameInstancesContainer,
-            IPlaySoundsService playSoundsService)
+            IPlaySoundsService playSoundsService,
+            Bootstrap bootstrap)
         {
             _playerInputActionReader = playerInputActionReader;
             _gameInstancesContainer = gameInstancesContainer;
             _playSoundsService = playSoundsService;
+            _bootstrap = bootstrap;
         }
 
         public UnityAction<bool> OnChangePanelState;
@@ -33,6 +38,7 @@ namespace UI.SettingsPanel
 
         private IGameInstancesContainer _gameInstancesContainer;
         private IPlaySoundsService _playSoundsService;
+        private Bootstrap _bootstrap;
 
         [Header("Settings Data")]
         [SerializeField] private GameplaySettings _gameplaySettings;
@@ -105,7 +111,7 @@ namespace UI.SettingsPanel
             var cinemachineComponent = _gameInstancesContainer.Player.GetComponent<PlayerChildContainer>()
                 .CinemachineVirtualCamera.GetCinemachineComponent<CinemachinePOV>();
 
-            UI.GameplayScreen.GameplayScreen.Instance?.GameplaySubtitlesView.SetSettings(_gameplaySettings.Subtitles);
+            GameplayScreen.GameplayScreen.Instance?.GameplaySubtitlesView.SetSettings(_gameplaySettings.Subtitles);
 
             cinemachineComponent.m_HorizontalAxis.m_MaxSpeed = _gameplaySettings.MouseSens / 100f;
             cinemachineComponent.m_VerticalAxis.m_MaxSpeed = _gameplaySettings.MouseSens / 100f;
@@ -119,9 +125,9 @@ namespace UI.SettingsPanel
 
         public void RestartLevel()
         {
-            // TODO: Restart level.
-
-            throw new System.NotImplementedException();
+            var currentScene = SceneManager.GetActiveScene();
+            
+            _bootstrap.StateMachine.SwitchState<GameLoadingState, string>(currentScene.name);
         }
 
         public void ClosePanel()
