@@ -4,7 +4,7 @@ namespace Data.AssetsAddressablesConstants
     {
         public const string INITIAL_LEVEL = "Bootstrap";
         public const string MAIN_MENU_LEVEL = "MainMenu";
-        public const string SCENE1_MGU_OUTSIDE = "Scene1_MGU_Outside";
+        public const string SCENE1_MGU_OUTSIDE = "Scene4_Morozilka";
         public const string SCENE2_MAIN_HUB = "Scene2_Main_Hub";
 
         public const string MENU_LOADING_SCREEN = "MenuLoadingScreen";
