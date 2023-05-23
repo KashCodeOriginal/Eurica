@@ -46,6 +46,11 @@ namespace Unit.Portal
 
         public void Select() 
         {         
+            if (_universalGunView == null)
+            {
+                return;
+            }
+            
             _playerInputActionReader.IsRightButtonClicked += MainFire;
             _playerInputActionReader.IsLeftButtonClicked += AlternateFire;
             

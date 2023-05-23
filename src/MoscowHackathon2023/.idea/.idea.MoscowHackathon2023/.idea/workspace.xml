@@ -5,18 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="796ee9ce-5b7d-4e10-92ca-ade5b0f8e2d9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Services/GameProgress.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Services/GameProgress/GameProgressService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Services/GameProgress/GameProgressService.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Services/GameProgress/IGameProgressService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Services/GameProgress/IGameProgressService.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Services/GameProgress/LiftStage.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Services/GameProgress/LiftStage.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Unit/Lift.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Unit/Lift/Lift.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Unit/Lift/Lift.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MoscowHackathon2023/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MoscowHackathon2023/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Infrastructure/Zenject/Installers/ServicesInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Infrastructure/Zenject/Installers/ServicesInstaller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit/GravityGun/GravityGun.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit/GravityGun/GravityGun.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit/Portal/PortalGun.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit/Portal/PortalGun.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit/ScaleGun/ScaleGun.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit/ScaleGun/ScaleGun.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +24,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Unit/Lever/LeverButtonLogic.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@14.0.4/Editor/LookDev/Stage.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Slider.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../nvp-vr/Assets/Tyrs/Scripts/BootstrapTyrs.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="2Pyiw7vG8xg4lu4Ul1yqdWYa9qO" />
   <component name="ProjectViewState">
@@ -43,7 +35,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "Add-first-lift-cut-scene",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
