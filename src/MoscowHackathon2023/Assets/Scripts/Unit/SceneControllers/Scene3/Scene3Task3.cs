@@ -12,6 +12,10 @@ namespace SceneControllers.Scene3
 
         [SerializeField] private GravityButtonLogic _gravityButton1;
         [SerializeField] private GravityButtonLogic _gravityButton2;
+        [SerializeField] private MeshRenderer _lampIndicator1;
+        [SerializeField] private MeshRenderer _lampIndicator2;
+        [SerializeField] private Material _indicatorGreen;
+        [SerializeField] private Material _indicatorRed;
         private bool _pressed1;
         private bool _pressed2;
         private bool _isTaskCompleted = false;
@@ -31,8 +35,11 @@ namespace SceneControllers.Scene3
             if (_gravityButton2._isPressed)
                 _pressed2 = true;
 
+            _lampIndicator1.material = _pressed1 ? _indicatorGreen : _indicatorRed;
+            _lampIndicator2.material = _pressed2 ? _indicatorGreen : _indicatorRed;
+
             // Press true forever, do not reset.
-            
+
             if (_pressed1 && _pressed2)
             {
                 if (!_isTaskCompleted)
