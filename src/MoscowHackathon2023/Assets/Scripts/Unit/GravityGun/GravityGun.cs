@@ -16,28 +16,38 @@ namespace Unit.GravityGun
         public BaseGunData GunData => _gravityGunGravityGunData;
 
         private Rigidbody _currentRigidbody;
+
         private ICoroutineRunner _coroutineRunner;
+
         private Coroutine _dragIn;
+
         private PlayerInputActionReader _playerInputActionReader;
+
         private readonly GravityGunData _gravityGunGravityGunData;
-        private readonly UniversalGunView _universalGunView;
+
+        private UniversalGunView _universalGunView;
+
         private readonly IGameInstancesContainer _gameInstancesContainer;
-        
+
         private LayerMask _interactiveLayer = LayerMask.NameToLayer("InteractiveObjectForGravity");
+
         private LayerMask _grabbedLayer = LayerMask.NameToLayer("Grabbed");
+
+        public void SetUpUniversalView(UniversalGunView universalGunView)
+        {
+            _universalGunView = universalGunView;
+        }
 
 
         public GravityGun(ICoroutineRunner coroutineRunner,
             PlayerInputActionReader playerInputActionReader,
             GravityGunData gravityGunGravityGunData,
-            IGameInstancesContainer gameInstancesContainer,
-            UniversalGunView universalGunView)
+            IGameInstancesContainer gameInstancesContainer)
         {
             _coroutineRunner = coroutineRunner;
             _playerInputActionReader = playerInputActionReader;
             _gravityGunGravityGunData = gravityGunGravityGunData;
             _gameInstancesContainer = gameInstancesContainer;
-            _universalGunView = universalGunView;
         }
 
         public void MainFire()

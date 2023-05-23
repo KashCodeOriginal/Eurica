@@ -13,15 +13,18 @@ namespace Unit.ScaleGun
     {
         public ScaleGun(PlayerInputActionReader playerInputActionReader,
             ScaleGunData scaleGunData,
-            IGameInstancesContainer gameInstancesContainer, 
-            UniversalGunView universalGunView)
+            IGameInstancesContainer gameInstancesContainer)
         {
             _playerInputActionReader = playerInputActionReader;
 
             _gameInstancesContainer = gameInstancesContainer;
-            _universalGunView = universalGunView;
 
             _scaleGunData = scaleGunData;
+        }
+
+        public void SetUpUniversalView(UniversalGunView universalGunView)
+        {
+            _universalGunView = universalGunView;
         }
 
         public BaseGunData GunData => _scaleGunData;
@@ -33,7 +36,7 @@ namespace Unit.ScaleGun
         private readonly ScaleGunData _scaleGunData;
 
         private readonly IGameInstancesContainer _gameInstancesContainer;
-        private readonly UniversalGunView _universalGunView;
+        private UniversalGunView _universalGunView;
 
         private bool _isLeftMouseHeld;
         private bool _isRightMouseHeld;

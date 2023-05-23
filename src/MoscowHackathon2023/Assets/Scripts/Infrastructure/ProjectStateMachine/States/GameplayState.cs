@@ -10,7 +10,7 @@ using UnityEngine;
 
 namespace Infrastructure.ProjectStateMachine.States
 {
-    public class GameplayState : IState<Bootstrap>, IEnterableWithOneArg<LevelData>
+    public class GameplayState : IState<Bootstrap>, IEnterable
     {
         private readonly IUIFactory _uiFactory;
         private readonly PlayerInputActionReader _playerInputActionReader;
@@ -19,8 +19,6 @@ namespace Infrastructure.ProjectStateMachine.States
         
         public Bootstrap Initializer { get; }
         
-        private Inventory _inventory;
-
         public GameplayState(Bootstrap initializer,
             IUIFactory uiFactory, 
             PlayerInputActionReader playerInputActionReader,
@@ -34,29 +32,31 @@ namespace Infrastructure.ProjectStateMachine.States
             Initializer = initializer;
         }
 
-        public async void OnEnter(LevelData levelData)
+        public async void OnEnter()
         {
             var gameplayScreen = await _uiFactory.CreateGameplayScreen();
             
             var gameplayScreenComponent = gameplayScreen.GetComponent<GameplayScreen>();
             
-            var portalGun = _gunFactory.CreatePortalGun();
-            var gravityGun = _gunFactory.CreateGravityGun();
-            var scaleGun = _gunFactory.CreateScaleGun();
+            var universalGunView = await _gunFactory.CreateUniversalGunView();
 
-            _inventory = new Inventory(_uiFactory, _playerInputActionReader, gameplayScreenComponent.InventoryTransform);
+            await _gameInstancesContainer.Inventory.ShowPanel(gameplayScreenComponent.InventoryTransform);
 
-            await _inventory.ShowPanel();
+            _gameInstancesContainer.TurnOnPlayerUI();
             
-            _inventory.CollectWeapon(portalGun);
-            _inventory.CollectWeapon(gravityGun);
-            _inventory.CollectWeapon(scaleGun);
+            _gameInstancesContainer.Inventory.Weapons[0].SetUpUniversalView(universalGunView);
+            _gameInstancesContainer.Inventory.Weapons[1].SetUpUniversalView(universalGunView);
+            _gameInstancesContainer.Inventory.Weapons[2].SetUpUniversalView(universalGunView);
+
+            _gameInstancesContainer.Inventory.DisplayGunViewInInventory
+                (_gameInstancesContainer.Inventory.Weapons[0]);
             
-            if (levelData.IsPlayerInstancingAtStart)
-            {
-                _gameInstancesContainer.TurnOnPlayer();
-                _gameInstancesContainer.TurnOnWeapon();
-            }
+            _gameInstancesContainer.Inventory.DisplayGunViewInInventory
+                (_gameInstancesContainer.Inventory.Weapons[1]);
+            
+            _gameInstancesContainer.Inventory.DisplayGunViewInInventory
+                (_gameInstancesContainer.Inventory.Weapons[2]);
+
         }
     }
 }

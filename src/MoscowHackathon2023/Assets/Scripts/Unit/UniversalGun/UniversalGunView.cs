@@ -1,6 +1,4 @@
-﻿using System;
-using UnityEngine;
-using static UnityEngine.Rendering.DebugUI;
+﻿using UnityEngine;
 
 namespace Unit.UniversalGun
 {
@@ -13,12 +11,7 @@ namespace Unit.UniversalGun
         [SerializeField] private GameObject _gravityGun;
         [SerializeField] private GameObject _scaleGun;
         
-        private GameObject _currentGun;
-
-        private void Start()
-        {
-            _currentGun = _portalGun;
-        }
+        [SerializeField] private GameObject _currentGun;
 
         public void ChangeActiveGun(GunTypes gunType)
         {

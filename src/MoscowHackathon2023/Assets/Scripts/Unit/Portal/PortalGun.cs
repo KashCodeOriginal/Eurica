@@ -18,21 +18,23 @@ namespace Unit.Portal
         private readonly PlayerInputActionReader _playerInputActionReader;
         private readonly IGameInstancesContainer _gameInstancesContainer;
         private readonly PortalGunData _portalGunData;
-        private readonly UniversalGunView _universalGunView;
+        private UniversalGunView _universalGunView;
         
         private LayerMask _layerMask = LayerMask.NameToLayer("WallForPortal");
-
 
         public PortalGun(IPortalFactory portalFactory,
             PlayerInputActionReader playerInputActionReader,
             IGameInstancesContainer gameInstancesContainer,
-            PortalGunData portalGunData,
-            UniversalGunView universalGunView)
+            PortalGunData portalGunData)
         {
             _portalFactory = portalFactory;
             _playerInputActionReader = playerInputActionReader;
             _gameInstancesContainer = gameInstancesContainer;
             _portalGunData = portalGunData;
+        }
+
+        public void SetUpUniversalView(UniversalGunView universalGunView)
+        {
             _universalGunView = universalGunView;
         }
 

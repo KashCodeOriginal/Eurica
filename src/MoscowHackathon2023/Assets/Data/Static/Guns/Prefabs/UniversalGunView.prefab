@@ -75,7 +75,7 @@ MonoBehaviour:
   _portalGun: {fileID: 8239652318719529324}
   _gravityGun: {fileID: 3686945175279058796}
   _scaleGun: {fileID: 6423010230758409010}
-  _mountGun: {fileID: 0}
+  _currentGun: {fileID: 8239652318719529324}
 --- !u!1 &3686945175279058796
 GameObject:
   m_ObjectHideFlags: 0

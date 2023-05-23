@@ -10,6 +10,7 @@ using Services.Input;
 using Services.PlaySounds;
 using Services.StaticData;
 using Unit.ScaleGun;
+using Unit.WeaponInventory;
 using UnityEditor;
 
 namespace Infrastructure
@@ -26,7 +27,12 @@ namespace Infrastructure
             IPlaySoundsService playSoundsService)
         {
             StateMachine = new StateMachine<Bootstrap>(
-                new BootstrapState(this, staticDataService),
+                new BootstrapState(this, 
+                    staticDataService, 
+                    uiFactory,
+                    playerInputActionReader,
+                    gameInstancesContainer,
+                    gunFactory),
                 new MenuLoadingState(this, uiFactory),
                 new MainMenuState(this, uiFactory),
                 new GameLoadingState(this),
