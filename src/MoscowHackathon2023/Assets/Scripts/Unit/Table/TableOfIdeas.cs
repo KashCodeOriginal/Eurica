@@ -1,3 +1,4 @@
+using System;
 using Services.Containers;
 using Unit.Base;
 using Unit.UniversalGun;
@@ -22,9 +23,18 @@ namespace Unit.Table
         {
             var universalGunView = _gameInstancesContainer.UniversalGunView;
             
-            _gameInstancesContainer.Inventory.Weapons[0].SetUpUniversalView(universalGunView);
-            _gameInstancesContainer.Inventory.Weapons[1].SetUpUniversalView(universalGunView);
-            _gameInstancesContainer.Inventory.Weapons[2].SetUpUniversalView(universalGunView);
+            switch (_gunType)
+            {
+                case GunTypes.Portal:
+                    _gameInstancesContainer.Inventory.Weapons[0].SetUpUniversalView(universalGunView);
+                    break;
+                case GunTypes.Gravity:
+                    _gameInstancesContainer.Inventory.Weapons[1].SetUpUniversalView(universalGunView);
+                    break;
+                case GunTypes.Scale:
+                    _gameInstancesContainer.Inventory.Weapons[2].SetUpUniversalView(universalGunView);
+                    break;
+            }
         }
     }
 }
