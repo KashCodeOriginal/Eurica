@@ -64,6 +64,11 @@ namespace Unit.TriggerSystem
             }                
         }
 
+        public void CloseLift()
+        {
+            
+        }
+
         public void ChangeScene(string sceneName)
         {
             _bootstrap.StateMachine.SwitchState<GameLoadingState, string>(sceneName);

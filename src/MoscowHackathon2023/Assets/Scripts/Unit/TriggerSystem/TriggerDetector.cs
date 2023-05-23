@@ -3,7 +3,6 @@ using UnityEngine.Events;
 
 namespace Unit.TriggerSystem
 {
-    [RequireComponent(typeof(TriggerTaskHelper))]
     [RequireComponent(typeof(BoxCollider))]
     public class TriggerDetector : MonoBehaviour
     {
