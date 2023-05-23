@@ -2665,6 +2665,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1940291756068124205}
     m_Modifications:
+    - target: {fileID: 2443324616064203023, guid: c8d39ca7d63e56a4cb9bc3e6573dff00, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2443324616799114816, guid: c8d39ca7d63e56a4cb9bc3e6573dff00, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2766010298671427207, guid: c8d39ca7d63e56a4cb9bc3e6573dff00, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -2712,6 +2720,10 @@ PrefabInstance:
     - target: {fileID: 3254140016885085245, guid: c8d39ca7d63e56a4cb9bc3e6573dff00, type: 3}
       propertyPath: m_Name
       value: Lift
+      objectReference: {fileID: 0}
+    - target: {fileID: 6377431604322227991, guid: c8d39ca7d63e56a4cb9bc3e6573dff00, type: 3}
+      propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
