@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace SceneControllers.Scene3
 {
@@ -10,6 +11,8 @@ namespace SceneControllers.Scene3
         [SerializeField] private Vector3 _ceilingTargetStage2;
         [SerializeField] private float _transitionTime = 8f;
         [SerializeField] private GameObject _objectsStage2;
+
+        public UnityEvent OnTransitionCompleted;
 
         private void Start()
         {
@@ -40,6 +43,7 @@ namespace SceneControllers.Scene3
             }
 
             _ceiling.localPosition = _ceilingTargetStage2;
+            OnTransitionCompleted?.Invoke();
         }
     }
 }
