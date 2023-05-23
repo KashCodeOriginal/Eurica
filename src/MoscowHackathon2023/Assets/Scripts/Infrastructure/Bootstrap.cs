@@ -35,7 +35,7 @@ namespace Infrastructure
                     gunFactory),
                 new MenuLoadingState(this, uiFactory),
                 new MainMenuState(this, uiFactory),
-                new GameLoadingState(this),
+                new GameLoadingState(this, uiFactory),
                 new GameSetUpState(this, gunFactory,
                     abstractFactory, playerInputActionReader, playerSettings,
                     gameInstancesContainer, staticDataService, playSoundsService, uiFactory),
