@@ -4,6 +4,7 @@ using Services.Factories.GunsFactory;
 using Services.Factories.UIFactory;
 using Services.Input;
 using UI.GameplayScreen;
+using Unit.UniversalGun;
 
 namespace Infrastructure.ProjectStateMachine.States
 {
@@ -36,7 +37,18 @@ namespace Infrastructure.ProjectStateMachine.States
             
             _gameInstancesContainer.SetUpUniversalGunView(universalGunView);
 
-            //await _gameInstancesContainer.Inventory.ShowPanel(gameplayScreenComponent.InventoryTransform);
+            if (_gameInstancesContainer.CollectedGunViews.Contains(GunTypes.Portal))
+            {
+                _gameInstancesContainer.Inventory.Weapons[0].SetUpUniversalView(universalGunView);
+            }
+            if (_gameInstancesContainer.CollectedGunViews.Contains(GunTypes.Gravity))
+            {
+                _gameInstancesContainer.Inventory.Weapons[1].SetUpUniversalView(universalGunView);
+            }
+            if (_gameInstancesContainer.CollectedGunViews.Contains(GunTypes.Scale))
+            {
+                _gameInstancesContainer.Inventory.Weapons[2].SetUpUniversalView(universalGunView);
+            }
 
             _gameInstancesContainer.TurnOnPlayerUI();
 

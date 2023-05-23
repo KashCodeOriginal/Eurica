@@ -4,7 +4,7 @@ using UnityEngine.AddressableAssets;
 
 namespace Infrastructure.ProjectStateMachine.States
 {
-    public class GameLoadingState : IState<Bootstrap>, IEnterableWithOneArg<string>, IExitable
+    public class GameLoadingState : IState<Bootstrap>, IEnterableWithOneArg<string>
     {
         public Bootstrap Initializer { get; }
 
@@ -20,11 +20,6 @@ namespace Infrastructure.ProjectStateMachine.States
             await asyncOperationHandler.Task;
             
             Initializer.StateMachine.SwitchState<GameSetUpState, string>(arg);
-        }
-
-        public void OnExit()
-        {
-            
         }
     }
 

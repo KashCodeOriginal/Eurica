@@ -1,4 +1,5 @@
-﻿using Cinemachine;
+﻿using System.Collections.Generic;
+using Cinemachine;
 using Services.Factories.UIFactory;
 using UI.GameplayScreen;
 using Unit.UniversalGun;
@@ -16,6 +17,7 @@ namespace Services.Containers
         public CinemachineBrain CinemachineBrain { get; private set; }
         public Inventory Inventory { get; private set; }
         public UniversalGunView UniversalGunView { get; private set; }
+        public List<GunTypes> CollectedGunViews { get; private set; } = new List<GunTypes>();
 
         public void SetUpPlayer(GameObject player, IUIFactory uiFactory, Transform weaponContainer)
         {
@@ -38,6 +40,11 @@ namespace Services.Containers
         public void SetUpUniversalGunView(UniversalGunView universalGunView)
         {
             UniversalGunView = universalGunView;
+        }
+
+        public void AddViewGun(GunTypes gunType)
+        {
+            CollectedGunViews.Add(gunType);
         }
 
         public void TurnOnPlayer()
