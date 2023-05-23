@@ -15,5 +15,5 @@ MonoBehaviour:
   <LevelName>k__BackingField: Scene3_MGU_Inside
   <IsPlayerOnScene>k__BackingField: 1
   <IsPlayerInstancingAtStart>k__BackingField: 1
-  <PlayerSpawnPoint>k__BackingField: {x: -296.0049, y: 1.63, z: 642.3089}
+  <PlayerSpawnPoint>k__BackingField: {x: -295.311, y: 10, z: 622.012}
   <PlayerSpawnRotation>k__BackingField: {x: 0, y: 1, z: 0, w: -0.00000004371139}

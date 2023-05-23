@@ -20,6 +20,12 @@ namespace Unit.TriggerSystem
         public void CloseDoors()
         {
             _animator.SetTrigger(CloseLiftDoor);
+
+            if (_blackWall == null)
+            {
+                return;
+            }
+            
             _blackWall.SetActive(false);
         }
     }
