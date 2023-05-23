@@ -49,7 +49,12 @@ MonoBehaviour:
   _buttonGravitySettings: {fileID: 11400000, guid: 3852605b0bc4e464ab4e6101ca94b910, type: 2}
   _colorId: 3
   _gravityCube: {fileID: 0}
-  _door: {fileID: 0}
+  OnPress:
+    m_PersistentCalls:
+      m_Calls: []
+  OnRelease:
+    m_PersistentCalls:
+      m_Calls: []
   _canPlayerPress: 1
 --- !u!65 &8945459654663080065
 BoxCollider:
@@ -119,7 +124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _buttonLogic: {fileID: 3951083725855844896}
   _movingPart: {fileID: 6714434630716812988}
-  _speed: 0.25
+  _speed: 1
   _localPosUnpressed: {x: 0, y: 0.4697792, z: 0}
   _localPosPressed: {x: 0, y: 0.2, z: 0}
   meshColorIndication: {fileID: 5355274079139198984}
