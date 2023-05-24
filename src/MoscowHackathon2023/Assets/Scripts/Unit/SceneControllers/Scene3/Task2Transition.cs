@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace SceneControllers.Scene3
+namespace Unit.SceneControllers.Scene3
 {
     public class Task2Transition : MonoBehaviour
     {

@@ -1,12 +1,12 @@
 using Unit.GravityCube;
 using UnityEngine;
 
-namespace SceneControllers.Scene3
+namespace Unit.SceneControllers.Scene3
 {
     public class Scene3Task1 : MonoBehaviour
     {
-        // На локации игрока встречает 1 куб, мирно лежащий по центру холла. Игрок должен взять куб грави-пушкой и кинуть его в люстру.
-        // Тогда с люстры упадет еще один куб, и в итоге у игрока их будет два.
+        // РќР° Р»РѕРєР°С†РёРё РёРіСЂРѕРєР° РІСЃС‚СЂРµС‡Р°РµС‚ 1 РєСѓР±, РјРёСЂРЅРѕ Р»РµР¶Р°С‰РёР№ РїРѕ С†РµРЅС‚СЂСѓ С…РѕР»Р»Р°. РРіСЂРѕРє РґРѕР»Р¶РµРЅ РІР·СЏС‚СЊ РєСѓР± РіСЂР°РІРё-РїСѓС€РєРѕР№ Рё РєРёРЅСѓС‚СЊ РµРіРѕ РІ Р»СЋСЃС‚СЂСѓ.
+        // РўРѕРіРґР° СЃ Р»СЋСЃС‚СЂС‹ СѓРїР°РґРµС‚ РµС‰Рµ РѕРґРёРЅ РєСѓР±, Рё РІ РёС‚РѕРіРµ Сѓ РёРіСЂРѕРєР° РёС… Р±СѓРґРµС‚ РґРІР°.
 
         [SerializeField] private GameObject disableAfterColission;
         [SerializeField] private GameObject enableAfterColission;

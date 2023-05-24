@@ -2,11 +2,11 @@ using Unit.GravityCube;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace SceneControllers.Scene3
+namespace Unit.SceneControllers.Scene3
 {
     public class Scene3Task2 : MonoBehaviour
     {
-        // Игрок кладет два куба на две кнопки для куба. В этот момент потолок раздвигается. Пространство расширяется.
+        // РРіСЂРѕРє РєР»Р°РґРµС‚ РґРІР° РєСѓР±Р° РЅР° РґРІРµ РєРЅРѕРїРєРё РґР»СЏ РєСѓР±Р°. Р’ СЌС‚РѕС‚ РјРѕРјРµРЅС‚ РїРѕС‚РѕР»РѕРє СЂР°Р·РґРІРёРіР°РµС‚СЃСЏ. РџСЂРѕСЃС‚СЂР°РЅСЃС‚РІРѕ СЂР°СЃС€РёСЂСЏРµС‚СЃСЏ.
 
         [SerializeField] private GravityButtonLogic _gravityButton1;
         [SerializeField] private GravityButtonLogic _gravityButton2;

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Unit.Scene4.Task1
+namespace Unit.SceneControllers.Scene4
 {
     [SelectionBase]
     public class QuizLampToggle : MonoBehaviour

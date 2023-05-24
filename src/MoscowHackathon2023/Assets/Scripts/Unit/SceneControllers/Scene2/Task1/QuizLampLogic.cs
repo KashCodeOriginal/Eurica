@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Unit.Scene2.Task1
+namespace Unit.SceneControllers.Scene2.Task1
 {
     public class QuizLampLogic : MonoBehaviour
     {
