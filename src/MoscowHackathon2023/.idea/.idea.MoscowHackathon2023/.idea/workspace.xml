@@ -6,17 +6,18 @@
   <component name="ChangeListManager">
     <list default="true" id="796ee9ce-5b7d-4e10-92ca-ade5b0f8e2d9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MoscowHackathon2023/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MoscowHackathon2023/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Data/Mesh_Location/MGU_INSIDE/Material/Prop_MGY_Emission 1.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Mesh_Location/MGU_INSIDE/Material/Prop_MGY_Emission 1.mat.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Data/Mesh_Location/Museum/Lamps/IndicatorOff.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Mesh_Location/Museum/Lamps/IndicatorOff.mat.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Data/Mesh_Location/Museum/Lamps/IndicatorOn.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Mesh_Location/Museum/Lamps/IndicatorOn.mat.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Data/Static/SkyBox/moscow bnw.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Static/SkyBox/moscow bnw.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Scene2_Main_Hub.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Scene2_Main_Hub.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/StaticData/GunData/BaseGunData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/StaticData/GunData/BaseGunData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Infrastructure/ProjectStateMachine/States/GameLoadingState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Infrastructure/ProjectStateMachine/States/GameLoadingState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit/GravityGun/GravityGun.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit/GravityGun/GravityGun.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit/Portal/PortalGun.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit/Portal/PortalGun.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit/ScaleGun/ScaleGun.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit/ScaleGun/ScaleGun.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit/WeaponInventory/Inventory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit/WeaponInventory/Inventory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit/SceneControllers/Scene2/Task1/QuizLampLever.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit/SceneControllers/Scene2/Task1/QuizLampLever.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit/SceneControllers/Scene2/Task1/QuizLampLogic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit/SceneControllers/Scene2/Task1/QuizLampLogic.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit/SceneControllers/Scene3/Scene3Task1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit/SceneControllers/Scene3/Scene3Task1.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit/SceneControllers/Scene3/Scene3Task2.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit/SceneControllers/Scene3/Scene3Task2.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit/SceneControllers/Scene3/Scene3Task3.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit/SceneControllers/Scene3/Scene3Task3.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit/SceneControllers/Scene3/Task2Transition.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit/SceneControllers/Scene3/Task2Transition.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit/SceneControllers/Scene4/QuizLampLogic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit/SceneControllers/Scene4/QuizLampLogic.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit/SceneControllers/Scene4/QuizLampToggle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit/SceneControllers/Scene4/QuizLampToggle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit/SceneControllers/Scene4/Scene4Ladder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit/SceneControllers/Scene4/Scene4Ladder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit/Table/TableOfIdeas.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit/Table/TableOfIdeas.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit/UniversalGun/GunTypes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit/UniversalGun/GunTypes.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +32,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Services/PlaySounds/VolumeLevel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Unit/Cutscene/FirstCutScene.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Unit/Lever/LeverButtonLogic.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Unit/Trap/MountTrap.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Unit/TriggerSystem/DoorTrigger.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@14.0.4/Editor/LookDev/Stage.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Slider.cs" root0="SKIP_HIGHLIGHTING" />
@@ -40,25 +42,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "Add-hub-voice-messages",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\Lindf\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\Lindf\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\Lindf\\AppData\\Local\\Symbols\\src&quot;
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\Lindf\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache",
+      "C:\\Users\\Lindf\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache",
+      "C:\\Users\\Lindf\\AppData\\Local\\Symbols\\src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor &amp; Play">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.2.1f1\Editor\Unity.exe" />

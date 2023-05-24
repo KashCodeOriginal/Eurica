@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Unit.Scene2.Task1
+namespace Unit.SceneControllers.Scene2.Task1
 {
     public class QuizLampLever : MonoBehaviour
     {

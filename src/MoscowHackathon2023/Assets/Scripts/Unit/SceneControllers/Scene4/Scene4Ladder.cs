@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-namespace SceneControllers.Scene4
+namespace Unit.SceneControllers.Scene4
 {
     public class Scene4Ladder : MonoBehaviour
     {

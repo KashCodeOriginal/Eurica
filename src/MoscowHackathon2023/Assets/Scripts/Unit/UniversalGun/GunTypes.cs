@@ -5,6 +5,7 @@
         Portal,
         Gravity,
         Scale,
-        Mount
+        Mount,
+        None
     }
 }
