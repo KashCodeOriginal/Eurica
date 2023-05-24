@@ -605,7 +605,7 @@ GameObject:
   - component: {fileID: 8791585869201456006}
   - component: {fileID: 8791585869201456005}
   m_Layer: 0
-  m_Name: CutScene3
+  m_Name: CutScene1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -58,6 +58,9 @@ namespace Unit.Hub
         {
             _tableOfIdeasWithGravityGun.IsGravityGunCreated +=
                 () => _dialogWithMountAfterCollectingGravityGunTrigger.SetActive(true);
+            
+            _tableOfIdeasWithScaleGun.IsScaleGunCreated +=
+                () => _dialogAfterCollectingScaleGunTrigger.SetActive(true);
         }
 
         [SerializeField] private GameObject _firstLiftCutScene;
@@ -70,6 +73,9 @@ namespace Unit.Hub
 
         [SerializeField] private TableOfIdeas _tableOfIdeasWithGravityGun;
         [SerializeField] private GameObject _dialogWithMountAfterCollectingGravityGunTrigger;
+        
+        [SerializeField] private TableOfIdeas _tableOfIdeasWithScaleGun;
+        [SerializeField] private GameObject _dialogAfterCollectingScaleGunTrigger;
 
         private IGameProgressService _gameProgressService;
     }
