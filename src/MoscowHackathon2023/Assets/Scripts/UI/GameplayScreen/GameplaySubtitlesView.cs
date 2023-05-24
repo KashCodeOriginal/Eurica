@@ -80,7 +80,7 @@ namespace UI.GameplayScreen
             string subtitleFormat = "<color=#{0}><b>{1}</b></color><br>{2}";
 
             int colonIndex = text.IndexOf(':');
-            if (colonIndex != -1)
+            if (colonIndex != -1 && _config != null)
             {
                 string speaker = text.Substring(0, colonIndex).ToUpper();
                 string dialogue = text.Substring(colonIndex + 1).Trim();

@@ -2538,6 +2538,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   subtitlesViewParent: {fileID: 8953791915316495953}
   subtitlesOutput: {fileID: 3283473441849858184}
+  _config: {fileID: 11400000, guid: bdc611ea373fe2145b8cc54c525b7d2b, type: 2}
 --- !u!223 &6455021638786543308
 Canvas:
   m_ObjectHideFlags: 0
