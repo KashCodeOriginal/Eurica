@@ -36,6 +36,11 @@ namespace Services.PlaySounds
             }
         }
 
+        public void ResetSoundStates()
+        {
+            _soundStates.Clear();
+        }
+
         private bool IsNotPlaying(AudioClip audioClip, bool playOnlyOnce)
         {
             if (playOnlyOnce)
