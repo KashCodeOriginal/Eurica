@@ -93,6 +93,12 @@ namespace Infrastructure.ProjectStateMachine.States
             playerInstance.transform.position = levelData.PlayerSpawnPoint;
             playerInstance.transform.rotation = levelData.PlayerSpawnRotation;
 
+            if (!levelData.IsPlayerInstancingAtStart)
+            {
+                playerInstance.SetActive(false);
+                cameraChildContainer.WeaponContainer.gameObject.SetActive(false);
+            }
+
             Cursor.lockState = CursorLockMode.Locked;
         }
 

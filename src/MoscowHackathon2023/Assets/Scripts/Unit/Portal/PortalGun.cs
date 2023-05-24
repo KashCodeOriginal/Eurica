@@ -37,6 +37,8 @@ namespace Unit.Portal
         public void SetUpUniversalView(UniversalGunView universalGunView)
         {
             _universalGunView = universalGunView;
+            
+            _universalGunView.PortalGunBody.SetActive(true);
         }
 
         public void MainFire() 

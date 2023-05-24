@@ -25,6 +25,8 @@ namespace Unit.ScaleGun
         public void SetUpUniversalView(UniversalGunView universalGunView)
         {
             _universalGunView = universalGunView;
+            
+            _universalGunView.ScaleGunBody.SetActive(true);
         }
 
         public BaseGunData GunData => _scaleGunData;

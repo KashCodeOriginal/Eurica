@@ -6,12 +6,18 @@ namespace Unit.UniversalGun
     {
         [field: SerializeField] public Transform GravityAttachPoint { get; private set; }
         [field: SerializeField] public Transform GuineaPigAttachPoint { get; private set; }
-        
+
+        public GameObject ScaleGunBody => _scaleGunBody;
+        public GameObject PortalGunBody => _portalGunBody;
+
         [SerializeField] private GameObject _portalGun;
         [SerializeField] private GameObject _gravityGun;
         [SerializeField] private GameObject _scaleGun;
         
         [SerializeField] private GameObject _currentGun;
+
+        [SerializeField] private GameObject _scaleGunBody;
+        [SerializeField] private GameObject _portalGunBody;
 
         public void ChangeActiveGun(GunTypes gunType)
         {
