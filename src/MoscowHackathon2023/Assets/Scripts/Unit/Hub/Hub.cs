@@ -16,13 +16,13 @@ namespace Unit.Hub
                 case LiftStage.First:
                     _firstLiftCutScene.SetActive(true);
                     
-                    _gameProgressService.SetUpLiftStage(LiftStage.Second);
+                    //_gameProgressService.SetUpLiftStage(LiftStage.Second);
                     break;
                 case LiftStage.Second:
                     _firstLiftCutScene.SetActive(false);
                     _secondLiftCutScene.SetActive(true);
                     
-                    _gameProgressService.SetUpLiftStage(LiftStage.Third);
+                    //_gameProgressService.SetUpLiftStage(LiftStage.Third);
                     break;
                 case LiftStage.Third:
                     _secondLiftCutScene.SetActive(false);
@@ -35,13 +35,13 @@ namespace Unit.Hub
                 case HubStage.First:
                     _firstHubVariant.SetActive(true);
                     
-                    _gameProgressService.SetUpHubStage(HubStage.Second);
+                    //_gameProgressService.SetUpHubStage(HubStage.Second);
                     break;
                 case HubStage.Second:
                     _firstHubVariant.SetActive(false);
                     _secondHubVariant.SetActive(true);
                     
-                    _gameProgressService.SetUpHubStage(HubStage.Third);
+                    //_gameProgressService.SetUpHubStage(HubStage.Third);
                     break;
                 case HubStage.Third:
                     _secondHubVariant.SetActive(false);

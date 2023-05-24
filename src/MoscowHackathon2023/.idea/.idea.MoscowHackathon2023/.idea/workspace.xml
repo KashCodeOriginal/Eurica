@@ -5,18 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="796ee9ce-5b7d-4e10-92ca-ade5b0f8e2d9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MoscowHackathon2023/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MoscowHackathon2023/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Data/Mesh_Location/MGU_INSIDE/Material/Prop_MGY_Emission 1.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Mesh_Location/MGU_INSIDE/Material/Prop_MGY_Emission 1.mat.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Data/Mesh_Location/Museum/Lamps/IndicatorOff.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Mesh_Location/Museum/Lamps/IndicatorOff.mat.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Data/Mesh_Location/Museum/Lamps/IndicatorOn.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Mesh_Location/Museum/Lamps/IndicatorOn.mat.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Data/Static/SkyBox/moscow bnw.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Static/SkyBox/moscow bnw.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Scene2_Main_Hub.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Scene2_Main_Hub.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/StaticData/GunData/BaseGunData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/StaticData/GunData/BaseGunData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Infrastructure/ProjectStateMachine/States/GameLoadingState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Infrastructure/ProjectStateMachine/States/GameLoadingState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit/GravityGun/GravityGun.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit/GravityGun/GravityGun.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit/Portal/PortalGun.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit/Portal/PortalGun.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit/ScaleGun/ScaleGun.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit/ScaleGun/ScaleGun.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit/WeaponInventory/Inventory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit/WeaponInventory/Inventory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit/Hub/Hub.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit/Hub/Hub.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
