@@ -507,16 +507,16 @@ MonoBehaviour:
   OnPress:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 135602510}
-        m_TargetAssemblyTypeName: Unit.Scene4.Task1.QuizLampToggle, Assembly-CSharp
-        m_MethodName: Press
+      - m_Target: {fileID: 956519206}
+        m_TargetAssemblyTypeName: Unit.SceneControllers.Scene4.Scene4Task3, Assembly-CSharp
+        m_MethodName: PullLever
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: "\u0412\u043E\u0439\u0442\u0438 \u0432 \u041C\u0413\u0423"
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
   _pressTime: 0.3
@@ -535,7 +535,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _quizLampLogic: {fileID: 1852407055}
-  _changes: ffffffffffffffff00000000010000000000000001000000
+  _changes: 
 --- !u!65 &135602511
 BoxCollider:
   m_ObjectHideFlags: 0
