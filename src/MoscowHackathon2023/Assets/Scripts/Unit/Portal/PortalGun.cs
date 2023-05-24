@@ -21,6 +21,7 @@ namespace Unit.Portal
         private UniversalGunView _universalGunView;
         
         private LayerMask _layerMask = LayerMask.NameToLayer("WallForPortal");
+        private LayerMask _ignoreRaycast = LayerMask.NameToLayer("Ignore Raycast");
 
         public PortalGun(IPortalFactory portalFactory,
             PlayerInputActionReader playerInputActionReader,
@@ -67,7 +68,7 @@ namespace Unit.Portal
         { 
             var ray = _gameInstancesContainer.Camera.ViewportPointToRay(new Vector3(0.5f, 0.5f));//Center the screen in the crosshairs
 
-            if (!Physics.Raycast(ray, out var hit))
+            if (!Physics.Raycast(ray, out var hit, 1000f, ~_ignoreRaycast))
             {
                 return;
             }

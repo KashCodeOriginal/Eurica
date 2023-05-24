@@ -691,7 +691,7 @@ GameObject:
   - component: {fileID: 529546702}
   - component: {fileID: 529546701}
   - component: {fileID: 529546700}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CHANGE THIS2 Dialog Lift
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -801,7 +801,7 @@ GameObject:
   - component: {fileID: 547243365}
   - component: {fileID: 547243364}
   - component: {fileID: 547243363}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CHANGE THIS
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -1222,7 +1222,7 @@ GameObject:
   - component: {fileID: 873131012}
   - component: {fileID: 873131011}
   - component: {fileID: 873131010}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: MountDialogWhenGravityGunCollected
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -1543,7 +1543,7 @@ GameObject:
   - component: {fileID: 1124375943}
   - component: {fileID: 1124375942}
   - component: {fileID: 1124375941}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: MountDialog
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -1808,6 +1808,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1205343099}
     m_Modifications:
+    - target: {fileID: 2443324616064203023, guid: c8d39ca7d63e56a4cb9bc3e6573dff00, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2443324616799114816, guid: c8d39ca7d63e56a4cb9bc3e6573dff00, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2443324616799114816, guid: c8d39ca7d63e56a4cb9bc3e6573dff00, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2443324616799114822, guid: c8d39ca7d63e56a4cb9bc3e6573dff00, type: 3}
       propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.size
       value: 4
@@ -1891,6 +1903,14 @@ PrefabInstance:
     - target: {fileID: 3254140016885085245, guid: c8d39ca7d63e56a4cb9bc3e6573dff00, type: 3}
       propertyPath: m_Name
       value: Lift
+      objectReference: {fileID: 0}
+    - target: {fileID: 6377431604322227985, guid: c8d39ca7d63e56a4cb9bc3e6573dff00, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7067564107866842624, guid: c8d39ca7d63e56a4cb9bc3e6573dff00, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7067564107866842624, guid: c8d39ca7d63e56a4cb9bc3e6573dff00, type: 3}
       propertyPath: m_IsActive
@@ -2496,7 +2516,7 @@ GameObject:
   - component: {fileID: 1988936700}
   - component: {fileID: 1988936699}
   - component: {fileID: 1988936698}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: MountDialog
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -2606,7 +2626,7 @@ GameObject:
   - component: {fileID: 2077797607}
   - component: {fileID: 2077797606}
   - component: {fileID: 2077797605}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CHANGE THIS WHEN COLLECTED
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -2621,7 +2641,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2077797603}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.32492942, y: -0.66276306, z: -3.7902238}
+  m_LocalPosition: {x: 0.32492942, y: 15.4, z: -3.7902238}
   m_LocalScale: {x: 0.27714893, y: 1, z: 0.40133244}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2724,7 +2744,7 @@ GameObject:
   - component: {fileID: 3846635976393757138}
   - component: {fileID: 1334481951177893144}
   - component: {fileID: 3846635976393757139}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Myzei
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2968,8 +2988,16 @@ PrefabInstance:
       value: -3.54
       objectReference: {fileID: 0}
     - target: {fileID: 2443324616064203023, guid: c8d39ca7d63e56a4cb9bc3e6573dff00, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2443324616064203023, guid: c8d39ca7d63e56a4cb9bc3e6573dff00, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2443324616799114816, guid: c8d39ca7d63e56a4cb9bc3e6573dff00, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2443324616799114816, guid: c8d39ca7d63e56a4cb9bc3e6573dff00, type: 3}
       propertyPath: m_IsActive
@@ -3062,6 +3090,14 @@ PrefabInstance:
     - target: {fileID: 4142644852517643324, guid: c8d39ca7d63e56a4cb9bc3e6573dff00, type: 3}
       propertyPath: m_LocalPosition.z
       value: -3.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 6377431604322227985, guid: c8d39ca7d63e56a4cb9bc3e6573dff00, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7067564107866842624, guid: c8d39ca7d63e56a4cb9bc3e6573dff00, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7067564107866842624, guid: c8d39ca7d63e56a4cb9bc3e6573dff00, type: 3}
       propertyPath: m_IsActive
@@ -4267,7 +4303,7 @@ GameObject:
   - component: {fileID: 8561875571721009168}
   - component: {fileID: 2744793986241245232}
   - component: {fileID: 3085561195553894176}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: LiftDialog
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
