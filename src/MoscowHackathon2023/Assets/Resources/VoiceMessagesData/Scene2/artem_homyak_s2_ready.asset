@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 624257dddb564f47a64a613463293458, type: 3}
-  m_Name: prof_artem_s2_lift 2
+  m_Name: artem_homyak_s2_ready
   m_EditorClassIdentifier: 
   <ID>k__BackingField: artem_homyak_s2_ready
   <AudioClip>k__BackingField: {fileID: 8300000, guid: 09f66cb49e6819345ac1cadc981245bd, type: 3}
