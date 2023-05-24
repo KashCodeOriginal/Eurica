@@ -16,10 +16,12 @@ namespace Unit.Table
         }
         
         [SerializeField] private GunTypes _gunType;
-        [SerializeField] private GameObject OpenDoorTrigger;
-        [SerializeField] private GameObject CloseDoorTrigger;
 
         private IGameInstancesContainer _gameInstancesContainer;
+
+        public event Action IsPortalGunCreated;
+        public event Action IsGravityGunCreated;
+        public event Action IsScaleGunCreated;
 
         public void Interact()
         {
@@ -34,9 +36,8 @@ namespace Unit.Table
                 case GunTypes.Gravity:
                     _gameInstancesContainer.Inventory.Weapons[1].SetUpUniversalView(universalGunView);
                     _gameInstancesContainer.AddViewGun(GunTypes.Gravity);
-                    
-                    OpenDoorTrigger.SetActive(true);
-                    CloseDoorTrigger.SetActive(true);
+
+                    IsGravityGunCreated?.Invoke();
                     
                     break;
                 case GunTypes.Scale:
