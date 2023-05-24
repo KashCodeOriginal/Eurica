@@ -41,8 +41,13 @@ namespace Unit.SceneControllers.Scene4
 
         private void StateChanged()
         {
-            // Set visuals.
+            // Set visuals for a display.
 
+            Debug.Log($"<color=orange>{_isCubeEntered} and {_isAllRed}</color>");
+        }
+
+        public void PullLever()
+        {
             CheckForLevelCompletion();
         }
 
