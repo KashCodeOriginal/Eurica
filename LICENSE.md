@@ -2,7 +2,7 @@
 
 - Iaroslav Smirnov ([@Eloren1](https://github.com/Eloren1))
 - Ilia Kruchkov ([@KashCodeOriginal](https://github.com/KashCodeOriginal))
-- Andrei Baranchikov ([@Ariestellar]((https://github.com/Ariestellar))
+- Andrei Baranchikov ([@Ariestellar](https://github.com/Ariestellar))
 
 # Models
 
