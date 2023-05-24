@@ -88,7 +88,7 @@ MonoBehaviour:
     m_Value: 0
   hdriSky:
     m_OverrideState: 1
-    m_Value: {fileID: 8900000, guid: 90d1a6b04420d6348a189e77b479c207, type: 3}
+    m_Value: {fileID: 8900000, guid: 5b50d197587714541a556bba81cfe8bc, type: 3}
   distortionMode:
     m_OverrideState: 1
     m_Value: 0

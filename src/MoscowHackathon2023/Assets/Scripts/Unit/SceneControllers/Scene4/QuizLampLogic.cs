@@ -10,6 +10,7 @@ namespace Unit.SceneControllers.Scene4
         public UnityEvent OnDoorOpened;
 
         private int[] _progress;
+        public UnityAction OnLampChanged;
         [SerializeField] private MeshRenderer[] _indicators;
         [SerializeField] private Material _indicatorOn;
         [SerializeField] private Material _indicatorOff;
@@ -41,7 +42,9 @@ namespace Unit.SceneControllers.Scene4
                 }
             }
 
-            if (IsCompleted() && !_isCompletedAlready)
+            OnLampChanged?.Invoke();
+
+            if (IsAllGreen() && !_isCompletedAlready)
             {
                 _isCompletedAlready = true;
                 OnQuizCompleted?.Invoke();
@@ -65,7 +68,7 @@ namespace Unit.SceneControllers.Scene4
             OnDoorOpened?.Invoke();
         }
 
-        private bool IsCompleted()
+        private bool IsAllGreen()
         {
             bool allGreen = true;
 
@@ -77,6 +80,20 @@ namespace Unit.SceneControllers.Scene4
                 }
             }
             return allGreen;
+        }
+
+        public bool IsAllRed()
+        {
+            bool allRed = true;
+
+            foreach (var progress in _progress)
+            {
+                if (progress == 1)
+                {
+                    allRed = false;
+                }
+            }
+            return allRed;
         }
     }
 }
