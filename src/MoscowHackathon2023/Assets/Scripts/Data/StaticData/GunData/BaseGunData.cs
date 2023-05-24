@@ -1,3 +1,4 @@
+using Unit.UniversalGun;
 using UnityEngine;
 
 namespace Data.StaticData.GunData
@@ -7,5 +8,6 @@ namespace Data.StaticData.GunData
         {
             [field: SerializeField] public Sprite InventoryIcon { get; private set; }
             [field: SerializeField] public int IndexWeapon { get; private set; }
+            [field: SerializeField] public GunTypes GunType { get; private set; }
         }
 }

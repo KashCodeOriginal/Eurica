@@ -38,7 +38,6 @@ namespace Unit.GravityGun
             _universalGunView = universalGunView;
         }
 
-
         public GravityGun(ICoroutineRunner coroutineRunner,
             PlayerInputActionReader playerInputActionReader,
             GravityGunData gravityGunGravityGunData,
@@ -143,7 +142,7 @@ namespace Unit.GravityGun
             {
                 return;
             }
-            
+
             _playerInputActionReader.IsLeftButtonClicked += MainFire;
             _playerInputActionReader.IsRightButtonClicked += AlternateFire;
             

@@ -18,10 +18,10 @@ namespace Infrastructure.ProjectStateMachine.States
 
         public async void OnEnter(string arg)
         {
-            var asyncOperationHandler = Addressables.LoadSceneAsync(arg);
-
             _uiFactory.CreateGameLoadingScreen();
-
+            
+            var asyncOperationHandler = Addressables.LoadSceneAsync(arg);
+            
             await asyncOperationHandler.Task;
             
             Initializer.StateMachine.SwitchState<GameSetUpState, string>(arg);

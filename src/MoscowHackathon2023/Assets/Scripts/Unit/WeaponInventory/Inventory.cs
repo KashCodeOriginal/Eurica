@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Data.StaticData.GunData;
+using Services.Containers;
 using Services.Factories.UIFactory;
 using Services.Input;
 using Unit.Weapon;
@@ -13,16 +14,19 @@ namespace Unit.WeaponInventory
         private List<IWeaponed> _weapons = new List<IWeaponed>();
         private InventoryView _inventoryView;
         private IUIFactory _uiFactory;
+        private readonly IGameInstancesContainer _gameInstancesContainer;
         private IWeaponed _currentWeaponed;
         private int _currentIndexWeapon;
 
         public List<IWeaponed> Weapons => _weapons;
 
         public Inventory(IUIFactory uiFactory, 
-            PlayerInputActionReader playerInputActionReader, 
+            PlayerInputActionReader playerInputActionReader,
+            IGameInstancesContainer gameInstancesContainer,
             List<IWeaponed> weapons = null)
         {
             _uiFactory = uiFactory;
+            _gameInstancesContainer = gameInstancesContainer;
 
             if (weapons != null)
             {
@@ -87,6 +91,11 @@ namespace Unit.WeaponInventory
 
         private void ChangeWeapon(IWeaponed weapon) 
         {
+            if (!_gameInstancesContainer.CollectedGunViews.Contains(weapon.GunData.GunType))
+            {
+                return;
+            }
+            
             if (_currentWeaponed != null) 
             {
                 _currentWeaponed.Deselect();                

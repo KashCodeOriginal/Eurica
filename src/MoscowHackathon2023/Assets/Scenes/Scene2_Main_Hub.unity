@@ -340,7 +340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d92f2b4987b05a146b8f8c2117f6db82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gunType: 0
+  _gunType: 1
 --- !u!1 &632717387
 GameObject:
   m_ObjectHideFlags: 0
@@ -757,7 +757,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d92f2b4987b05a146b8f8c2117f6db82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gunType: 1
+  _gunType: 0
 --- !u!65 &1169119862
 BoxCollider:
   m_ObjectHideFlags: 0

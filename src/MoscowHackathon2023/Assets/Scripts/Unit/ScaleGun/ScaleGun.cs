@@ -67,7 +67,7 @@ namespace Unit.ScaleGun
             {
                 return;
             }
-            
+
             _playerInputActionReader.IsLeftButtonClickStarted += StartLeftMouseHeld;
             _playerInputActionReader.IsLeftButtonClickEnded += EndLeftMouseHeld;
 

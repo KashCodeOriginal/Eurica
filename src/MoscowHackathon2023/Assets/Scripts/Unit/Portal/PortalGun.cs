@@ -50,7 +50,7 @@ namespace Unit.Portal
             {
                 return;
             }
-            
+
             _playerInputActionReader.IsRightButtonClicked += MainFire;
             _playerInputActionReader.IsLeftButtonClicked += AlternateFire;
             
