@@ -25,6 +25,8 @@ namespace Unit.ScaleGun
         public void SetUpUniversalView(UniversalGunView universalGunView)
         {
             _universalGunView = universalGunView;
+            
+            _universalGunView.ScaleGunBody.SetActive(true);
         }
 
         public BaseGunData GunData => _scaleGunData;
@@ -43,14 +45,12 @@ namespace Unit.ScaleGun
 
         private Transform _placeWeaponInHand;
 
-        private LayerMask _ignoreRaycast = LayerMask.NameToLayer("Ignore Raycast");
-        
 
         private void TryFindScalableObject()
         {
             var ray = _gameInstancesContainer.Camera.ViewportPointToRay(new Vector3(0.5f, 0.5f));
 
-            if (!Physics.Raycast(ray, out var hit, 1000f, ~_ignoreRaycast))
+            if (!Physics.Raycast(ray, out var hit))
             {
                 return;
             }

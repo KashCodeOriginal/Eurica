@@ -33,10 +33,10 @@ namespace Infrastructure.ProjectStateMachine.States
 
             var gameplayScreen = await _uiFactory.CreateGameplayScreen();
             
-            var gameplayScreenComponent = gameplayScreen.GetComponent<GameplayScreen>();
-            
+            gameplayScreen.SetActive(false);
+
             var universalGunView = await _gunFactory.CreateUniversalGunView();
-            
+
             _gameInstancesContainer.SetUpUniversalGunView(universalGunView);
 
             if (_gameInstancesContainer.CollectedGunViews.Contains(GunTypes.Portal))
@@ -51,9 +51,7 @@ namespace Infrastructure.ProjectStateMachine.States
             {
                 _gameInstancesContainer.Inventory.Weapons[2].SetUpUniversalView(universalGunView);
             }
-
-            _gameInstancesContainer.TurnOnPlayerUI();
-
+            
             /*_gameInstancesContainer.Inventory.DisplayGunViewInInventory
                 (_gameInstancesContainer.Inventory.Weapons[0]);
             

@@ -74,6 +74,7 @@ namespace Unit.Portal
             while (true)
             {
                 yield return null;
+                
                 if (Camera.main == null)
                 {
                     continue;
