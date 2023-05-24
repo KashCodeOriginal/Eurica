@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Unit.Scene4.Task1
+namespace Unit.SceneControllers.Scene4
 {
     public class QuizLampLogic : MonoBehaviour
     {
@@ -10,6 +10,7 @@ namespace Unit.Scene4.Task1
         public UnityEvent OnDoorOpened;
 
         private int[] _progress;
+        public UnityAction OnLampChanged;
         [SerializeField] private MeshRenderer[] _indicators;
         [SerializeField] private Material _indicatorOn;
         [SerializeField] private Material _indicatorOff;
@@ -41,7 +42,9 @@ namespace Unit.Scene4.Task1
                 }
             }
 
-            if (IsCompleted() && !_isCompletedAlready)
+            OnLampChanged?.Invoke();
+
+            if (IsAllGreen() && !_isCompletedAlready)
             {
                 _isCompletedAlready = true;
                 OnQuizCompleted?.Invoke();
@@ -65,7 +68,7 @@ namespace Unit.Scene4.Task1
             OnDoorOpened?.Invoke();
         }
 
-        private bool IsCompleted()
+        private bool IsAllGreen()
         {
             bool allGreen = true;
 
@@ -77,6 +80,20 @@ namespace Unit.Scene4.Task1
                 }
             }
             return allGreen;
+        }
+
+        public bool IsAllRed()
+        {
+            bool allRed = true;
+
+            foreach (var progress in _progress)
+            {
+                if (progress == 1)
+                {
+                    allRed = false;
+                }
+            }
+            return allRed;
         }
     }
 }

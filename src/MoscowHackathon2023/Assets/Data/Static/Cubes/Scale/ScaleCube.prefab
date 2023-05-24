@@ -34,7 +34,7 @@ Transform:
   m_Children:
   - {fileID: 4432113193656905356}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3130288914518766690
 MonoBehaviour:
@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e280f607a734117b24027ac87a3f80f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minScale: 1
-  _maxScale: 3
+  _minScale: 0.2
+  _maxScale: 2
 --- !u!54 &2992689784793863151
 Rigidbody:
   m_ObjectHideFlags: 0
