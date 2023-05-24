@@ -1,6 +1,7 @@
 using Data.StaticData.VoicePhrases;
 using System.Collections;
 using TMPro;
+using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 
 namespace UI.GameplayScreen
@@ -11,17 +12,25 @@ namespace UI.GameplayScreen
 
         [SerializeField] private GameObject subtitlesViewParent;
         [SerializeField] private TextMeshProUGUI subtitlesOutput;
+        [SerializeField] private SubtitleConfig _config;
         private VoiceMessage _voiceMessage;
         private bool _subtitlesEnabled;
 
         private void Awake()
         {
+            subtitlesOutput.text = "";
             HideSubtitles();
         }
 
         public void SetSettings(bool subtitlesEnabled)
         {
             _subtitlesEnabled = subtitlesEnabled;
+        }
+
+        public void HideSubtitles()
+        {
+            subtitlesViewParent.SetActive(false);
+            StopAllCoroutines();
         }
 
         public void ShowSubtitles(VoiceMessage voiceMessage)
@@ -44,11 +53,16 @@ namespace UI.GameplayScreen
 
             foreach (var phrase in _voiceMessage.Phrases)
             {
-                if (phrase.Length <= 0.5f)
-                    Debug.LogError($"Phrase length is {phrase.Length} seconds, make it longer for ID {_voiceMessage.ID} in {phrase.Text}");
+                if (phrase.Length <= 0.2f)
+                    phrase.Length += 0.2f;
 
-                subtitlesOutput.text = phrase.Text;
-                
+                string text = phrase.Text.Replace("ё", "е");
+
+                text = ConfigureText(text);
+
+                subtitlesOutput.text = text;
+
+                // 0.2f - это время между субтитрами, для большей киношности.
                 yield return new WaitForSeconds(phrase.Length - 0.2f);
 
                 subtitlesViewParent.SetActive(false);
@@ -60,10 +74,40 @@ namespace UI.GameplayScreen
 
             HideSubtitles();
         }
-
-        public void HideSubtitles()
+        
+        private string ConfigureText(string text)
         {
-            subtitlesViewParent.SetActive(false);
+            string subtitleFormat = "<color=#{0}><b>{1}</b></color><br>{2}";
+
+            int colonIndex = text.IndexOf(':');
+            if (colonIndex != -1)
+            {
+                string speaker = text.Substring(0, colonIndex).ToUpper();
+                string dialogue = text.Substring(colonIndex + 1).Trim();
+
+                Color speakerColor = GetSpeakerColor(speaker, _config);
+
+                string colorHex = ColorUtility.ToHtmlStringRGB(speakerColor);
+                string formattedSubtitle = string.Format(subtitleFormat, colorHex, speaker, dialogue);
+
+                return formattedSubtitle;
+            }
+
+            return text;
+        }
+
+        private Color GetSpeakerColor(string speaker, SubtitleConfig config)
+        {
+            foreach (SubtitleConfig.SpeakerColor speakerColor in config.speakerColors)
+            {
+                if (speakerColor.name.ToUpper().Equals(speaker))
+                {
+                    return speakerColor.color;
+                }
+            }
+            
+            return config.defaultColor;
         }
     }
 }
+

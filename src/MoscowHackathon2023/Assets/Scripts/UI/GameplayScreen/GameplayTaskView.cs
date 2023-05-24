@@ -12,6 +12,7 @@ namespace UI.GameplayScreen
 
         private void Awake()
         {
+            taskOutput.text = "";
             RequestHidingTask();
         }
 

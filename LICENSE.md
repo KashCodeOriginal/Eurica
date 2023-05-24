@@ -15,6 +15,7 @@
 - VAZ-2104 FREE by sMoKi (https://sketchfab.com/3d-models/vaz-2104-free-ba563a31b4754a66a5f0e7f893145922)
 - Old Car - VAZ 2107 by Arkady Gribachev (https://sketchfab.com/3d-models/old-car-vaz-2107-91270dab9d1a47c7ba7ffaaf8c8b0beb)
 - Tallinn Tram Card Reader by mike.jader (https://sketchfab.com/3d-models/tallinn-tram-card-reader-0f54d5d4d1d74073b727d3dd322cd938)
+- Workbench by Voxel_CG (https://sketchfab.com/3d-models/workbench-7fcb5586fa954be7ad4885beb346a5be)
 - Also thanks to [@Aid2901](https://github.com/Aid2901) for creating his own models and editing some of the existing ones!
 
 # Sounds

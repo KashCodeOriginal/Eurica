@@ -485,12 +485,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi posuere,
-    ipsum id gravida suscipit, est purus sollicitudin lorem, a luctus mauris lacus
-    in quam. \u0420\u0443\u0441\u0441\u043A\u0438\u0439 \u0442\u0435\u043A\u0441\u0442."
+  m_text: "<color=#FFD580><b>\u0425\u041E\u041C\u042F\u041A</b></color>\nLorem ipsum
+    dolor sit amet, consectetur adipiscing elit. Morbi posuere, ipsum id gravida
+    suscipit, est purus sollicitudin lorem, a luctus mauris lacus in quam. \u0420\u0443\u0441\u0441\u043A\u0438\u0439
+    \u0442\u0435\u043A\u0441\u0442."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4603bdd2eeffef3499526a5a74a91a27, type: 2}
+  m_sharedMaterial: {fileID: -1270395017949202295, guid: 4603bdd2eeffef3499526a5a74a91a27, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -514,24 +515,24 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
+  m_HorizontalAlignment: 32
+  m_VerticalAlignment: 4096
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: -5
+  m_lineSpacing: -10
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
   m_enableWordWrapping: 1
-  m_wordWrappingRatios: 0.4
+  m_wordWrappingRatios: 0.501
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
@@ -4714,8 +4715,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 10
-    m_Right: 10
+    m_Left: 5
+    m_Right: 5
     m_Top: 5
     m_Bottom: 5
   m_ChildAlignment: 4

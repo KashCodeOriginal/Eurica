@@ -13,6 +13,7 @@ namespace UI.GameplayScreen
 
         private void Awake()
         {
+            hintOutput.text = "";
             RequestHidingHint();
         }
 
