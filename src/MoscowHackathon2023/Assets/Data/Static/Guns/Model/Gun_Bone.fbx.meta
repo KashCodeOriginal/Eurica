@@ -1,9 +1,59 @@
 fileFormatVersion: 2
-guid: ab2abb102c002374fb33f9e5d3b0a80b
+guid: 52b8578f4c629264a82f5749187cf187
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ekran
+    second: {fileID: 2100000, guid: 1923d3cb28dcd8d448c83928c87dbdee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Emissive_Blue
+    second: {fileID: 2100000, guid: 9f90c4273173b4746bd686a808caedd4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Emissive_Green
+    second: {fileID: 2100000, guid: 24f61fce42d4e164e9ccecc3fe3da8e8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Emissive_Red
+    second: {fileID: 2100000, guid: 785b030b9599765458f3d6c6ea1b5fb0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass
+    second: {fileID: 2100000, guid: 5053a97b8df7aec40835b8ca722df454, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass_2
+    second: {fileID: 2100000, guid: 5053a97b8df7aec40835b8ca722df454, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass_3
+    second: {fileID: 2100000, guid: 5053a97b8df7aec40835b8ca722df454, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gun
+    second: {fileID: 2100000, guid: 99934a0a22594324392b7920b7055d40, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Provod
+    second: {fileID: 2100000, guid: 8ac750658d6b82e40b767b9baab00f94, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: glass
+    second: {fileID: 2100000, guid: 40bdf8d07dda8f847b4364c1f6cd4c48, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -35,7 +85,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 0.04
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -89,7 +139,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
+    globalScale: 0.04
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
