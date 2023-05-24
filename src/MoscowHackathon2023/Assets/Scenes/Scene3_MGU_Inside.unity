@@ -18592,7 +18592,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3951083725855844896, guid: f02432717bc260b48a8a86a4414548a1, type: 3}
       propertyPath: _colorId
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3951083725855844896, guid: f02432717bc260b48a8a86a4414548a1, type: 3}
       propertyPath: _gravityCube
