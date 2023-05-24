@@ -45,14 +45,12 @@ namespace Unit.ScaleGun
 
         private Transform _placeWeaponInHand;
 
-        private LayerMask _ignoreRaycast = LayerMask.NameToLayer("Ignore Raycast");
-        
 
         private void TryFindScalableObject()
         {
             var ray = _gameInstancesContainer.Camera.ViewportPointToRay(new Vector3(0.5f, 0.5f));
 
-            if (!Physics.Raycast(ray, out var hit, 1000f, ~_ignoreRaycast))
+            if (!Physics.Raycast(ray, out var hit))
             {
                 return;
             }

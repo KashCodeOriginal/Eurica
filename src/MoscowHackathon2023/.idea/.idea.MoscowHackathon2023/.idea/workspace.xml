@@ -6,32 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="796ee9ce-5b7d-4e10-92ca-ade5b0f8e2d9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MoscowHackathon2023/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MoscowHackathon2023/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Data/Car/ElectroBus.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Car/ElectroBus.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Data/CutScenes/FirstCutScene/CameraAnimation.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Data/CutScenes/FirstCutScene/CameraAnimation.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Data/CutScenes/FirstCutScene/CutSceneFirstTimeline.playable" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/CutScenes/FirstCutScene/CutSceneFirstTimeline.playable" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Data/CutScenes/FirstCutScene/VC-1.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Data/CutScenes/FirstCutScene/VC-1.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Data/Static/Bus.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Data/Static/Bus/Animations.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Data/Static/Bus/Animations/BusController.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Data/Static/Bus/Animations/BusController.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Data/Static/Bus/Animations/BusMovement.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Data/Static/Bus/Animations/BusMovement.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Data/Static/Bus/Models.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Data/Static/Camera/Prefab/MainCameraContainer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Static/Camera/Prefab/MainCameraContainer.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Data/Static/Guns/Model/Gun_anim.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Data/Static/Guns/Model/Gun_anim.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Data/Static/Guns/Model/Texture/Glass.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Static/Guns/Model/Texture/Glass.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Data/Static/Guns/Model/Texture/Glass.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Static/Guns/Model/Texture/Glass.mat.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Data/Static/Guns/Prefabs/UniversalGunView.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Static/Guns/Prefabs/UniversalGunView.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Data/Static/Player/Model/Character/Character.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Data/Static/Player/Model/Character/Character.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FirstQuest.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FirstQuest.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Scene1_MGU_Outside.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Scene1_MGU_Outside.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SecondQuest.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SecondQuest.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Static/CellForMount/Cell.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Static/CellForMount/Cell.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Static/Key/Ключ.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Static/Key/Ключ.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Scene2_Main_Hub.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Scene2_Main_Hub.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit/ScaleGun/ScaleGun.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit/ScaleGun/ScaleGun.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
