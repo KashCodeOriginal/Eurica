@@ -1,6 +1,8 @@
+using Services.GameProgress;
 using Unit.GravityCube;
 using UnityEngine;
 using UnityEngine.Events;
+using Zenject;
 
 namespace Unit.SceneControllers.Scene3
 {
@@ -21,6 +23,14 @@ namespace Unit.SceneControllers.Scene3
         private bool _isTaskCompleted = false;
 
         public UnityEvent OnTaskCompleted;
+
+        private IGameProgressService _gameProgressService;
+
+        [Inject]
+        public void Construct(IGameProgressService gameProgressService)
+        {
+            _gameProgressService = gameProgressService;
+        }
 
         private void Start()
         {
@@ -44,7 +54,8 @@ namespace Unit.SceneControllers.Scene3
             {
                 if (!_isTaskCompleted)
                 {
-                    Debug.Log("Level completed");
+                    _gameProgressService.SetUpHubStage(HubStage.Second);
+                    _gameProgressService.SetUpLiftStage(LiftStage.Second);
                     _isTaskCompleted = true;
                     OnTaskCompleted?.Invoke();
                 }
