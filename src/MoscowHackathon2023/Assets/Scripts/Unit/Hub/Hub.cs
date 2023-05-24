@@ -1,5 +1,8 @@
+using System;
 using Services.GameProgress;
+using Unit.Table;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Zenject;
 
 namespace Unit.Hub
@@ -51,6 +54,12 @@ namespace Unit.Hub
             }
         }
 
+        private void Start()
+        {
+            _tableOfIdeasWithGravityGun.IsGravityGunCreated +=
+                () => _dialogWithMountAfterCollectingGravityGunTrigger.SetActive(true);
+        }
+
         [SerializeField] private GameObject _firstLiftCutScene;
         [SerializeField] private GameObject _secondLiftCutScene;
         [SerializeField] private GameObject _thirdLiftCutScene;
@@ -58,6 +67,9 @@ namespace Unit.Hub
         [SerializeField] private GameObject _firstHubVariant;
         [SerializeField] private GameObject _secondHubVariant;
         [SerializeField] private GameObject _thirdHubVariant;
+
+        [SerializeField] private TableOfIdeas _tableOfIdeasWithGravityGun;
+        [SerializeField] private GameObject _dialogWithMountAfterCollectingGravityGunTrigger;
 
         private IGameProgressService _gameProgressService;
     }
