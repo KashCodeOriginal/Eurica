@@ -8,6 +8,6 @@ namespace Data.StaticData.VoicePhrases
     {
         [field: TextArea]
         [field: SerializeField] public string Text { get; private set; }
-        [field: SerializeField] public float Length { get; private set; }
+        [field: SerializeField] public float Length { get; set; }
     }
 }

@@ -126,7 +126,9 @@ namespace UI.SettingsPanel
         public void RestartLevel()
         {
             var currentScene = SceneManager.GetActiveScene();
-            
+
+            GameplayScreen.GameplayScreen.Instance?.GameplaySubtitlesView.HideSubtitles();
+
             _bootstrap.StateMachine.SwitchState<GameLoadingState, string>(currentScene.name);
         }
 
