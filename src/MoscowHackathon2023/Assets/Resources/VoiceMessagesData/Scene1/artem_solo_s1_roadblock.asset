@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 624257dddb564f47a64a613463293458, type: 3}
+  m_Name: artem_solo_s1_roadblock
+  m_EditorClassIdentifier: 
+  <ID>k__BackingField: artem_solo_s1_roadblock
+  <AudioClip>k__BackingField: {fileID: 8300000, guid: 706c6532503904047ae598e32c0a978a, type: 3}
+  <Phrases>k__BackingField:
+  - <Text>k__BackingField: "\u0410\u0440\u0442\u0435\u043C: \u0422\u0443\u0442 \u043D\u0435
+      \u043F\u0440\u043E\u0439\u0442\u0438. \u041A\u0430\u0436\u0435\u0442\u0441\u044F
+      \u043E\u043F\u044F\u0442\u044C \u043A\u0430\u043A\u0438\u0435-\u0442\u043E
+      \u0440\u0430\u0431\u043E\u0442\u044B."
+    <Length>k__BackingField: 2.3
