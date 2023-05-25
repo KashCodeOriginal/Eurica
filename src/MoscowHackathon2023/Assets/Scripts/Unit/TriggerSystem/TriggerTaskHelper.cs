@@ -52,7 +52,6 @@ namespace Unit.TriggerSystem
             if (voiceMessage == null)
             {
                 Debug.LogError("No sound by id " + audioID);
-                return;
             }
             else
             {
