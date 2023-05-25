@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 namespace Unit.SceneControllers.Scene2.Task1
 {
@@ -12,18 +13,21 @@ namespace Unit.SceneControllers.Scene2.Task1
         [SerializeField] private Material _indicatorOn;
         [SerializeField] private Material _indicatorOff;
 
+        [SerializeField] private bool _canUse = false;
+
         private void Awake()
         {
             _progress = new int[5];
-            foreach (var indicator in _indicators)
-            {
-                indicator.material = _indicatorOff;
-            }
         }
 
         /// <param name="changes">0 set red, 1 set green, -1 ignore</param>
         public void SetChanges(int[] changes)
         {
+            if (!_canUse)
+            {
+                return;
+            }
+            
             for (int i = 0; i < changes.Length; i++)
             {
                 if (changes[i] != -1)
@@ -33,10 +37,13 @@ namespace Unit.SceneControllers.Scene2.Task1
                 }
             }
 
-            if (IsCompleted())
+            if (!IsCompleted())
             {
-                OnQuizCompleted?.Invoke();
+                return;
             }
+            
+            OnQuizCompleted?.Invoke();
+            _canUse = false;
         }
 
         private bool IsCompleted()
@@ -51,6 +58,11 @@ namespace Unit.SceneControllers.Scene2.Task1
                 }
             }
             return allGreen;
+        }
+
+        public void SetCanUse(bool condition)
+        {
+            _canUse = condition;
         }
     }
 }

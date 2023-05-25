@@ -51,15 +51,6 @@ namespace Infrastructure.ProjectStateMachine.States
             {
                 _gameInstancesContainer.Inventory.Weapons[2].SetUpUniversalView(universalGunView);
             }
-            
-            /*_gameInstancesContainer.Inventory.DisplayGunViewInInventory
-                (_gameInstancesContainer.Inventory.Weapons[0]);
-            
-            _gameInstancesContainer.Inventory.DisplayGunViewInInventory
-                (_gameInstancesContainer.Inventory.Weapons[1]);
-            
-            _gameInstancesContainer.Inventory.DisplayGunViewInInventory
-                (_gameInstancesContainer.Inventory.Weapons[2]);*/
 
         }
     }

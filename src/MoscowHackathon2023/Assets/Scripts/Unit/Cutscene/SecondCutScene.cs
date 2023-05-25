@@ -43,9 +43,9 @@ namespace Unit.Cutscene
             if (BlinkSystem.Instance)
             {
                 BlinkSystem.Instance.CloseEyelids();
+                _gameInstancesContainer.TurnOnPlayerUI();
                 yield return new WaitForSeconds(BlinkSystem.Instance.GetPauseTime);
             }
-            
             _bootstrap.StateMachine.SwitchState<GameLoadingState, string>(sceneName);
         }
     }

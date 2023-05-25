@@ -32,12 +32,16 @@ namespace Unit.Table
                 case GunTypes.Portal:
                     _gameInstancesContainer.Inventory.Weapons[0].SetUpUniversalView(universalGunView);
                     _gameInstancesContainer.AddViewGun(GunTypes.Portal);
+                    
+                    universalGunView.PortalGunBody.SetActive(true);
 
                     break;
                 case GunTypes.Gravity:
                     _gameInstancesContainer.Inventory.Weapons[1].SetUpUniversalView(universalGunView);
                     _gameInstancesContainer.AddViewGun(GunTypes.Gravity);
-
+                    
+                    _gameInstancesContainer.TurnOnWeapon();
+                    
                     IsGravityGunCreated?.Invoke();
                     
                     _gameInstancesContainer.TurnOnWeapon();
@@ -46,6 +50,8 @@ namespace Unit.Table
                 case GunTypes.Scale:
                     _gameInstancesContainer.Inventory.Weapons[2].SetUpUniversalView(universalGunView);
                     _gameInstancesContainer.AddViewGun(GunTypes.Scale);
+                    
+                    universalGunView.ScaleGunBody.SetActive(true);
                     
                     IsScaleGunCreated?.Invoke();
                     
