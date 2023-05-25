@@ -291,30 +291,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7313840465054844428, guid: 5ddc2baf3af9a71408bf5fe905655a38, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: d5dd13532337db448a7b2f9497186925, type: 3}
-    - target: {fileID: 7313840465054844428, guid: 5ddc2baf3af9a71408bf5fe905655a38, type: 3}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7313840465054844428, guid: 5ddc2baf3af9a71408bf5fe905655a38, type: 3}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7313840465054844428, guid: 5ddc2baf3af9a71408bf5fe905655a38, type: 3}
-      propertyPath: m_Color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7313840465054844428, guid: 5ddc2baf3af9a71408bf5fe905655a38, type: 3}
-      propertyPath: m_Color.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7313840465054844429, guid: 5ddc2baf3af9a71408bf5fe905655a38, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 1000
-      objectReference: {fileID: 0}
     - target: {fileID: 7313840465657012944, guid: 5ddc2baf3af9a71408bf5fe905655a38, type: 3}
       propertyPath: m_Name
       value: BlinkSystem
@@ -362,62 +338,6 @@ PrefabInstance:
     - target: {fileID: 7313840465657012946, guid: 5ddc2baf3af9a71408bf5fe905655a38, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7313840465657012947, guid: 5ddc2baf3af9a71408bf5fe905655a38, type: 3}
-      propertyPath: _blinkSpeed
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7313840465657012947, guid: 5ddc2baf3af9a71408bf5fe905655a38, type: 3}
-      propertyPath: _blinkPauseTime
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7313840465657012947, guid: 5ddc2baf3af9a71408bf5fe905655a38, type: 3}
-      propertyPath: _openedPosition.y
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 7313840465834116714, guid: 5ddc2baf3af9a71408bf5fe905655a38, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: d5dd13532337db448a7b2f9497186925, type: 3}
-    - target: {fileID: 7313840465834116714, guid: 5ddc2baf3af9a71408bf5fe905655a38, type: 3}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7313840465834116714, guid: 5ddc2baf3af9a71408bf5fe905655a38, type: 3}
-      propertyPath: m_Color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7313840465834116714, guid: 5ddc2baf3af9a71408bf5fe905655a38, type: 3}
-      propertyPath: m_Color.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7313840465834116715, guid: 5ddc2baf3af9a71408bf5fe905655a38, type: 3}
-      propertyPath: m_Pivot.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7313840465834116715, guid: 5ddc2baf3af9a71408bf5fe905655a38, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 7313840465834116715, guid: 5ddc2baf3af9a71408bf5fe905655a38, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7313840465834116715, guid: 5ddc2baf3af9a71408bf5fe905655a38, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7313840465834116715, guid: 5ddc2baf3af9a71408bf5fe905655a38, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7313840465834116715, guid: 5ddc2baf3af9a71408bf5fe905655a38, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7313840465834116715, guid: 5ddc2baf3af9a71408bf5fe905655a38, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 180
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
