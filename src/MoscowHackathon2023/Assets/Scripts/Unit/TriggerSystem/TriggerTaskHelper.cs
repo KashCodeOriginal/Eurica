@@ -66,10 +66,11 @@ namespace Unit.TriggerSystem
             }
         }
 
-        public void BlinkAndOpen()
-        {
-            BlinkSystem.Instance?.BlinkAndOpen();
-        }
+        public void BlinkAndOpen() => BlinkSystem.Instance?.BlinkAndOpen();
+
+        public void OpenEyelids() => BlinkSystem.Instance?.OpenEyelids();
+
+        public void CloseEyelids() => BlinkSystem.Instance?.CloseEyelids();
 
         public void ChangeScene(string sceneName)
         {
