@@ -18,6 +18,8 @@ namespace Unit.Cutscene
         {
             _gameInstancesContainer.TurnOnPlayer();
             _gameInstancesContainer.TurnOnPlayerUI();
+            
+            gameObject.SetActive(false);
         }
     }
 }

@@ -6,6 +6,7 @@ using Infrastructure;
 using Infrastructure.ProjectStateMachine.States;
 using UI.GameplayScreen;
 using Unit.Base;
+using Unit.Cutscene;
 using UnityEngine;
 using Zenject;
 
@@ -13,6 +14,7 @@ namespace Unit.MapProps
 {
     public class CardReader : MonoBehaviour, IInteractable
     {
+        [SerializeField] private GameObject _secondCutScene;
         [SerializeField] private MeshRenderer _indicatorMesh;
         [SerializeField] private Material _indicatorNotWorking;
         [SerializeField] private Material _indicatorWorking;
@@ -21,25 +23,15 @@ namespace Unit.MapProps
         [SerializeField] private Material _displayWorking;
         private bool _working = false;
 
-        private Bootstrap _bootstrap;
-
-        [Inject]
-        public void Construct(Bootstrap bootstrap)
-        {
-            _bootstrap = bootstrap;
-        }
-
         public void Interact()
         {
             if (_working)
             {
                 GameplayScreen.Instance.GameplayHintView.RequestHidingHint();
                 GameplayScreen.Instance.GameplayTaskView.RequestHidingTask();
-
-                // TODO: Start 2nd cutscene for the 1st level.
-
-      
-                StartCoroutine(ChangeSceneAfterBlink(AssetsAddressablesConstants.SCENE2_MAIN_HUB));
+                
+                _secondCutScene.SetActive(true);
+                _secondCutScene.GetComponent<SecondCutScene>().CinemachineVirtualCamera.Priority = 12;
             }
         }
 
@@ -48,16 +40,6 @@ namespace Unit.MapProps
             _working = working;
             _indicatorMesh.material = working ? _indicatorWorking : _indicatorNotWorking;
             _displayMesh.material = working ? _displayWorking : _displayNotWorking;
-        }
-
-        private IEnumerator ChangeSceneAfterBlink(string sceneName)
-        {
-            if (BlinkSystem.Instance)
-            {
-                BlinkSystem.Instance.CloseEyelids();
-                yield return new WaitForSeconds(BlinkSystem.Instance.GetPauseTime);
-            }
-            _bootstrap.StateMachine.SwitchState<GameLoadingState, string>(sceneName);
         }
     }
 }
