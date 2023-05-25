@@ -1779,6 +1779,14 @@ PlayableDirector:
   m_SceneBindings:
   - key: {fileID: -3816316721530600190, guid: 2ad1caee5041bb54ab4492983082c77e, type: 2}
     value: {fileID: 1752098775}
+  - key: {fileID: 1049229792285359520, guid: 2ad1caee5041bb54ab4492983082c77e, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 7907764889834952768, guid: 2ad1caee5041bb54ab4492983082c77e, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -8227792734153431567, guid: 2ad1caee5041bb54ab4492983082c77e, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 4891101580389871284, guid: 2ad1caee5041bb54ab4492983082c77e, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
 --- !u!1 &681740245
@@ -3136,6 +3144,22 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2443324616064203023, guid: c8d39ca7d63e56a4cb9bc3e6573dff00, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2443324616064203027, guid: c8d39ca7d63e56a4cb9bc3e6573dff00, type: 3}
+      propertyPath: m_Size.x
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2443324616064203027, guid: c8d39ca7d63e56a4cb9bc3e6573dff00, type: 3}
+      propertyPath: m_Size.y
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2443324616064203027, guid: c8d39ca7d63e56a4cb9bc3e6573dff00, type: 3}
+      propertyPath: m_Size.z
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 2443324616799114816, guid: c8d39ca7d63e56a4cb9bc3e6573dff00, type: 3}
       propertyPath: m_Layer
       value: 2
@@ -3699,6 +3723,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 632717388}
     m_Modifications:
+    - target: {fileID: 2443324616064203027, guid: c8d39ca7d63e56a4cb9bc3e6573dff00, type: 3}
+      propertyPath: m_Size.x
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2443324616064203027, guid: c8d39ca7d63e56a4cb9bc3e6573dff00, type: 3}
+      propertyPath: m_Size.y
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2443324616064203027, guid: c8d39ca7d63e56a4cb9bc3e6573dff00, type: 3}
+      propertyPath: m_Size.z
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 2443324616799114822, guid: c8d39ca7d63e56a4cb9bc3e6573dff00, type: 3}
       propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.size
       value: 4
