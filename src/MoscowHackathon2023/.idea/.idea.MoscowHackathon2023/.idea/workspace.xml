@@ -6,11 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="796ee9ce-5b7d-4e10-92ca-ade5b0f8e2d9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MoscowHackathon2023/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MoscowHackathon2023/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Data/CutScenes/ThirdCutScene/CutScene1Timeline.playable" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/CutScenes/ThirdCutScene/CutScene1Timeline.playable" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Data/Mesh_Location/Museum/Lamps/IndicatorOff.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Mesh_Location/Museum/Lamps/IndicatorOff.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Data/Mesh_Location/Museum/Lamps/IndicatorOn.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Mesh_Location/Museum/Lamps/IndicatorOn.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Scene2_Main_Hub.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Scene2_Main_Hub.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit/SceneControllers/Scene2/Task1/QuizLampLogic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit/SceneControllers/Scene2/Task1/QuizLampLogic.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit/Training/FirstHubTraining.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit/Training/FirstHubTraining.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

@@ -2,6 +2,7 @@ using System;
 using Services.Input;
 using Unit.TriggerSystem;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Zenject;
 
 namespace Unit.Training
@@ -9,11 +10,14 @@ namespace Unit.Training
     public class FirstHubTraining : MonoBehaviour
     {
         [SerializeField] private GameObject _leftMouseHintTrigger;
-        [SerializeField] private GameObject _rightMouseHintTrigger;
+        [SerializeField] private GameObject _leftMouseReleaseHintTrigger;
         [SerializeField] private GameObject _scrollHintTrigger;
         [SerializeField] private TriggerTaskHelper _triggerTaskHelper;
 
         private PlayerInputActionReader _playerInputActionReader;
+
+        private bool _isCubeTaken = false;
+        private bool _allCompleted = false;
         
         [Inject]
         public void Construct(PlayerInputActionReader playerInputActionReader)
@@ -24,9 +28,9 @@ namespace Unit.Training
         private void OnEnable()
         {
             _playerInputActionReader.IsLeftButtonClicked += TurnOffLeftHint;
-            _playerInputActionReader.IsRightButtonClicked += TurnOffRightHint;
 
             _playerInputActionReader.IsMouseScroll += TurnOffScrollHint;
+            
         }
 
         private void TurnOffScrollHint(float obj)
@@ -39,20 +43,8 @@ namespace Unit.Training
             _scrollHintTrigger.SetActive(false);
             
             _leftMouseHintTrigger.SetActive(true);
-        }
-
-        private void TurnOffRightHint()
-        {
-            if (gameObject.activeSelf == false)
-            {
-                return;
-            }
             
-            _rightMouseHintTrigger.SetActive(false);
-            
-            _triggerTaskHelper.HideHint();
-            
-            gameObject.SetActive(false);
+            _isCubeTaken = true;
         }
 
         private void TurnOffLeftHint()
@@ -61,16 +53,28 @@ namespace Unit.Training
             {
                 return;
             }
+
+            if (_allCompleted)
+            {
+                _triggerTaskHelper.HideHint();
+                _leftMouseReleaseHintTrigger.SetActive(false);
+                gameObject.SetActive(false);
+            }
+
+            if (!_isCubeTaken)
+            {
+                return;
+            }
             
             _leftMouseHintTrigger.SetActive(false);
+            _leftMouseReleaseHintTrigger.SetActive(true);
             
-            _rightMouseHintTrigger.SetActive(true);
+            _allCompleted = true;
         }
 
         private void OnDisable()
         {
             _playerInputActionReader.IsLeftButtonClicked -= TurnOffLeftHint;
-            _playerInputActionReader.IsRightButtonClicked -= TurnOffRightHint;
 
             _playerInputActionReader.IsMouseScroll -= TurnOffScrollHint;
         }
