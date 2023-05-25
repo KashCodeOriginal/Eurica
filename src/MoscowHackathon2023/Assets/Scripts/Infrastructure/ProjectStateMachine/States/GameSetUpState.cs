@@ -99,6 +99,11 @@ namespace Infrastructure.ProjectStateMachine.States
                 cameraChildContainer.WeaponContainer.gameObject.SetActive(false);
             }
 
+            if (!levelData.IsPlayerWeaponInstancingAtStart)
+            {
+                cameraChildContainer.WeaponContainer.gameObject.SetActive(false);
+            }
+
             Cursor.lockState = CursorLockMode.Locked;
         }
 
