@@ -1,8 +1,6 @@
-using System;
 using Services.GameProgress;
 using Unit.Table;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Zenject;
 
 namespace Unit.Hub
@@ -19,13 +17,11 @@ namespace Unit.Hub
                 case LiftStage.First:
                     _firstLiftCutScene.SetActive(true);
                     
-                    //_gameProgressService.SetUpLiftStage(LiftStage.Second);
                     break;
                 case LiftStage.Second:
                     _firstLiftCutScene.SetActive(false);
                     _secondLiftCutScene.SetActive(true);
                     
-                    //_gameProgressService.SetUpLiftStage(LiftStage.Third);
                     break;
                 case LiftStage.Third:
                     _secondLiftCutScene.SetActive(false);
@@ -38,13 +34,11 @@ namespace Unit.Hub
                 case HubStage.First:
                     _firstHubVariant.SetActive(true);
                     
-                    //_gameProgressService.SetUpHubStage(HubStage.Second);
                     break;
                 case HubStage.Second:
                     _firstHubVariant.SetActive(false);
                     _secondHubVariant.SetActive(true);
                     
-                    //_gameProgressService.SetUpHubStage(HubStage.Third);
                     break;
                 case HubStage.Third:
                     _secondHubVariant.SetActive(false);
@@ -57,7 +51,15 @@ namespace Unit.Hub
         private void Start()
         {
             _tableOfIdeasWithGravityGun.IsGravityGunCreated +=
-                () => _dialogWithMountAfterCollectingGravityGunTrigger.SetActive(true);
+                () =>
+                {
+                    _firstScreenTraining.SetActive(true);
+                    
+                    _dialogWithMountAfterCollectingGravityGunTrigger.SetActive(true);
+                    _scrollHintTrigger.SetActive(true);
+                    
+                    _keyGetTask.SetActive(true);
+                };
             
             _tableOfIdeasWithScaleGun.IsScaleGunCreated +=
                 () =>
@@ -79,6 +81,11 @@ namespace Unit.Hub
 
         [SerializeField] private TableOfIdeas _tableOfIdeasWithGravityGun;
         [SerializeField] private GameObject _dialogWithMountAfterCollectingGravityGunTrigger;
+
+        [SerializeField] private GameObject _firstScreenTraining;
+        [SerializeField] private GameObject _scrollHintTrigger;
+
+        [SerializeField] private GameObject _keyGetTask;
         
         [SerializeField] private TableOfIdeas _tableOfIdeasWithScaleGun;
         [SerializeField] private GameObject _dialogAfterCollectingScaleGunTrigger;
