@@ -91,7 +91,7 @@ namespace UI.GameplayScreen
 
                 if (speaker == "АРТЕМ" && dialogue.Contains("Эврика"))
                 {
-                    dialogue.Replace("Эврика!", "<color=#FF97EF><b>Эврика</b></color>");
+                    dialogue.Replace("Эврика!", "<color=#C6FFEB><b>Эврика</b></color>");
                 }
 
                 return formattedSubtitle;
