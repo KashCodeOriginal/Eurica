@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Data.AssetsAddressablesConstants;
 using Infrastructure;
 using Infrastructure.ProjectStateMachine.States;
+using UI.GameplayScreen;
 using Unit.Base;
 using UnityEngine;
 using Zenject;
@@ -31,6 +32,11 @@ namespace Unit.MapProps
         {
             if (_working)
             {
+                GameplayScreen.Instance.GameplayHintView.RequestHidingHint();
+                GameplayScreen.Instance.GameplayTaskView.RequestHidingTask();
+
+                // TODO: Start 2nd cutscene for the 1st level.
+
                 _bootstrap.StateMachine.SwitchState<GameLoadingState, string>(AssetsAddressablesConstants.SCENE2_MAIN_HUB);
             }
         }
