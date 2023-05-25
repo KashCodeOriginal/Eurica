@@ -27,8 +27,7 @@ namespace Unit.MapProps
         {
             if (_working)
             {
-                GameplayScreen.Instance.GameplayHintView.RequestHidingHint();
-                GameplayScreen.Instance.GameplayTaskView.RequestHidingTask();
+                GameplayScreen.Instance?.ResetHintsTasks();
                 
                 _secondCutScene.SetActive(true);
                 _secondCutScene.GetComponent<SecondCutScene>().CinemachineVirtualCamera.Priority = 12;

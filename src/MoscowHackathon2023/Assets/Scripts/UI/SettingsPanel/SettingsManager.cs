@@ -1,10 +1,12 @@
 using Cinemachine;
+using Data.StaticData.BlinkSystem;
 using Data.StaticData.PlayerData;
 using Infrastructure;
 using Infrastructure.ProjectStateMachine.States;
 using Services.Containers;
 using Services.Input;
 using Services.PlaySounds;
+using System.Collections;
 using TMPro;
 using Unit.Player;
 using UnityEngine;
@@ -125,14 +127,24 @@ namespace UI.SettingsPanel
 
         public void RestartLevel()
         {
-            ClosePanel();
-
             var currentScene = SceneManager.GetActiveScene();
 
             _playSoundsService.ResetSoundStates();
-            GameplayScreen.GameplayScreen.Instance?.GameplaySubtitlesView.HideSubtitles();
 
-            _bootstrap.StateMachine.SwitchState<GameLoadingState, string>(currentScene.name);
+            StartCoroutine(ChangeSceneAfterBlink(currentScene.name));
+        }
+
+        private IEnumerator ChangeSceneAfterBlink(string sceneName)
+        {
+            if (BlinkSystem.Instance)
+            {
+                BlinkSystem.Instance.CloseEyelids();
+                yield return new WaitForSeconds(BlinkSystem.Instance.GetPauseTime);
+            }
+
+            ClosePanel();
+            GameplayScreen.GameplayScreen.Instance?.ResetHintsTasks();
+            _bootstrap.StateMachine.SwitchState<GameLoadingState, string>(sceneName);
         }
 
         public void ClosePanel()

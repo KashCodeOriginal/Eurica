@@ -69,9 +69,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bf6bebc20e866a4a89fd7773b75757f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _swayAmount: 500
-  _maxSwayAmount: 1000
-  _swaySmoothness: 5
+  _swayAmount: 130
+  _swaySmoothness: 3
 --- !u!1 &3686945175279058796
 GameObject:
   m_ObjectHideFlags: 0

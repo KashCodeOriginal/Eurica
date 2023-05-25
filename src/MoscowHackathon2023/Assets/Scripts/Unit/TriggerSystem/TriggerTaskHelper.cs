@@ -83,6 +83,7 @@ namespace Unit.TriggerSystem
                 BlinkSystem.Instance.CloseEyelids();
                 yield return new WaitForSeconds(BlinkSystem.Instance.GetPauseTime);
             }
+            GameplayScreen.Instance?.ResetHintsTasks();
             _bootstrap.StateMachine.SwitchState<GameLoadingState, string>(sceneName);
         }
     }
