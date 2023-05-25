@@ -17,6 +17,12 @@
 - Old Car - VAZ 2107 by Arkady Gribachev (https://sketchfab.com/3d-models/old-car-vaz-2107-91270dab9d1a47c7ba7ffaaf8c8b0beb)
 - Tallinn Tram Card Reader by mike.jader (https://sketchfab.com/3d-models/tallinn-tram-card-reader-0f54d5d4d1d74073b727d3dd322cd938)
 - Workbench by Heroinfather (https://sketchfab.com/3d-models/workbench-9903d3f3a9c94c478cca7eee8ba9e6ab)
+- Low rise wall to wall office building by aitortilla01 (https://sketchfab.com/3d-models/low-rise-wall-to-wall-office-building-dcf171dca9174000a0fa8d44660253d0)
+- Kadashevskeaya 10, Moscow, Russia by j.a.m (https://sketchfab.com/3d-models/kadashevskeaya-10-moscow-russia-aa9e9bcb472146d7b3d68d81bd738136)
+- Volkhonka 14/1, Moscow, Russia by  j.a.m (https://sketchfab.com/3d-models/volkhonka-141-moscow-russia-a945105ac6924430b3f239e55f9f654b)
+- Building Optimize Game-Ready by Ali haghshenas (https://sketchfab.com/3d-models/building-optimize-game-ready-ba3769744767463f89d9fc2737c35944)
+- Game ready building 5 by ModelMaker (https://sketchfab.com/3d-models/game-ready-building-5-73b1d5fc97ca46bab7f80b7c95001e79)
+- 317 Washington Street by hamma085 (https://sketchfab.com/3d-models/317-washington-street-1c16cac26e2b484387ac1311e0f5b57e)
 - Also thanks to [@Aid2901](https://github.com/Aid2901) for creating his own models and editing some of the existing ones!
 
 # Sounds
