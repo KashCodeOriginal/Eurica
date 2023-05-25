@@ -16,4 +16,4 @@ MonoBehaviour:
   <BackwardWalkSpeed>k__BackingField: 0.5
   <SideWalkSpeed>k__BackingField: 0.5
   <RunMultiplier>k__BackingField: 1
-  <JumpPower>k__BackingField: 11
+  <JumpPower>k__BackingField: 15
