@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 877429417110759892}
   - component: {fileID: 8723577758711781688}
+  - component: {fileID: 4660559953130419666}
   m_Layer: 12
   m_Name: UniversalGunView
   m_TagString: Untagged
@@ -56,6 +57,21 @@ MonoBehaviour:
   _currentGun: {fileID: 8239652318719529324}
   _scaleGunBody: {fileID: 9137530271798857822}
   _portalGunBody: {fileID: 7974911871843139673}
+--- !u!114 &4660559953130419666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 877429417110759891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bf6bebc20e866a4a89fd7773b75757f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _swayAmount: 500
+  _maxSwayAmount: 1000
+  _swaySmoothness: 5
 --- !u!1 &3686945175279058796
 GameObject:
   m_ObjectHideFlags: 0
