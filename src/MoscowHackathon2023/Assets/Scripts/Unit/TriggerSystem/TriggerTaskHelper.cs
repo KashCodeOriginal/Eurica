@@ -1,3 +1,4 @@
+using Data.StaticData.BlinkSystem;
 using Data.StaticData.VoicePhrases;
 using Infrastructure;
 using Infrastructure.ProjectStateMachine.States;
@@ -64,9 +65,9 @@ namespace Unit.TriggerSystem
             }                
         }
 
-        public void CloseLift()
+        public void BlinkAndOpen()
         {
-            
+            BlinkSystem.Instance?.BlinkAndOpen();
         }
 
         public void ChangeScene(string sceneName)
