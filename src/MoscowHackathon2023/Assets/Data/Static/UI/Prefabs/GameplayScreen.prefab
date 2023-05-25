@@ -487,8 +487,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "<color=#FFD580><b>\u0425\u041E\u041C\u042F\u041A</b></color>\nLorem ipsum
     dolor sit amet, consectetur adipiscing elit. Morbi posuere, ipsum id gravida
-    suscipit, est purus sollicitudin lorem, a luctus mauris lacus in quam. \u0420\u0443\u0441\u0441\u043A\u0438\u0439
-    \u0442\u0435\u043A\u0441\u0442."
+    suscipit, est purus sollicitudin lorem, a luctus <color=#FF97EF><b>\u042D\u0432\u0440\u0438\u043A\u0430!</b></color>
+    mauris lacus in quam. \u0420\u0443\u0441\u0441\u043A\u0438\u0439 \u0442\u0435\u043A\u0441\u0442."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4603bdd2eeffef3499526a5a74a91a27, type: 2}
   m_sharedMaterial: {fileID: -1270395017949202295, guid: 4603bdd2eeffef3499526a5a74a91a27, type: 2}

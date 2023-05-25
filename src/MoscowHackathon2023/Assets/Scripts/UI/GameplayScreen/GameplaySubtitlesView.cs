@@ -1,7 +1,6 @@
 using Data.StaticData.VoicePhrases;
 using System.Collections;
 using TMPro;
-using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 
 namespace UI.GameplayScreen
@@ -89,6 +88,11 @@ namespace UI.GameplayScreen
 
                 string colorHex = ColorUtility.ToHtmlStringRGB(speakerColor);
                 string formattedSubtitle = string.Format(subtitleFormat, colorHex, speaker, dialogue);
+
+                if (speaker == "АРТЕМ" && dialogue.Contains("Эврика"))
+                {
+                    dialogue.Replace("Эврика!", "<color=#FF97EF><b>Эврика</b></color>");
+                }
 
                 return formattedSubtitle;
             }
