@@ -27,5 +27,11 @@ namespace UI.GameplayScreen
                 Destroy(gameObject);
             }
         }
+
+        public void ResetHintsTasks()
+        {
+            GameplayHintView?.RequestHidingHint();
+            GameplayTaskView?.RequestHidingTask();
+        }
     }
 }
