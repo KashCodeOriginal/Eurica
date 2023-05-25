@@ -19,7 +19,10 @@ namespace Unit.Training
         public void Construct(PlayerInputActionReader playerInputActionReader)
         {
             _playerInputActionReader = playerInputActionReader;
+        }
 
+        private void OnEnable()
+        {
             _playerInputActionReader.IsLeftButtonClicked += TurnOffLeftHint;
             _playerInputActionReader.IsRightButtonClicked += TurnOffRightHint;
 
