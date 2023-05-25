@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Data.AssetsAddressablesConstants;
+using Data.StaticData.BlinkSystem;
 using Infrastructure;
 using Infrastructure.ProjectStateMachine.States;
 using UI.GameplayScreen;
@@ -37,7 +38,8 @@ namespace Unit.MapProps
 
                 // TODO: Start 2nd cutscene for the 1st level.
 
-                _bootstrap.StateMachine.SwitchState<GameLoadingState, string>(AssetsAddressablesConstants.SCENE2_MAIN_HUB);
+      
+                StartCoroutine(ChangeSceneAfterBlink(AssetsAddressablesConstants.SCENE2_MAIN_HUB));
             }
         }
 
@@ -46,6 +48,16 @@ namespace Unit.MapProps
             _working = working;
             _indicatorMesh.material = working ? _indicatorWorking : _indicatorNotWorking;
             _displayMesh.material = working ? _displayWorking : _displayNotWorking;
+        }
+
+        private IEnumerator ChangeSceneAfterBlink(string sceneName)
+        {
+            if (BlinkSystem.Instance)
+            {
+                BlinkSystem.Instance.CloseEyelids();
+                yield return new WaitForSeconds(BlinkSystem.Instance.GetPauseTime);
+            }
+            _bootstrap.StateMachine.SwitchState<GameLoadingState, string>(sceneName);
         }
     }
 }

@@ -364,6 +364,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7313840465657012947, guid: 5ddc2baf3af9a71408bf5fe905655a38, type: 3}
+      propertyPath: _blinkSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7313840465657012947, guid: 5ddc2baf3af9a71408bf5fe905655a38, type: 3}
+      propertyPath: _blinkPauseTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7313840465657012947, guid: 5ddc2baf3af9a71408bf5fe905655a38, type: 3}
       propertyPath: _openedPosition.y
       value: 1000
       objectReference: {fileID: 0}

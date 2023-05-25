@@ -125,6 +125,8 @@ namespace UI.SettingsPanel
 
         public void RestartLevel()
         {
+            ClosePanel();
+
             var currentScene = SceneManager.GetActiveScene();
 
             _playSoundsService.ResetSoundStates();
