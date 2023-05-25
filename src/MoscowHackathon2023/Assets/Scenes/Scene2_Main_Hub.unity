@@ -861,7 +861,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &352806257
 Transform:
   m_ObjectHideFlags: 0
@@ -5094,6 +5094,8 @@ PlayableDirector:
     value: {fileID: 1124375939}
   - key: {fileID: -6999017256875294282, guid: 2ad1caee5041bb54ab4492983082c77e, type: 2}
     value: {fileID: 3069411017075727255}
+  - key: {fileID: -3846882064685539622, guid: 2ad1caee5041bb54ab4492983082c77e, type: 2}
+    value: {fileID: 3069411017473925460}
   m_ExposedReferences:
     m_References:
     - a06608917b312014c9f2b8f0564846a0: {fileID: 1609743903}
@@ -6384,6 +6386,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3069411017473925456}
   - component: {fileID: 3069411017473925459}
+  - component: {fileID: 3069411017473925460}
   m_Layer: 0
   m_Name: Scene2_Task1
   m_TagString: Untagged
@@ -6411,6 +6414,38 @@ MonoBehaviour:
   - {fileID: 3069411016547718445}
   _indicatorOn: {fileID: 2100000, guid: 2b88e3a88f99ebd41ae8edf24eeb374b, type: 2}
   _indicatorOff: {fileID: 2100000, guid: b37ae207d097f4949a013eb9bd80a43c, type: 2}
+  _canUse: 0
+--- !u!114 &3069411017473925460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3069411017473925457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: d44558767744543468365c5c22520d84, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3069411017473925459}
+          m_TargetAssemblyTypeName: Unit.SceneControllers.Scene2.Task1.QuizLampLogic,
+            Assembly-CSharp
+          m_MethodName: SetCanUse
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
 --- !u!135 &3069411017742683412
 SphereCollider:
   m_ObjectHideFlags: 0
