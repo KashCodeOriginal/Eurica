@@ -5,10 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="796ee9ce-5b7d-4e10-92ca-ade5b0f8e2d9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Unit/Cutscene/SecondCutScene.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Unit/Cutscene/SecondCutScene.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MoscowHackathon2023/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MoscowHackathon2023/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Data/Static/TableOfIdeas/Model/Workbench.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Static/TableOfIdeas/Model/Workbench.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Scene2_Main_Hub.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Scene2_Main_Hub.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit/Hub/Hub.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit/Hub/Hub.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Static/UI/Sprites/eurica-logo.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Static/UI/Sprites/eurica-logo.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Scene1_MGU_Outside.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Scene1_MGU_Outside.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit/Cutscene/FirstCutScene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit/Cutscene/FirstCutScene.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit/MapProps/CardReader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit/MapProps/CardReader.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +41,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "First-Hub-Tasks",
+    "git-widget-placeholder": "main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
