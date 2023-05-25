@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 624257dddb564f47a64a613463293458, type: 3}
+  m_Name: s3_eurica_mixdown
+  m_EditorClassIdentifier: 
+  <ID>k__BackingField: s3_eurica_mixdown
+  <AudioClip>k__BackingField: {fileID: 8300000, guid: a9f440a1dd7d1c248aa6b2cf5e0cc289, type: 3}
+  <Phrases>k__BackingField:
+  - <Text>k__BackingField: "\u0425\u043E\u043C\u044F\u043A: \u0421\u043C\u043E\u0442\u0440\u0438!
+      \u041A\u0430\u0436\u0435\u0442\u0441\u044F, \u043C\u044B \u043C\u0435\u043D\u044F\u0435\u043C
+      \u043F\u0440\u043E\u0441\u0442\u0440\u0430\u043D\u0441\u0442\u0432\u043E \u0432
+      \u0440\u0430\u0437\u043C\u0435\u0440\u0430\u0445!"
+    <Length>k__BackingField: 3.4
+  - <Text>k__BackingField: "\u0410\u0440\u0442\u0435\u043C: \u041C\u0435\u043D\u044F\u0442\u044C
+      \u0432 \u0440\u0430\u0437\u043C\u0435\u0440\u0430\u0445... \u0421\u043B\u0443\u0448\u0430\u0439,
+      \u0430 \u0437\u0432\u0443\u0447\u0438\u0442 \u043A\u0430\u043A \u043F\u043E\u043B\u0435\u0437\u043D\u044B\u0439
+      \u0442\u0440\u044E\u043A. \u042D\u0432\u0440\u0438\u043A\u0430!"
+    <Length>k__BackingField: 5.5

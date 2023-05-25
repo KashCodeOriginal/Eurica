@@ -9,6 +9,9 @@
       <change beforePath="$PROJECT_DIR$/Assets/Data/Static/CellForMount/Cell.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Static/CellForMount/Cell.fbx.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Data/Static/Key/Ключ.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Static/Key/Ключ.fbx.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Scene2_Main_Hub.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Scene2_Main_Hub.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit/GravityGun/GravityGun.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit/GravityGun/GravityGun.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit/Portal/Portal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit/Portal/Portal.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit/Portal/PortalGun.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit/Portal/PortalGun.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit/ScaleGun/ScaleGun.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit/ScaleGun/ScaleGun.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
