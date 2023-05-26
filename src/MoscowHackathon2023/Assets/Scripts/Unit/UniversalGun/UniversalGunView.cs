@@ -1,5 +1,7 @@
-﻿using UnityEngine;
+﻿using Services.GameProgress;
+using UnityEngine;
 using UnityEngine.Serialization;
+using Zenject;
 
 namespace Unit.UniversalGun
 {
@@ -20,6 +22,13 @@ namespace Unit.UniversalGun
         [SerializeField] private GameObject _scaleGunBody;
         [SerializeField] private GameObject _portalGunBody;
 
+        private IGameProgressService _gameProgressService;
+        
+        public void Construct(IGameProgressService gameProgressService)
+        {
+            _gameProgressService = gameProgressService;
+        }
+
         public void ChangeActiveGun(GunTypes gunType)
         {
             ChangeCurrentGunEmission(1);
@@ -36,6 +45,8 @@ namespace Unit.UniversalGun
 
         private void SetNewGun(GunTypes gunType)
         {
+            _gameProgressService.SetUpCurrentWeapon(gunType);
+
             switch (gunType)
             {
                 case GunTypes.Portal:
@@ -46,8 +57,6 @@ namespace Unit.UniversalGun
                     break;
                 case GunTypes.Scale:
                     _currentGun = _scaleGun;
-                    break;
-                case GunTypes.Mount:
                     break;
             }
         }

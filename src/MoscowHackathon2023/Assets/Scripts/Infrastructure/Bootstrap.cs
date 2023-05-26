@@ -6,6 +6,7 @@ using Services.Factories.AbstractFactory;
 using Services.Factories.GunsFactory;
 using Services.Factories.PortalFactory;
 using Services.Factories.UIFactory;
+using Services.GameProgress;
 using Services.Input;
 using Services.PlaySounds;
 using Services.StaticData;
@@ -24,7 +25,8 @@ namespace Infrastructure
             IGunFactory gunFactory,
             IGameInstancesContainer gameInstancesContainer,
             IStaticDataService staticDataService,
-            IPlaySoundsService playSoundsService)
+            IPlaySoundsService playSoundsService,
+            IGameProgressService gameProgressService)
         {
             StateMachine = new StateMachine<Bootstrap>(
                 new BootstrapState(this, 
@@ -38,8 +40,9 @@ namespace Infrastructure
                 new GameLoadingState(this, uiFactory),
                 new GameSetUpState(this, gunFactory,
                     abstractFactory, playerInputActionReader, playerSettings,
-                    gameInstancesContainer, staticDataService, playSoundsService, uiFactory),
-                new GameplayState(this, uiFactory, gameInstancesContainer,gunFactory));  
+                    gameInstancesContainer, staticDataService, playSoundsService, uiFactory,
+                    gameProgressService),
+                new GameplayState(this, uiFactory, gameInstancesContainer,gunFactory, gameProgressService));  
             
                 StateMachine.SwitchState<BootstrapState>();
         }

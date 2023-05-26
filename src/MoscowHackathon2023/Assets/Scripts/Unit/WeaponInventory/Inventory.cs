@@ -4,6 +4,7 @@ using Data.StaticData.GunData;
 using Services.Containers;
 using Services.Factories.UIFactory;
 using Services.Input;
+using Unit.UniversalGun;
 using Unit.Weapon;
 using UnityEngine;
 
@@ -13,19 +14,16 @@ namespace Unit.WeaponInventory
     {
         private List<IWeaponed> _weapons = new List<IWeaponed>();
         private InventoryView _inventoryView;
-        private IUIFactory _uiFactory;
         private readonly IGameInstancesContainer _gameInstancesContainer;
         private IWeaponed _currentWeaponed;
         private int _currentIndexWeapon;
 
         public List<IWeaponed> Weapons => _weapons;
 
-        public Inventory(IUIFactory uiFactory, 
-            PlayerInputActionReader playerInputActionReader,
+        public Inventory(PlayerInputActionReader playerInputActionReader,
             IGameInstancesContainer gameInstancesContainer,
             List<IWeaponed> weapons = null)
         {
-            _uiFactory = uiFactory;
             _gameInstancesContainer = gameInstancesContainer;
 
             if (weapons != null)
@@ -103,8 +101,6 @@ namespace Unit.WeaponInventory
             
             _currentWeaponed = weapon;
             _currentWeaponed.Select();
-            
-            //_inventoryView.ChangeCurrentActiveWeapon(_currentWeaponed.GunData.IndexWeapon);
         }
 
         private void SetupWeaponInInventory(BaseGunData dataWeapon) 

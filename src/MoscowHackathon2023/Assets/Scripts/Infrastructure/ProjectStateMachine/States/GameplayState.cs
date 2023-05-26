@@ -2,6 +2,7 @@ using Infrastructure.ProjectStateMachine.Base;
 using Services.Containers;
 using Services.Factories.GunsFactory;
 using Services.Factories.UIFactory;
+using Services.GameProgress;
 using Services.Input;
 using UI.GameplayScreen;
 using Unit.UniversalGun;
@@ -13,17 +14,20 @@ namespace Infrastructure.ProjectStateMachine.States
         private readonly IUIFactory _uiFactory;
         private readonly IGameInstancesContainer _gameInstancesContainer;
         private readonly IGunFactory _gunFactory;
-        
+        private readonly IGameProgressService _gameProgressService;
+
         public Bootstrap Initializer { get; }
         
         public GameplayState(Bootstrap initializer,
             IUIFactory uiFactory, 
             IGameInstancesContainer gameInstancesContainer,
-            IGunFactory gunFactory)
+            IGunFactory gunFactory,
+            IGameProgressService gameProgressService)
         {
             _uiFactory = uiFactory;
             _gameInstancesContainer = gameInstancesContainer;
             _gunFactory = gunFactory;
+            _gameProgressService = gameProgressService;
             Initializer = initializer;
         }
 
@@ -36,6 +40,8 @@ namespace Infrastructure.ProjectStateMachine.States
             gameplayScreen.SetActive(false);
 
             var universalGunView = await _gunFactory.CreateUniversalGunView();
+            
+            universalGunView.Construct(_gameProgressService);
 
             _gameInstancesContainer.SetUpUniversalGunView(universalGunView);
 

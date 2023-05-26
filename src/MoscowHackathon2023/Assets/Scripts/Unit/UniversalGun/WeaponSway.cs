@@ -16,7 +16,7 @@ namespace Unit.UniversalGun
         {
             weaponTransform = transform;
             initialRotation = weaponTransform.localRotation;
-            cameraTransform = transform.parent.parent;
+            cameraTransform = transform.parent;
             lastCameraPosition = cameraTransform.position;
         }
 
