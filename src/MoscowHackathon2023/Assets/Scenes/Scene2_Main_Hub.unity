@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 4788449}
   - component: {fileID: 4788448}
   - component: {fileID: 4788447}
-  m_Layer: 2
+  m_Layer: 16
   m_Name: ScrollHint
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -247,7 +247,7 @@ GameObject:
   - component: {fileID: 22760776}
   - component: {fileID: 22760775}
   - component: {fileID: 22760774}
-  m_Layer: 2
+  m_Layer: 16
   m_Name: Press E
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -347,7 +347,7 @@ GameObject:
   - component: {fileID: 31795241}
   - component: {fileID: 31795240}
   - component: {fileID: 31795239}
-  m_Layer: 2
+  m_Layer: 16
   m_Name: TaskThird
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -459,7 +459,7 @@ GameObject:
   - component: {fileID: 48052739}
   - component: {fileID: 48052738}
   - component: {fileID: 48052737}
-  m_Layer: 2
+  m_Layer: 16
   m_Name: LeftMouseHint
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -571,7 +571,7 @@ GameObject:
   - component: {fileID: 126834449}
   - component: {fileID: 126834448}
   - component: {fileID: 126834447}
-  m_Layer: 2
+  m_Layer: 16
   m_Name: TriggerDayLightVolume
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -871,6 +871,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 681740246}
     m_Modifications:
+    - target: {fileID: 2039476119115597317, guid: 38c961f5d6a8763448dfcc4bf60094a8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 2039476119274354617, guid: 38c961f5d6a8763448dfcc4bf60094a8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 2039476119589924454, guid: 38c961f5d6a8763448dfcc4bf60094a8, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 3069411018166830544, guid: 38c961f5d6a8763448dfcc4bf60094a8, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -918,6 +930,10 @@ PrefabInstance:
     - target: {fileID: 3069411018166830545, guid: 38c961f5d6a8763448dfcc4bf60094a8, type: 3}
       propertyPath: m_Name
       value: Scene2_Task1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4446220127233726491, guid: 38c961f5d6a8763448dfcc4bf60094a8, type: 3}
+      propertyPath: m_Layer
+      value: 16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1076,7 +1092,7 @@ GameObject:
   - component: {fileID: 304980453}
   - component: {fileID: 304980454}
   - component: {fileID: 304980452}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: KeyGetTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1211,7 +1227,7 @@ GameObject:
   - component: {fileID: 321790495}
   - component: {fileID: 321790494}
   - component: {fileID: 321790497}
-  m_Layer: 2
+  m_Layer: 16
   m_Name: MountDialogWhenScaleGunCollected
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -1634,7 +1650,7 @@ GameObject:
   - component: {fileID: 529546702}
   - component: {fileID: 529546701}
   - component: {fileID: 529546700}
-  m_Layer: 2
+  m_Layer: 16
   m_Name: LiftDialog
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -1744,7 +1760,7 @@ GameObject:
   - component: {fileID: 547243365}
   - component: {fileID: 547243364}
   - component: {fileID: 547243363}
-  m_Layer: 2
+  m_Layer: 16
   m_Name: MountDialogTryThis
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -2355,7 +2371,7 @@ GameObject:
   - component: {fileID: 873131011}
   - component: {fileID: 873131012}
   - component: {fileID: 873131010}
-  m_Layer: 2
+  m_Layer: 16
   m_Name: MountDialogWhenGravityGunCollected
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -3139,7 +3155,7 @@ GameObject:
   - component: {fileID: 1124375943}
   - component: {fileID: 1124375942}
   - component: {fileID: 1124375941}
-  m_Layer: 2
+  m_Layer: 16
   m_Name: MountDialog
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -3269,7 +3285,7 @@ GameObject:
   - component: {fileID: 1256954073}
   - component: {fileID: 1256954072}
   - component: {fileID: 1256954071}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SuccesGunTry
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -3379,7 +3395,7 @@ GameObject:
   - component: {fileID: 1262849681}
   - component: {fileID: 1262849680}
   - component: {fileID: 1262849679}
-  m_Layer: 2
+  m_Layer: 16
   m_Name: Press E
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -3479,7 +3495,7 @@ GameObject:
   - component: {fileID: 1283161392}
   - component: {fileID: 1283161391}
   - component: {fileID: 1283161390}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: KeyGetTask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4262,7 +4278,7 @@ GameObject:
   - component: {fileID: 1508821996}
   - component: {fileID: 1508821995}
   - component: {fileID: 1508821994}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: GoToLift
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4677,7 +4693,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7067564107866842624, guid: c8d39ca7d63e56a4cb9bc3e6573dff00, type: 3}
       propertyPath: m_Layer
-      value: 2
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 7067564107866842624, guid: c8d39ca7d63e56a4cb9bc3e6573dff00, type: 3}
       propertyPath: m_IsActive
@@ -4765,7 +4781,7 @@ GameObject:
   - component: {fileID: 1582577532}
   - component: {fileID: 1582577533}
   - component: {fileID: 1582577531}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: KeyDialog
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -4863,7 +4879,7 @@ GameObject:
   - component: {fileID: 1609743907}
   - component: {fileID: 1609743906}
   - component: {fileID: 1609743905}
-  m_Layer: 2
+  m_Layer: 16
   m_Name: TaskSecond
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -5188,7 +5204,7 @@ GameObject:
   - component: {fileID: 1711078060}
   - component: {fileID: 1711078059}
   - component: {fileID: 1711078058}
-  m_Layer: 2
+  m_Layer: 16
   m_Name: CollectWeaponTask
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -5462,6 +5478,10 @@ PrefabInstance:
       value: Lift
       objectReference: {fileID: 0}
     - target: {fileID: 7067564107866842624, guid: c8d39ca7d63e56a4cb9bc3e6573dff00, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 7067564107866842624, guid: c8d39ca7d63e56a4cb9bc3e6573dff00, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -5569,7 +5589,7 @@ GameObject:
   - component: {fileID: 1773355864}
   - component: {fileID: 1773355863}
   - component: {fileID: 1773355862}
-  m_Layer: 2
+  m_Layer: 16
   m_Name: LeftMouseRelease
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -5682,7 +5702,7 @@ GameObject:
   - component: {fileID: 1773911269}
   - component: {fileID: 1773911268}
   - component: {fileID: 1773911267}
-  m_Layer: 2
+  m_Layer: 16
   m_Name: TriggerDayLightVolume (1)
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -5781,7 +5801,7 @@ GameObject:
   - component: {fileID: 1827867497}
   - component: {fileID: 1827867496}
   - component: {fileID: 1827867495}
-  m_Layer: 2
+  m_Layer: 16
   m_Name: TaskFirst
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -5995,7 +6015,7 @@ GameObject:
   - component: {fileID: 1988936698}
   - component: {fileID: 1988936701}
   - component: {fileID: 1988936702}
-  m_Layer: 2
+  m_Layer: 16
   m_Name: MountDialog
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -6155,7 +6175,7 @@ GameObject:
   - component: {fileID: 2000723408}
   - component: {fileID: 2000723407}
   - component: {fileID: 2000723406}
-  m_Layer: 2
+  m_Layer: 16
   m_Name: TriggerDayLightVolume (2)
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -6652,6 +6672,10 @@ PrefabInstance:
     - target: {fileID: 3951083725855844910, guid: cbc12a56a4caa7c4d81ab39ceb196c6f, type: 3}
       propertyPath: m_Name
       value: LeverButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 3951083725855844910, guid: cbc12a56a4caa7c4d81ab39ceb196c6f, type: 3}
+      propertyPath: m_Layer
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 8078142021148482131, guid: cbc12a56a4caa7c4d81ab39ceb196c6f, type: 3}
       propertyPath: OnPress.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -7483,7 +7507,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7067564107866842624, guid: c8d39ca7d63e56a4cb9bc3e6573dff00, type: 3}
       propertyPath: m_Layer
-      value: 2
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 7067564107866842624, guid: c8d39ca7d63e56a4cb9bc3e6573dff00, type: 3}
       propertyPath: m_IsActive
@@ -7775,6 +7799,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LeverButton (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3951083725855844910, guid: cbc12a56a4caa7c4d81ab39ceb196c6f, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 8078142021148482131, guid: cbc12a56a4caa7c4d81ab39ceb196c6f, type: 3}
       propertyPath: OnPress.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
@@ -7983,6 +8011,10 @@ PrefabInstance:
     - target: {fileID: 3951083725855844910, guid: cbc12a56a4caa7c4d81ab39ceb196c6f, type: 3}
       propertyPath: m_Name
       value: LeverButton (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3951083725855844910, guid: cbc12a56a4caa7c4d81ab39ceb196c6f, type: 3}
+      propertyPath: m_Layer
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 8078142021148482131, guid: cbc12a56a4caa7c4d81ab39ceb196c6f, type: 3}
       propertyPath: OnPress.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -8297,6 +8329,10 @@ PrefabInstance:
     - target: {fileID: 3951083725855844910, guid: cbc12a56a4caa7c4d81ab39ceb196c6f, type: 3}
       propertyPath: m_Name
       value: LeverButton (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3951083725855844910, guid: cbc12a56a4caa7c4d81ab39ceb196c6f, type: 3}
+      propertyPath: m_Layer
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 8078142021148482131, guid: cbc12a56a4caa7c4d81ab39ceb196c6f, type: 3}
       propertyPath: OnPress.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -9778,7 +9814,7 @@ GameObject:
   - component: {fileID: 8561875571721009168}
   - component: {fileID: 2744793986241245232}
   - component: {fileID: 3085561195553894176}
-  m_Layer: 2
+  m_Layer: 16
   m_Name: LiftDialog
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}

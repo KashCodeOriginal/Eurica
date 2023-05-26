@@ -1341,7 +1341,7 @@ GameObject:
   - component: {fileID: 42723590}
   - component: {fileID: 42723589}
   - component: {fileID: 42723588}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: TriggerDetector_Eyes (2)
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -1565,7 +1565,7 @@ GameObject:
   - component: {fileID: 54411526}
   - component: {fileID: 54411525}
   - component: {fileID: 54411524}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: TriggerDetector_Speech (artem_solo_s1_doors)
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -2490,7 +2490,7 @@ GameObject:
   - component: {fileID: 95180044}
   - component: {fileID: 95180043}
   - component: {fileID: 95180042}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: TriggerDetector_START
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -4254,7 +4254,7 @@ GameObject:
   - component: {fileID: 134833176}
   - component: {fileID: 134833175}
   - component: {fileID: 134833174}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: TriggerDetector_Eyes
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -4369,7 +4369,7 @@ GameObject:
   - component: {fileID: 140434099}
   - component: {fileID: 140434098}
   - component: {fileID: 140434097}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: TriggerDetector_Hint
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -4905,6 +4905,10 @@ PrefabInstance:
     - target: {fileID: 1602849521589668788, guid: e1477bb16e5af4d47ba247c399d98af3, type: 3}
       propertyPath: m_Name
       value: CheatSpeedTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 1602849521589668788, guid: e1477bb16e5af4d47ba247c399d98af3, type: 3}
+      propertyPath: m_Layer
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 1602849521589668789, guid: e1477bb16e5af4d47ba247c399d98af3, type: 3}
       propertyPath: _gizmoColor.a
@@ -8188,7 +8192,7 @@ GameObject:
   - component: {fileID: 240577474}
   - component: {fileID: 240577473}
   - component: {fileID: 240577472}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: TriggerDetector_Speech (8)
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -9223,6 +9227,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChangeSceneTrigger (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1602849521589668788, guid: e1477bb16e5af4d47ba247c399d98af3, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 1602849521589668789, guid: e1477bb16e5af4d47ba247c399d98af3, type: 3}
       propertyPath: _gizmoColor.a
       value: 1
@@ -9724,7 +9732,7 @@ GameObject:
   - component: {fileID: 283787277}
   - component: {fileID: 283787276}
   - component: {fileID: 283787275}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: TriggerDetector_Speech (11)
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -9828,7 +9836,7 @@ GameObject:
   - component: {fileID: 288381382}
   - component: {fileID: 288381381}
   - component: {fileID: 288381380}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: TriggerDetector_Hint (3)
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -16207,7 +16215,7 @@ GameObject:
   - component: {fileID: 510126307}
   - component: {fileID: 510126306}
   - component: {fileID: 510126305}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: TriggerDetector_Speech (7)
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -18011,7 +18019,7 @@ GameObject:
   - component: {fileID: 589415778}
   - component: {fileID: 589415777}
   - component: {fileID: 589415776}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: TriggerDetector_Speech (4)
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -18755,7 +18763,7 @@ GameObject:
   - component: {fileID: 608524087}
   - component: {fileID: 608524086}
   - component: {fileID: 608524085}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: TriggerDetector_Speech (artem_solo_s1_final)
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -19483,6 +19491,10 @@ PrefabInstance:
     - target: {fileID: 1602849521589668788, guid: e1477bb16e5af4d47ba247c399d98af3, type: 3}
       propertyPath: m_Name
       value: ChangeSceneTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 1602849521589668788, guid: e1477bb16e5af4d47ba247c399d98af3, type: 3}
+      propertyPath: m_Layer
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 1602849521589668789, guid: e1477bb16e5af4d47ba247c399d98af3, type: 3}
       propertyPath: _gizmoColor.a
@@ -21423,7 +21435,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 701187833}
-  m_LocalRotation: {x: 0.010175443, y: 0.715383, z: -0.010420184, w: 0.69858074}
+  m_LocalRotation: {x: 0.010175437, y: 0.71538305, z: -0.010420178, w: 0.6985807}
   m_LocalPosition: {x: -422.12784, y: 2.274, z: 636.93665}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -28189,7 +28201,7 @@ GameObject:
   - component: {fileID: 956596160}
   - component: {fileID: 956596159}
   - component: {fileID: 956596158}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: TriggerDetector_Speech (6)
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -30218,7 +30230,7 @@ GameObject:
   - component: {fileID: 1035677849}
   - component: {fileID: 1035677848}
   - component: {fileID: 1035677847}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: TriggerDetector_Hint (2)
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -30330,7 +30342,7 @@ GameObject:
   - component: {fileID: 1036675769}
   - component: {fileID: 1036675768}
   - component: {fileID: 1036675767}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: TriggerDetector_Speech (artem_solo_s1_roadblock)
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -36580,7 +36592,7 @@ GameObject:
   - component: {fileID: 1260661062}
   - component: {fileID: 1260661061}
   - component: {fileID: 1260661060}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: TriggerDetector_Speech (12)
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -37128,7 +37140,7 @@ GameObject:
   - component: {fileID: 1277544231}
   - component: {fileID: 1277544230}
   - component: {fileID: 1277544229}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: TriggerDetector_Task (1)
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -39551,7 +39563,7 @@ GameObject:
   - component: {fileID: 1376919962}
   - component: {fileID: 1376919961}
   - component: {fileID: 1376919960}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: TriggerDetector_Speech (artem_solo_s1_lenin)
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -40380,6 +40392,10 @@ PrefabInstance:
     - target: {fileID: 1602849521589668788, guid: e1477bb16e5af4d47ba247c399d98af3, type: 3}
       propertyPath: m_Name
       value: ChangeSceneTrigger (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1602849521589668788, guid: e1477bb16e5af4d47ba247c399d98af3, type: 3}
+      propertyPath: m_Layer
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 1602849521589668789, guid: e1477bb16e5af4d47ba247c399d98af3, type: 3}
       propertyPath: _gizmoColor.a
@@ -41258,7 +41274,7 @@ GameObject:
   - component: {fileID: 1422370643}
   - component: {fileID: 1422370642}
   - component: {fileID: 1422370641}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: TriggerDetector_Speech (9)
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -41452,6 +41468,10 @@ PrefabInstance:
     - target: {fileID: 1602849521589668788, guid: e1477bb16e5af4d47ba247c399d98af3, type: 3}
       propertyPath: m_Name
       value: ChangeSceneTrigger (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1602849521589668788, guid: e1477bb16e5af4d47ba247c399d98af3, type: 3}
+      propertyPath: m_Layer
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 1602849521589668789, guid: e1477bb16e5af4d47ba247c399d98af3, type: 3}
       propertyPath: _gizmoColor.a
@@ -42725,7 +42745,7 @@ GameObject:
   - component: {fileID: 1476315886}
   - component: {fileID: 1476315885}
   - component: {fileID: 1476315884}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: TriggerDetector_Task
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -43622,7 +43642,7 @@ GameObject:
   - component: {fileID: 1501198964}
   - component: {fileID: 1501198963}
   - component: {fileID: 1501198962}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: TriggerDetector_Speech (13)
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -43721,7 +43741,7 @@ GameObject:
   - component: {fileID: 1502766925}
   - component: {fileID: 1502766924}
   - component: {fileID: 1502766923}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: TriggerDetector_Hint
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -50552,7 +50572,7 @@ GameObject:
   - component: {fileID: 1744534237}
   - component: {fileID: 1744534236}
   - component: {fileID: 1744534235}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: TriggerDetector_Speech (10)
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -51329,7 +51349,7 @@ GameObject:
   - component: {fileID: 1777380693}
   - component: {fileID: 1777380692}
   - component: {fileID: 1777380691}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: TriggerDetector_Speech (5)
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -52759,7 +52779,7 @@ GameObject:
   - component: {fileID: 1835452900}
   - component: {fileID: 1835452899}
   - component: {fileID: 1835452898}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: TriggerDetector_EdgeAfterNewTask
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -58494,7 +58514,7 @@ GameObject:
   - component: {fileID: 2010142403}
   - component: {fileID: 2010142402}
   - component: {fileID: 2010142401}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: TriggerDetector_Speech (artem_solo_1s_ostanovka)
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -59448,7 +59468,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2051243969}
-  m_LocalRotation: {x: 0.010175443, y: 0.715383, z: -0.010420184, w: 0.69858074}
+  m_LocalRotation: {x: 0.010175437, y: 0.71538305, z: -0.010420178, w: 0.6985807}
   m_LocalPosition: {x: -422.12784, y: 2.274, z: 636.93665}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -62424,6 +62444,10 @@ PrefabInstance:
     - target: {fileID: 3951083725855844910, guid: cbc12a56a4caa7c4d81ab39ceb196c6f, type: 3}
       propertyPath: m_Name
       value: LeverButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 3951083725855844910, guid: cbc12a56a4caa7c4d81ab39ceb196c6f, type: 3}
+      propertyPath: m_Layer
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 8078142021148482131, guid: cbc12a56a4caa7c4d81ab39ceb196c6f, type: 3}
       propertyPath: _releaseTime

@@ -679,7 +679,7 @@ GameObject:
   - component: {fileID: 135602512}
   - component: {fileID: 135602511}
   - component: {fileID: 135602510}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: LeverButton (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3258,7 +3258,7 @@ GameObject:
   - component: {fileID: 687773847}
   - component: {fileID: 687773846}
   - component: {fileID: 687773845}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: TriggerHint (ButtonPerson)
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -7086,7 +7086,7 @@ GameObject:
   - component: {fileID: 1579103617}
   - component: {fileID: 1579103616}
   - component: {fileID: 1579103615}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: TriggerHint (Button)
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -7282,7 +7282,7 @@ GameObject:
   - component: {fileID: 1587288169}
   - component: {fileID: 1587288168}
   - component: {fileID: 1587288167}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: TriggerHint (Button) (1)
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -21648,6 +21648,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 906732458}
     m_Modifications:
+    - target: {fileID: 4541713670250366790, guid: fe2e16e6fc64b9a4ca606acf3f50946b, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4541713670395018125, guid: fe2e16e6fc64b9a4ca606acf3f50946b, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4541713670633624169, guid: fe2e16e6fc64b9a4ca606acf3f50946b, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4541713671681539700, guid: fe2e16e6fc64b9a4ca606acf3f50946b, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 8767963235692177299, guid: fe2e16e6fc64b9a4ca606acf3f50946b, type: 3}
       propertyPath: m_Name
       value: GraviTransformer
@@ -24378,7 +24394,7 @@ GameObject:
   - component: {fileID: 8126028349876657005}
   - component: {fileID: 7387009541447186372}
   - component: {fileID: 8126028349876657006}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: LeverButton (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24447,7 +24463,7 @@ GameObject:
   - component: {fileID: 8126028350443320078}
   - component: {fileID: 7387009540898348967}
   - component: {fileID: 8126028350443320079}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: LeverButton (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31502,7 +31518,7 @@ GameObject:
   - component: {fileID: 5853829200205874547}
   - component: {fileID: 5150542466919901658}
   - component: {fileID: 7716804935257963337}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: LeverButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
