@@ -61,6 +61,7 @@ namespace Unit.GraviTransformer
 
         private IEnumerator DoorAnimationCloseLeft(GravityCubeLogic cube)
         {
+            _isLeftDoorOpen = false;
             _doorLeftAnim.SetBool("isOpen", false);
             UpdateIndicators(false, false);
 
@@ -72,7 +73,6 @@ namespace Unit.GraviTransformer
             Instantiate(_scalableCubePrefab, _outputPosition.position, _outputPosition.rotation);
 
             UpdateIndicators(false, true);
-            _isLeftDoorOpen = false;
         }
 
 
