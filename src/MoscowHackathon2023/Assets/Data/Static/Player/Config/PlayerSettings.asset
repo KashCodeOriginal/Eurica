@@ -18,4 +18,4 @@ MonoBehaviour:
   <RunMultiplier>k__BackingField: 1
   <JumpPower>k__BackingField: 15
   <WalkSound>k__BackingField: {fileID: 8300000, guid: 70b627990d785294fb9977706a479a7e, type: 3}
-  <WalkSoundFrequency>k__BackingField: 0.65
+  <WalkSoundFrequency>k__BackingField: 0.55
