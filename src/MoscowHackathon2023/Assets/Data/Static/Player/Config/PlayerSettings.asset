@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a30ec1902e1c4aa3bdcd7d9c43c4f1ec, type: 3}
   m_Name: PlayerSettings
   m_EditorClassIdentifier: 
-  <ForwardWalkSpeed>k__BackingField: 0.6
-  <BackwardWalkSpeed>k__BackingField: 0.5
-  <SideWalkSpeed>k__BackingField: 0.5
+  <ForwardWalkSpeed>k__BackingField: 3.6
+  <BackwardWalkSpeed>k__BackingField: 3
+  <SideWalkSpeed>k__BackingField: 3
   <RunMultiplier>k__BackingField: 1
   <JumpPower>k__BackingField: 15
