@@ -15,12 +15,16 @@ namespace Unit.GraviTransformer
         [SerializeField] private Animator _doorRightAnim;
         [SerializeField] private bool _isLeftDoorOpen = true;
 
+        [SerializeField] private GraviTransformerIndicator[] indicators;
+
         private GravityCubeLogic _currentCube;
 
         private void OnEnable()
         {
             _leftInput.OnCubeInside += OnCubeInsideLeft;
             _rightInput.OnCubeInside += OnCubeInsideRight;
+
+            UpdateIndicators(false, false);
         }
 
         private void OnDisable()
@@ -31,6 +35,8 @@ namespace Unit.GraviTransformer
 
         private void OnCubeInsideLeft(bool inside, GravityCubeLogic cube)
         {
+            UpdateIndicators(inside, false);
+
             if (inside)
                 _currentCube = cube;
             else
@@ -41,7 +47,7 @@ namespace Unit.GraviTransformer
         {
             if (_isLeftDoorOpen && _currentCube)
             {
-                StartCoroutine(DoorAnimation(_currentCube, false));
+                StartCoroutine(DoorAnimationCloseLeft(_currentCube));
             }
         }
 
@@ -49,26 +55,44 @@ namespace Unit.GraviTransformer
         {
             if (!inside)
             {
-                StartCoroutine(DoorAnimation(null, true));
+                StartCoroutine(DoorAnimationOpenLeft());
             }
         }
 
-        private IEnumerator DoorAnimation(GravityCubeLogic cube, bool isLeftOpening)
+        private IEnumerator DoorAnimationCloseLeft(GravityCubeLogic cube)
         {
-            _doorLeftAnim.SetBool("isOpen", isLeftOpening);
+            _doorLeftAnim.SetBool("isOpen", false);
+            UpdateIndicators(false, false);
 
             yield return new WaitForSeconds(3);
+ 
+            _doorRightAnim.SetBool("isOpen", true);
 
-            _doorRightAnim.SetBool("isOpen", !isLeftOpening);
+            Destroy(cube.gameObject);
+            Instantiate(_scalableCubePrefab, _outputPosition.position, _outputPosition.rotation);
 
-            if (cube)
+            UpdateIndicators(false, true);
+            _isLeftDoorOpen = false;
+        }
+
+
+        private IEnumerator DoorAnimationOpenLeft()
+        {
+            UpdateIndicators(false, false);
+            _doorLeftAnim.SetBool("isOpen", true);
+            _doorRightAnim.SetBool("isOpen", false);
+
+            yield return new WaitForSeconds(1);
+
+            _isLeftDoorOpen = true;
+        }
+
+        private void UpdateIndicators(bool glowLeft, bool glowRight)
+        {
+            foreach (var indicator in indicators)
             {
-                Destroy(cube.gameObject);
-                _currentCube = null;
-                Instantiate(_scalableCubePrefab, _outputPosition.position, _outputPosition.rotation);
+                indicator.SetStatus(glowLeft, glowRight);
             }
-
-            _isLeftDoorOpen = isLeftOpening;
         }
     }
 }
