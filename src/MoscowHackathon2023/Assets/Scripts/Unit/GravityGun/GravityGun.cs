@@ -60,8 +60,6 @@ namespace Unit.GravityGun
                 return;
             }
 
-            Debug.Log(hit.collider.gameObject.name);
-
             if (hit.collider.gameObject.layer != _interactiveLayer)
             {
                 return;

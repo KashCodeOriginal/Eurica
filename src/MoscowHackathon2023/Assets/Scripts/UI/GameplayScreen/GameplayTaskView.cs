@@ -24,8 +24,6 @@ namespace UI.GameplayScreen
             currentTask = task;
             taskOutput.text = task;
             taskViewParent.SetActive(true);
-
-            Debug.Log("<color=cyan>Show task: </color>" + task);
         }
 
         public void RequestHidingTask()
@@ -33,14 +31,10 @@ namespace UI.GameplayScreen
             taskOutput.text = "";
             currentTask = "";
             taskViewParent.SetActive(false);
-
-            Debug.Log("<color=cyan>Request hiding task </color>");
         }
 
         public void RequestTaskFail()
         {
-            Debug.Log("<color=cyan>Request task fail</color>");
-
             // Show "Task failed" text
             // Hide task
         }
