@@ -31,7 +31,7 @@ namespace Unit.Player
                 return;
             }
 
-            var maxDistance = 5f;
+            var maxDistance = 4f;
             var ray = _gameInstancesContainer.Camera.ViewportPointToRay(new Vector3(0.5f, 0.5f));
 
             if (!Physics.Raycast(ray, out var hit, maxDistance))

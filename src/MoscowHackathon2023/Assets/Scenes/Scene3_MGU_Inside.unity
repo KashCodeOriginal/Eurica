@@ -10333,7 +10333,7 @@ GameObject:
   - component: {fileID: 305445795}
   - component: {fileID: 305445794}
   - component: {fileID: 305445793}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Trigger Voice (s3_eurica_mixdown)
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -12356,7 +12356,7 @@ GameObject:
   - component: {fileID: 356706549}
   - component: {fileID: 356706548}
   - component: {fileID: 356706547}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: TriggerKey (s3_key_mixdown)
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -15981,6 +15981,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GravityButton (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3951083725855844910, guid: f02432717bc260b48a8a86a4414548a1, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19117,6 +19121,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GravityButton (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3951083725855844910, guid: f02432717bc260b48a8a86a4414548a1, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19370,7 +19378,7 @@ GameObject:
   - component: {fileID: 552830487}
   - component: {fileID: 552830486}
   - component: {fileID: 552830485}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Trigger Voice (artem_homyak_s3_poster_mixdown)
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -30628,7 +30636,7 @@ GameObject:
   - component: {fileID: 898113151}
   - component: {fileID: 898113150}
   - component: {fileID: 898113149}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SceneTransition
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -37336,7 +37344,7 @@ GameObject:
   - component: {fileID: 1121713250}
   - component: {fileID: 1121713249}
   - component: {fileID: 1121713248}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Trigger Voice (homyak_solo_s3_cube)
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -42489,6 +42497,10 @@ PrefabInstance:
       value: TriggerDetector_Restrict2ndFloor
       objectReference: {fileID: 0}
     - target: {fileID: 8748627698247667914, guid: 2bd48415f1ba5f746ae419ab189d431c, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8748627698247667914, guid: 2bd48415f1ba5f746ae419ab189d431c, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -45048,7 +45060,7 @@ GameObject:
   - component: {fileID: 1379246205}
   - component: {fileID: 1379246204}
   - component: {fileID: 1379246203}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Trigger Voice (artem_solo_s3_card)
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -63735,7 +63747,7 @@ GameObject:
   - component: {fileID: 1947053674}
   - component: {fileID: 1947053673}
   - component: {fileID: 1947053672}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: TriggerCurrentTask (1)
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -64535,7 +64547,7 @@ GameObject:
   - component: {fileID: 1966540354}
   - component: {fileID: 1966540353}
   - component: {fileID: 1966540356}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Trigger Voice (s3_entry_mixdown)
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
