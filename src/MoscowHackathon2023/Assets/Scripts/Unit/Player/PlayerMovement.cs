@@ -66,7 +66,6 @@ namespace Unit.Player
             newDirection.y = 0f;
 
             Vector3 desiredVelocity = newDirection.normalized * _currentSpeed;
-
             Vector3 slopeVelocity = Vector3.ProjectOnPlane(desiredVelocity, Vector3.up);
 
             _rigidbody.MovePosition(_rigidbody.position + slopeVelocity * Time.fixedDeltaTime);
