@@ -12,6 +12,7 @@ namespace Unit.GraviTransformer
         {
             if (collision.gameObject.TryGetComponent<GravityCubeLogic>(out var cube))
             {
+                cube?.RequestDetach();
                 OnCubeInside?.Invoke(cube);
             }
         }
