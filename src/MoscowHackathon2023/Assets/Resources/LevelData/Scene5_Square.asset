@@ -16,5 +16,5 @@ MonoBehaviour:
   <IsPlayerOnScene>k__BackingField: 1
   <IsPlayerInstancingAtStart>k__BackingField: 1
   <IsPlayerWeaponInstancingAtStart>k__BackingField: 1
-  <PlayerSpawnPoint>k__BackingField: {x: 0, y: 1, z: 33.90504}
+  <PlayerSpawnPoint>k__BackingField: {x: -0.5, y: 2.2, z: 87}
   <PlayerSpawnRotation>k__BackingField: {x: 0, y: 0, z: 0, w: 1}
