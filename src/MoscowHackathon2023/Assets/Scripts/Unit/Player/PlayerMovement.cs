@@ -62,12 +62,13 @@ namespace Unit.Player
         private void MovePlayer()
         {
             var newDirection = new Vector3(_currentDirection.x, 0f, _currentDirection.y).normalized;
-
             newDirection = _camera.transform.forward * newDirection.z + _camera.transform.right * newDirection.x;
-
             newDirection.y = 0f;
 
-            _rigidbody.AddForce(newDirection.normalized * _currentSpeed, ForceMode.Impulse);
+            Vector3 desiredVelocity = newDirection.normalized * _currentSpeed;
+            Vector3 slopeVelocity = Vector3.ProjectOnPlane(desiredVelocity, Vector3.up);
+
+            _rigidbody.MovePosition(_rigidbody.position + slopeVelocity * Time.fixedDeltaTime);
         }
 
         private void Jump()
