@@ -25,8 +25,6 @@ namespace UI.GameplayScreen
             currentHint = hint;
             hintOutput.text = hint;
             hintViewParent.SetActive(true);
-
-            Debug.Log("<color=yellow>Show hint: </color>" + hint);
         }
 
         public void RequestHidingHint()
@@ -34,8 +32,6 @@ namespace UI.GameplayScreen
             hintOutput.text = "";
             currentHint = "";
             hintViewParent.SetActive(false);
-
-            Debug.Log("<color=yellow>Request hiding hint</color>");
         }
     }
 }

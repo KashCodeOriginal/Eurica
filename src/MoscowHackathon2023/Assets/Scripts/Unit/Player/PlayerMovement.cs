@@ -89,9 +89,7 @@ namespace Unit.Player
 
                 if (_stepSoundTimer >= _playerSettings.WalkSoundFrequency)
                 {
-                    _playSoundsService.PlayAudioClip(_playerSettings.WalkSound, 
-                        VolumeLevel.StepsVolume, 
-                        true);
+                    _playSoundsService.PlayAudioClip(_playerSettings.WalkSound, VolumeLevel.StepsVolume, true);
 
                     _stepSoundTimer = 0;
                 }
@@ -103,7 +101,9 @@ namespace Unit.Player
         private void Jump()
         {
             _isJumping = true;
-            
+
+            _playSoundsService.PlayAudioClip(_playerSettings.WalkSound, VolumeLevel.StepsVolume, true);
+
             _rigidbody.velocity = new Vector3(_rigidbody.velocity.x, 0f, _rigidbody.velocity.z);
 
             _rigidbody.AddForce(new Vector3(0f, _playerSettings.JumpPower, 0f), ForceMode.Impulse);
