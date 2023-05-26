@@ -49,6 +49,7 @@ namespace Unit.Table
                     break;
                 case GunTypes.Scale:
                     _gameInstancesContainer.Inventory.Weapons[2].SetUpUniversalView(universalGunView);
+                    
                     _gameInstancesContainer.AddViewGun(GunTypes.Scale);
                     
                     universalGunView.ScaleGunBody.SetActive(true);

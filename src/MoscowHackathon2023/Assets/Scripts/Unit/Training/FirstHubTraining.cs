@@ -36,6 +36,11 @@ namespace Unit.Training
 
         private void TurnOffScrollHint(float obj)
         {
+            if (_allCompleted)
+            {
+                return;
+            }
+            
             if (gameObject.activeSelf == false)
             {
                 return;
@@ -57,6 +62,7 @@ namespace Unit.Training
             {
                 _leftMouseReleaseHintTrigger.SetActive(false);
                 _triggerTaskHelper.HideHint();  
+                return;
             }
 
             if (!_isCubeTaken)
