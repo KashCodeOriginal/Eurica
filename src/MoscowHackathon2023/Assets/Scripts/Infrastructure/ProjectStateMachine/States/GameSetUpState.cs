@@ -136,7 +136,7 @@ namespace Infrastructure.ProjectStateMachine.States
 
             if (playerInstance.TryGetComponent(out PlayerMovement playerMovement))
             {
-                playerMovement.Construct(_playerInputActionReader, mainCamera, _playerSettings);
+                playerMovement.Construct(_playerInputActionReader, mainCamera, _playerSettings, _playSoundsService);
             }
         }
     }
