@@ -6,7 +6,8 @@ namespace Unit.GraviTransformer
 {
     public class GraviTransformerController : MonoBehaviour
     {
-        [SerializeField] private GraviTransformerInput _input;
+        [SerializeField] private GraviTransformerInput _leftInput;
+        [SerializeField] private GraviTransformerInput _rightInput;
         [SerializeField] private GameObject _scalableCubePrefab;
         [SerializeField] private Transform _outputPosition;
 
@@ -14,35 +15,60 @@ namespace Unit.GraviTransformer
         [SerializeField] private Animator _doorRightAnim;
         [SerializeField] private bool _isLeftDoorOpen = true;
 
+        private GravityCubeLogic _currentCube;
+
         private void OnEnable()
         {
-            _input.OnCubeInside += OnCubeInside;
+            _leftInput.OnCubeInside += OnCubeInsideLeft;
+            _rightInput.OnCubeInside += OnCubeInsideRight;
         }
 
         private void OnDisable()
         {
-            _input.OnCubeInside -= OnCubeInside;
+            _leftInput.OnCubeInside -= OnCubeInsideLeft;
+            _rightInput.OnCubeInside -= OnCubeInsideRight;
         }
 
-        private void OnCubeInside(GravityCubeLogic cube)
+        private void OnCubeInsideLeft(bool inside, GravityCubeLogic cube)
         {
-            if (_isLeftDoorOpen)
+            if (inside)
+                _currentCube = cube;
+            else
+                _currentCube = null;
+        }
+
+        public void PullLever()
+        {
+            if (_isLeftDoorOpen && _currentCube)
             {
-                StartCoroutine(DoorOpenCloseAnimation(cube));
+                StartCoroutine(DoorAnimation(_currentCube, false));
             }
         }
 
-        private IEnumerator DoorOpenCloseAnimation(GravityCubeLogic cube)
+        private void OnCubeInsideRight(bool inside, GravityCubeLogic cube)
         {
-            _isLeftDoorOpen = false;
-            _doorLeftAnim.SetBool("isOpen", false);
+            if (!inside)
+            {
+                StartCoroutine(DoorAnimation(null, true));
+            }
+        }
 
-            yield return new WaitForSeconds(1);
+        private IEnumerator DoorAnimation(GravityCubeLogic cube, bool isLeftOpening)
+        {
+            _doorLeftAnim.SetBool("isOpen", isLeftOpening);
 
-            _doorRightAnim.SetBool("isOpen", true);
+            yield return new WaitForSeconds(3);
 
-            Destroy(cube.gameObject);
-            Instantiate(_scalableCubePrefab, _outputPosition.position, _outputPosition.rotation);
+            _doorRightAnim.SetBool("isOpen", !isLeftOpening);
+
+            if (cube)
+            {
+                Destroy(cube.gameObject);
+                _currentCube = null;
+                Instantiate(_scalableCubePrefab, _outputPosition.position, _outputPosition.rotation);
+            }
+
+            _isLeftDoorOpen = isLeftOpening;
         }
     }
 }
