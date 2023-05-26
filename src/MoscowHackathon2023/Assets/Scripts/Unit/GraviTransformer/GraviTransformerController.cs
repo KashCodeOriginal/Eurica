@@ -39,12 +39,12 @@ namespace Unit.GraviTransformer
 
         private void OnCubeInsideLeft(bool inside, GravityCubeLogic cube)
         {
-            UpdateIndicators(inside, false);
-
             if (inside)
                 _currentCube = cube;
             else
                 _currentCube = null;
+
+            UpdateIndicators(inside, false);
         }
 
         public void PullLever()
@@ -98,7 +98,7 @@ namespace Unit.GraviTransformer
             _hintPullLever.SetActive(false);
             _getYourCube.SetActive(false);
 
-            if (_isLeftDoorOpen && !_currentCube)
+            if (_isLeftDoorOpen && _currentCube == null)
             {
                 _hintPlaceCube.SetActive(true);
             }
