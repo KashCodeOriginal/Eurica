@@ -2,6 +2,7 @@ using System.Linq;
 using Data.StaticData.PlayerData;
 using UnityEngine;
 using Services.Input;
+using Services.PlaySounds;
 
 namespace Unit.Player
 {
@@ -24,8 +25,17 @@ namespace Unit.Player
 
         private PlayerBaseSettings _playerSettings;
 
-        public void Construct(PlayerInputActionReader playerInputActionReader, Camera camera, PlayerBaseSettings playerSettings)
+        private IPlaySoundsService _playSoundsService;
+
+        private float _stepSoundTimer;
+
+        public void Construct(PlayerInputActionReader playerInputActionReader, 
+            Camera camera, 
+            PlayerBaseSettings playerSettings,
+            IPlaySoundsService playSoundsService)
         {
+            _playSoundsService = playSoundsService;
+            
             _playerInputActionReader = playerInputActionReader;
 
             _playerSettings = playerSettings;
@@ -38,6 +48,8 @@ namespace Unit.Player
             _playerInputActionReader.IsPlayerAccelerationButtonClickEnded += OnPlayerWalk;
 
             _playerInputActionReader.IsPlayerJumpButtonClicked += OnPlayerJump;
+
+            _stepSoundTimer = _playerSettings.WalkSoundFrequency;
         }
 
         private void FixedUpdate()
@@ -68,7 +80,24 @@ namespace Unit.Player
             Vector3 desiredVelocity = newDirection.normalized * _currentSpeed;
             Vector3 slopeVelocity = Vector3.ProjectOnPlane(desiredVelocity, Vector3.up);
 
-            _rigidbody.MovePosition(_rigidbody.position + slopeVelocity * Time.fixedDeltaTime);
+            if (slopeVelocity.sqrMagnitude > 0.0001f)
+            {
+                if (_isGrounded)
+                {
+                    _stepSoundTimer += Time.deltaTime;
+                }
+
+                if (_stepSoundTimer >= _playerSettings.WalkSoundFrequency)
+                {
+                    _playSoundsService.PlayAudioClip(_playerSettings.WalkSound, 
+                        VolumeLevel.StepsVolume, 
+                        true);
+
+                    _stepSoundTimer = 0;
+                }
+
+                _rigidbody.MovePosition(_rigidbody.position + slopeVelocity * Time.fixedDeltaTime);
+            }
         }
 
         private void Jump()
