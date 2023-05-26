@@ -2544,13 +2544,13 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 95180044}
         m_TargetAssemblyTypeName: Unit.TriggerSystem.TriggerTaskHelper, Assembly-CSharp
-        m_MethodName: OpenEyelids
-        m_Mode: 1
+        m_MethodName: OpenEyelidsAfterTime
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 0
+          m_FloatArgument: 1
           m_StringArgument: "\u0418\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u0439\u0442\u0435
             \u043A\u043B\u0430\u0432\u0438\u0448\u0438 WASD, \u0447\u0442\u043E\u0431\u044B
             \u043F\u0435\u0440\u0435\u043C\u0435\u0449\u0430\u0442\u044C\u0441\u044F"
