@@ -61,13 +61,11 @@ namespace Services.PlaySounds
 
         private float GetVolumeLevel(VolumeLevel volume)
         {
-            
-            
             var volumeLevel = _currentVolumeMultiplier * volume switch
             {
                 VolumeLevel.Default => 1f,
                 VolumeLevel.VoiceOver => 0.5f,
-                VolumeLevel.StepsVolume => 0.3f,
+                VolumeLevel.StepsVolume => 0.25f,
                 _ => 0f
             };
             return volumeLevel;
