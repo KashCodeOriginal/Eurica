@@ -10,8 +10,8 @@ namespace Data.StaticData.PlayerData
         [field: SerializeField] public float SideWalkSpeed { get; private set; }
         
         [field: SerializeField] public float RunMultiplier { get; private set; }
-
         [field: SerializeField] public float JumpPower { get; private set; }
-        
+        [field: SerializeField] public AudioClip WalkSound { get; private set; }
+        [field: SerializeField] public float WalkSoundFrequency { get; private set; }
     }
 }
