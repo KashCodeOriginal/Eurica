@@ -32,7 +32,6 @@ namespace Unit.GravityGun
         private LayerMask _interactiveLayer = LayerMask.NameToLayer("InteractiveObjectForGravity");
 
         private LayerMask _grabbedLayer = LayerMask.NameToLayer("Grabbed");
-        private LayerMask _ignoreRaycast = LayerMask.NameToLayer("Ignore Raycast");
 
         public void SetUpUniversalView(UniversalGunView universalGunView)
         {
@@ -54,10 +53,14 @@ namespace Unit.GravityGun
         {
             var ray = _gameInstancesContainer.Camera.ViewportPointToRay(new Vector3(0.5f, 0.5f));
 
-            if (!Physics.Raycast(ray, out var hit, _gravityGunGravityGunData.CatchDistance, ~_ignoreRaycast))
+            int layerToIgnore = LayerMask.NameToLayer("IgnoreWeaponRay");
+            int layerMask = ~(1 << layerToIgnore);
+            if (!Physics.Raycast(ray, out var hit, _gravityGunGravityGunData.CatchDistance, layerMask))
             {
                 return;
             }
+
+            Debug.Log(hit.collider.gameObject.name);
 
             if (hit.collider.gameObject.layer != _interactiveLayer)
             {
