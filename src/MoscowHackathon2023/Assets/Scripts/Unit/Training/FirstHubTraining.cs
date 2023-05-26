@@ -40,6 +40,8 @@ namespace Unit.Training
             {
                 return;
             }
+            
+            _scrollHintTrigger.SetActive(false);
 
             _leftMouseHintTrigger.SetActive(true);
         }
@@ -53,6 +55,7 @@ namespace Unit.Training
 
             if (_allCompleted)
             {
+                _leftMouseReleaseHintTrigger.SetActive(false);
                 _triggerTaskHelper.HideHint();  
             }
 

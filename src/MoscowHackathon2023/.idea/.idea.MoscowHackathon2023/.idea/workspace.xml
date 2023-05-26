@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="796ee9ce-5b7d-4e10-92ca-ade5b0f8e2d9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MoscowHackathon2023/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MoscowHackathon2023/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Scene2_Main_Hub.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Scene2_Main_Hub.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit/Training/FirstHubTraining.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit/Training/FirstHubTraining.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -105,7 +106,7 @@
       <workItem from="1684744114919" duration="3195000" />
       <workItem from="1684822782543" duration="7053000" />
       <workItem from="1685031351889" duration="3956000" />
-      <workItem from="1685088713628" duration="3822000" />
+      <workItem from="1685088713628" duration="4552000" />
     </task>
     <servers />
   </component>
