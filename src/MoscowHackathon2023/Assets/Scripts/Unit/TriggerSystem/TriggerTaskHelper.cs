@@ -42,6 +42,11 @@ namespace Unit.TriggerSystem
             GameplayScreen.Instance?.GameplayTaskView.RequestShowingTask(task);
         }
 
+        public void HideTask()
+        {
+            GameplayScreen.Instance?.GameplayTaskView.RequestHidingTask();
+        }
+
         public void FailTask()
         {
             GameplayScreen.Instance?.GameplayTaskView.RequestTaskFail();
@@ -70,6 +75,8 @@ namespace Unit.TriggerSystem
         public void OpenEyelids() => BlinkSystem.Instance?.OpenEyelids();
 
         public void CloseEyelids() => BlinkSystem.Instance?.CloseEyelids();
+
+        public void CheatSpeed(float speed) => Time.timeScale = speed;
 
         public void ChangeScene(string sceneName)
         {
