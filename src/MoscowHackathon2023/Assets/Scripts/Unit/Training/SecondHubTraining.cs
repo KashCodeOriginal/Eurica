@@ -1,9 +1,7 @@
-using System;
 using Services.Containers;
 using Services.Input;
 using Unit.ScaleGun;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Zenject;
 
 namespace Unit.Training
