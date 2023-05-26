@@ -17,6 +17,7 @@ namespace Unit.Training
         private PlayerInputActionReader _playerInputActionReader;
 
         private bool _isCubeTaken = false;
+        
         private bool _allCompleted = false;
         
         [Inject]
@@ -37,41 +38,34 @@ namespace Unit.Training
         {
             if (gameObject.activeSelf == false)
             {
-                _triggerTaskHelper.HideHint();
                 return;
             }
-            
-            _scrollHintTrigger.SetActive(false);
-            
+
             _leftMouseHintTrigger.SetActive(true);
-            
-            _isCubeTaken = true;
         }
 
         private void TurnOffLeftHint()
         {
             if (gameObject.activeSelf == false)
             {
-                _triggerTaskHelper.HideHint();
                 return;
             }
 
             if (_allCompleted)
             {
-                _triggerTaskHelper.HideHint();
-                _leftMouseReleaseHintTrigger.SetActive(false);
-                gameObject.SetActive(false);
+                _triggerTaskHelper.HideHint();  
             }
 
             if (!_isCubeTaken)
             {
-                return;
+                _leftMouseHintTrigger.SetActive(false);
+                
+                _leftMouseReleaseHintTrigger.SetActive(true);
+
+                _isCubeTaken = true;
+                
+                _allCompleted = true;
             }
-            
-            _leftMouseHintTrigger.SetActive(false);
-            _leftMouseReleaseHintTrigger.SetActive(true);
-            
-            _allCompleted = true;
         }
 
         private void OnDisable()
