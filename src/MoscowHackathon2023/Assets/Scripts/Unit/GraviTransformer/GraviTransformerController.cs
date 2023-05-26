@@ -14,6 +14,10 @@ namespace Unit.GraviTransformer
         [SerializeField] private Animator _doorLeftAnim;
         [SerializeField] private Animator _doorRightAnim;
         [SerializeField] private bool _isLeftDoorOpen = true;
+        
+        [SerializeField] private GameObject _hintPlaceCube;
+        [SerializeField] private GameObject _hintPullLever;
+        [SerializeField] private GameObject _getYourCube;
 
         [SerializeField] private GraviTransformerIndicator[] indicators;
 
@@ -35,12 +39,12 @@ namespace Unit.GraviTransformer
 
         private void OnCubeInsideLeft(bool inside, GravityCubeLogic cube)
         {
-            UpdateIndicators(inside, false);
-
             if (inside)
                 _currentCube = cube;
             else
                 _currentCube = null;
+
+            UpdateIndicators(inside, false);
         }
 
         public void PullLever()
@@ -70,6 +74,7 @@ namespace Unit.GraviTransformer
             _doorRightAnim.SetBool("isOpen", true);
 
             Destroy(cube.gameObject);
+            _currentCube = null;
             Instantiate(_scalableCubePrefab, _outputPosition.position, _outputPosition.rotation);
 
             UpdateIndicators(false, true);
@@ -89,6 +94,26 @@ namespace Unit.GraviTransformer
 
         private void UpdateIndicators(bool glowLeft, bool glowRight)
         {
+            _hintPlaceCube.SetActive(false);
+            _hintPullLever.SetActive(false);
+            _getYourCube.SetActive(false);
+
+            if (_isLeftDoorOpen && _currentCube == null)
+            {
+                _hintPlaceCube.SetActive(true);
+            }
+            else
+            {
+                if (_currentCube)
+                {
+                    _hintPullLever.SetActive(true);
+                }
+                else
+                {
+                    _getYourCube.SetActive(true);
+                }
+            }
+
             foreach (var indicator in indicators)
             {
                 indicator.SetStatus(glowLeft, glowRight);
