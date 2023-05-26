@@ -12,8 +12,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Door.001
+    second: {fileID: 2100000, guid: 2f298750d0725a9408794256b9dd4d7e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Emissive
     second: {fileID: 2100000, guid: 216113cc94e9a13468e50391a715f15f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Emissive.001
+    second: {fileID: 2100000, guid: 5c51f41652ef06d4e82fe610b7a683b5, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -22,8 +32,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Emissive_2.001
+    second: {fileID: 2100000, guid: 38266ba8af4d6f34daa30958af1315c2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Glass
     second: {fileID: 2100000, guid: c2eb10b53615c314099eb7fe6a2e6f55, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass.001
+    second: {fileID: 2100000, guid: a26fc24b7c120a34c96989a4e96c23c0, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -32,13 +52,28 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: GraviTransformer.001
+    second: {fileID: 2100000, guid: fce49015debd21645a8387f724dedbd9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Main
     second: {fileID: 2100000, guid: b305b5261bd13cf48865aca66dab7443, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Main.001
+    second: {fileID: 2100000, guid: 9e59a7523d448334491790cbcc1982b7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Prowod
     second: {fileID: 2100000, guid: 349efbc9e80b79949a5e915cda52c163, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Prowod.001
+    second: {fileID: 2100000, guid: f19bcd56a343b344e96bca6b6603b12d, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
