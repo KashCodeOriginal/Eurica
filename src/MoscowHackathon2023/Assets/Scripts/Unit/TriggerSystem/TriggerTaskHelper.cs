@@ -74,6 +74,17 @@ namespace Unit.TriggerSystem
 
         public void OpenEyelids() => BlinkSystem.Instance?.OpenEyelids();
 
+        public void OpenEyelidsAfterTime(float time)
+        {
+            StartCoroutine(OpenAfterTime(time));
+        }
+
+        private IEnumerator OpenAfterTime(float time)
+        {
+            yield return new WaitForSeconds(time);
+            BlinkSystem.Instance?.OpenEyelids();
+        }
+
         public void CloseEyelids() => BlinkSystem.Instance?.CloseEyelids();
 
         public void CheatSpeed(float speed) => Time.timeScale = speed;
