@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using Cinemachine;
 using Data.AssetsAddressablesConstants;
@@ -8,6 +9,7 @@ using Services.Containers;
 using Services.Factories.AbstractFactory;
 using Services.Factories.GunsFactory;
 using Services.Factories.UIFactory;
+using Services.GameProgress;
 using Services.Input;
 using Services.PlaySounds;
 using Services.StaticData;
@@ -17,6 +19,7 @@ using Unit.MountRemote;
 using Unit.Player;
 using Unit.Portal;
 using Unit.ScaleGun;
+using Unit.UniversalGun;
 using Unit.WeaponInventory;
 using UnityEngine;
 
@@ -34,7 +37,7 @@ namespace Infrastructure.ProjectStateMachine.States
         private readonly IStaticDataService _staticDataService;
         private readonly IPlaySoundsService _playSoundsService;
         private readonly IUIFactory _uiFactory;
-
+        private readonly IGameProgressService _gameProgressService;
 
         private PortalGun _portalGun;
         private GravityGun _gravityGun;
@@ -50,7 +53,8 @@ namespace Infrastructure.ProjectStateMachine.States
             IGameInstancesContainer gameInstancesContainer,
             IStaticDataService staticDataService,
             IPlaySoundsService playSoundsService,
-            IUIFactory uiFactory)
+            IUIFactory uiFactory,
+            IGameProgressService gameProgressService)
         {
             Initializer = initializer;
             _gunFactory = gunFactory;
@@ -61,6 +65,7 @@ namespace Infrastructure.ProjectStateMachine.States
             _staticDataService = staticDataService;
             _playSoundsService = playSoundsService;
             _uiFactory = uiFactory;
+            _gameProgressService = gameProgressService;
         }
 
         public async void OnEnter(string arg)
@@ -99,11 +104,14 @@ namespace Infrastructure.ProjectStateMachine.States
                 cameraChildContainer.WeaponContainer.gameObject.SetActive(false);
             }
 
-            if (!levelData.IsPlayerWeaponInstancingAtStart)
+            var currentWeaponType = _gameProgressService.CurrentWeaponOnPlayer;
+
+            if (currentWeaponType == GunTypes.None)
             {
                 cameraChildContainer.WeaponContainer.gameObject.SetActive(false);
             }
-
+            
+            
             Cursor.lockState = CursorLockMode.Locked;
         }
 

@@ -37,6 +37,7 @@ namespace Unit.Training
         {
             if (gameObject.activeSelf == false)
             {
+                _triggerTaskHelper.HideHint();
                 return;
             }
             
@@ -51,6 +52,7 @@ namespace Unit.Training
         {
             if (gameObject.activeSelf == false)
             {
+                _triggerTaskHelper.HideHint();
                 return;
             }
 
