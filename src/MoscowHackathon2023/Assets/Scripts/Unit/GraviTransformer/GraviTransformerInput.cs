@@ -6,14 +6,11 @@ namespace Unit.GraviTransformer
 {
     public class GraviTransformerInput : MonoBehaviour
     {
-        public UnityAction<GravityCubeLogic> OnCubeInside;
+        public UnityAction<bool, GravityCubeLogic> OnCubeInside;
 
-        private void OnCollisionEnter(Collision collision)
+        public void SetStatus(bool inside, GravityCubeLogic cube)
         {
-            if (collision.gameObject.TryGetComponent<GravityCubeLogic>(out var cube))
-            {
-                OnCubeInside?.Invoke(cube);
-            }
+            OnCubeInside?.Invoke(inside, cube);
         }
     }
 }

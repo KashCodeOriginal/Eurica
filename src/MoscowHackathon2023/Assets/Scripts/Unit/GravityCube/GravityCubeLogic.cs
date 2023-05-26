@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Unit.GraviTransformer;
+using UnityEngine;
 using UnityEngine.Events;
 
 namespace Unit.GravityCube
@@ -22,6 +23,22 @@ namespace Unit.GravityCube
             if (collision.gameObject.layer == LayerMask.NameToLayer("GravityCubeBlocker"))
             {
                 RequestDetach?.Invoke();
+            }
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.TryGetComponent(out GraviTransformerInput input))
+            {
+                input.SetStatus(true, this);
+            }
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.TryGetComponent(out GraviTransformerInput input))
+            {
+                input.SetStatus(false, this);
             }
         }
     }
