@@ -50,7 +50,9 @@ namespace Unit.ScaleGun
         {
             var ray = _gameInstancesContainer.Camera.ViewportPointToRay(new Vector3(0.5f, 0.5f));
 
-            if (!Physics.Raycast(ray, out var hit))
+            int layerToIgnore = LayerMask.NameToLayer("IgnoreWeaponRay");
+            int layerMask = ~(1 << layerToIgnore);
+            if (!Physics.Raycast(ray, out var hit, 10, layerMask))
             {
                 return;
             }
