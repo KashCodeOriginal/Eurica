@@ -34,8 +34,10 @@
 - "Wooden Bed" от Shedmon (https://sketchfab.com/3d-models/wooden-bridge-ramp-899fd82b1fc94473b899825611222fc2)
 - "Stationery: pencil, pen and eraser (lowpoly)" от Mikhail Antonov (https://sketchfab.com/3d-models/stationery-pencil-pen-and-eraser-lowpoly-4737f219b0834245a9fbd5b5f90b16a5)
 - "Notebook And Pen" от spckmm (https://sketchfab.com/3d-models/notebook-and-pen-ef22424f973044d28738a4c3c4ae31c0)
+- "Trees Low Poly" от Igor_K. (https://sketchfab.com/3d-models/trees-low-poly-1d2dcca2ccb1496c85b7cc5789a2a261)
 - "Модели Москвы, предоставленные для хакатона "Лидеры Цифровой Трансформации"
 
 ## Звуки
 
-- Некоторые звуки взяты с сайта https://www.zapsplat.com
+- Большинство звуков взято с сайта Zapsplat (https://www.zapsplat.com)
+- Закадровый голос: Михаил Волков
