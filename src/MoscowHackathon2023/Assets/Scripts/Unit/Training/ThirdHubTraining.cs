@@ -45,6 +45,7 @@ namespace Unit.Training
         private void OnDisable()
         {
             _playerInputActionReader.IsLeftButtonClicked -= HideLeftHint;
+            _playerInputActionReader.IsRightButtonClicked -= HideRightHint;
         }
     }
 }

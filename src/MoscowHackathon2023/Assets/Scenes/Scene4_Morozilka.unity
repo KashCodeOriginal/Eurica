@@ -4900,7 +4900,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: Scene2_Main_Hub
           m_BoolArgument: 0
-        m_CallState: 0
+        m_CallState: 1
   OnExit:
     m_PersistentCalls:
       m_Calls: []
