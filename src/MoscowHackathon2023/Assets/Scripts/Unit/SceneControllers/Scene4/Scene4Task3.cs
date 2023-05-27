@@ -18,6 +18,16 @@ namespace Unit.SceneControllers.Scene4
         private bool _isCubeEntered;
         private bool _isAllRed;
 
+        [Header("Visual Screen")]
+        [SerializeField] private GameObject _cubeNotReady;
+        [SerializeField] private GameObject _cubeReady;
+        [SerializeField] private GameObject _lampsNotReady;
+        [SerializeField] private GameObject _lampsReady;
+        [SerializeField] private GameObject _pullLever;
+        [SerializeField] private GameObject _separator;
+        [SerializeField] private GameObject _liftUnlocked;
+        [SerializeField] private GameObject _arrowHelper;
+
         [Inject]
         public void Construct(IGameProgressService gameProgressService)
         {
@@ -27,6 +37,8 @@ namespace Unit.SceneControllers.Scene4
         private void OnEnable()
         {
             _quizLogic.OnLampChanged += OnLampChanged;
+
+            StateChanged();
         }
 
         private void OnDisable()
@@ -39,6 +51,8 @@ namespace Unit.SceneControllers.Scene4
             if (collision.gameObject.TryGetComponent(out Scalable cube))
             {
                 _isCubeEntered = true;
+                cube.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+                cube.gameObject.GetComponent<BoxCollider>().enabled = false;
                 StateChanged();
             }
         }
@@ -51,7 +65,17 @@ namespace Unit.SceneControllers.Scene4
 
         private void StateChanged()
         {
-            // Set visuals for a display
+            if (!_isLevelCompleted)
+            {
+                _arrowHelper.SetActive(!_isCubeEntered);
+                _cubeNotReady.SetActive(!_isCubeEntered);
+                _cubeReady.SetActive(_isCubeEntered);
+                _lampsNotReady.SetActive(!_isAllRed);
+                _lampsReady.SetActive(_isAllRed);
+
+                _pullLever.SetActive(_isAllRed && _isCubeEntered);
+                _liftUnlocked.SetActive(false);
+            }
         }
 
         public void PullLever()
@@ -66,7 +90,15 @@ namespace Unit.SceneControllers.Scene4
                 if (!_isLevelCompleted)
                 {
                     _isLevelCompleted = true;
-                    
+
+                    _cubeNotReady.SetActive(false);
+                    _cubeReady.SetActive(false);
+                    _lampsNotReady.SetActive(false);
+                    _lampsReady.SetActive(false);
+                    _pullLever.SetActive(false);
+                    _separator.SetActive(false);
+                    _liftUnlocked.SetActive(true);
+
                     _gameProgressService.SetUpHubStage(HubStage.Third);
                     _gameProgressService.SetUpLiftStage(LiftStage.Third);
                     
