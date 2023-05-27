@@ -3,72 +3,7 @@ guid: fa02f37db83266546b3807ca9e3e7505
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Fundo
-    second: {fileID: 2100000, guid: 9d0a3bd9925e3ac46aa3e6ac5f59e6c4, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Fundo.001
-    second: {fileID: 2100000, guid: 600aaba8c49a8cd419132b2cf2b72fea, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Fundo.002
-    second: {fileID: 2100000, guid: 8591c9917172eca4e88076e84c1ec2d3, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Lumi
-    second: {fileID: 2100000, guid: 6c2906ac216f4f049825ab928d82b5a6, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.002
-    second: {fileID: 2100000, guid: 851a71235157a2445bcdedbf3ac2fef2, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.005
-    second: {fileID: 2100000, guid: 29819b5b23af49947a6528ca474c0570, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.006
-    second: {fileID: 2100000, guid: 727eb0811c0894943ba3683f4dfd0cdf, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.007
-    second: {fileID: 2100000, guid: 5d9e31150ee53954a9cbc8968a30b209, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: "Pl\xE1stico"
-    second: {fileID: 2100000, guid: 5d2310a235fe4424c95e807ffdbc0921, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Tela
-    second: {fileID: 2100000, guid: f3580738d87d862409ad2556b73dab1b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: rED
-    second: {fileID: 2100000, guid: 56f3a144a3e868e4e9c67263704f756d, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: white
-    second: {fileID: 2100000, guid: 5b07d9998698b754aa750742f6b64dc6, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: yellow
-    second: {fileID: 2100000, guid: 0cf35f8f3fae5694c9e5b4065882c7b6, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
