@@ -6,9 +6,29 @@
   <component name="ChangeListManager">
     <list default="true" id="796ee9ce-5b7d-4e10-92ca-ade5b0f8e2d9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MoscowHackathon2023/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MoscowHackathon2023/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Scene2_Main_Hub.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Scene2_Main_Hub.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit/Training/SecondHubTraining.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit/Training/SecondHubTraining.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit/Training/ThirdHubTraining.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit/Training/ThirdHubTraining.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/CutScenes/ThirdCutScene.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/CutScenes/ThirdCutScene/CutScene1.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/CutScenes/ThirdCutScene/CutScene1.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/CutScenes/ThirdCutScene/CutScene1Timeline.playable" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/CutScenes/ThirdCutScene/CutScene1Timeline.playable.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/CutScenes/ThirdCutScene/Lift.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/CutScenes/ThirdCutScene/Lift.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/CutScenes/ThirdCutScene/LiftCloseDoor.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/CutScenes/ThirdCutScene/LiftCloseDoor.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/CutScenes/ThirdCutScene/LiftGoUpFirstCutScene.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/CutScenes/ThirdCutScene/LiftGoUpFirstCutScene.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/CutScenes/ThirdCutScene/LiftGoUpSecondCutScene.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/CutScenes/ThirdCutScene/LiftGoUpSecondCutScene.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/CutScenes/ThirdCutScene/LiftHubFirstButScene.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/CutScenes/ThirdCutScene/LiftHubFirstButScene.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/CutScenes/ThirdCutScene/LiftHubSecondCutScene.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/CutScenes/ThirdCutScene/LiftHubSecondCutScene.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/CutScenes/ThirdCutScene/LiftOpenDoor.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/CutScenes/ThirdCutScene/LiftOpenDoor.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/CutScenes/ThirdCutScene/LiftOtherBuildings.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/CutScenes/ThirdCutScene/LiftOtherBuildings.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/LevelData/Scene5_Square.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/LevelData/Scene5_Square.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Scene5_Square.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Scene5_Square.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,10 +43,12 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Services/PlaySounds/VolumeLevel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Unit/Cutscene/FirstCutScene.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Unit/Lamp/LampContainer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Unit/Lever/LevelController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Unit/Lever/LeverButtonLogic.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Unit/Training/FirstHubTraining.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Unit/Trap/MountTrap.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Unit/TriggerSystem/DoorTrigger.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Unit/TriggerSystem/LiftGoingDownTrigger.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@14.0.4/Editor/LookDev/Stage.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Slider.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -39,7 +61,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Minor-Hub-Fixes",
+    "git-widget-placeholder": "Add-fifth-scene-logic",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
