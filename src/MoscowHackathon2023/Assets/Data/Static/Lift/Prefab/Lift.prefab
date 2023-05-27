@@ -280,7 +280,7 @@ GameObject:
   - component: {fileID: 2443324616064203027}
   - component: {fileID: 2443324616064203026}
   - component: {fileID: 2443324616064203021}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: OpenDoorTriggerFromOutside
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -392,7 +392,7 @@ GameObject:
   - component: {fileID: 2443324616799114820}
   - component: {fileID: 2443324616799114823}
   - component: {fileID: 2443324616799114822}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: CloseDoorFromInside
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -901,7 +901,7 @@ GameObject:
   - component: {fileID: 576207168370243087}
   - component: {fileID: 6377431604322227990}
   - component: {fileID: 6377431604322227991}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: CloseDoorTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
