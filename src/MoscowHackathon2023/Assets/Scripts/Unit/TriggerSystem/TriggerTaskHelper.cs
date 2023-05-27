@@ -5,7 +5,9 @@ using Infrastructure.ProjectStateMachine.States;
 using Services.PlaySounds;
 using Services.StaticData;
 using System.Collections;
+using Services.Containers;
 using UI.GameplayScreen;
+using Unit.UniversalGun;
 using UnityEngine;
 using Zenject;
 
@@ -16,16 +18,19 @@ namespace Unit.TriggerSystem
         [Inject]
         public void Construct(Bootstrap bootstrap,
             IStaticDataService staticDataService,
-            IPlaySoundsService playSoundsService)
+            IPlaySoundsService playSoundsService,
+            IGameInstancesContainer gameInstancesContainer)
         {
             _bootstrap = bootstrap;
             _staticDataService = staticDataService;
             _playSoundsService = playSoundsService;
+            _gameInstancesContainer = gameInstancesContainer;
         }
 
         private Bootstrap _bootstrap;
         private IStaticDataService _staticDataService;
         private IPlaySoundsService _playSoundsService;
+        private IGameInstancesContainer _gameInstancesContainer;
 
         public void ShowHint(string hint)
         {
@@ -88,6 +93,26 @@ namespace Unit.TriggerSystem
         public void CloseEyelids() => BlinkSystem.Instance?.CloseEyelids();
 
         public void CheatSpeed(float speed) => Time.timeScale = speed;
+
+        public void CheatGuns()
+        {
+            var universalGunView = _gameInstancesContainer.UniversalGunView;
+            
+            _gameInstancesContainer.TurnOnWeapon();
+            
+            _gameInstancesContainer.Inventory.Weapons[0].SetUpUniversalView(universalGunView);
+            _gameInstancesContainer.AddViewGun(GunTypes.Portal);
+            universalGunView.PortalGunBody.SetActive(true);
+            
+            _gameInstancesContainer.Inventory.Weapons[1].SetUpUniversalView(universalGunView);
+            _gameInstancesContainer.AddViewGun(GunTypes.Gravity);
+            
+            _gameInstancesContainer.Inventory.Weapons[2].SetUpUniversalView(universalGunView);
+                    
+            _gameInstancesContainer.AddViewGun(GunTypes.Scale);
+                    
+            universalGunView.ScaleGunBody.SetActive(true);
+        }
 
         public void ChangeScene(string sceneName)
         {
