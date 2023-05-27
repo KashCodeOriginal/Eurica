@@ -26,6 +26,7 @@
 - 317 Washington Street by hamma085 (https://sketchfab.com/3d-models/317-washington-street-1c16cac26e2b484387ac1311e0f5b57e)
 - Wooden Bridge Deep by Alex Gimson (https://sketchfab.com/3d-models/wooden-bridge-deep-27b22af7020c4755b5cb788d75db8ee7)
 - Wooden Bridge Ramp by Alex Gimson (https://sketchfab.com/3d-models/wooden-bridge-ramp-899fd82b1fc94473b899825611222fc2)
+- Other models provided for a hackathon "Лидеры Цифровой Трансформации"
 - Also thanks to [@Aid2901](https://github.com/Aid2901) for creating his own models and editing some of the existing ones!
 
 # Sounds
