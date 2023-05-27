@@ -1,9 +1,7 @@
-using System;
 using Services.Containers;
 using Services.Input;
 using Unit.ScaleGun;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Zenject;
 
 namespace Unit.Training
@@ -28,9 +26,16 @@ namespace Unit.Training
 
         [SerializeField] private GameObject _successDialog;
 
+        private bool _isCompleted;
+
         private void PlaySuccessDialog()
         {
             if (gameObject.activeSelf == false)
+            {
+                return;
+            }
+
+            if (_isCompleted)
             {
                 return;
             }
@@ -44,6 +49,7 @@ namespace Unit.Training
 
             if (hit.collider.TryGetComponent(out Scalable _))
             {
+                _isCompleted = true;
                 _successDialog.SetActive(true);
             }
         }

@@ -1,7 +1,9 @@
+using Services.GameProgress;
 using Unit.GravityCube;
 using Unit.ScaleGun;
 using UnityEngine;
 using UnityEngine.Events;
+using Zenject;
 
 namespace Unit.SceneControllers.Scene4
 {
@@ -11,8 +13,16 @@ namespace Unit.SceneControllers.Scene4
         private bool _isLevelCompleted;
         [SerializeField] private QuizLampLogic _quizLogic;
 
+        private IGameProgressService _gameProgressService;
+
         private bool _isCubeEntered;
         private bool _isAllRed;
+
+        [Inject]
+        public void Construct(IGameProgressService gameProgressService)
+        {
+            _gameProgressService = gameProgressService;
+        }
 
         private void OnEnable()
         {
@@ -56,6 +66,10 @@ namespace Unit.SceneControllers.Scene4
                 if (!_isLevelCompleted)
                 {
                     _isLevelCompleted = true;
+                    
+                    _gameProgressService.SetUpHubStage(HubStage.Third);
+                    _gameProgressService.SetUpLiftStage(LiftStage.Third);
+                    
                     OnLevelCompleted?.Invoke();
                 }
             }

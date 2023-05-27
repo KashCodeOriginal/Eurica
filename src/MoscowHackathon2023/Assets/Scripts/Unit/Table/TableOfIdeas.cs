@@ -34,6 +34,8 @@ namespace Unit.Table
                     _gameInstancesContainer.AddViewGun(GunTypes.Portal);
                     
                     universalGunView.PortalGunBody.SetActive(true);
+                    
+                    IsPortalGunCreated?.Invoke();
 
                     break;
                 case GunTypes.Gravity:

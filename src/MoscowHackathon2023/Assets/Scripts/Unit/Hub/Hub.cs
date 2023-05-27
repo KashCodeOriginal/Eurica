@@ -69,6 +69,17 @@ namespace Unit.Hub
                     _closeDoorSecondCutScene.SetActive(true);
                     _nextSceneTransition.SetActive(true);
                 };
+            
+            _tableOfIdeasWithPortalGun.IsPortalGunCreated +=
+                () =>
+                {
+                    _dialogAfterCollectingPortalGunTrigger.SetActive(true);
+                    _openDoorSecondCutScene.SetActive(true);
+                    _closeDoorSecondCutScene.SetActive(true);
+                    _nextSceneTransition.SetActive(true);
+                    
+                    _leftMousePortalTrigger.SetActive(true);
+                };
         }
 
         [SerializeField] private GameObject _firstLiftCutScene;
@@ -93,6 +104,11 @@ namespace Unit.Hub
         [SerializeField] private GameObject _openDoorSecondCutScene;
         [SerializeField] private GameObject _closeDoorSecondCutScene;
         [SerializeField] private GameObject _nextSceneTransition;
+        
+        [SerializeField] private TableOfIdeas _tableOfIdeasWithPortalGun;
+        [SerializeField] private GameObject _dialogAfterCollectingPortalGunTrigger;
+        
+        [SerializeField] private GameObject _leftMousePortalTrigger;
 
         private IGameProgressService _gameProgressService;
     }
