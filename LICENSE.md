@@ -8,6 +8,7 @@
 
 - Warning_Signboard by chenkl (https://sketchfab.com/3d-models/warning-signboard-5805213c2b54454fb22d8176c8741210)
 - Abandoned factory by Rixael (https://sketchfab.com/3d-models/abandoned-factory-e510537c72a848879171cbbb1ec2f648)
+- moscow bus station by bez_glaza (https://sketchfab.com/3d-models/moscow-bus-station-b663562188404aa5a430ea16ebe6cd14)
 - Construction site - Low poly prop set by Daniel Zhabotinsky (https://sketchfab.com/3d-models/construction-site-low-poly-prop-set-cc261d95224242ab8f287e3a2cdf07cc)
 - Highway Stuff - Low poly prop set by Daniel Zhabotinsky (https://sketchfab.com/3d-models/highway-stuff-low-poly-prop-set-510081f7ad4e48898f40c9dcec895438)
 - Urban Communications - Low poly prop set by Daniel Zhabotinsky (https://sketchfab.com/3d-models/urban-communications-low-poly-prop-set-5b81402bd4464ba0a71712ad7a07587c)
