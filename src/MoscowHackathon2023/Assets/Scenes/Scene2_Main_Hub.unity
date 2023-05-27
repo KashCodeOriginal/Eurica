@@ -4903,6 +4903,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1463214978}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1507883931 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3254140016885085245, guid: c8d39ca7d63e56a4cb9bc3e6573dff00, type: 3}
+  m_PrefabInstance: {fileID: 2443324616880355042}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1508821992
 GameObject:
   m_ObjectHideFlags: 0
@@ -7857,6 +7862,26 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2766010298671427207, guid: c8d39ca7d63e56a4cb9bc3e6573dff00, type: 3}
   m_PrefabInstance: {fileID: 2443324616880355042}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &543450651665832038
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1507883931}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b6b081b0bc0b1e446b8c99e3444ecf26, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!4 &580493208038102564
 Transform:
   m_ObjectHideFlags: 0
@@ -8042,11 +8067,6 @@ Transform:
   m_Father: {fileID: 2010756681}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &919132148010533600 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 3254140016885085186, guid: c8d39ca7d63e56a4cb9bc3e6573dff00, type: 3}
-  m_PrefabInstance: {fileID: 2443324616880355042}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &941147020344770837
 Transform:
   m_ObjectHideFlags: 0
@@ -8494,7 +8514,7 @@ PlayableDirector:
   m_InitialTime: 0
   m_SceneBindings:
   - key: {fileID: -3816316721530600190, guid: 2ad1caee5041bb54ab4492983082c77e, type: 2}
-    value: {fileID: 919132148010533600}
+    value: {fileID: 0}
   - key: {fileID: 1049229792285359520, guid: 2ad1caee5041bb54ab4492983082c77e, type: 2}
     value: {fileID: 8748627698660512046}
   - key: {fileID: 7907764889834952768, guid: 2ad1caee5041bb54ab4492983082c77e, type: 2}
@@ -8695,6 +8715,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2443324616064203026, guid: c8d39ca7d63e56a4cb9bc3e6573dff00, type: 3}
+      propertyPath: _animator
+      value: 
+      objectReference: {fileID: 543450651665832038}
     - target: {fileID: 2443324616064203027, guid: c8d39ca7d63e56a4cb9bc3e6573dff00, type: 3}
       propertyPath: m_Size.x
       value: 30
@@ -8747,6 +8771,10 @@ PrefabInstance:
       propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 2443324616799114823, guid: c8d39ca7d63e56a4cb9bc3e6573dff00, type: 3}
+      propertyPath: _animator
+      value: 
+      objectReference: {fileID: 543450651665832038}
     - target: {fileID: 2766010298671427207, guid: c8d39ca7d63e56a4cb9bc3e6573dff00, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -8807,6 +8835,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6377431604322227990, guid: c8d39ca7d63e56a4cb9bc3e6573dff00, type: 3}
+      propertyPath: _animator
+      value: 
+      objectReference: {fileID: 543450651665832038}
     - target: {fileID: 7067564107866842624, guid: c8d39ca7d63e56a4cb9bc3e6573dff00, type: 3}
       propertyPath: m_Name
       value: ChangeSceneTriggerTimer
@@ -8881,6 +8913,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7067564107866842626, guid: c8d39ca7d63e56a4cb9bc3e6573dff00, type: 3}
+    - {fileID: 3254140016885085186, guid: c8d39ca7d63e56a4cb9bc3e6573dff00, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 2766010298671427207, guid: c8d39ca7d63e56a4cb9bc3e6573dff00, type: 3}
@@ -8920,6 +8953,9 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 126834446}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3254140016885085245, guid: c8d39ca7d63e56a4cb9bc3e6573dff00, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 543450651665832038}
     - targetCorrespondingSourceObject: {fileID: 7067564107866842624, guid: c8d39ca7d63e56a4cb9bc3e6573dff00, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2443324616880355047}
