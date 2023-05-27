@@ -45,9 +45,7 @@ namespace Unit.Table
                     _gameInstancesContainer.TurnOnWeapon();
                     
                     IsGravityGunCreated?.Invoke();
-                    
-                    _gameInstancesContainer.TurnOnWeapon();
-                    
+
                     break;
                 case GunTypes.Scale:
                     _gameInstancesContainer.Inventory.Weapons[2].SetUpUniversalView(universalGunView);

@@ -239,6 +239,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7313840465657012946}
   - component: {fileID: 7313840465657012947}
+  - component: {fileID: 487897668878988589}
   m_Layer: 0
   m_Name: BlinkSystem
   m_TagString: Untagged
@@ -281,6 +282,18 @@ MonoBehaviour:
   _needToOpenEyes: 0
   _eyelidUp: {fileID: 7313840465834116715}
   _eyelidDown: {fileID: 7313840465054844429}
+--- !u!114 &487897668878988589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7313840465657012944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3615ee6e340e9b6499990c63cb8ebacb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7313840465834116712
 GameObject:
   m_ObjectHideFlags: 0
