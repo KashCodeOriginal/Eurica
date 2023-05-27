@@ -26,6 +26,7 @@ namespace Unit.SceneControllers.Scene4
         [SerializeField] private GameObject _pullLever;
         [SerializeField] private GameObject _separator;
         [SerializeField] private GameObject _liftUnlocked;
+        [SerializeField] private GameObject _arrowHelper;
 
         [Inject]
         public void Construct(IGameProgressService gameProgressService)
@@ -50,6 +51,8 @@ namespace Unit.SceneControllers.Scene4
             if (collision.gameObject.TryGetComponent(out Scalable cube))
             {
                 _isCubeEntered = true;
+                cube.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+                cube.gameObject.GetComponent<BoxCollider>().enabled = false;
                 StateChanged();
             }
         }
@@ -64,6 +67,7 @@ namespace Unit.SceneControllers.Scene4
         {
             if (!_isLevelCompleted)
             {
+                _arrowHelper.SetActive(!_isCubeEntered);
                 _cubeNotReady.SetActive(!_isCubeEntered);
                 _cubeReady.SetActive(_isCubeEntered);
                 _lampsNotReady.SetActive(!_isAllRed);
