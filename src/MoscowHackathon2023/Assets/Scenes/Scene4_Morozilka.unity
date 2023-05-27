@@ -21524,22 +21524,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 906732458}
     m_Modifications:
-    - target: {fileID: 4541713670250366790, guid: fe2e16e6fc64b9a4ca606acf3f50946b, type: 3}
-      propertyPath: m_Layer
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 4541713670395018125, guid: fe2e16e6fc64b9a4ca606acf3f50946b, type: 3}
-      propertyPath: m_Layer
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 4541713670633624169, guid: fe2e16e6fc64b9a4ca606acf3f50946b, type: 3}
-      propertyPath: m_Layer
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 4541713671681539700, guid: fe2e16e6fc64b9a4ca606acf3f50946b, type: 3}
-      propertyPath: m_Layer
-      value: 16
-      objectReference: {fileID: 0}
     - target: {fileID: 8767963235692177299, guid: fe2e16e6fc64b9a4ca606acf3f50946b, type: 3}
       propertyPath: m_Name
       value: GraviTransformer
