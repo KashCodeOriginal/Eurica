@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Unit.Lever
@@ -13,30 +14,56 @@ namespace Unit.Lever
 
         [SerializeField] private float _releaseSpeed;
 
+        [SerializeField] private List<Rigidbody> _movingRigidbodies;
+
         private bool _released;
 
         private Vector3 _targetPosition;
 
         private void OnEnable()
         {
+            if (_leverButtonLogic == null)
+            {
+                return;
+            }
+            
             _leverButtonLogic.OnPress.AddListener(ChangeLevelPartState);
         }
 
         private void Start()
         {
-            _targetPosition = _hidePosition;
+            Hide();
         }
 
         private void Update()
         {
-            if (_movingObject.transform.position == _targetPosition)
+            var movingObjectPosition = _movingObject.transform.position;
+
+            movingObjectPosition =
+                new Vector3(Mathf.Round(movingObjectPosition.x),
+                    Mathf.Round(movingObjectPosition.y),
+                    Mathf.Round(movingObjectPosition.z));
+
+            if (movingObjectPosition == _targetPosition)
+            {
+                if (_released)
+                {
+                    foreach (var movingRigidbody in _movingRigidbodies)
+                    {
+                        movingRigidbody.isKinematic = false;
+                    }
+                }
+
                 return;
+            }
+            
+            
 
             _movingObject.transform.position = Vector3.Lerp(_movingObject.transform.position,
                 _targetPosition, _releaseSpeed * Time.deltaTime);
         }
 
-        private void ChangeLevelPartState()
+        public void ChangeLevelPartState()
         {
             if (!_released)
             {
@@ -58,10 +85,20 @@ namespace Unit.Lever
         private void Hide()
         {
             _targetPosition = _hidePosition;
+            
+            foreach (var movingRigidbody in _movingRigidbodies)
+            {
+                movingRigidbody.isKinematic = true;
+            }
         }
         
         private void OnDisable()
         {
+            if (_leverButtonLogic == null)
+            {
+                return;
+            }
+            
             _leverButtonLogic.OnPress.RemoveListener(ChangeLevelPartState);
         }
     }
