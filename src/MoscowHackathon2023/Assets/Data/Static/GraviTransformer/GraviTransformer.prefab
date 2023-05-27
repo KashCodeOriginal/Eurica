@@ -1381,7 +1381,7 @@ GameObject:
   - component: {fileID: 4541713670077937664}
   - component: {fileID: 4541713670077937678}
   - component: {fileID: 4541713670077937679}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: RightInput
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1448,7 +1448,7 @@ GameObject:
   - component: {fileID: 4541713670250366794}
   - component: {fileID: 4541713670250366795}
   - component: {fileID: 4541713670250366788}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: TriggerHint (PlaceCube)
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -1559,7 +1559,7 @@ GameObject:
   - component: {fileID: 4541713670395018123}
   - component: {fileID: 4541713670395018121}
   - component: {fileID: 4541713670395018122}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: LeverButton (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1707,7 +1707,7 @@ GameObject:
   - component: {fileID: 4541713670633624173}
   - component: {fileID: 4541713670633624174}
   - component: {fileID: 4541713670633624175}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: TriggerHint (GetYourCube)
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -2067,7 +2067,7 @@ GameObject:
   - component: {fileID: 4541713671681539704}
   - component: {fileID: 4541713671681539705}
   - component: {fileID: 4541713671681539706}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: TriggerHint (PullLever)
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -2391,7 +2391,7 @@ GameObject:
   - component: {fileID: 6741807975677027821}
   - component: {fileID: 6817045840894262398}
   - component: {fileID: 4541713670774861545}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: LeftInput
   m_TagString: Untagged
   m_Icon: {fileID: 0}

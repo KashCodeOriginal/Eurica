@@ -89,7 +89,7 @@ namespace Unit.Player
 
                 if (_stepSoundTimer >= _playerSettings.WalkSoundFrequency)
                 {
-                    _playSoundsService.PlayAudioClip(_playerSettings.WalkSound, VolumeLevel.StepsVolume, true);
+                    PlayStepsSound();
 
                     _stepSoundTimer = 0;
                 }
@@ -102,11 +102,16 @@ namespace Unit.Player
         {
             _isJumping = true;
 
-            _playSoundsService.PlayAudioClip(_playerSettings.WalkSound, VolumeLevel.StepsVolume, true);
+            PlayStepsSound();
 
             _rigidbody.velocity = new Vector3(_rigidbody.velocity.x, 0f, _rigidbody.velocity.z);
 
             _rigidbody.AddForce(new Vector3(0f, _playerSettings.JumpPower, 0f), ForceMode.Impulse);
+        }
+
+        private void PlayStepsSound()
+        {
+            _playSoundsService.PlayAudioClip(_playerSettings.WalkSound, VolumeLevel.StepsVolume, true, minPitch: 0.95f, maxPitch: 1.05f);
         }
 
         private bool IsCameraInactive()

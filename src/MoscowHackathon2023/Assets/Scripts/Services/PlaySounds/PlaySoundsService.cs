@@ -24,11 +24,14 @@ namespace Services.PlaySounds
             _currentVolumeMultiplier = volume;
         }
 
-        public void PlayAudioClip(AudioClip audioClip, VolumeLevel volume, bool canPlayMultiple = false, bool playOnlyOnce = true)
+        public void PlayAudioClip(AudioClip audioClip, VolumeLevel volume, 
+            bool canPlayMultiple = false, bool playOnlyOnce = true,
+            float minPitch = 1f, float maxPitch = 1f)
         {
             if (IsNotPlaying(audioClip, playOnlyOnce) || canPlayMultiple)
             {
                 float volumeLevel = GetVolumeLevel(volume);
+                _audioSource.pitch = Random.Range(minPitch, maxPitch);
                 _audioSource.PlayOneShot(audioClip, volumeLevel);
                 _soundStates[audioClip] = true;
 
