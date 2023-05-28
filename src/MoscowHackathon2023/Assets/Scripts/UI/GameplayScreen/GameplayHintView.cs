@@ -47,15 +47,15 @@ namespace UI.GameplayScreen
             {
                 _icon.sprite = _controlsWASD;
             }
-            if (hint.Contains("Нажмите пробел"))
+            else if(hint.Contains("Нажмите пробел"))
             {
                 _icon.sprite = _controlsSpace;
             }
-            if (hint.Contains("кнопку Е") || hint.Contains("кнопку E"))
+            else if(hint.Contains("кнопку Е") || hint.Contains("кнопку E"))
             {
                 _icon.sprite = _controlsE;
             }
-            if (hint.Contains("WASD"))
+            else if(hint.Contains("WASD"))
             {
                 _icon.sprite = _controlsWASD;
             }
