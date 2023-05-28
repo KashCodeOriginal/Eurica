@@ -1,24 +1,9 @@
 fileFormatVersion: 2
-guid: a3152c6413e6ec541b4b3225e234e1f1
+guid: 593c50f1075edde44863bd3db0c0643c
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: BlanketMat
-    second: {fileID: 2100000, guid: bf0126717139e9e4d89024b12d0186c9, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: PillowMat
-    second: {fileID: 2100000, guid: 52488bafbce777140b7d7d8fecd0f51c, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: bedMat
-    second: {fileID: 2100000, guid: 631a3e6d4904eef4fb44dc02dcb8eed4, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
