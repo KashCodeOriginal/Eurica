@@ -6,20 +6,23 @@
   <component name="ChangeListManager">
     <list default="true" id="796ee9ce-5b7d-4e10-92ca-ade5b0f8e2d9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MoscowHackathon2023/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MoscowHackathon2023/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Data/Mesh_Location/scrap-box-v2/model.obj.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Scene2_Main_Hub.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Scene2_Main_Hub.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit/Hub/Hub.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit/Hub/Hub.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Data/CutScenes/IntroCutScene/CutScene0Timeline.playable" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/CutScenes/IntroCutScene/CutScene0Timeline.playable" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/AddressableAssetsData/AssetGroups/Default Local Group.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/AddressableAssetsData/AssetGroups/Default Local Group.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Scene0_Intro.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Scene0_Intro.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Scene1_MGU_Outside.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Scene1_MGU_Outside.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/AssetsAddressablesConstants/AssetsAddressablesConstants.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/AssetsAddressablesConstants/AssetsAddressablesConstants.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Infrastructure/ProjectStateMachine/States/GameSetUpState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Infrastructure/ProjectStateMachine/States/GameSetUpState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Infrastructure/ProjectStateMachine/States/GameplayState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Infrastructure/ProjectStateMachine/States/GameplayState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Services/Containers/GameInstancesContainer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Services/Containers/GameInstancesContainer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Services/Containers/IGameInstancesContainer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Services/Containers/IGameInstancesContainer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit/Cutscene/FirstCutScene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit/Cutscene/FirstCutScene.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit/TriggerSystem/TriggerTaskHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit/TriggerSystem/TriggerTaskHelper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Static/Guns/Model/Gun_Bone.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Static/Guns/Model/Gun_Bone.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Static/Guns/Model/Texture/GlassGun.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Static/Guns/Model/Texture/GlassGun.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Static/Guns/Model/Texture/GlassLamps.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Static/Guns/Model/Texture/GlassLamps.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Static/Guns/Model/Texture/Screen.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Static/Guns/Model/Texture/Screen.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Static/Guns/Prefabs/UniversalGunView.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Static/Guns/Prefabs/UniversalGunView.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/ui-ecspezi/crosshairs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/ui-ecspezi/crosshairs/crosshair dimensor.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/ui-ecspezi/crosshairs/crosshair dimensor.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/ui-ecspezi/crosshairs/crosshair gravity.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/ui-ecspezi/crosshairs/crosshair gravity.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/ui-ecspezi/crosshairs/crosshair portal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/ui-ecspezi/crosshairs/crosshair portal.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit/UniversalGun/UniversalGunLamp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit/UniversalGun/UniversalGunLamp.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit/UniversalGun/UniversalGunView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit/UniversalGun/UniversalGunView.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,9 +58,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-
-    "git-widget-placeholder": "Add-new-dialogs",
-
+    "git-widget-placeholder": "main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -89,10 +90,10 @@
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="11976">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="11976" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />

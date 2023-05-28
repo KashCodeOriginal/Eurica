@@ -1,6 +1,8 @@
-﻿using Services.GameProgress;
+﻿using System;
+using Services.GameProgress;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 using Zenject;
 
 namespace Unit.UniversalGun
@@ -22,8 +24,14 @@ namespace Unit.UniversalGun
         [SerializeField] private GameObject _scaleGunBody;
         [SerializeField] private GameObject _portalGunBody;
 
+        [SerializeField] private Image _currentWeaponIcon;
+
+        [SerializeField] private Sprite _portalIcon;
+        [SerializeField] private Sprite _scaleIcon;
+        [SerializeField] private Sprite _gravityIcon;
+
         private IGameProgressService _gameProgressService;
-        
+
         public void Construct(IGameProgressService gameProgressService)
         {
             _gameProgressService = gameProgressService;
@@ -51,12 +59,15 @@ namespace Unit.UniversalGun
             {
                 case GunTypes.Portal:
                     _currentGun = _portalGun;
+                    _currentWeaponIcon.sprite = _portalIcon;
                     break;
                 case GunTypes.Gravity:
                     _currentGun = _gravityGun;
+                    _currentWeaponIcon.sprite = _gravityIcon;
                     break;
                 case GunTypes.Scale:
                     _currentGun = _scaleGun;
+                    _currentWeaponIcon.sprite = _scaleIcon;
                     break;
             }
         }

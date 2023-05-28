@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 52b8578f4c629264a82f5749187cf187
+guid: 5a0327afffaa5e743a213dc246284e35
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -28,17 +28,17 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Glass
-    second: {fileID: 2100000, guid: 5053a97b8df7aec40835b8ca722df454, type: 2}
+    second: {fileID: 2100000, guid: 6dc3a92f1b5b06d429e8a6d31beaedae, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Glass_2
-    second: {fileID: 2100000, guid: 5053a97b8df7aec40835b8ca722df454, type: 2}
+    second: {fileID: 2100000, guid: 6dc3a92f1b5b06d429e8a6d31beaedae, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Glass_3
-    second: {fileID: 2100000, guid: 5053a97b8df7aec40835b8ca722df454, type: 2}
+    second: {fileID: 2100000, guid: 6dc3a92f1b5b06d429e8a6d31beaedae, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -53,7 +53,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: glass
-    second: {fileID: 2100000, guid: 40bdf8d07dda8f847b4364c1f6cd4c48, type: 2}
+    second: {fileID: 2100000, guid: 6dc3a92f1b5b06d429e8a6d31beaedae, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -120,7 +120,7 @@ ModelImporter:
     strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 60
-    normalImportMode: 1
+    normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0

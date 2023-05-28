@@ -2,18 +2,18 @@
 
 namespace Unit.UniversalGun
 {
-    [RequireComponent(typeof(MeshRenderer))]
+    [RequireComponent(typeof(SkinnedMeshRenderer))]
     public class UniversalGunLamp : MonoBehaviour
     {
         private static readonly int EmissiveExposureWeight = Shader.PropertyToID("_EmissiveExposureWeight");
 
-        private MeshRenderer _meshRenderer;
+        private SkinnedMeshRenderer _meshRenderer;
         private float _targetValue = 1;
         private float _currentValue = 1;
 
         private void Awake()
         {
-            _meshRenderer = GetComponent<MeshRenderer>();
+            _meshRenderer = GetComponent<SkinnedMeshRenderer>();
         }
 
         public void SetCurrentState(float value)
