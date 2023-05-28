@@ -23,7 +23,7 @@ namespace Unit.UniversalGun
 
         private void Update()
         {
-            _currentValue = Mathf.Lerp(_currentValue, _targetValue, 5f * Time.deltaTime);
+            _currentValue = Mathf.Lerp(_currentValue, _targetValue, 15f * Time.deltaTime);
             _meshRenderer.material.SetFloat(EmissiveExposureWeight, _currentValue);
         }
     }
