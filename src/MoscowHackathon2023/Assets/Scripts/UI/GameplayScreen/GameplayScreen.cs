@@ -1,3 +1,4 @@
+using UI.SettingsPanel;
 using UnityEngine;
 
 namespace UI.GameplayScreen
@@ -9,6 +10,7 @@ namespace UI.GameplayScreen
         public GameplayTaskView GameplayTaskView;
         public GameplayHintView GameplayHintView;
         public GameplaySubtitlesView GameplaySubtitlesView;
+        public SettingsManager SettingsManager;
 
         [SerializeField] private Transform _inventoryTransform;
         [SerializeField] private GameObject _staticCanvas;

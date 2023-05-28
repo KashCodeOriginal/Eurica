@@ -7,6 +7,7 @@ using UnityEngine.Events;
 namespace Unit.Lever
 {
     [RequireComponent(typeof(TriggerTaskHelper))]
+    [RequireComponent(typeof(SoundHelper))]
     [RequireComponent(typeof(BoxCollider))]
     public class LeverButtonLogic : MonoBehaviour, IInteractable
     {
@@ -41,6 +42,8 @@ namespace Unit.Lever
             _canPress = false;
             _pressing = true;
             OnStateChanged?.Invoke(true);
+            GetComponent<SoundHelper>().SetPitch(0.95f, 1.05f);
+            GetComponent<SoundHelper>().PlaySound();
 
             yield return new WaitForSeconds(_pressTime);
 

@@ -178,6 +178,7 @@ GameObject:
   - component: {fileID: 8078142021148482131}
   - component: {fileID: 936311286590493722}
   - component: {fileID: 1925552271432480947}
+  - component: {fileID: 516983783512491254}
   m_Layer: 0
   m_Name: LeverButton
   m_TagString: Untagged
@@ -228,6 +229,18 @@ MonoBehaviour:
           m_StringArgument: "\u0412\u043E\u0439\u0442\u0438 \u0432 \u041C\u0413\u0423"
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 516983783512491254}
+        m_TargetAssemblyTypeName: Unit.TriggerSystem.SoundHelper, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: "\u0412\u043E\u0439\u0442\u0438 \u0432 \u041C\u0413\u0423"
+          m_BoolArgument: 0
+        m_CallState: 2
   _pressTime: 0.3
   _releaseTime: 0.7
   _gizmoColor: {r: 1, g: 0, b: 0.15532255, a: 1}
@@ -264,6 +277,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.5019531, y: 0.85, z: 0.6}
   m_Center: {x: -0.24902344, y: 0.14140713, z: 0}
+--- !u!114 &516983783512491254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3951083725855844910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acf138b331fd42a981e83ad9d9a0c9ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioClip: {fileID: 8300000, guid: abb2ce83f04517c498fa1bfd773847e0, type: 3}
+  _volume: 0.8
+  _canPlayMultiple: 1
+  _playOnlyOnce: 0
 --- !u!1 &3951083726311301256
 GameObject:
   m_ObjectHideFlags: 0

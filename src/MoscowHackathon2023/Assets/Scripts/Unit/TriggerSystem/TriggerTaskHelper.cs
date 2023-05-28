@@ -70,7 +70,7 @@ namespace Unit.TriggerSystem
                 if (_playSoundsService.CanPlay(voiceMessage.AudioClip, canPlayMultiple: false, playOnlyOnce: true))
                 {
                     GameplayScreen.Instance?.GameplaySubtitlesView.ShowSubtitles(voiceMessage);
-                    _playSoundsService.PlayAudioClip(voiceMessage.AudioClip, VolumeLevel.VoiceOver);
+                    _playSoundsService.PlayAudioClip(voiceMessage.AudioClip, _playSoundsService.GetVolumeLevel(VolumeLevel.VoiceOver));
                 }
             }
         }

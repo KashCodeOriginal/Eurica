@@ -24,13 +24,13 @@ namespace Services.PlaySounds
             _currentVolumeMultiplier = volume;
         }
 
-        public void PlayAudioClip(AudioClip audioClip, VolumeLevel volume, 
+        public void PlayAudioClip(AudioClip audioClip, float volume, 
             bool canPlayMultiple = false, bool playOnlyOnce = true,
             float minPitch = 1f, float maxPitch = 1f)
         {
             if (IsNotPlaying(audioClip, playOnlyOnce) || canPlayMultiple)
             {
-                float volumeLevel = GetVolumeLevel(volume);
+                float volumeLevel = volume * _currentVolumeMultiplier;
                 _audioSource.pitch = Random.Range(minPitch, maxPitch);
                 _audioSource.PlayOneShot(audioClip, volumeLevel);
                 _soundStates[audioClip] = true;
@@ -62,9 +62,9 @@ namespace Services.PlaySounds
             _soundStates[audioClip] = false;
         }
 
-        private float GetVolumeLevel(VolumeLevel volume)
+        public float GetVolumeLevel(VolumeLevel volume)
         {
-            var volumeLevel = _currentVolumeMultiplier * volume switch
+            var volumeLevel = volume switch
             {
                 VolumeLevel.Default => 1f,
                 VolumeLevel.VoiceOver => 0.5f,

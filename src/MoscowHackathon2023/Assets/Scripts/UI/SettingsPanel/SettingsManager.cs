@@ -49,6 +49,7 @@ namespace UI.SettingsPanel
         [SerializeField] private Slider _mouseSensSlider;
         [SerializeField] private TextMeshProUGUI _mouseSensOutput;
         [SerializeField] private GameObject _subtitlesCheckmark;
+        public float GetVolume() => _gameplaySettings.SoundVolume;
 
         private void OnEnable()
         {
@@ -80,11 +81,14 @@ namespace UI.SettingsPanel
 
         private void Update()
         {
-            _gameplaySettings.SoundVolume = _volumeSlider.value;
-            _gameplaySettings.MouseSens = _mouseSensSlider.value;
+            if (_settingsPanel.activeSelf)
+            {
+                _gameplaySettings.SoundVolume = _volumeSlider.value;
+                _gameplaySettings.MouseSens = _mouseSensSlider.value;
 
-            _volumeOutput.text = Mathf.RoundToInt(_volumeSlider.value * 100) + "%";
-            _mouseSensOutput.text = ((int)_mouseSensSlider.value).ToString();
+                _volumeOutput.text = Mathf.RoundToInt(_volumeSlider.value * 100) + "%";
+                _mouseSensOutput.text = ((int)_mouseSensSlider.value).ToString();
+            }
         }
 
         private void OnVolumeChanged(float value)
@@ -117,6 +121,11 @@ namespace UI.SettingsPanel
 
             cinemachineComponent.m_HorizontalAxis.m_MaxSpeed = _gameplaySettings.MouseSens / 100f;
             cinemachineComponent.m_VerticalAxis.m_MaxSpeed = _gameplaySettings.MouseSens / 100f;
+
+            foreach (var sound in FindObjectsOfType<SoundsSceneSource>())
+            {
+                sound.UpdateCurrentVolume(_gameplaySettings.SoundVolume);
+            }
         }
 
         private void EscClicked()

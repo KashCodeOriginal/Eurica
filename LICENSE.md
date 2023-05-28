@@ -35,6 +35,10 @@
 - "Stationery: pencil, pen and eraser (lowpoly)" от Mikhail Antonov (https://sketchfab.com/3d-models/stationery-pencil-pen-and-eraser-lowpoly-4737f219b0834245a9fbd5b5f90b16a5)
 - "Notebook And Pen" от spckmm (https://sketchfab.com/3d-models/notebook-and-pen-ef22424f973044d28738a4c3c4ae31c0)
 - "Trees Low Poly" от Igor_K. (https://sketchfab.com/3d-models/trees-low-poly-1d2dcca2ccb1496c85b7cc5789a2a261)
+- "Small Room Scene" от nickheitzman (https://sketchfab.com/3d-models/small-room-scene-56530121cfcc4f6aa7c27544f84e1526)
+- "University Lecture Hall" от 융해열흡수 (https://sketchfab.com/3d-models/university-lecture-hall-452cc01ebd1a47de9925bd43f44d7da4)
+- "School_[class room]" от Comicaroid (https://sketchfab.com/3d-models/school-class-room-371cd1996ed4452ebd1990132ba2d669)
+- "School_[hallway]" от Comicaroid (https://sketchfab.com/3d-models/school-hallway-0f1e9ea00ef94425a62c28d26773ed47)
 - "Модели Москвы, предоставленные для хакатона "Лидеры Цифровой Трансформации"
 
 ## Звуки
