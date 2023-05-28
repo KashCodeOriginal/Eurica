@@ -80977,7 +80977,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8078142021148482131, guid: cbc12a56a4caa7c4d81ab39ceb196c6f, type: 3}
       propertyPath: OnPress.m_PersistentCalls.m_Calls.Array.size
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8078142021148482131, guid: cbc12a56a4caa7c4d81ab39ceb196c6f, type: 3}
       propertyPath: OnPress.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -81318,37 +81318,24 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3951083725855844910, guid: cbc12a56a4caa7c4d81ab39ceb196c6f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4021841622122220729}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cbc12a56a4caa7c4d81ab39ceb196c6f, type: 3}
 --- !u!4 &4021841622122220727 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3951083725855844897, guid: cbc12a56a4caa7c4d81ab39ceb196c6f, type: 3}
   m_PrefabInstance: {fileID: 4021841622122220726}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &4021841622122220728 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3951083725855844910, guid: cbc12a56a4caa7c4d81ab39ceb196c6f, type: 3}
+--- !u!114 &4021841622122220729 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 516983783512491254, guid: cbc12a56a4caa7c4d81ab39ceb196c6f, type: 3}
   m_PrefabInstance: {fileID: 4021841622122220726}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4021841622122220729
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4021841622122220728}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: acf138b331fd42a981e83ad9d9a0c9ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _audioClip: {fileID: 8300000, guid: abb2ce83f04517c498fa1bfd773847e0, type: 3}
-  _volume: 1
-  _canPlayMultiple: 1
-  _playOnlyOnce: 0
 --- !u!23 &4379276202920208108
 MeshRenderer:
   m_ObjectHideFlags: 0

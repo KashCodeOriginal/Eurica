@@ -3,6 +3,7 @@ using Unit.SceneControllers.Scene2.Task1;
 using Unit.Table;
 using Unit.UniversalGun;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Unit.Trap
 {
@@ -11,6 +12,7 @@ namespace Unit.Trap
         [SerializeField] private QuizLampLogic _quizLampLogic;
         [SerializeField] private Animator _animator;
         [SerializeField] private TableOfIdeas _tableOfIdeas;
+        [SerializeField] private UnityEvent _soundOfChains;
         
         private static readonly int TrapGoUp = Animator.StringToHash("TrapGoUp");
 
@@ -22,8 +24,8 @@ namespace Unit.Trap
         private void MountTrapUp()
         {
             _animator.SetTrigger(TrapGoUp);
-            
             _tableOfIdeas.SetUpType(GunTypes.Gravity);
+            _soundOfChains?.Invoke();
         }
 
         private void OnDisable()
