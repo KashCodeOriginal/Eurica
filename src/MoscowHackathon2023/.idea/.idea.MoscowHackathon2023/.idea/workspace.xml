@@ -6,9 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="796ee9ce-5b7d-4e10-92ca-ade5b0f8e2d9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MoscowHackathon2023/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MoscowHackathon2023/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/CutScenes/Lifts/LiftOtherBuildings.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/CutScenes/Lifts/LiftOtherBuildings.controller" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Data/Mesh_Location/scrap-box-v2/model.obj.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/VoiceMessagesData/Scene4/s5_moroz_mixdown.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/VoiceMessagesData/Scene4/s5_moroz_mixdown.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Scene2_Main_Hub.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Scene2_Main_Hub.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit/Hub/Hub.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit/Hub/Hub.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Scene4_Morozilka.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Scene4_Morozilka.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit/SceneControllers/Scene4/QuizLampLogic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit/SceneControllers/Scene4/QuizLampLogic.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit/SceneControllers/Scene4/Scene4Task3.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit/SceneControllers/Scene4/Scene4Task3.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
