@@ -30,6 +30,13 @@ namespace UI.GameplayScreen
             }
         }
 
+        public void SetVisibilityOfPlayerUI(bool isVisible)
+        {
+            GameplayTaskView.GetComponent<CanvasGroup>().alpha = isVisible ? 1 : 0;
+            GameplayHintView.GetComponent<CanvasGroup>().alpha = isVisible ? 1 : 0;
+            _staticCanvas.GetComponent<CanvasGroup>().alpha = isVisible ? 1 : 0;
+        }
+
         public void ResetHintsTasks()
         {
             GameplayHintView?.RequestHidingHint();
