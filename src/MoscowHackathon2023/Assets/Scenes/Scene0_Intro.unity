@@ -24,7 +24,7 @@ RenderSettings:
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 4
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
@@ -602,7 +602,6 @@ GameObject:
   m_Component:
   - component: {fileID: 190268270}
   - component: {fileID: 190268271}
-  - component: {fileID: 190268272}
   m_Layer: 0
   m_Name: CutScene0
   m_TagString: Untagged
@@ -641,36 +640,10 @@ PlayableDirector:
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
-  m_SceneBindings:
-  - key: {fileID: 255053118871443164, guid: 751cfe6cf730a9f4caed479803b25dfe, type: 2}
-    value: {fileID: 218261016}
-  - key: {fileID: -3951574530871959245, guid: 751cfe6cf730a9f4caed479803b25dfe, type: 2}
-    value: {fileID: 190268272}
-  - key: {fileID: -897214440112993096, guid: 751cfe6cf730a9f4caed479803b25dfe, type: 2}
-    value: {fileID: 1224244913}
+  m_SceneBindings: []
   m_ExposedReferences:
     m_References:
     - 9941ebcb5586731448bac0e96666ec8e: {fileID: 336320022}
---- !u!95 &190268272
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 190268269}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 84e299e9e18a93c489e052aaa5a01ec1, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &218261011
 GameObject:
   m_ObjectHideFlags: 0
@@ -684,7 +657,6 @@ GameObject:
   - component: {fileID: 218261012}
   - component: {fileID: 218261015}
   - component: {fileID: 218261016}
-  - component: {fileID: 218261017}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -929,26 +901,6 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!95 &218261017
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 218261011}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &219112298
 GameObject:
   m_ObjectHideFlags: 0
@@ -1064,7 +1016,6 @@ GameObject:
   m_Component:
   - component: {fileID: 336320023}
   - component: {fileID: 336320022}
-  - component: {fileID: 336320024}
   m_Layer: 0
   m_Name: Virtual Camera School
   m_TagString: Untagged
@@ -1134,26 +1085,6 @@ Transform:
   m_Father: {fileID: 190268270}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &336320024
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 336320021}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &445709790
 GameObject:
   m_ObjectHideFlags: 0
@@ -2590,7 +2521,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1224244915}
   - component: {fileID: 1224244914}
-  - component: {fileID: 1224244913}
   m_Layer: 0
   m_Name: Virtual Camera MGU
   m_TagString: Untagged
@@ -2598,26 +2528,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &1224244913
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1224244912}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
 --- !u!114 &1224244914
 MonoBehaviour:
   m_ObjectHideFlags: 0
