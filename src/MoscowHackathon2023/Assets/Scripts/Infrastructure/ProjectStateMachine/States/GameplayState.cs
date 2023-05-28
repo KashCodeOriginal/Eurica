@@ -4,6 +4,7 @@ using Services.Factories.GunsFactory;
 using Services.Factories.UIFactory;
 using Services.GameProgress;
 using Services.Input;
+using Services.PlaySounds;
 using UI.GameplayScreen;
 using Unit.UniversalGun;
 
@@ -15,6 +16,7 @@ namespace Infrastructure.ProjectStateMachine.States
         private readonly IGameInstancesContainer _gameInstancesContainer;
         private readonly IGunFactory _gunFactory;
         private readonly IGameProgressService _gameProgressService;
+        private readonly IPlaySoundsService _playSoundsService;
 
         public Bootstrap Initializer { get; }
         
@@ -22,13 +24,15 @@ namespace Infrastructure.ProjectStateMachine.States
             IUIFactory uiFactory, 
             IGameInstancesContainer gameInstancesContainer,
             IGunFactory gunFactory,
-            IGameProgressService gameProgressService)
+            IGameProgressService gameProgressService,
+            IPlaySoundsService playSoundsService)
         {
             _uiFactory = uiFactory;
             _gameInstancesContainer = gameInstancesContainer;
             _gunFactory = gunFactory;
             _gameProgressService = gameProgressService;
             Initializer = initializer;
+            _playSoundsService = playSoundsService;
         }
 
         public async void OnEnter()
@@ -41,7 +45,7 @@ namespace Infrastructure.ProjectStateMachine.States
 
             var universalGunView = await _gunFactory.CreateUniversalGunView();
             
-            universalGunView.Construct(_gameProgressService);
+            universalGunView.Construct(_gameProgressService, _playSoundsService);
 
             _gameInstancesContainer.SetUpUniversalGunView(universalGunView);
 
