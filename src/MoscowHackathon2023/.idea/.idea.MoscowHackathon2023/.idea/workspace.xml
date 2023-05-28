@@ -9,6 +9,17 @@
       <change beforePath="$PROJECT_DIR$/Assets/Data/Mesh_Location/scrap-box-v2/model.obj.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Scene2_Main_Hub.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Scene2_Main_Hub.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit/Hub/Hub.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit/Hub/Hub.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/CutScenes/IntroCutScene/CutScene0Timeline.playable" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/CutScenes/IntroCutScene/CutScene0Timeline.playable" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/AddressableAssetsData/AssetGroups/Default Local Group.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/AddressableAssetsData/AssetGroups/Default Local Group.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Scene0_Intro.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Scene0_Intro.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Scene1_MGU_Outside.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Scene1_MGU_Outside.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/AssetsAddressablesConstants/AssetsAddressablesConstants.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/AssetsAddressablesConstants/AssetsAddressablesConstants.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Infrastructure/ProjectStateMachine/States/GameSetUpState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Infrastructure/ProjectStateMachine/States/GameSetUpState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Infrastructure/ProjectStateMachine/States/GameplayState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Infrastructure/ProjectStateMachine/States/GameplayState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Services/Containers/GameInstancesContainer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Services/Containers/GameInstancesContainer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Services/Containers/IGameInstancesContainer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Services/Containers/IGameInstancesContainer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit/Cutscene/FirstCutScene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit/Cutscene/FirstCutScene.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit/TriggerSystem/TriggerTaskHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit/TriggerSystem/TriggerTaskHelper.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +31,10 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/bdd20210bb844b2e88e1149ea99da5ef16c200/92/ff398c34/ISerializationCallbackReceiver.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f7044ab663d344a2badf1160e57d1c1d93c400/7b/fb58ba4c/Editor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Services/PlaySounds/VolumeLevel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Unit/Cutscene/FirstCutScene.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Unit/Cutscene/Intro.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Unit/Lamp/LampContainer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Unit/Lever/LevelController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Unit/Lever/LeverButtonLogic.cs" root0="FORCE_HIGHLIGHTING" />
@@ -42,7 +55,9 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+
     "git-widget-placeholder": "Add-new-dialogs",
+
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -74,10 +89,10 @@
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="11976">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="11976" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
