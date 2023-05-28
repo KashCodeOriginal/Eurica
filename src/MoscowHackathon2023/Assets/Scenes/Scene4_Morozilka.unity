@@ -4226,7 +4226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _audioClip: {fileID: 8300000, guid: 83b1c013988376b418a363655857c793, type: 3}
-  _volume: 0.1
+  _volume: 0.06
   _canPlayMultiple: 1
   _playOnlyOnce: 0
 --- !u!1 &713940412
@@ -15368,7 +15368,7 @@ MeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9d70d1eab41ac024f8751dc3877152b9, type: 2}
+  - {fileID: 2100000, guid: 197b5ae53acf2da45a18258b5bcf4921, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -20971,7 +20971,7 @@ MeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9d70d1eab41ac024f8751dc3877152b9, type: 2}
+  - {fileID: 2100000, guid: 197b5ae53acf2da45a18258b5bcf4921, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -21013,7 +21013,7 @@ MeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9d70d1eab41ac024f8751dc3877152b9, type: 2}
+  - {fileID: 2100000, guid: 197b5ae53acf2da45a18258b5bcf4921, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
