@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _startGameButton: {fileID: 5202975422637170148}
+  _exitGame: {fileID: 5474584696217702804}
 --- !u!1 &3102277012699387185
 GameObject:
   m_ObjectHideFlags: 0
