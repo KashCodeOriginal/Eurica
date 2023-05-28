@@ -2481,6 +2481,7 @@ MonoBehaviour:
   GameplayTaskView: {fileID: 906533847288329361}
   GameplayHintView: {fileID: 8182034679670141290}
   GameplaySubtitlesView: {fileID: 579786604444019315}
+  SettingsManager: {fileID: 4441432284837437170}
   _inventoryTransform: {fileID: 3425652960814026842}
   _staticCanvas: {fileID: 2402701981541903637}
 --- !u!1 &4695833742992996720
