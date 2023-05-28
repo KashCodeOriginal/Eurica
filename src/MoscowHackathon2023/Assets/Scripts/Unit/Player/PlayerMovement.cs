@@ -111,7 +111,8 @@ namespace Unit.Player
 
         private void PlayStepsSound()
         {
-            _playSoundsService.PlayAudioClip(_playerSettings.WalkSound, VolumeLevel.StepsVolume, true, minPitch: 0.95f, maxPitch: 1.05f);
+            _playSoundsService.PlayAudioClip(_playerSettings.WalkSound, _playSoundsService.GetVolumeLevel(VolumeLevel.StepsVolume), 
+                true, minPitch: 0.95f, maxPitch: 1.05f);
         }
 
         private bool IsCameraInactive()

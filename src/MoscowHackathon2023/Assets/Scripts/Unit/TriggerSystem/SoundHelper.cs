@@ -7,6 +7,7 @@ namespace Unit.TriggerSystem
     public class SoundHelper : MonoBehaviour
     {
         [SerializeField] private AudioClip _audioClip;
+        [SerializeField] private float _volume;
         [SerializeField] private bool _canPlayMultiple;
         [SerializeField] private bool _playOnlyOnce;
 
@@ -25,7 +26,7 @@ namespace Unit.TriggerSystem
 
         private void Play()
         {
-            _playSoundsService.PlayAudioClip(_audioClip, VolumeLevel.Default, _canPlayMultiple, _playOnlyOnce);
+            _playSoundsService.PlayAudioClip(_audioClip, _volume, _canPlayMultiple, _playOnlyOnce);
         }
     }
 }
