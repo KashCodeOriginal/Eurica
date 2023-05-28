@@ -110,6 +110,12 @@ namespace UI.SettingsPanel
             ApplyCurrentSettings();
         }
 
+        public void ExitApplication()
+        {
+            Debug.Log("Exit app");
+            Application.Quit();
+        }
+
         private void ApplyCurrentSettings()
         {
             _playSoundsService.SetUpVolumeMultiplier(_gameplaySettings.SoundVolume);

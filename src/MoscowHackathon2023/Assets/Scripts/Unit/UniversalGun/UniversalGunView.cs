@@ -1,5 +1,6 @@
 ﻿using System;
 using Services.GameProgress;
+using Services.PlaySounds;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
@@ -30,11 +31,17 @@ namespace Unit.UniversalGun
         [SerializeField] private Sprite _scaleIcon;
         [SerializeField] private Sprite _gravityIcon;
 
-        private IGameProgressService _gameProgressService;
+        [SerializeField] private AudioClip _portalAudioClip;
+        [SerializeField] private AudioClip _scaleAudioClip;
+        [SerializeField] private AudioClip _gravityAudioClip;
 
-        public void Construct(IGameProgressService gameProgressService)
+        private IGameProgressService _gameProgressService;
+        private IPlaySoundsService _playSoundsService;
+
+        public void Construct(IGameProgressService gameProgressService, IPlaySoundsService playSoundsService)
         {
             _gameProgressService = gameProgressService;
+            _playSoundsService = playSoundsService;
         }
 
         public void ChangeActiveGun(GunTypes gunType)
@@ -60,14 +67,17 @@ namespace Unit.UniversalGun
                 case GunTypes.Portal:
                     _currentGun = _portalGun;
                     _currentWeaponIcon.sprite = _portalIcon;
+                    _playSoundsService.PlayAudioClip(_portalAudioClip, 0.3f, true, false, 0.95f, 1.05f);
                     break;
                 case GunTypes.Gravity:
                     _currentGun = _gravityGun;
                     _currentWeaponIcon.sprite = _gravityIcon;
+                    _playSoundsService.PlayAudioClip(_gravityAudioClip, 0.3f, true, false, 0.95f, 1.05f);
                     break;
                 case GunTypes.Scale:
                     _currentGun = _scaleGun;
                     _currentWeaponIcon.sprite = _scaleIcon;
+                    _playSoundsService.PlayAudioClip(_scaleAudioClip, 0.3f, true, false, 0.95f, 1.05f);
                     break;
             }
         }

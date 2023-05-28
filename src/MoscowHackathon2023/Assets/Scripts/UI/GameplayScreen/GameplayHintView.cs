@@ -47,15 +47,15 @@ namespace UI.GameplayScreen
             {
                 _icon.sprite = _controlsWASD;
             }
-            if (hint.Contains("пробел, чтобы подпрыгнуть"))
+            else if(hint.Contains("Нажмите пробел"))
             {
                 _icon.sprite = _controlsSpace;
             }
-            if (hint.Contains("кнопку Е"))
+            else if(hint.Contains("кнопку Е") || hint.Contains("кнопку E"))
             {
                 _icon.sprite = _controlsE;
             }
-            if (hint.Contains("WASD"))
+            else if(hint.Contains("WASD"))
             {
                 _icon.sprite = _controlsWASD;
             }
@@ -67,7 +67,7 @@ namespace UI.GameplayScreen
             {
                 _icon.sprite = _controlsMouseScroll;
             }
-            else if (hint.Contains("левую кнопку"))
+            else if (hint.Contains("левую кнопку") || hint.Contains("правую кнопку"))
             {
                 _icon.sprite = _controlsMouseButtons;
             }

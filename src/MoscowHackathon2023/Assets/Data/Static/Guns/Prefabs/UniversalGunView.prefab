@@ -201,6 +201,9 @@ MonoBehaviour:
   _portalIcon: {fileID: 21300000, guid: d821d5e5cdc583c44b36261506e1593d, type: 3}
   _scaleIcon: {fileID: 21300000, guid: f882719c1111ae24f805bf7d6f73bbb9, type: 3}
   _gravityIcon: {fileID: 21300000, guid: e18e6f00e6cafcd4592f0b5beeba71d9, type: 3}
+  _portalAudioClip: {fileID: 8300000, guid: 2524cb3849d76c247b34cc24078c8532, type: 3}
+  _scaleAudioClip: {fileID: 8300000, guid: cbee9a2ce9193d34e98e3037ff15c053, type: 3}
+  _gravityAudioClip: {fileID: 8300000, guid: 4182d5b6c8cc08c4790d5851d2342a36, type: 3}
 --- !u!114 &4660559953130419666
 MonoBehaviour:
   m_ObjectHideFlags: 0
