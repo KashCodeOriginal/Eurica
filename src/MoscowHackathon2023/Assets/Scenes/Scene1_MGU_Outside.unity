@@ -3018,8 +3018,8 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: "\u0418\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u0439\u0442\u0435
-            \u043A\u043B\u0430\u0432\u0438\u0448\u0438 [WASD], \u0447\u0442\u043E\u0431\u044B
-            \u043F\u0435\u0440\u0435\u043C\u0435\u0449\u0430\u0442\u044C\u0441\u044F"
+            \u043A\u043B\u0430\u0432\u0438\u0448\u0438 WASD, \u0447\u0442\u043E\u0431\u044B
+            \u0445\u043E\u0434\u0438\u0442\u044C"
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 95180044}
@@ -12655,8 +12655,8 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: "\u041D\u0430\u0436\u043C\u0438\u0442\u0435 \u043A\u043B\u0430\u0432\u0438\u0448\u0443
-            [\u0415], \u0447\u0442\u043E\u0431\u044B \u043F\u0440\u0438\u043B\u043E\u0436\u0438\u0442\u044C
+          m_StringArgument: "\u041D\u0430\u0436\u043C\u0438\u0442\u0435 \u043A\u043D\u043E\u043F\u043A\u0443
+            \u0415, \u0447\u0442\u043E\u0431\u044B \u043F\u0440\u0438\u043B\u043E\u0436\u0438\u0442\u044C
             \u043F\u0440\u043E\u043F\u0443\u0441\u043A"
           m_BoolArgument: 0
         m_CallState: 2
@@ -27721,7 +27721,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 701187833}
-  m_LocalRotation: {x: 0.010175443, y: 0.715383, z: -0.010420184, w: 0.69858074}
+  m_LocalRotation: {x: 0.010175437, y: 0.71538305, z: -0.010420178, w: 0.6985807}
   m_LocalPosition: {x: -422.12784, y: 2.274, z: 636.93665}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -40052,8 +40052,8 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: "\u041D\u0430\u0436\u043C\u0438\u0442\u0435 \u043A\u043B\u0430\u0432\u0438\u0448\u0443
-            [\u0415], \u0447\u0442\u043E\u0431\u044B \u043F\u043E\u0432\u0435\u0440\u043D\u0443\u0442\u044C
+          m_StringArgument: "\u041D\u0430\u0436\u043C\u0438\u0442\u0435 \u043A\u043D\u043E\u043F\u043A\u0443
+            \u0415, \u0447\u0442\u043E\u0431\u044B \u043F\u043E\u0432\u0435\u0440\u043D\u0443\u0442\u044C
             \u0440\u044B\u0447\u0430\u0433 "
           m_BoolArgument: 0
         m_CallState: 2
@@ -80699,7 +80699,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2051243969}
-  m_LocalRotation: {x: 0.010175443, y: 0.715383, z: -0.010420184, w: 0.69858074}
+  m_LocalRotation: {x: 0.010175437, y: 0.71538305, z: -0.010420178, w: 0.6985807}
   m_LocalPosition: {x: -422.12784, y: 2.274, z: 636.93665}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
