@@ -36,7 +36,7 @@ namespace Infrastructure.ProjectStateMachine.States
 
         private void SwitchStateToGameLoading()
         {
-            Initializer.StateMachine.SwitchState<GameLoadingState, string>(AssetsAddressablesConstants.SCENE1_MGU_OUTSIDE);
+            Initializer.StateMachine.SwitchState<GameLoadingState, string>(AssetsAddressablesConstants.SCENE0_INTRO);
         }
 
         public void OnExit()

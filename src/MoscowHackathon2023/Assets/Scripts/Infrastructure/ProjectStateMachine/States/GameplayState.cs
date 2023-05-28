@@ -37,7 +37,7 @@ namespace Infrastructure.ProjectStateMachine.States
 
             var gameplayScreen = await _uiFactory.CreateGameplayScreen();
             
-            gameplayScreen.SetActive(false);
+            //gameplayScreen.SetActive(false);
 
             var universalGunView = await _gunFactory.CreateUniversalGunView();
             

@@ -17,7 +17,7 @@ namespace Unit.Cutscene
         public void OnCutSceneEnded()
         {
             _gameInstancesContainer.TurnOnPlayer();
-            _gameInstancesContainer.TurnOnPlayerUI();
+            /*_gameInstancesContainer.TurnOnPlayerUI();*/
         }
     }
 }

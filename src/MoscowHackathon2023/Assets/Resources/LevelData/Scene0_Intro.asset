@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <LevelName>k__BackingField: Scene0_Intro
   <IsPlayerOnScene>k__BackingField: 1
-  <IsPlayerInstancingAtStart>k__BackingField: 1
-  <IsPlayerWeaponInstancingAtStart>k__BackingField: 1
+  <IsPlayerInstancingAtStart>k__BackingField: 0
+  <IsPlayerWeaponInstancingAtStart>k__BackingField: 0
   <PlayerSpawnPoint>k__BackingField: {x: 100, y: 3, z: -11}
   <PlayerSpawnRotation>k__BackingField: {x: 0, y: 0, z: 0, w: 1}
