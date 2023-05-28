@@ -104,6 +104,11 @@ namespace Infrastructure.ProjectStateMachine.States
                 cameraChildContainer.WeaponContainer.gameObject.SetActive(false);
             }
 
+            if (!levelData.IsPlayerCameraInstancingAtStart)
+            {
+                cameraInstance.SetActive(false);
+            }
+
             var currentWeaponType = _gameProgressService.CurrentWeaponOnPlayer;
 
             if (currentWeaponType == GunTypes.None)
@@ -118,9 +123,9 @@ namespace Infrastructure.ProjectStateMachine.States
         private void SetUp(GameObject playerInstance, GameObject cameraInstance, Transform weaponContainer,
             GameObject audioSource)
         {
-            _gameInstancesContainer.SetUpPlayer(playerInstance, _uiFactory, weaponContainer);
-            
             _playSoundsService.SetUp(audioSource.GetComponent<AudioSource>());
+            
+            _gameInstancesContainer.SetUpPlayer(playerInstance, _uiFactory, weaponContainer);
             
             var mainCamera = cameraInstance.GetComponentInChildren<Camera>();
 

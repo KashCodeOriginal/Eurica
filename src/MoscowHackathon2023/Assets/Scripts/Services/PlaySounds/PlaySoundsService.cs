@@ -7,7 +7,7 @@ namespace Services.PlaySounds
 {
     public class PlaySoundsService : IPlaySoundsService
     {
-        private AudioSource _audioSource;
+        public AudioSource AudioSource { get; private set; }
         private ICoroutineRunner _coroutineRunner;
         private Dictionary<AudioClip, bool> _soundStates;
 
@@ -31,8 +31,8 @@ namespace Services.PlaySounds
             if (IsNotPlaying(audioClip, playOnlyOnce) || canPlayMultiple)
             {
                 float volumeLevel = volume * _currentVolumeMultiplier;
-                _audioSource.pitch = Random.Range(minPitch, maxPitch);
-                _audioSource.PlayOneShot(audioClip, volumeLevel);
+                AudioSource.pitch = Random.Range(minPitch, maxPitch);
+                AudioSource.PlayOneShot(audioClip, volumeLevel);
                 _soundStates[audioClip] = true;
 
                 _coroutineRunner.StartCoroutine(WaitForSoundFinish(audioClip.length, audioClip));
@@ -76,7 +76,7 @@ namespace Services.PlaySounds
 
         public void SetUp(AudioSource audioSource)
         {
-            _audioSource = audioSource;
+            AudioSource = audioSource;
         }
 
         public bool CanPlay(AudioClip audioClip, bool canPlayMultiple = false, bool playOnlyOnce = true)
