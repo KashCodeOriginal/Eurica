@@ -825,7 +825,7 @@ GameObject:
   - component: {fileID: 135602511}
   - component: {fileID: 135602510}
   - component: {fileID: 135602513}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: LeverButton (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23209,38 +23209,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 906732458}
     m_Modifications:
-    - target: {fileID: 4541713670395018123, guid: fe2e16e6fc64b9a4ca606acf3f50946b, type: 3}
-      propertyPath: OnPress.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4541713670395018123, guid: fe2e16e6fc64b9a4ca606acf3f50946b, type: 3}
-      propertyPath: OnPress.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4541713670395018123, guid: fe2e16e6fc64b9a4ca606acf3f50946b, type: 3}
-      propertyPath: OnPress.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 4541713671626139094}
-    - target: {fileID: 4541713670395018123, guid: fe2e16e6fc64b9a4ca606acf3f50946b, type: 3}
-      propertyPath: OnPress.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4541713670395018123, guid: fe2e16e6fc64b9a4ca606acf3f50946b, type: 3}
-      propertyPath: OnPress.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: PlaySound
-      objectReference: {fileID: 0}
-    - target: {fileID: 4541713670395018123, guid: fe2e16e6fc64b9a4ca606acf3f50946b, type: 3}
-      propertyPath: OnPress.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: Unit.TriggerSystem.SoundHelper, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 4541713670395018123, guid: fe2e16e6fc64b9a4ca606acf3f50946b, type: 3}
-      propertyPath: OnPress.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 4541713670395018125, guid: fe2e16e6fc64b9a4ca606acf3f50946b, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8767963235692177299, guid: fe2e16e6fc64b9a4ca606acf3f50946b, type: 3}
       propertyPath: m_Name
       value: GraviTransformer
@@ -23292,32 +23260,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4541713670395018125, guid: fe2e16e6fc64b9a4ca606acf3f50946b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4541713671626139094}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe2e16e6fc64b9a4ca606acf3f50946b, type: 3}
---- !u!1 &4541713671626139093 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4541713670395018125, guid: fe2e16e6fc64b9a4ca606acf3f50946b, type: 3}
-  m_PrefabInstance: {fileID: 4541713671626139091}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &4541713671626139094
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4541713671626139093}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acf138b331fd42a981e83ad9d9a0c9ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _audioClip: {fileID: 8300000, guid: abb2ce83f04517c498fa1bfd773847e0, type: 3}
-  _volume: 0.8
-  _canPlayMultiple: 1
-  _playOnlyOnce: 0
 --- !u!1 &4554990808165264142
 GameObject:
   m_ObjectHideFlags: 0
@@ -26030,7 +25974,7 @@ GameObject:
   - component: {fileID: 7387009541447186372}
   - component: {fileID: 8126028349876657006}
   - component: {fileID: 8126028349876657007}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: LeverButton (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26100,7 +26044,7 @@ GameObject:
   - component: {fileID: 7387009540898348967}
   - component: {fileID: 8126028350443320079}
   - component: {fileID: 8126028350443320080}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: LeverButton (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33140,7 +33084,7 @@ GameObject:
   - component: {fileID: 5150542466919901658}
   - component: {fileID: 7716804935257963337}
   - component: {fileID: 7716804935257963338}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: LeverButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
