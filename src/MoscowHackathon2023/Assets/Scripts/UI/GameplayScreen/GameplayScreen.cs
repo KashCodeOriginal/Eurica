@@ -15,8 +15,12 @@ namespace UI.GameplayScreen
         [SerializeField] private Transform _inventoryTransform;
         [SerializeField] private GameObject _staticCanvas;
 
+        [SerializeField] private GameObject _canvasCredits;
+
         public Transform InventoryTransform => _inventoryTransform;
         public GameObject StaticCanvas => _staticCanvas;
+
+        public GameObject CanvasCredits => _canvasCredits;
 
         private void Awake()
         {
