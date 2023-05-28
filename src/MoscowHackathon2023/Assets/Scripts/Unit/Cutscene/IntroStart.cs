@@ -9,6 +9,8 @@ namespace Unit.Cutscene
         public void Start()
         {
             GameplayScreen.Instance?.SetVisibilityOfPlayerUI(false);
+            
+            //var cinemachineBrain = FindObjectOfType<>()
         }
     }
 }

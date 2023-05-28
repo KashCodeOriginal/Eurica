@@ -104,6 +104,11 @@ namespace Infrastructure.ProjectStateMachine.States
                 cameraChildContainer.WeaponContainer.gameObject.SetActive(false);
             }
 
+            if (!levelData.IsPlayerCameraInstancingAtStart)
+            {
+                cameraInstance.SetActive(false);
+            }
+
             var currentWeaponType = _gameProgressService.CurrentWeaponOnPlayer;
 
             if (currentWeaponType == GunTypes.None)
