@@ -6561,69 +6561,26 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1264606289}
   m_SourcePrefab: {fileID: 100100000, guid: 593c50f1075edde44863bd3db0c0643c, type: 3}
---- !u!4 &1264606282
+--- !u!4 &1264606282 stripped
 Transform:
-  m_ObjectHideFlags: 8
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 593c50f1075edde44863bd3db0c0643c, type: 3}
   m_PrefabInstance: {fileID: 1264606281}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_LocalRotation: {x: -0, y: 0.0000004172325, z: -0, w: 1}
-  m_LocalPosition: {x: 0.035133034, y: -0.5190208, z: -0.36428455}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1540622268}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!1 &1264606284
+--- !u!1 &1264606284 stripped
 GameObject:
-  m_ObjectHideFlags: 8
   m_CorrespondingSourceObject: {fileID: -5478644454795232246, guid: 593c50f1075edde44863bd3db0c0643c, type: 3}
   m_PrefabInstance: {fileID: 1264606281}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1264606289}
-  m_Layer: 0
-  m_Name: Placeholder for referenced GameObject in Prefab instance (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1264606285
+--- !u!1 &1264606285 stripped
 GameObject:
-  m_ObjectHideFlags: 8
   m_CorrespondingSourceObject: {fileID: 4175779839895134691, guid: 593c50f1075edde44863bd3db0c0643c, type: 3}
   m_PrefabInstance: {fileID: 1264606281}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1264606290}
-  m_Layer: 0
-  m_Name: Placeholder for referenced GameObject in Prefab instance (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1264606286
+--- !u!1 &1264606286 stripped
 GameObject:
-  m_ObjectHideFlags: 8
   m_CorrespondingSourceObject: {fileID: 7861854473326295642, guid: 593c50f1075edde44863bd3db0c0643c, type: 3}
   m_PrefabInstance: {fileID: 1264606281}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1264606291}
-  m_Layer: 0
-  m_Name: Placeholder for referenced GameObject in Prefab instance (3)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!64 &1264606289
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -22932,6 +22889,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 906732458}
     m_Modifications:
+    - target: {fileID: 4541713670395018125, guid: fe2e16e6fc64b9a4ca606acf3f50946b, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8767963235692177299, guid: fe2e16e6fc64b9a4ca606acf3f50946b, type: 3}
       propertyPath: m_Name
       value: GraviTransformer
