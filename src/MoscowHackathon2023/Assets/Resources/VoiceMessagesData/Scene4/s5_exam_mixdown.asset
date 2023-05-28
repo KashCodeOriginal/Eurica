@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 624257dddb564f47a64a613463293458, type: 3}
+  m_Name: s5_exam_mixdown
+  m_EditorClassIdentifier: 
+  <ID>k__BackingField: s5_exam_mixdown
+  <AudioClip>k__BackingField: {fileID: 8300000, guid: 234365e928d1a594591c8ee4cd523daa, type: 3}
+  <Phrases>k__BackingField:
+  - <Text>k__BackingField: "\u041F\u0440\u043E\u0444\u0435\u0441\u0441\u043E\u0440
+      \u0421.: \u042D\u043A\u0437\u0430\u043C\u0435\u043D \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043D.
+      \u0418\u0441\u043A\u0440\u0435\u043D\u043A\u043E - \u043D\u0435\u0437\u0430\u0447\u0435\u0442.
+      \u041E\u0441\u0442\u0430\u043B\u044C\u043D\u044B\u0435 - 5. \u041A\u0430\u043A\u043E\u0432
+      \u043D\u0435\u0443\u0434\u0430\u0447\u043D\u0438\u043A"
+    <Length>k__BackingField: 8.6
+  - <Text>k__BackingField: "\u0425\u043E\u043C\u044F\u043A: \u0412\u043E\u0443, \u043D\u0443
+      \u0438 \u0447\u0435\u0440\u0442\u0438 \u0436\u0438\u0432\u0443\u0442 \u0443
+      \u0442\u0435\u0431\u044F \u0432 \u0433\u043E\u043B\u043E\u0432\u0435, \u0410\u0440\u0442\u0435\u043C."
+    <Length>k__BackingField: 3

@@ -93,6 +93,7 @@ namespace Unit.SceneControllers.Scene4
                     allRed = false;
                 }
             }
+
             return allRed;
         }
     }
