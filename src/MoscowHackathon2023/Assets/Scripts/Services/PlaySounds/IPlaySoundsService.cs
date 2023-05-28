@@ -4,6 +4,7 @@ namespace Services.PlaySounds
 {
     public interface IPlaySoundsService
     {
+        public AudioSource AudioSource { get; }
         public void PlayAudioClip(AudioClip audioClip, float volume, 
             bool canPlayMultiple = false, bool playOnlyOnce = true, 
             float minPitch = 1f, float maxPitch = 1f);

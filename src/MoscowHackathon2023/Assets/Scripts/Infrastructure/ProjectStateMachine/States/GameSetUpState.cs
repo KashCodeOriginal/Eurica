@@ -123,9 +123,9 @@ namespace Infrastructure.ProjectStateMachine.States
         private void SetUp(GameObject playerInstance, GameObject cameraInstance, Transform weaponContainer,
             GameObject audioSource)
         {
-            _gameInstancesContainer.SetUpPlayer(playerInstance, _uiFactory, weaponContainer);
-            
             _playSoundsService.SetUp(audioSource.GetComponent<AudioSource>());
+            
+            _gameInstancesContainer.SetUpPlayer(playerInstance, _uiFactory, weaponContainer);
             
             var mainCamera = cameraInstance.GetComponentInChildren<Camera>();
 

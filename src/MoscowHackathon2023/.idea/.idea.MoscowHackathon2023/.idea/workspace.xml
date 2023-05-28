@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="796ee9ce-5b7d-4e10-92ca-ade5b0f8e2d9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MoscowHackathon2023/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MoscowHackathon2023/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/CutScenes/IntroCutScene/CutScene0Timeline.playable" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/CutScenes/IntroCutScene/CutScene0Timeline.playable" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Scene0_Intro.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Scene0_Intro.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit/Cutscene/IntroStart.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit/Cutscene/IntroStart.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -74,10 +76,10 @@
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="43324">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="43324" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
