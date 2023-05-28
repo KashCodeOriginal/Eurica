@@ -76,23 +76,18 @@ namespace UI.GameplayScreen
         
         private string ConfigureText(string text)
         {
-            string subtitleFormat = "<color=#{0}><b>{1}</b></color><br>{2}";
+            string subtitleFormat = "<color=#{0}><b>{1}</b></color>: {2}";
 
             int colonIndex = text.IndexOf(':');
             if (colonIndex != -1 && _config != null)
             {
-                string speaker = text.Substring(0, colonIndex).ToUpper();
+                string speaker = text.Substring(0, colonIndex);
                 string dialogue = text.Substring(colonIndex + 1).Trim();
 
                 Color speakerColor = GetSpeakerColor(speaker, _config);
 
                 string colorHex = ColorUtility.ToHtmlStringRGB(speakerColor);
                 string formattedSubtitle = string.Format(subtitleFormat, colorHex, speaker, dialogue);
-
-                if (speaker == "АРТЕМ" && dialogue.Contains("Эврика"))
-                {
-                    dialogue.Replace("Эврика", "<color=#C6FFEB><b>Эврика</b></color>");
-                }
 
                 return formattedSubtitle;
             }
@@ -104,7 +99,7 @@ namespace UI.GameplayScreen
         {
             foreach (SubtitleConfig.SpeakerColor speakerColor in config.speakerColors)
             {
-                if (speakerColor.name.ToUpper().Equals(speaker))
+                if (speakerColor.name.Equals(speaker))
                 {
                     return speakerColor.color;
                 }
