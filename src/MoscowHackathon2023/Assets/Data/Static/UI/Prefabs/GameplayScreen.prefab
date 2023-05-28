@@ -820,6 +820,7 @@ GameObject:
   - component: {fileID: 2190175581059524870}
   - component: {fileID: 485828516210147955}
   - component: {fileID: 1489929008717058176}
+  - component: {fileID: 1483430832080615129}
   m_Layer: 0
   m_Name: Canvas Inventory
   m_TagString: Untagged
@@ -910,6 +911,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!225 &1483430832080615129
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1736326404872149826}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &2207637731854447579
 GameObject:
   m_ObjectHideFlags: 0
@@ -1533,6 +1546,7 @@ GameObject:
   - component: {fileID: 9130433461698273105}
   - component: {fileID: 9158678578778234261}
   - component: {fileID: 6284133497070310386}
+  - component: {fileID: 9047567842676815528}
   m_Layer: 0
   m_Name: StaticCanvas
   m_TagString: Untagged
@@ -1623,6 +1637,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!225 &9047567842676815528
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2402701981541903637}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &2497384355471231211
 GameObject:
   m_ObjectHideFlags: 0
@@ -2118,6 +2144,7 @@ GameObject:
   - component: {fileID: 6363522681278608817}
   - component: {fileID: 8623695611978134145}
   - component: {fileID: 2690269966547326561}
+  - component: {fileID: 74260223730868469}
   m_Layer: 0
   m_Name: Canvas TaskView
   m_TagString: Untagged
@@ -2222,6 +2249,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!225 &74260223730868469
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4101061079804272375}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &4109241569209489801
 GameObject:
   m_ObjectHideFlags: 0
@@ -2497,6 +2536,7 @@ GameObject:
   - component: {fileID: 6455021638786543308}
   - component: {fileID: 6337517829681371258}
   - component: {fileID: 903247687119820591}
+  - component: {fileID: 8361132523506306823}
   m_Layer: 0
   m_Name: Canvas SubtitlesView
   m_TagString: Untagged
@@ -2602,6 +2642,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!225 &8361132523506306823
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4695833742992996720}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &4966266673171725081
 GameObject:
   m_ObjectHideFlags: 0
@@ -2691,6 +2743,7 @@ GameObject:
   - component: {fileID: 508240048916906351}
   - component: {fileID: 3908101503442325628}
   - component: {fileID: 7508390287180285951}
+  - component: {fileID: 4100206582196004893}
   m_Layer: 0
   m_Name: Canvas Settings
   m_TagString: Untagged
@@ -2800,6 +2853,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!225 &4100206582196004893
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4977474812781332881}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &5128302218468490048
 GameObject:
   m_ObjectHideFlags: 0
@@ -3907,6 +3972,7 @@ GameObject:
   - component: {fileID: 1940624269921508253}
   - component: {fileID: 2426719393831635854}
   - component: {fileID: 557989767614505829}
+  - component: {fileID: 7455734202557450866}
   m_Layer: 0
   m_Name: Canvas HintView
   m_TagString: Untagged
@@ -4011,6 +4077,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!225 &7455734202557450866
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7448231363169464276}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &7516405915334658548
 GameObject:
   m_ObjectHideFlags: 0
