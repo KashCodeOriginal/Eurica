@@ -28,6 +28,9 @@ namespace Unit.SceneControllers.Scene4
         [SerializeField] private GameObject _liftUnlocked;
         [SerializeField] private GameObject _arrowHelper;
 
+        [SerializeField] private GameObject _tryDoAllLampsBackDialog;
+        [SerializeField] private GameObject _successRevertLampsToRedDialog;
+
         [Inject]
         public void Construct(IGameProgressService gameProgressService)
         {
@@ -60,6 +63,7 @@ namespace Unit.SceneControllers.Scene4
         private void OnLampChanged()
         {
             _isAllRed = _quizLogic.IsAllRed();
+
             StateChanged();
         }
 
@@ -85,6 +89,15 @@ namespace Unit.SceneControllers.Scene4
 
         private void CheckForLevelCompletion()
         {
+            if (!_isAllRed)
+            {
+                _tryDoAllLampsBackDialog.SetActive(true);
+            }
+            else
+            {
+                _successRevertLampsToRedDialog.SetActive(true);
+            }
+            
             if (_isAllRed && _isCubeEntered)
             {
                 if (!_isLevelCompleted)
