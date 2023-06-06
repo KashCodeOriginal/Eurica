@@ -5302,7 +5302,7 @@ MonoBehaviour:
   _liftUnlocked: {fileID: 1683897680}
   _arrowHelper: {fileID: 1091329626}
   _tryDoAllLampsBackDialog: {fileID: 1581671700}
-  _successRevertLampsToRedDialog: {fileID: 1363633092}
+  _levelCompletedDialog: {fileID: 1363633092}
 --- !u!1 &966652131
 GameObject:
   m_ObjectHideFlags: 0
@@ -7540,7 +7540,7 @@ GameObject:
   - component: {fileID: 1363633095}
   - component: {fileID: 1363633094}
   m_Layer: 16
-  m_Name: AllLampsAreRedDialog
+  m_Name: LevelCompletedDialog
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
