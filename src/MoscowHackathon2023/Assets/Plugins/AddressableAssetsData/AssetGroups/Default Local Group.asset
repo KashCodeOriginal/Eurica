@@ -17,16 +17,6 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 584bbc3535915df40a3796c3d273082e
   m_SerializeEntries:
-  - m_GUID: 9fc0d4010bbf28b4594072e72b8655ab
-    m_Address: Bootstrap
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: cde2c7b998dc96e488704c90b5dd1d5d
-    m_Address: MainMenu
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: bf61249f9c69ad947a15782496ea0cfd
     m_Address: GameplayScreen
     m_ReadOnly: 0
@@ -87,23 +77,8 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: cb6c65f46edbca74289a6fc87bdf61b5
-    m_Address: Scene1_MGU_Outside
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 9300e686d85cb0a4bb5410d8dd326ba1
-    m_Address: Scene2_Main_Hub
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 513fa4880e04c244c9088e1cfa065615
-    m_Address: Scene3_MGU_Inside
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 4481cb99435d60344b05ac21288e0d0f
-    m_Address: Scene4_Morozilka
+  - m_GUID: 9fc0d4010bbf28b4594072e72b8655ab
+    m_Address: Bootstrap
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -112,8 +87,33 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4481cb99435d60344b05ac21288e0d0f
+    m_Address: Scene4_Morozilka
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 513fa4880e04c244c9088e1cfa065615
+    m_Address: Scene3_MGU_Inside
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9300e686d85cb0a4bb5410d8dd326ba1
+    m_Address: Scene2_Main_Hub
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cb6c65f46edbca74289a6fc87bdf61b5
+    m_Address: Scene1_MGU_Outside
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 0bc490ee921f6cc4cb289d1d1cae52df
     m_Address: Scene0_Intro
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cde2c7b998dc96e488704c90b5dd1d5d
+    m_Address: MainMenu
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
