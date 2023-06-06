@@ -29,7 +29,7 @@ namespace Unit.SceneControllers.Scene4
         [SerializeField] private GameObject _arrowHelper;
 
         [SerializeField] private GameObject _tryDoAllLampsBackDialog;
-        [SerializeField] private GameObject _successRevertLampsToRedDialog;
+        [SerializeField] private GameObject _levelCompletedDialog;
 
         [Inject]
         public void Construct(IGameProgressService gameProgressService)
@@ -93,16 +93,14 @@ namespace Unit.SceneControllers.Scene4
             {
                 _tryDoAllLampsBackDialog.SetActive(true);
             }
-            else
-            {
-                _successRevertLampsToRedDialog.SetActive(true);
-            }
             
             if (_isAllRed && _isCubeEntered)
             {
                 if (!_isLevelCompleted)
                 {
                     _isLevelCompleted = true;
+
+                    _levelCompletedDialog.SetActive(true);
 
                     _cubeNotReady.SetActive(false);
                     _cubeReady.SetActive(false);
