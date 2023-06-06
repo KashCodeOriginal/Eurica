@@ -90,6 +90,7 @@ namespace Unit.GraviTransformer
             yield return new WaitForSeconds(1);
 
             _isLeftDoorOpen = true;
+            UpdateIndicators(false, false);
         }
 
         private void UpdateIndicators(bool glowLeft, bool glowRight)
