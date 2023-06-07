@@ -44,6 +44,11 @@ namespace Unit.UniversalGun
             _playSoundsService = playSoundsService;
         }
 
+        private void Start()
+        {
+            ChangeActiveGun(_gameProgressService.CurrentWeaponOnPlayer);
+        }
+
         public void ChangeActiveGun(GunTypes gunType)
         {
             ChangeCurrentGunEmission(1);
