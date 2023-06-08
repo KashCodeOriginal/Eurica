@@ -6,6 +6,7 @@ using Services.Containers;
 using Services.Input;
 using Services.PlaySounds;
 using Unit.GravityCube;
+using Unit.ScaleGun;
 using Unit.UniversalGun;
 using Unit.Weapon;
 using UnityEngine;
@@ -86,9 +87,9 @@ namespace Unit.GravityGun
             }
             else
             {
-                if (_currentRigidbody.gameObject.TryGetComponent(out GravityCubeLogic gravityCube))
+                if (_currentRigidbody.gameObject.TryGetComponent(out CubeBase cube))
                 {
-                    gravityCube.RequestDetach += OnRequestToDetach;
+                    cube.RequestDetach += OnRequestToDetach;
                 }
             }
 
@@ -99,14 +100,15 @@ namespace Unit.GravityGun
         private void StopMainFire()
         {
             _coroutineRunner.StopCoroutine(_dragIn);
-            _playerInputActionReader.IsLeftButtonClicked -= StopMainFire;
-            _playerInputActionReader.IsLeftButtonClicked += MainFire;
-
+      
             if (_currentRigidbody != null)
             {
-                if (_currentRigidbody.gameObject.TryGetComponent(out GravityCubeLogic gravityCube))
+                _playerInputActionReader.IsLeftButtonClicked -= StopMainFire;
+                _playerInputActionReader.IsLeftButtonClicked += MainFire;
+
+                if (_currentRigidbody.gameObject.TryGetComponent(out CubeBase cube))
                 {
-                    gravityCube.RequestDetach -= OnRequestToDetach;
+                    cube.RequestDetach -= OnRequestToDetach;
                 }
 
                 _currentRigidbody.constraints = RigidbodyConstraints.None;
@@ -137,9 +139,9 @@ namespace Unit.GravityGun
             Quaternion randomRotation = Quaternion.Euler(Random.Range(-rAng, rAng), Random.Range(-rAng, rAng), Random.Range(-rAng, rAng));
             _currentRigidbody.AddTorque(randomRotation.eulerAngles, ForceMode.Impulse);
 
-            if (_currentRigidbody.gameObject.TryGetComponent(out GravityCubeLogic gravityCube))
+            if (_currentRigidbody.gameObject.TryGetComponent(out CubeBase cube))
             {
-                gravityCube.RequestDetach -= OnRequestToDetach;
+                cube.RequestDetach -= OnRequestToDetach;
             }
 
             _currentRigidbody = null;

@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Unit.ScaleGun
 {
-    public class ScaleCubeMK2 : MonoBehaviour
+    public class ScaleCubeMK2 : CubeBase
     {
         private void OnTriggerEnter(Collider other)
         {
