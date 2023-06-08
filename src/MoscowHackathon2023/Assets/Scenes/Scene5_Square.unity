@@ -6359,7 +6359,7 @@ PrefabInstance:
     - target: {fileID: 6377431604322227991, guid: c8d39ca7d63e56a4cb9bc3e6573dff00, type: 3}
       propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_StringArgument
       value: "\u0414\u043E\u0431\u0440\u0430\u0442\u044C\u0441\u044F \u0434\u043E
-        \u043B\u0438\u0444\u0442\u0430 \u043F\u043E\u0434 \u0444\u043E\u043D\u0442\u0430\u043C\u0438"
+        \u043B\u0438\u0444\u0442\u0430 \u043F\u043E\u0434 \u0444\u043E\u043D\u0442\u0430\u043D\u043E\u043C"
       objectReference: {fileID: 0}
     - target: {fileID: 6377431604322227991, guid: c8d39ca7d63e56a4cb9bc3e6573dff00, type: 3}
       propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
