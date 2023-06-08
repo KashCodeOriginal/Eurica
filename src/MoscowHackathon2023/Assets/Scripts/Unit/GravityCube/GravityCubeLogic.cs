@@ -1,11 +1,12 @@
 ﻿using Unit.GraviTransformer;
+using Unit.ScaleGun;
 using UnityEngine;
 using UnityEngine.Events;
 
 namespace Unit.GravityCube
 {
     [SelectionBase]
-    public class GravityCubeLogic : MonoBehaviour
+    public class GravityCubeLogic : CubeBase
     {
         public int ColorId { get; private set; }
         public UnityAction RequestDetach;
@@ -18,8 +19,9 @@ namespace Unit.GravityCube
             _gravityCubeView.SetColor(indicationColor);
         }
 
-        private void OnCollisionEnter(Collision collision)
+        protected override void OnCollisionEnter(Collision collision)
         {
+            base.OnCollisionEnter(collision);
             if (collision.gameObject.layer == LayerMask.NameToLayer("GravityCubeBlocker"))
             {
                 RequestDetach?.Invoke();
