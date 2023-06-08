@@ -1,11 +1,12 @@
 ﻿using Unit.Player;
+using Unit.ScaleGun;
 using UnityEngine;
 
 namespace Unit.Portal
 {
     public class Teleport : MonoBehaviour
     {
-        private Teleport _other;        
+        private Teleport _other;
         private float _offset = 1f;
         private LayerMask _grabbedLayer;
 
@@ -14,13 +15,13 @@ namespace Unit.Portal
             _grabbedLayer = LayerMask.NameToLayer("Grabbed");
         }
 
-        public void TurnOn(Teleport other) 
+        public void TurnOn(Teleport other)
         {
             enabled = true;
             _other = other;
         }
 
-        public void TurnOff() 
+        public void TurnOff()
         {
             enabled = false;
         }
@@ -31,17 +32,25 @@ namespace Unit.Portal
             {
                 return;
             }
-            
-            var rigidBodyTransform =  rigidbodyObject.transform;
-            
+
+            if (collider.TryGetComponent(out CubeBase cubeBase))
+            {
+                if (cubeBase.transform.localScale.x >= 1.1f)
+                {
+                    return;
+                }
+            }
+
+            var rigidBodyTransform = rigidbodyObject.transform;
+
             if (rigidbodyObject.CompareTag("Player"))
             {
                 var turnAngle = Quaternion.Angle(_other.transform.rotation, rigidbodyObject.transform.rotation);
 
                 rigidBodyTransform.position = _other.transform.position + (_other.transform.forward * _offset);
-                
+
                 rigidbodyObject.velocity = rigidbodyObject.velocity.magnitude * _other.transform.forward;
-                
+
                 return;
             }
 
@@ -52,7 +61,7 @@ namespace Unit.Portal
             {
                 return;
             }
-            
+
             rigidbodyObject.velocity = rigidbodyObject.velocity.magnitude * _other.transform.forward;
         }
     }
