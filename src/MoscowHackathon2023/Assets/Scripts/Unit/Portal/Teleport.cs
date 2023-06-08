@@ -39,6 +39,8 @@ namespace Unit.Portal
                 {
                     return;
                 }
+                
+                cubeBase?.RequestDetach?.Invoke();
             }
 
             var rigidBodyTransform = rigidbodyObject.transform;
