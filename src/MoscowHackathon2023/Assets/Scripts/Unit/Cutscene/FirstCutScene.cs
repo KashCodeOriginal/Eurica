@@ -1,4 +1,6 @@
+using System;
 using Services.Containers;
+using UI.GameplayScreen;
 using UnityEngine;
 using Zenject;
 
@@ -14,10 +16,15 @@ namespace Unit.Cutscene
 
         private IGameInstancesContainer _gameInstancesContainer;
 
+        private void Start()
+        {
+            GameplayScreen.Instance?.SetVisibilityOfPlayerUI(false);
+        }
+
         public void OnCutSceneEnded()
         {
             _gameInstancesContainer.TurnOnPlayer();
-            /*_gameInstancesContainer.TurnOnPlayerUI();*/
+            GameplayScreen.Instance?.SetVisibilityOfPlayerUI(true);
         }
     }
 }
