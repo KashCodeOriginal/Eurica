@@ -14,6 +14,7 @@ namespace Unit.WeaponInventory
     {
         private List<IWeaponed> _weapons = new List<IWeaponed>();
         private InventoryView _inventoryView;
+        private readonly PlayerInputActionReader _playerInputActionReader;
         private readonly IGameInstancesContainer _gameInstancesContainer;
         private IWeaponed _currentWeaponed;
         private int _currentIndexWeapon;
@@ -24,6 +25,7 @@ namespace Unit.WeaponInventory
             IGameInstancesContainer gameInstancesContainer,
             List<IWeaponed> weapons = null)
         {
+            _playerInputActionReader = playerInputActionReader;
             _gameInstancesContainer = gameInstancesContainer;
 
             if (weapons != null)
@@ -31,7 +33,8 @@ namespace Unit.WeaponInventory
                 weapons.ForEach(weapon => SetupWeaponInInventory(weapon.GunData));
             }
             
-            playerInputActionReader.IsMouseScroll += Switch;            
+            playerInputActionReader.IsMouseScroll += Switch;          
+            playerInputActionReader.IsPlayerDigitsClicked += Switch;          
         }
 
         /*public async Task ShowPanel(Transform panel) 
@@ -66,6 +69,16 @@ namespace Unit.WeaponInventory
                 {
                     SwitchBackward();
                 }            
+            }       
+        }
+        
+        private void Switch(int index) 
+        {
+            if (_weapons != null)
+            {
+                _currentIndexWeapon = index;
+                
+                ChangeWeapon(_weapons[_currentIndexWeapon]);
             }       
         }
 
@@ -106,6 +119,12 @@ namespace Unit.WeaponInventory
         private void SetupWeaponInInventory(BaseGunData dataWeapon) 
         {            
             //_inventoryView.AddWeapon(dataWeapon.InventoryIcon, dataWeapon.IndexWeapon);
+        }
+
+        ~Inventory()
+        {
+            _playerInputActionReader.IsMouseScroll -= Switch;  
+            _playerInputActionReader.IsPlayerDigitsClicked -= Switch;  
         }
     }
 }

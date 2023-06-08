@@ -38,6 +38,8 @@ namespace Services.Input
         
         public Action IsPlayerEscClicked;
 
+        public Action<int> IsPlayerDigitsClicked;
+
         private void OnEnable()
         {
             if (_playerInputAction != null)
@@ -152,6 +154,21 @@ namespace Services.Input
             {
                 IsPlayerEscClicked?.Invoke();
             }
+        }
+
+        public void OnPlayerFirstClicked(InputAction.CallbackContext context)
+        {
+            IsPlayerDigitsClicked?.Invoke(0);
+        }
+
+        public void OnPlayerSecondClicked(InputAction.CallbackContext context)
+        {
+            IsPlayerDigitsClicked?.Invoke(1);
+        }
+
+        public void OnPlayerThirdClicked(InputAction.CallbackContext context)
+        {
+            IsPlayerDigitsClicked?.Invoke(2);
         }
     }
 }

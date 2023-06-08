@@ -125,6 +125,33 @@ public partial class @PlayerInputAction : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""PlayerFirstClicked"",
+                    ""type"": ""Value"",
+                    ""id"": ""c2a8fe30-f601-415a-a248-1aa3efced914"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""PlayerSecondClicked"",
+                    ""type"": ""Value"",
+                    ""id"": ""10994bb4-efdf-45cf-9e9e-1b5142481bd3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""PlayerThirdClicked"",
+                    ""type"": ""Value"",
+                    ""id"": ""3ac51382-52fb-42c9-8fec-5d04d7c16184"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -292,6 +319,39 @@ public partial class @PlayerInputAction : IInputActionCollection2, IDisposable
                     ""action"": ""PlayerEsc"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""52382bdd-a855-4e16-9762-6f686ddc2f02"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PlayerFirstClicked"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""14c1b87b-bfbe-45af-a66b-33b647411e7d"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PlayerSecondClicked"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""39d2753f-fc9c-4bca-8503-b564be48e034"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PlayerThirdClicked"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -311,6 +371,9 @@ public partial class @PlayerInputAction : IInputActionCollection2, IDisposable
         m_PlayerInput_PlayerCrouch = m_PlayerInput.FindAction("PlayerCrouch", throwIfNotFound: true);
         m_PlayerInput_PlayerTab = m_PlayerInput.FindAction("PlayerTab", throwIfNotFound: true);
         m_PlayerInput_PlayerEsc = m_PlayerInput.FindAction("PlayerEsc", throwIfNotFound: true);
+        m_PlayerInput_PlayerFirstClicked = m_PlayerInput.FindAction("PlayerFirstClicked", throwIfNotFound: true);
+        m_PlayerInput_PlayerSecondClicked = m_PlayerInput.FindAction("PlayerSecondClicked", throwIfNotFound: true);
+        m_PlayerInput_PlayerThirdClicked = m_PlayerInput.FindAction("PlayerThirdClicked", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -381,6 +444,9 @@ public partial class @PlayerInputAction : IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerInput_PlayerCrouch;
     private readonly InputAction m_PlayerInput_PlayerTab;
     private readonly InputAction m_PlayerInput_PlayerEsc;
+    private readonly InputAction m_PlayerInput_PlayerFirstClicked;
+    private readonly InputAction m_PlayerInput_PlayerSecondClicked;
+    private readonly InputAction m_PlayerInput_PlayerThirdClicked;
     public struct PlayerInputActions
     {
         private @PlayerInputAction m_Wrapper;
@@ -396,6 +462,9 @@ public partial class @PlayerInputAction : IInputActionCollection2, IDisposable
         public InputAction @PlayerCrouch => m_Wrapper.m_PlayerInput_PlayerCrouch;
         public InputAction @PlayerTab => m_Wrapper.m_PlayerInput_PlayerTab;
         public InputAction @PlayerEsc => m_Wrapper.m_PlayerInput_PlayerEsc;
+        public InputAction @PlayerFirstClicked => m_Wrapper.m_PlayerInput_PlayerFirstClicked;
+        public InputAction @PlayerSecondClicked => m_Wrapper.m_PlayerInput_PlayerSecondClicked;
+        public InputAction @PlayerThirdClicked => m_Wrapper.m_PlayerInput_PlayerThirdClicked;
         public InputActionMap Get() { return m_Wrapper.m_PlayerInput; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -438,6 +507,15 @@ public partial class @PlayerInputAction : IInputActionCollection2, IDisposable
                 @PlayerEsc.started -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnPlayerEsc;
                 @PlayerEsc.performed -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnPlayerEsc;
                 @PlayerEsc.canceled -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnPlayerEsc;
+                @PlayerFirstClicked.started -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnPlayerFirstClicked;
+                @PlayerFirstClicked.performed -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnPlayerFirstClicked;
+                @PlayerFirstClicked.canceled -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnPlayerFirstClicked;
+                @PlayerSecondClicked.started -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnPlayerSecondClicked;
+                @PlayerSecondClicked.performed -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnPlayerSecondClicked;
+                @PlayerSecondClicked.canceled -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnPlayerSecondClicked;
+                @PlayerThirdClicked.started -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnPlayerThirdClicked;
+                @PlayerThirdClicked.performed -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnPlayerThirdClicked;
+                @PlayerThirdClicked.canceled -= m_Wrapper.m_PlayerInputActionsCallbackInterface.OnPlayerThirdClicked;
             }
             m_Wrapper.m_PlayerInputActionsCallbackInterface = instance;
             if (instance != null)
@@ -475,6 +553,15 @@ public partial class @PlayerInputAction : IInputActionCollection2, IDisposable
                 @PlayerEsc.started += instance.OnPlayerEsc;
                 @PlayerEsc.performed += instance.OnPlayerEsc;
                 @PlayerEsc.canceled += instance.OnPlayerEsc;
+                @PlayerFirstClicked.started += instance.OnPlayerFirstClicked;
+                @PlayerFirstClicked.performed += instance.OnPlayerFirstClicked;
+                @PlayerFirstClicked.canceled += instance.OnPlayerFirstClicked;
+                @PlayerSecondClicked.started += instance.OnPlayerSecondClicked;
+                @PlayerSecondClicked.performed += instance.OnPlayerSecondClicked;
+                @PlayerSecondClicked.canceled += instance.OnPlayerSecondClicked;
+                @PlayerThirdClicked.started += instance.OnPlayerThirdClicked;
+                @PlayerThirdClicked.performed += instance.OnPlayerThirdClicked;
+                @PlayerThirdClicked.canceled += instance.OnPlayerThirdClicked;
             }
         }
     }
@@ -492,5 +579,8 @@ public partial class @PlayerInputAction : IInputActionCollection2, IDisposable
         void OnPlayerCrouch(InputAction.CallbackContext context);
         void OnPlayerTab(InputAction.CallbackContext context);
         void OnPlayerEsc(InputAction.CallbackContext context);
+        void OnPlayerFirstClicked(InputAction.CallbackContext context);
+        void OnPlayerSecondClicked(InputAction.CallbackContext context);
+        void OnPlayerThirdClicked(InputAction.CallbackContext context);
     }
 }
