@@ -9,8 +9,7 @@ namespace Unit.GravityCube
     public class GravityCubeLogic : CubeBase
     {
         public int ColorId { get; private set; }
-        public UnityAction RequestDetach;
-        
+
         [SerializeField] private GravityCubeView _gravityCubeView;
 
         public void Init(int colorId, Color indicationColor)
