@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using Services.PlaySounds;
 using UI.GameplayScreen;
 using Unit.TriggerSystem;
@@ -13,8 +14,14 @@ namespace Unit.Cutscene
 
         private void Start()
         {
+            StartCoroutine(IntroTimer());
+        }
+
+        private IEnumerator IntroTimer()
+        {
+            yield return new WaitForSeconds(1f);
             GameplayScreen.Instance?.SetVisibilityOfPlayerUI(false);
-            //_triggerTaskHelper.StartVoiceMessage("artem_solo_entry");
+            _triggerTaskHelper.StartVoiceMessage("artem_solo_entry");
         }
     }
 }
