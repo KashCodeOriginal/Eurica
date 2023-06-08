@@ -8,5 +8,6 @@ namespace Data.StaticData.GunData.GravityGunData
         [field: SerializeField] public float CatchDistance { get; private set; }
         [field: SerializeField] public float CatchPower { get; private set; }
         [field: SerializeField] public float DropPower { get; private set; }
+        [field: SerializeField] public float SoundPlayDelay { get; private set; }
     }
 }
