@@ -4,6 +4,7 @@ using Data.StaticData.GunData.GravityGunData;
 using Infrastructure;
 using Services.Containers;
 using Services.Input;
+using Services.PlaySounds;
 using Unit.GravityCube;
 using Unit.UniversalGun;
 using Unit.Weapon;
@@ -28,6 +29,9 @@ namespace Unit.GravityGun
         private UniversalGunView _universalGunView;
 
         private readonly IGameInstancesContainer _gameInstancesContainer;
+        private readonly IPlaySoundsService _playSoundsService;
+
+        private float _soundTimer;
 
         private LayerMask _interactiveLayer = LayerMask.NameToLayer("InteractiveObjectForGravity");
 
@@ -41,12 +45,14 @@ namespace Unit.GravityGun
         public GravityGun(ICoroutineRunner coroutineRunner,
             PlayerInputActionReader playerInputActionReader,
             GravityGunData gravityGunGravityGunData,
-            IGameInstancesContainer gameInstancesContainer)
+            IGameInstancesContainer gameInstancesContainer,
+            IPlaySoundsService playSoundsService)
         {
             _coroutineRunner = coroutineRunner;
             _playerInputActionReader = playerInputActionReader;
             _gravityGunGravityGunData = gravityGunGravityGunData;
             _gameInstancesContainer = gameInstancesContainer;
+            _playSoundsService = playSoundsService;
         }
 
         public void MainFire()
@@ -55,6 +61,7 @@ namespace Unit.GravityGun
 
             int layerToIgnore = LayerMask.NameToLayer("IgnoreWeaponRay");
             int layerMask = ~(1 << layerToIgnore);
+            
             if (!Physics.Raycast(ray, out var hit, _gravityGunGravityGunData.CatchDistance, layerMask))
             {
                 return;
@@ -178,7 +185,17 @@ namespace Unit.GravityGun
                         (_universalGunView.GravityAttachPoint.position -
                          (_currentRigidbody.transform.position + _currentRigidbody.centerOfMass)) * _gravityGunGravityGunData.CatchPower;
                 }
+                
                 yield return new WaitForFixedUpdate();
+
+                _soundTimer += Time.deltaTime;
+
+                if (_soundTimer >= _gravityGunGravityGunData.SoundPlayDelay)
+                {
+                    _playSoundsService.PlayAudioClip(GunData.FirstGunSound, _playSoundsService.GetVolumeLevel(VolumeLevel.Default), true, false);
+
+                    _soundTimer = 0;
+                }
             }
         }
     }

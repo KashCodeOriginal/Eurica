@@ -15,6 +15,7 @@ MonoBehaviour:
   <InventoryIcon>k__BackingField: {fileID: 21300000, guid: 20182d7fb199625468444b2ffc6351de, type: 3}
   <IndexWeapon>k__BackingField: 1
   <GunType>k__BackingField: 1
+  <GunSound>k__BackingField: {fileID: 8300000, guid: a274c6bc4fd16304f8762089b1f53fb8, type: 3}
   <CatchDistance>k__BackingField: 5
   <CatchPower>k__BackingField: 10
   <DropPower>k__BackingField: 20

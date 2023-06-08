@@ -3,6 +3,7 @@ using Data.StaticData.GunData;
 using Data.StaticData.GunData.ScaleGunData;
 using Services.Containers;
 using Services.Input;
+using Services.PlaySounds;
 using Unit.UniversalGun;
 using Unit.Weapon;
 using UnityEngine;
@@ -13,11 +14,13 @@ namespace Unit.ScaleGun
     {
         public ScaleGun(PlayerInputActionReader playerInputActionReader,
             ScaleGunData scaleGunData,
-            IGameInstancesContainer gameInstancesContainer)
+            IGameInstancesContainer gameInstancesContainer,
+            IPlaySoundsService playSoundsService)
         {
             _playerInputActionReader = playerInputActionReader;
 
             _gameInstancesContainer = gameInstancesContainer;
+            _playSoundsService = playSoundsService;
 
             _scaleGunData = scaleGunData;
         }
@@ -38,13 +41,16 @@ namespace Unit.ScaleGun
         private readonly ScaleGunData _scaleGunData;
 
         private readonly IGameInstancesContainer _gameInstancesContainer;
+        private readonly IPlaySoundsService _playSoundsService;
         private UniversalGunView _universalGunView;
 
         private bool _isLeftMouseHeld;
         private bool _isRightMouseHeld;
 
         private Transform _placeWeaponInHand;
-
+        
+        private float _raiseSoundTimer;
+        private float _fallSoundTimer;
 
         private void TryFindScalableObject()
         {
@@ -123,6 +129,15 @@ namespace Unit.ScaleGun
                 _currentScalableObject?.UpScale(_scaleGunData.ResizeValue);
 
                 await Task.Yield();
+                
+                _raiseSoundTimer += Time.deltaTime;
+
+                if (_raiseSoundTimer >= _scaleGunData.SoundPlayDelay)
+                {
+                    _playSoundsService.PlayAudioClip(GunData.FirstGunSound, _playSoundsService.GetVolumeLevel(VolumeLevel.Default), true, false);
+
+                    _raiseSoundTimer = 0;
+                }
             }
         }
 
@@ -135,6 +150,15 @@ namespace Unit.ScaleGun
                 _currentScalableObject?.DownScale(_scaleGunData.ResizeValue);
 
                 await Task.Yield();
+                
+                _raiseSoundTimer += Time.deltaTime;
+
+                if (_raiseSoundTimer >= _scaleGunData.SoundPlayDelay)
+                {
+                    _playSoundsService.PlayAudioClip(GunData.SecondGunSound, _playSoundsService.GetVolumeLevel(VolumeLevel.Default), true, false);
+
+                    _raiseSoundTimer = 0;
+                }
             }
         }
     }

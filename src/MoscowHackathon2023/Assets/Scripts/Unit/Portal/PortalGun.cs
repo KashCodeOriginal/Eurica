@@ -4,6 +4,7 @@ using Data.StaticData.GunData;
 using Data.StaticData.GunData.PortalGunData;
 using Services.Containers;
 using Services.Factories.PortalFactory;
+using Services.PlaySounds;
 using Unit.UniversalGun;
 using Unit.Weapon;
 using UnityEngine;
@@ -18,6 +19,7 @@ namespace Unit.Portal
         private readonly PlayerInputActionReader _playerInputActionReader;
         private readonly IGameInstancesContainer _gameInstancesContainer;
         private readonly PortalGunData _portalGunData;
+        private readonly IPlaySoundsService _playSoundsService;
         private UniversalGunView _universalGunView;
         
         private LayerMask _layerMask = LayerMask.NameToLayer("WallForPortal");
@@ -25,12 +27,14 @@ namespace Unit.Portal
         public PortalGun(IPortalFactory portalFactory,
             PlayerInputActionReader playerInputActionReader,
             IGameInstancesContainer gameInstancesContainer,
-            PortalGunData portalGunData)
+            PortalGunData portalGunData,
+            IPlaySoundsService playSoundsService)
         {
             _portalFactory = portalFactory;
             _playerInputActionReader = playerInputActionReader;
             _gameInstancesContainer = gameInstancesContainer;
             _portalGunData = portalGunData;
+            _playSoundsService = playSoundsService;
         }
 
         public void SetUpUniversalView(UniversalGunView universalGunView)
@@ -40,11 +44,19 @@ namespace Unit.Portal
             _universalGunView.PortalGunBody.SetActive(true);
         }
 
-        public void MainFire() 
-            => Fire(PortalType.Blue);
+        public void MainFire()
+        {
+            Fire(PortalType.Blue);
+            
+            _playSoundsService.PlayAudioClip(GunData.FirstGunSound, _playSoundsService.GetVolumeLevel(VolumeLevel.Default), true, false);
+        }
 
-        public void AlternateFire() 
-            => Fire(PortalType.Red);
+        public void AlternateFire()
+        {
+            Fire(PortalType.Red);
+            
+            _playSoundsService.PlayAudioClip(GunData.SecondGunSound, _playSoundsService.GetVolumeLevel(VolumeLevel.Default), true, false);
+        }
 
         public void Select() 
         {         

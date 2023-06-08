@@ -9,6 +9,7 @@ using Services.Containers;
 using Services.Factories.AbstractFactory;
 using Services.Factories.PortalFactory;
 using Services.Input;
+using Services.PlaySounds;
 using Unit.GravityGun;
 using Unit.Mount;
 using Unit.MountRemote;
@@ -23,13 +24,14 @@ namespace Services.Factories.GunsFactory
     {
         public GunFactory(ICoroutineRunner coroutineRunner,
             IPortalFactory portalFactory,
-            IAbstractFactory abstractFactory, 
+            IAbstractFactory abstractFactory,
             PlayerInputActionReader playerInputActionReader,
             GravityGunData gravityGunData,
             ScaleGunData scaleGunData,
             PortalGunData portalGunData,
             MountRemoveData mountRemoveData,
-            IGameInstancesContainer gameInstancesContainer)
+            IGameInstancesContainer gameInstancesContainer,
+            IPlaySoundsService playSoundsService)
         {
             _abstractFactory = abstractFactory;
             _playerInputActionReader = playerInputActionReader;
@@ -38,6 +40,7 @@ namespace Services.Factories.GunsFactory
             _portalGunData = portalGunData;
             _mountRemoveData = mountRemoveData;
             _gameInstancesContainer = gameInstancesContainer;
+            _playSoundsService = playSoundsService;
             _portalFactory = portalFactory;
             _coroutineRunner = coroutineRunner;
         }
@@ -60,6 +63,7 @@ namespace Services.Factories.GunsFactory
         private readonly MountRemoveData _mountRemoveData;
 
         private readonly IGameInstancesContainer _gameInstancesContainer;
+        private readonly IPlaySoundsService _playSoundsService;
 
         private readonly IPortalFactory _portalFactory;
 
@@ -72,19 +76,19 @@ namespace Services.Factories.GunsFactory
         public PortalGun CreatePortalGun()
         {
             return new PortalGun(_portalFactory, 
-                _playerInputActionReader, _gameInstancesContainer, _portalGunData);
+                _playerInputActionReader, _gameInstancesContainer, _portalGunData, _playSoundsService);
         }
 
         public GravityGun CreateGravityGun()
         {
             return new GravityGun(_coroutineRunner,
-                _playerInputActionReader, _gravityGunData, _gameInstancesContainer);
+                _playerInputActionReader, _gravityGunData, _gameInstancesContainer, _playSoundsService);
         }
 
         public ScaleGun CreateScaleGun()
         {
             return new ScaleGun(_playerInputActionReader,
-                _scaleGunData, _gameInstancesContainer);
+                _scaleGunData, _gameInstancesContainer, _playSoundsService);
         }
 
         public async Task<MountRemote> CreateMountRemove()
