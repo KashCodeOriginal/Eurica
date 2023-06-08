@@ -44,9 +44,9 @@ namespace Infrastructure.ProjectStateMachine.States
             var gravityGun = _gunFactory.CreateGravityGun();
             var scaleGun = _gunFactory.CreateScaleGun();
 
-            inventory.AddWeaponToInventory(portalGun);
             inventory.AddWeaponToInventory(gravityGun);
             inventory.AddWeaponToInventory(scaleGun);
+            inventory.AddWeaponToInventory(portalGun);
 
             _gameInstancesContainer.SetUpInventory(inventory);
             
