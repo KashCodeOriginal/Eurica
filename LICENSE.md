@@ -39,7 +39,10 @@
 - "University Lecture Hall" от 융해열흡수 (https://sketchfab.com/3d-models/university-lecture-hall-452cc01ebd1a47de9925bd43f44d7da4)
 - "School_[class room]" от Comicaroid (https://sketchfab.com/3d-models/school-class-room-371cd1996ed4452ebd1990132ba2d669)
 - "School_[hallway]" от Comicaroid (https://sketchfab.com/3d-models/school-hallway-0f1e9ea00ef94425a62c28d26773ed47)
-- "Модели Москвы, предоставленные для хакатона "Лидеры Цифровой Трансформации"
+- "No Drink [Soviet poster]" от Vector (https://sketchfab.com/3d-models/no-drink-soviet-poster-1-baed0522b0b046cca0837a8f159b9de0)
+- "Russian Poster 1" от Euphoria Collective (https://sketchfab.com/3d-models/russian-poster-1-8bf24790f55e47a28fd53029eed9367d)
+- "Ice Claw mouse" от dmitriy7776661111 (https://sketchfab.com/3d-models/ice-claw-mouse-43de4d030ae94667bd8b8a478dd371ac)
+- Модели Москвы, предоставленные для хакатона "Лидеры Цифровой Трансформации"
 
 ## Звуки
 
