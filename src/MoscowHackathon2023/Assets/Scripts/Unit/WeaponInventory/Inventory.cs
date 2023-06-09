@@ -120,11 +120,5 @@ namespace Unit.WeaponInventory
         {            
             //_inventoryView.AddWeapon(dataWeapon.InventoryIcon, dataWeapon.IndexWeapon);
         }
-
-        ~Inventory()
-        {
-            _playerInputActionReader.IsMouseScroll -= Switch;  
-            _playerInputActionReader.IsPlayerDigitsClicked -= Switch;  
-        }
     }
 }
