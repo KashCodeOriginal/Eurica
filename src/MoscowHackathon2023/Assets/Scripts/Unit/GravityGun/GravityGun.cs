@@ -100,12 +100,12 @@ namespace Unit.GravityGun
         private void StopMainFire()
         {
             _coroutineRunner.StopCoroutine(_dragIn);
-      
+
+            _playerInputActionReader.IsLeftButtonClicked -= StopMainFire;
+            _playerInputActionReader.IsLeftButtonClicked += MainFire;
+
             if (_currentRigidbody != null)
             {
-                _playerInputActionReader.IsLeftButtonClicked -= StopMainFire;
-                _playerInputActionReader.IsLeftButtonClicked += MainFire;
-
                 if (_currentRigidbody.gameObject.TryGetComponent(out CubeBase cube))
                 {
                     cube.RequestDetach -= OnRequestToDetach;
@@ -194,7 +194,7 @@ namespace Unit.GravityGun
 
                 if (_soundTimer >= _gravityGunGravityGunData.SoundPlayDelay)
                 {
-                    _playSoundsService.PlayAudioClip(GunData.FirstGunSound, _playSoundsService.GetVolumeLevel(VolumeLevel.Default), true, false);
+                    _playSoundsService.PlayAudioClip(GunData.FirstGunSound, 0.1f, true, false);
 
                     _soundTimer = 0;
                 }
