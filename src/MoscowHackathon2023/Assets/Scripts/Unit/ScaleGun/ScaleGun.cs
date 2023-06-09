@@ -134,7 +134,7 @@ namespace Unit.ScaleGun
 
                 if (_raiseSoundTimer >= _scaleGunData.SoundPlayDelay)
                 {
-                    _playSoundsService.PlayAudioClip(GunData.FirstGunSound, _playSoundsService.GetVolumeLevel(VolumeLevel.Default), true, false);
+                    _playSoundsService.PlayAudioClip(GunData.FirstGunSound, 0.1f, true, false);
 
                     _raiseSoundTimer = 0;
                 }
@@ -155,7 +155,7 @@ namespace Unit.ScaleGun
 
                 if (_raiseSoundTimer >= _scaleGunData.SoundPlayDelay)
                 {
-                    _playSoundsService.PlayAudioClip(GunData.SecondGunSound, _playSoundsService.GetVolumeLevel(VolumeLevel.Default), true, false);
+                    _playSoundsService.PlayAudioClip(GunData.SecondGunSound, 0.1f, true, false);
 
                     _raiseSoundTimer = 0;
                 }

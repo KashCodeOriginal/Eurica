@@ -48,14 +48,14 @@ namespace Unit.Portal
         {
             Fire(PortalType.Blue);
             
-            _playSoundsService.PlayAudioClip(GunData.FirstGunSound, _playSoundsService.GetVolumeLevel(VolumeLevel.Default), true, false);
+            _playSoundsService.PlayAudioClip(GunData.FirstGunSound, 0.1f, true, false);
         }
 
         public void AlternateFire()
         {
             Fire(PortalType.Red);
             
-            _playSoundsService.PlayAudioClip(GunData.SecondGunSound, _playSoundsService.GetVolumeLevel(VolumeLevel.Default), true, false);
+            _playSoundsService.PlayAudioClip(GunData.SecondGunSound, 0.1f, true, false);
         }
 
         public void Select() 

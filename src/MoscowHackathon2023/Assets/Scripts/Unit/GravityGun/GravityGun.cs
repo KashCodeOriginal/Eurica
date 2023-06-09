@@ -194,7 +194,7 @@ namespace Unit.GravityGun
 
                 if (_soundTimer >= _gravityGunGravityGunData.SoundPlayDelay)
                 {
-                    _playSoundsService.PlayAudioClip(GunData.FirstGunSound, _playSoundsService.GetVolumeLevel(VolumeLevel.Default), true, false);
+                    _playSoundsService.PlayAudioClip(GunData.FirstGunSound, 0.1f, true, false);
 
                     _soundTimer = 0;
                 }
