@@ -10,7 +10,7 @@ namespace Unit.Base
         private void Start()
         {
             QualitySettings.vSyncCount = 1;
-#if UNITY_RELEASE
+#if !UNITY_EDITOR
         }
 #else
             // Показывать FPS на самодельном канвасе только в нерелизных билдах.
