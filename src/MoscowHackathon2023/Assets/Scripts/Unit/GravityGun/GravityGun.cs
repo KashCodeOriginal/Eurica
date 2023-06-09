@@ -100,12 +100,12 @@ namespace Unit.GravityGun
         private void StopMainFire()
         {
             _coroutineRunner.StopCoroutine(_dragIn);
-      
+
+            _playerInputActionReader.IsLeftButtonClicked -= StopMainFire;
+            _playerInputActionReader.IsLeftButtonClicked += MainFire;
+
             if (_currentRigidbody != null)
             {
-                _playerInputActionReader.IsLeftButtonClicked -= StopMainFire;
-                _playerInputActionReader.IsLeftButtonClicked += MainFire;
-
                 if (_currentRigidbody.gameObject.TryGetComponent(out CubeBase cube))
                 {
                     cube.RequestDetach -= OnRequestToDetach;
