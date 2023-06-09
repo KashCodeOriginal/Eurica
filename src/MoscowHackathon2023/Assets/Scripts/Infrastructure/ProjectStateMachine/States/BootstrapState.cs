@@ -39,10 +39,10 @@ namespace Infrastructure.ProjectStateMachine.States
             _staticDataService.LoadStaticData();
 
             var inventory = new Inventory(_playerInputActionReader, _gameInstancesContainer);
-            
-            var portalGun = _gunFactory.CreatePortalGun();
+
             var gravityGun = _gunFactory.CreateGravityGun();
             var scaleGun = _gunFactory.CreateScaleGun();
+            var portalGun = _gunFactory.CreatePortalGun();
 
             inventory.AddWeaponToInventory(gravityGun);
             inventory.AddWeaponToInventory(scaleGun);

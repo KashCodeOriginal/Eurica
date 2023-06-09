@@ -49,19 +49,20 @@ namespace Infrastructure.ProjectStateMachine.States
 
             _gameInstancesContainer.SetUpUniversalGunView(universalGunView);
 
-            if (_gameInstancesContainer.CollectedGunViews.Contains(GunTypes.Portal))
+            if (_gameInstancesContainer.CollectedGunViews.Contains(GunTypes.Gravity))
             {
                 _gameInstancesContainer.Inventory.Weapons[0].SetUpUniversalView(universalGunView);
             }
-            if (_gameInstancesContainer.CollectedGunViews.Contains(GunTypes.Gravity))
+
+            if (_gameInstancesContainer.CollectedGunViews.Contains(GunTypes.Scale))
             {
                 _gameInstancesContainer.Inventory.Weapons[1].SetUpUniversalView(universalGunView);
             }
-            if (_gameInstancesContainer.CollectedGunViews.Contains(GunTypes.Scale))
+
+            if (_gameInstancesContainer.CollectedGunViews.Contains(GunTypes.Portal))
             {
                 _gameInstancesContainer.Inventory.Weapons[2].SetUpUniversalView(universalGunView);
             }
-
         }
     }
 }
